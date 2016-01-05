@@ -541,14 +541,13 @@ class product_template(osv.osv):
                                                "Expressed in the default unit of measure of the product.",
                                           groups="base.group_user", string="Cost Price"),
         'volume': fields.float('Volume', help="The volume in m3."),
-        'weight': fields.float('Gross Weight', digits_compute=dp.get_precision('Stock Weight'), help="The gross weight in Kg."),
+        'weight': fields.float('Gross Weight', required=True, digits_compute=dp.get_precision('Stock Weight'), help="The gross weight in Kg."),
         'weight_net': fields.float('Net Weight', digits_compute=dp.get_precision('Stock Weight'), help="The net weight in Kg."),
         'warranty': fields.float('Warranty'),
         'sale_ok': fields.boolean('Can be Sold', help="Specify if the product can be selected in a sales order line."),
         'pricelist_id': fields.dummy(string='Pricelist', relation='product.pricelist', type='many2one'),
-        'state': fields.selection([('',''),
-            ('draft', 'In Development'),
-            ('sellable','Normal'),
+        'state': fields.selection([('sellable','Normal'),
+            ('draft', 'In Development'),          
             ('end','End of Lifecycle'),
             ('obsolete','Obsolete')], 'Status'),
         'uom_id': fields.many2one('product.uom', 'Unit of Measure', required=True, help="Default Unit of Measure used for all stock operation."),
@@ -603,6 +602,11 @@ class product_template(osv.osv):
         'ean13': fields.related('product_variant_ids', 'ean13', type='char', string='EAN13 Barcode'),
         'default_code': fields.related('product_variant_ids', 'default_code', type='char', string='Internal Reference'),
     }
+    _defaults = {
+        'state' : 'sellable',
+    }
+
+
 
     def _price_get_list_price(self, product):
         return 0.0
@@ -993,7 +997,7 @@ class product_product(osv.osv):
         'lst_price': fields.function(_product_lst_price, fnct_inv=_set_product_lst_price, type='float', string='Public Price', digits_compute=dp.get_precision('Product Price')),
         'code': fields.function(_product_code, type='char', string='Internal Reference'),
         'partner_ref' : fields.function(_product_partner_ref, type='char', string='Customer ref'),
-        'default_code' : fields.char('Internal Reference', select=True),
+        'default_code' : fields.char('Internal Reference', select=True, required=True), 
         'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the product without removing it."),
         'product_tmpl_id': fields.many2one('product.template', 'Product Template', required=True, ondelete="cascade", select=True, auto_join=True),
         'ean13': fields.char('EAN13 Barcode', size=13, help="International Article Number used for product identification."),

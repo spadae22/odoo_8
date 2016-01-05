@@ -46,7 +46,7 @@ class hr_employee_category(osv.Model):
 
     def _name_get_fnc(self, cr, uid, ids, prop, unknow_none, context=None):
         res = self.name_get(cr, uid, ids, context=context)
-        return dict(res)
+        return dict(res)    
 
     _name = "hr.employee.category"
     _description = "Employee Category"
