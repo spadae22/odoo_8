@@ -85,7 +85,7 @@ class report_custom(report_rml):
                     <col para='yes'> """+ main_sp_name + sellers + """ </col>
                     <col f='yes'>"""+ rml_obj.formatLang(prod_qtty, digits=product_uom_digits) +' '+ product_uom_name +"""</col>
                     <col f='yes'>"""+ rml_obj.formatLang(float(main_strd_price), digits=purchase_price_digits) +' '+ (company_currency_symbol) +"""</col>
-                    <col f='yes'>""" + main_sp_price + sellers_price + """</col>'"""
+                    <col f='yes'>""" + rml_obj.formatLang(float(sum_strd), digits=purchase_price_digits) +' '+ (company_currency_symbol) + """</col>'"""
 
             xml += '</row>'
             return xml, sum, sum_strd

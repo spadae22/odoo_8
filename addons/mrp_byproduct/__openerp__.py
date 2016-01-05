@@ -43,7 +43,7 @@ With this module:
     'depends': ['base', 'mrp'],
     'data': [
        'security/ir.model.access.csv',
-       'mrp_byproduct_view.xml'
+       
     ],
     'demo': [],
     'test': ['test/mrp_byproduct.yml'],

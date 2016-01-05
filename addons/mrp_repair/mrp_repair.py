@@ -141,7 +141,7 @@ class mrp_repair(osv.osv):
         'location_dest_id': fields.many2one('stock.location', 'Delivery Location', readonly=True, required=True, states={'draft': [('readonly', False)], 'confirmed': [('readonly', True)]}),
         'lot_id': fields.many2one('stock.production.lot', 'Repaired Lot', domain="[('product_id','=', product_id)]", help="Products repaired are all belonging to this lot", oldname="prodlot_id"),
         'guarantee_limit': fields.date('Warranty Expiration', states={'confirmed': [('readonly', True)]}),
-        'operations': fields.one2many('mrp.repair.line', 'repair_id', 'Operation Lines', readonly=True, states={'draft': [('readonly', False)]}, copy=True),
+        'operations': fields.one2many('mrp.repair.line', 'repair_id', 'Operation Lines', states={'done': [('readonly', True)]}, copy=True),
         'pricelist_id': fields.many2one('product.pricelist', 'Pricelist', help='Pricelist of the selected partner.'),
         'partner_invoice_id': fields.many2one('res.partner', 'Invoicing Address'),
         'invoice_method': fields.selection([
@@ -152,7 +152,7 @@ class mrp_repair(osv.osv):
             select=True, required=True, states={'draft': [('readonly', False)]}, readonly=True, help='Selecting \'Before Repair\' or \'After Repair\' will allow you to generate invoice before or after the repair is done respectively. \'No invoice\' means you don\'t want to generate invoice for this repair order.'),
         'invoice_id': fields.many2one('account.invoice', 'Invoice', readonly=True, track_visibility="onchange", copy=False),
         'move_id': fields.many2one('stock.move', 'Move', readonly=True, help="Move created by the repair order", track_visibility="onchange", copy=False),
-        'fees_lines': fields.one2many('mrp.repair.fee', 'repair_id', 'Fees', readonly=True, states={'draft': [('readonly', False)]}, copy=True),
+        'fees_lines': fields.one2many('mrp.repair.fee', 'repair_id', 'Fees', states={'done': [('readonly', True)]}, copy=True),
         'internal_notes': fields.text('Internal Notes'),
         'quotation_notes': fields.text('Quotation Notes'),
         'company_id': fields.many2one('res.company', 'Company'),
