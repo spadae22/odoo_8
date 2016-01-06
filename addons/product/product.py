@@ -606,7 +606,7 @@ class product_template(osv.osv):
         'state' : 'sellable',
     }
 
-
+   
 
     def _price_get_list_price(self, product):
         return 0.0
@@ -803,6 +803,7 @@ class product_template(osv.osv):
         'categ_id' : _default_category,
         'type' : 'consu',
         'active': True,
+        'state' : 'sellable',
     }
 
     def _check_uom(self, cursor, user, ids, context=None):
