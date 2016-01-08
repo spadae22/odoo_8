@@ -149,14 +149,14 @@ class mrp_repair(osv.osv):
             ("b4repair", "Before Repair"),
             ("after_repair", "After Repair")
            ], "Invoice Method",
-            select=True, required=True, states={'draft': [('readonly', False)]}, readonly=True, help='Selecting \'Before Repair\' or \'After Repair\' will allow you to generate invoice before or after the repair is done respectively. \'No invoice\' means you don\'t want to generate invoice for this repair order.'),
+            select=True, required=True, states={'draft': [('readonly', False)], 'done': [('readonly', False)]}, readonly=True, help='Selecting \'Before Repair\' or \'After Repair\' will allow you to generate invoice before or after the repair is done respectively. \'No invoice\' means you don\'t want to generate invoice for this repair order.'),
         'invoice_id': fields.many2one('account.invoice', 'Invoice', readonly=True, track_visibility="onchange", copy=False),
         'move_id': fields.many2one('stock.move', 'Move', readonly=True, help="Move created by the repair order", track_visibility="onchange", copy=False),
         'fees_lines': fields.one2many('mrp.repair.fee', 'repair_id', 'Fees', states={'done': [('readonly', True)]}, copy=True),
         'internal_notes': fields.text('Internal Notes'),
         'quotation_notes': fields.text('Quotation Notes'),
         'company_id': fields.many2one('res.company', 'Company'),
-        'invoiced': fields.boolean('Invoiced', readonly=True, copy=False),
+        'invoiced': fields.boolean('Invoiced',copy=False),
         'repaired': fields.boolean('Repaired', readonly=True, copy=False),
         'amount_untaxed': fields.function(_amount_untaxed, string='Untaxed Amount',
             store={
