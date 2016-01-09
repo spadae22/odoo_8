@@ -145,11 +145,10 @@ class mrp_repair(osv.osv):
         'pricelist_id': fields.many2one('product.pricelist', 'Pricelist', help='Pricelist of the selected partner.'),
         'partner_invoice_id': fields.many2one('res.partner', 'Invoicing Address'),
         'invoice_method': fields.selection([
-            ("none", "No Invoice"),
-            ("b4repair", "Before Repair"),
-            ("after_repair", "After Repair")
+            ("none", "No Charge / Warranty"),           
+            ("after_repair", "To Be Invoiced")
            ], "Invoice Method",
-            select=True, required=True, states={'draft': [('readonly', False)], 'done': [('readonly', False)]}, readonly=True, help='Selecting \'Before Repair\' or \'After Repair\' will allow you to generate invoice before or after the repair is done respectively. \'No invoice\' means you don\'t want to generate invoice for this repair order.'),
+            select=True, required=True, states={'draft': [('readonly', False)], 'done': [('readonly', False)]}, readonly=True, help='Selecting \'Before Repair\' or \'After Repair\' will allow you to generate invoice before or after the repair is done respectively. \'No Charge / Warranty\' means you don\'t want to generate invoice for this repair order.'),
         'invoice_id': fields.many2one('account.invoice', 'Invoice', readonly=True, track_visibility="onchange", copy=False),
         'move_id': fields.many2one('stock.move', 'Move', readonly=True, help="Move created by the repair order", track_visibility="onchange", copy=False),
         'fees_lines': fields.one2many('mrp.repair.fee', 'repair_id', 'Fees', states={'done': [('readonly', True)]}, copy=True),
@@ -598,7 +597,9 @@ class mrp_repair_line(osv.osv, ProductChangeMixin):
     }
     _defaults = {
         'state': lambda *a: 'draft',
+        'type': lambda *a: 'add',
         'product_uom_qty': lambda *a: 1,
+        'to_invoice': lambda *a: True,
     }
 
     def onchange_operation_type(self, cr, uid, ids, type, guarantee_limit, company_id=False, context=None):
@@ -615,6 +616,7 @@ class mrp_repair_line(osv.osv, ProductChangeMixin):
                 }}
         location_obj = self.pool.get('stock.location')
         warehouse_obj = self.pool.get('stock.warehouse')
+        repair_obj = self.pool.get('mrp.repair')
         location_id = location_obj.search(cr, uid, [('usage', '=', 'production')], context=context)
         location_id = location_id and location_id[0] or False
 
@@ -626,10 +628,11 @@ class mrp_repair_line(osv.osv, ProductChangeMixin):
             stock_id = False
             if warehouse_ids:
                 stock_id = warehouse_obj.browse(cr, uid, warehouse_ids[0], context=context).lot_stock_id.id
-            to_invoice = (guarantee_limit and datetime.strptime(guarantee_limit, '%Y-%m-%d') < datetime.now())
+            #to_invoice = (guarantee_limit and datetime.strptime(guarantee_limit, '%Y-%m-%d') < datetime.now())
+           
 
             return {'value': {
-                'to_invoice': to_invoice,
+                #'to_invoice': to_invoice,
                 'location_id': stock_id,
                 'location_dest_id': location_id
                 }}
