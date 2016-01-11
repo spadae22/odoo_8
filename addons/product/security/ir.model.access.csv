@@ -26,7 +26,7 @@ access_product_attribute,product.attribute,model_product_attribute,base.group_us
 access_product_attribute_value,product.attribute value,model_product_attribute_value,base.group_user,1,0,0,0
 access_product_attribute_price,product.attribute price,model_product_attribute_price,base.group_user,1,0,0,0
 access_product_attribute_line,product.attribute line,model_product_attribute_line,base.group_user,1,0,0,0
-access_product_attribute_sale_manager,product.attribute manager,model_product_attribute,base.group_sale_manager,1,1,1,1
+access_product_attribute_sale_manager,product.attribute manager,model_product_attribute,base.group_sale_manager,1,1,0,0
 access_product_attribute_value_sale_manager,product.attribute manager value,model_product_attribute_value,base.group_sale_manager,1,1,1,1
 access_product_attribute_price_sale_manager,product.attribute manager price,model_product_attribute_price,base.group_sale_manager,1,1,1,1
 access_product_attribute_line_sale_manager,product.attribute manager line,model_product_attribute_line,base.group_sale_manager,1,1,1,1
