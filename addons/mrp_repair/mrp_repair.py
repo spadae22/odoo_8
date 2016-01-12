@@ -148,7 +148,8 @@ class mrp_repair(osv.osv):
             ("none", "No Charge / Warranty"),           
             ("after_repair", "To Be Invoiced")
            ], "Invoice Method",
-            select=True, required=True, states={'draft': [('readonly', False)], 'done': [('readonly', False)]}, readonly=True, help='Selecting \'Before Repair\' or \'After Repair\' will allow you to generate invoice before or after the repair is done respectively. \'No Charge / Warranty\' means you don\'t want to generate invoice for this repair order.'),
+            select=True, required=True, states={'draft': [('readonly', False)], 'confirmed': [('readonly', False)],
+'under_repair': [('readonly', False)], 'ready': [('readonly', False)],'done': [('readonly', False)]}, readonly=True, help='Selecting \'Before Repair\' or \'After Repair\' will allow you to generate invoice before or after the repair is done respectively. \'No Charge / Warranty\' means you don\'t want to generate invoice for this repair order.'),
         'invoice_id': fields.many2one('account.invoice', 'Invoice', readonly=True, track_visibility="onchange", copy=False),
         'move_id': fields.many2one('stock.move', 'Move', readonly=True, help="Move created by the repair order", track_visibility="onchange", copy=False),
         'fees_lines': fields.one2many('mrp.repair.fee', 'repair_id', 'Fees', states={'done': [('readonly', True)]}, copy=True),
