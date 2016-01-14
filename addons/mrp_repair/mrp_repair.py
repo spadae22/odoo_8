@@ -376,7 +376,8 @@ class mrp_repair(osv.osv):
                             'uos_id': operation.product_uom.id,
                             'price_unit': operation.price_unit,
                             'price_subtotal': operation.product_uom_qty * operation.price_unit,
-                            'product_id': operation.product_id and operation.product_id.id or False
+                            'product_id': operation.product_id and operation.product_id.id or False,
+                            'rma_id': repair.id
                         })
                         repair_line_obj.write(cr, uid, [operation.id], {'invoiced': True, 'invoice_line_id': invoice_line_id})
                 for fee in repair.fees_lines:
@@ -405,7 +406,8 @@ class mrp_repair(osv.osv):
                             'uos_id': fee.product_uom.id,
                             'product_id': fee.product_id and fee.product_id.id or False,
                             'price_unit': fee.price_unit,
-                            'price_subtotal': fee.product_uom_qty * fee.price_unit
+                            'price_subtotal': fee.product_uom_qty * fee.price_unit,
+                            'rma_id': repair.id
                         })
                         repair_fee_obj.write(cr, uid, [fee.id], {'invoiced': True, 'invoice_line_id': invoice_fee_id})
                 inv_obj.button_reset_taxes(cr, uid, inv_id, context=context)
