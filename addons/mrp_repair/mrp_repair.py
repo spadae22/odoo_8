@@ -118,7 +118,7 @@ class mrp_repair(osv.osv):
         'product_qty': fields.float('Product Quantity', digits_compute=dp.get_precision('Product Unit of Measure'),
                                     required=True, readonly=True, states={'draft': [('readonly', False)]}),
         'product_uom': fields.many2one('product.uom', 'Product Unit of Measure', required=True, readonly=True, states={'draft': [('readonly', False)]}),
-        'partner_id': fields.many2one('res.partner', 'Partner', select=True, help='Choose partner for whom the order will be invoiced and delivered.', states={'confirmed': [('readonly', True)]}),
+        'partner_id': fields.many2one('res.partner', 'Partner', select=True, domain=[('is_company','=',True)], help='Choose partner for whom the order will be invoiced and delivered.', states={'confirmed': [('readonly', True)]}),
         'address_id': fields.many2one('res.partner', 'Delivery Address', domain="[('parent_id','=',partner_id)]", states={'confirmed': [('readonly', True)]}),
         'default_address_id': fields.function(_get_default_address, type="many2one", relation="res.partner"),
         'state': fields.selection([
