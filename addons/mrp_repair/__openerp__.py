@@ -22,7 +22,7 @@
 
 {
     'name': 'Repairs Management',
-    'version': '1.0',
+    'version': '1.1',
     'category': 'Manufacturing',
     'description': """
 The aim is to have a complete module to manage all products repairs.
