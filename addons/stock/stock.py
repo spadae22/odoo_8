@@ -596,7 +596,7 @@ class stock_quant(osv.osv):
             negative quants. If it's possible, apply the cost of the new
             quant to the conter-part of the negative quant.
         """
-        context = context or {}
+        context = context or {} 
         context = dict(context)
         context.update({'force_unlink': True})
         solving_quant = quant
@@ -690,11 +690,11 @@ class stock_quant(osv.osv):
             raise osv.except_osv(_('Error'), _('You cannot move to a location of type view %s.') % (location.name))
         return True
 
-    def unlink(self, cr, uid, ids, context=None):
-        context = context or {}
-        if not context.get('force_unlink'):
-            raise osv.except_osv(_('Error!'), _('Under no circumstances should you delete or change quants yourselves!'))
-        super(stock_quant, self).unlink(cr, uid, ids, context=context)
+#    def unlink(self, cr, uid, ids, context=None):
+#        context = context or {}
+#        if not context.get('force_unlink'):
+#            raise osv.except_osv(_('Error!'), _('Under no circumstances should you delete or change quants yourselves!'))
+#        super(stock_quant, self).unlink(cr, uid, ids, context=context)
 
 #----------------------------------------------------------
 # Stock Picking
