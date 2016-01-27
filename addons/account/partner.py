@@ -31,7 +31,7 @@ class account_fiscal_position(osv.osv):
     _order = 'sequence'
     _columns = {
         'sequence': fields.integer('Sequence'),
-        'name': fields.char('Fiscal Position', required=True),
+        'name': fields.char('Sales Tax', required=True),
         'active': fields.boolean('Active', help="By unchecking the active field, you may hide a fiscal position without deleting it."),
         'company_id': fields.many2one('res.company', 'Company'),
         'account_ids': fields.one2many('account.fiscal.position.account', 'position_id', 'Account Mapping', copy=True),
@@ -148,7 +148,7 @@ class account_fiscal_position_tax(osv.osv):
     _description = 'Taxes Fiscal Position'
     _rec_name = 'position_id'
     _columns = {
-        'position_id': fields.many2one('account.fiscal.position', 'Fiscal Position', required=True, ondelete='cascade'),
+        'position_id': fields.many2one('account.fiscal.position', 'Sales Tax', required=True, ondelete='cascade'),
         'tax_src_id': fields.many2one('account.tax', 'Tax Source', required=True),
         'tax_dest_id': fields.many2one('account.tax', 'Replacement Tax')
     }
@@ -165,7 +165,7 @@ class account_fiscal_position_account(osv.osv):
     _description = 'Accounts Fiscal Position'
     _rec_name = 'position_id'
     _columns = {
-        'position_id': fields.many2one('account.fiscal.position', 'Fiscal Position', required=True, ondelete='cascade'),
+        'position_id': fields.many2one('account.fiscal.position', 'Sales Tax', required=True, ondelete='cascade'),
         'account_src_id': fields.many2one('account.account', 'Account Source', domain=[('type','<>','view')], required=True),
         'account_dest_id': fields.many2one('account.account', 'Account Destination', domain=[('type','<>','view')], required=True)
     }
@@ -345,7 +345,7 @@ class res_partner(osv.osv):
         'property_account_position': fields.property(
             type='many2one',
             relation='account.fiscal.position',
-            string="Fiscal Position",
+            string="Sales Tax",
             help="The fiscal position will determine taxes and accounts used for the partner.",
         ),
         'property_payment_term': fields.property(

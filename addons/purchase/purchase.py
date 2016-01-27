@@ -304,7 +304,7 @@ class purchase_order(osv.osv):
             store={
                 'purchase.order.line': (_get_order, None, 10),
             }, multi="sums", help="The total amount"),
-        'fiscal_position': fields.many2one('account.fiscal.position', 'Fiscal Position'),
+        'fiscal_position': fields.many2one('account.fiscal.position', 'Sales Tax'),
         'payment_term_id': fields.many2one('account.payment.term', 'Payment Term'),
         'incoterm_id': fields.many2one('stock.incoterms', 'Incoterm', help="International Commercial Terms are a series of predefined commercial terms used in international transactions."),
         'product_id': fields.related('order_line', 'product_id', type='many2one', relation='product.product', string='Product'),

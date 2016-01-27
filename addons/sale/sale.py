@@ -245,7 +245,7 @@ class sale_order(osv.osv):
             multi='sums', help="The total amount."),
 
         'payment_term': fields.many2one('account.payment.term', 'Payment Term'),
-        'fiscal_position': fields.many2one('account.fiscal.position', 'Fiscal Position'),
+        'fiscal_position': fields.many2one('account.fiscal.position', 'Sales Tax'),
         'company_id': fields.many2one('res.company', 'Company'),
         'section_id': fields.many2one('crm.case.section', 'Sales Team'),
         'procurement_group_id': fields.many2one('procurement.group', 'Procurement group', copy=False),
@@ -1006,7 +1006,7 @@ class sale_order_line(osv.osv):
             account_id = self.pool.get('account.fiscal.position').map_account(cr, uid, fpos, account_id)
             if not account_id:
                 raise osv.except_osv(_('Error!'),
-                            _('There is no Fiscal Position defined or Income category account defined for default properties of Product categories.'))
+                            _('There is no Sales Tax defined or Income category account defined for default properties of Product categories.'))
             res = {
                 'name': line.name,
                 'sequence': line.sequence,

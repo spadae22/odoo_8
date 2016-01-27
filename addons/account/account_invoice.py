@@ -304,7 +304,7 @@ class account_invoice(models.Model):
     user_id = fields.Many2one('res.users', string='Salesperson', track_visibility='onchange',
         readonly=True, states={'draft': [('readonly', False)]},
         default=lambda self: self.env.user)
-    fiscal_position = fields.Many2one('account.fiscal.position', string='Fiscal Position',
+    fiscal_position = fields.Many2one('account.fiscal.position', string='Sales Tax',
         readonly=True, states={'draft': [('readonly', False)]})
     commercial_partner_id = fields.Many2one('res.partner', string='Commercial Entity',
         related='partner_id.commercial_partner_id', store=True, readonly=True,
