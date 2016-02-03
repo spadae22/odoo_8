@@ -10,7 +10,7 @@
                 <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
                 <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
                 <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                <span t-if="o.type == 'out_refund'">Refund</span>
+                <span t-if="o.type == 'out_refund'"><FONT COLOR="f70202"><strong>CREDIT </strong></FONT></span>
                 <span t-if="o.type == 'in_refund'">Supplier Refund</span>
                 <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
                 <span t-field="o.number"/>
