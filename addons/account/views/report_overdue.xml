@@ -56,12 +56,13 @@
 
                     <tr>
                         <th>Date</th>
-                        <th class="text-center">Invoice / Ref</th>        
+                        <th class="text-center">Invoice / Payments</th>
+                         <th class="text-center">Reference</th>        
                       <th class="text-center">Due Date</th>
                         <th class="text-right">Due</th>
-                        <th class="text-right">Paid</th>
+                        <th class="text-right">Unapplied Credits</th>
                         <th class="text-right">Overdue</th>
-                        <th class="text-center">Li.</th>
+                        
                     </tr>
                 </thead>
                 <tr t-foreach="getLines(o)" t-as="line">
@@ -69,7 +70,10 @@
                         <span t-field="line.date"/>
                     </td>
                     <td>
-                        <span t-field="line.invoice"/>
+                        <span t-field="line.move_id"/>
+                    </td>
+                     <td>
+                        <span t-field="line.name"/>
                     </td>
                         
                     <td>
