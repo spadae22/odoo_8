@@ -200,8 +200,8 @@
           <field name="name">mrp.repair.select</field>
           <field name="model">mrp.repair</field>
           <field name="arch" type="xml">
-              <search string="Search Reair Orders">
-                  <field name="name" string="Reair Orders"/>
+              <search string="Search Repair Orders">
+                  <field name="name" string="Repair Orders"/>
                   <field name="state"/>
                   <filter icon="terp-document-new" string="Quotations" domain="[('state','=','draft')]"/>
                   <filter icon="terp-check" string="Confirmed" domain="[('state','=','confirmed')]" name="current" />
