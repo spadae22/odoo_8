@@ -86,7 +86,7 @@ class sale_order(osv.osv):
         return result.keys()
 
     _columns = {
-        'margin': fields.function(_product_margin, string='Margin', help="It gives profitability by calculating the difference between the Unit Price and the cost price.", store={
+                'margin': fields.function(_product_margin, string='Margin', help="It gives profitability by calculating the difference between the Unit Price and the cost price.", store={
                 'sale.order.line': (_get_order, ['margin', 'purchase_price', 'order_id'], 20),
                 'sale.order': (lambda self, cr, uid, ids, c={}: ids, ['order_line'], 20),
                 }, digits_compute= dp.get_precision('Product Price')),
