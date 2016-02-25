@@ -60,7 +60,6 @@ class mrp_repair(osv.osv):
         @return: Dictionary of values.
         """
         res = {}
-        #return {}.fromkeys(ids, 0)
         cur_obj = self.pool.get('res.currency')
         tax_obj = self.pool.get('account.tax')
         for repair in self.browse(cr, uid, ids, context=context):
@@ -491,7 +490,6 @@ class mrp_repair(osv.osv):
         """ Creates stock move for operation and stock move for final product of repair order.
         @return: Move ids of final products
         """
-        print "---- action confirm done------------------"
         res = {}
         move_obj = self.pool.get('stock.move')
         repair_line_obj = self.pool.get('mrp.repair.line')
@@ -663,7 +661,6 @@ class mrp_repair_line(osv.osv, ProductChangeMixin):
             stock_id = False
             if warehouse_ids:
                 stock_id = warehouse_obj.browse(cr, uid, warehouse_ids[0], context=context).lot_stock_id.id
-                print "======= stock id========================", stock_id
             #to_invoice = (guarantee_limit and datetime.strptime(guarantee_limit, '%Y-%m-%d') < datetime.now())
            
 
