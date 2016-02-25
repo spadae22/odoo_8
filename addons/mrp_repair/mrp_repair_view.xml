@@ -31,10 +31,10 @@
                    <button name="action_cancel_draft" states="cancel" string="Set to Draft" type="object"/>
                    <button name="action_repair_end" states="under_repair" string="End Repair" class="oe_highlight"/>
                    <button name="action_invoice_create" states="2binvoiced" string="Create Invoice" class="oe_highlight"/>
-                   <button name="invoice_recreate" states="invoice_except" string="Recreate Invoice"/>
                    <button name="invoice_corrected" states="invoice_except" string="Invoice Corrected"/>
-                   <button name="action_cancel" string="Cancel Repair" type="object" attrs="{'invisible':['|',('invoice_method','!=','none'), ('state', 'not in',('confirmed','2binvoiced','ready','under_repair', 'invoice_except'))]}"/>
-                   <button name="cancel" states="draft" string="Cancel Repair"/>
+                   <button name="action_cancel" string="Cancel Repair - Return Parts to Stock" type="object"
+                  attrs="{'invisible':[('state', 'not in',('done', 'invoice_except'))]}"/> 
+                 
                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
                </header>
                <sheet string="Repairs order">
@@ -45,11 +45,11 @@
                         <group>
 			    <field name="invoice_method"/>
                             <field name="product_id" on_change="onchange_product_id(product_id)" domain="[('type','!=','service')]"/>
-                            <label for="product_qty"/>
+                    <label for="product_qty"/>
                             <div>
                                 <field name="product_qty" class="oe_inline"/> 
                                 <field name="product_uom" groups="product.group_uom" on_change="onchange_product_uom(product_id, product_uom)" class="oe_inline"/>
-                            </div>
+                            </div> 
                             <field name="lot_id" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" groups="stock.group_production_lot"/>
                             <field name="partner_id" on_change="onchange_partner_id(partner_id,address_id)" attrs="{'required':[('invoice_method','!=','none')]}"/>
                             <field name="address_id" groups="sale.group_delivery_invoice_address"/>

@@ -266,9 +266,11 @@ class mrp_repair(osv.osv):
         """
         if not len(ids):
             return False
+            
         mrp_line_obj = self.pool.get('mrp.repair.line')
         for repair in self.browse(cr, uid, ids):
-            mrp_line_obj.write(cr, uid, [l.id for l in repair.operations], {'state': 'draft'})
+            mrp_line_obj.write(cr, uid, [l.id for l in repair.operations], {'state': 'draft'}) 
+            
         self.write(cr, uid, ids, {'state': 'draft'})
         return self.create_workflow(cr, uid, ids)
 
@@ -296,12 +298,41 @@ class mrp_repair(osv.osv):
         """
         mrp_line_obj = self.pool.get('mrp.repair.line')
         for repair in self.browse(cr, uid, ids, context=context):
-            if not repair.invoiced:
-                mrp_line_obj.write(cr, uid, [l.id for l in repair.operations], {'state': 'cancel'}, context=context)
-            else:
-                raise osv.except_osv(_('Warning!'), _('Repair order is already invoiced.'))
-        return self.write(cr, uid, ids, {'state': 'cancel'})
-
+            if repair.invoice_id.state != 'cancel' and repair.invoiced:
+                raise osv.except_osv(_('Warning!'), _('Repair order is already invoiced. You must cancel the invoice first. Please see a manager.'))   
+        mrp_line_obj.write(cr, uid, [l.id for l in repair.operations], {'state': 'draft'}, context=context)                      
+        res = {}
+        move_obj = self.pool.get('stock.move')
+        repair_line_obj = self.pool.get('mrp.repair.line')
+        for repair in self.browse(cr, uid, ids, context=context):
+            move_ids = []
+            for move in repair.operations:
+                move_id = move_obj.create(cr, uid, {
+                    'name': move.name,
+                    'product_id': move.product_id.id,
+                    'restrict_lot_id': move.lot_id.id,
+                    'product_uom_qty': move.product_uom_qty,
+                    'product_uom': move.product_uom.id,
+                    'location_id': move.location_dest_id.id,
+                    'location_dest_id': move.location_id.id
+                })
+                move_ids.append(move_id)
+                repair_line_obj.write(cr, uid, [move.id], {'move_id': move_id, 'state': 'done'}, context=context)
+            move_id = move_obj.create(cr, uid, {
+                'name': repair.name,
+                'product_id': repair.product_id.id,
+                'product_uom': repair.product_uom.id or repair.product_id.uom_id.id,
+                'product_uom_qty': repair.product_qty,
+                'location_id': repair.location_dest_id.id,
+                'location_dest_id': repair.location_id.id,
+                'restrict_lot_id': repair.lot_id.id,
+            })
+            move_ids.append(move_id)
+            move_obj.action_done(cr, uid, move_ids, context=context)
+            self.write(cr, uid, [repair.id], {'state': 'done', 'move_id': move_id}, context=context)
+            res[repair.id] = move_id
+        return self.write(cr, uid, ids, {'state': 'cancel', 'invoiced': False, 'invoice_id': False})
+        
     def wkf_invoice_create(self, cr, uid, ids, *args):
         self.action_invoice_create(cr, uid, ids)
         return True
@@ -460,6 +491,7 @@ class mrp_repair(osv.osv):
         """ Creates stock move for operation and stock move for final product of repair order.
         @return: Move ids of final products
         """
+        print "---- action confirm done------------------"
         res = {}
         move_obj = self.pool.get('stock.move')
         repair_line_obj = self.pool.get('mrp.repair.line')
@@ -631,6 +663,7 @@ class mrp_repair_line(osv.osv, ProductChangeMixin):
             stock_id = False
             if warehouse_ids:
                 stock_id = warehouse_obj.browse(cr, uid, warehouse_ids[0], context=context).lot_stock_id.id
+                print "======= stock id========================", stock_id
             #to_invoice = (guarantee_limit and datetime.strptime(guarantee_limit, '%Y-%m-%d') < datetime.now())
            
 
