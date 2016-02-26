@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'name': 'Suppliers Payment Management',
+    'name': 'Vendors Payment Management',
     'version': '1.1',
     'author': 'OpenERP SA',
     'category': 'Accounting & Finance',

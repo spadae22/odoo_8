@@ -63,7 +63,7 @@
                 <filter string="Invoiced" name="current" domain="[('state','not in', ('draft','cancel','proforma','proforma2'))]"/>
                 <separator/>
                 <filter string="Customer" name="customer" domain="['|', ('type','=','out_invoice'),('type','=','out_refund')]"/>
-                <filter string="Supplier" domain="['|', ('type','=','in_invoice'),('type','=','in_refund')]"/>
+                <filter string="Vendor" domain="['|', ('type','=','in_invoice'),('type','=','in_refund')]"/>
                 <separator/>
                 <filter string="Invoice" domain="['|', ('type','=','out_invoice'),('type','=','in_invoice')]"/>
                 <filter string="Refund" domain="['|', ('type','=','out_refund'),('type','=','in_refund')]"/>

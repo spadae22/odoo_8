@@ -143,7 +143,7 @@
             <field name="model">account.invoice</field>
             <field name="priority">2</field>
             <field name="arch" type="xml">
-                <form string="Supplier Invoice">
+                <form string="Vendor Invoice">
                 <header>
                         <button name="invoice_open" states="draft,proforma2" string="Validate" class="oe_highlight" groups="account.group_account_invoice"/>
                         <button name="%(action_account_invoice_refund)d" type='action' string='Ask Refund' states='open,paid' groups="account.group_account_invoice"/>
@@ -152,7 +152,7 @@
                         <button name='%(action_account_state_open)d' type='action' string='Re-Open' groups="account.group_account_invoice" attrs="{'invisible':['|', ('state','&lt;&gt;','paid'), ('reconciled', '=', True)]}" help="This button only appears when the state of the invoice is 'paid' (showing that it has been fully reconciled) and auto-computed boolean 'reconciled' is False (depicting that it's not the case anymore). In other words, the invoice has been dereconciled and it does not fit anymore the 'paid' state. You should press this button to re-open it and let it continue its normal process after having resolved the eventual exceptions it may have created."/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,open,paid" statusbar_colors='{"proforma":"blue","proforma2":"blue"}'/>
                 </header>
-                <sheet string="Supplier Invoice">
+                <sheet string="Vendor Invoice">
                     <div class="oe_title">
                         <h1>
                             <label string="Draft Invoice" attrs="{'invisible': ['|',('state','&lt;&gt;','draft'), ('type','&lt;&gt;','in_invoice')]}"/>
@@ -165,7 +165,7 @@
                     <field name="type" invisible="1"/>
                     <group>
                         <group>
-                            <field string="Supplier" name="partner_id"
+                            <field string="Vendor" name="partner_id"
                               on_change="onchange_partner_id(type, partner_id, date_invoice, payment_term, partner_bank_id, company_id, context)"
                               context="{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1}"
                               domain="[('supplier', '=', True)]"/>
@@ -586,7 +586,7 @@
         <menuitem action="action_invoice_tree1" id="menu_action_invoice_tree1" parent="menu_finance_receivables"/>
 
         <record id="action_invoice_tree2" model="ir.actions.act_window">
-            <field name="name">Supplier Invoices</field>
+            <field name="name">Vendor Invoices</field>
             <field name="res_model">account.invoice</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,calendar,graph</field>
@@ -643,7 +643,7 @@
         <menuitem action="action_invoice_tree3" id="menu_action_invoice_tree3" parent="menu_finance_receivables"/>
 
         <record id="action_invoice_tree4" model="ir.actions.act_window">
-            <field name="name">Supplier Refunds</field>
+            <field name="name">Vendor Refunds</field>
             <field name="res_model">account.invoice</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,calendar,graph</field>

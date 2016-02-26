@@ -230,7 +230,7 @@ class purchase_order(osv.osv):
         'origin': fields.char('Source Document', copy=False,
                               help="Reference of the document that generated this purchase order "
                                    "request; a sales order or an internal procurement request."),
-        'partner_ref': fields.char('Supplier Reference', states={'confirmed':[('readonly',True)],
+        'partner_ref': fields.char('Vendor Reference', states={'confirmed':[('readonly',True)],
                                                                  'approved':[('readonly',True)],
                                                                  'done':[('readonly',True)]},
                                    copy=False,
@@ -244,7 +244,7 @@ class purchase_order(osv.osv):
                                  copy=False),
         'date_approve':fields.date('Date Approved', readonly=1, select=True, copy=False,
                                    help="Date on which purchase order has been approved"),
-        'partner_id':fields.many2one('res.partner', 'Supplier', required=True, states=READONLY_STATES,
+        'partner_id':fields.many2one('res.partner', 'Vendor', required=True, states=READONLY_STATES,
             change_default=True, track_visibility='always'),
         'dest_address_id':fields.many2one('res.partner', 'Customer Address (Direct Delivery)',
             states=READONLY_STATES,
@@ -471,7 +471,7 @@ class purchase_order(osv.osv):
         res_id = res and res[1] or False
 
         return {
-            'name': _('Supplier Invoices'),
+            'name': _('Vendor Invoices'),
             'view_type': 'form',
             'view_mode': 'form',
             'view_id': [res_id],
@@ -1325,7 +1325,7 @@ class procurement_order(osv.osv):
         user = self.pool.get('res.users').browse(cr, uid, uid, context=context)
         for procurement in self.browse(cr, uid, ids, context=context):
             message = ''
-            partner = procurement.product_id.seller_id #Taken Main Supplier of Product of Procurement.
+            partner = procurement.product_id.seller_id #Taken Main Vendor of Product of Procurement.
 
             if not procurement.product_id.seller_ids:
                 message = _('No supplier defined for this product !')

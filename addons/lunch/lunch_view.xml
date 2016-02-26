@@ -8,7 +8,7 @@
         <menuitem name="Administrate Cash Moves" parent="menu_lunch" id="menu_lunch_cash" sequence="52" groups="group_lunch_manager"/>
         <menuitem name="Configuration" parent="menu_lunch" id="menu_lunch_config" sequence="53" groups="group_lunch_manager"/>
 
-         <!--View Search to group/filter by Supplier and time-->
+         <!--View Search to group/filter by Vendor and time-->
         <record model="ir.ui.view" id="lunch_order_line_search_view">
             <field name="name">Search</field>
             <field name="model">lunch.order.line</field>
@@ -22,8 +22,8 @@
                     <filter name="today" string="Today" domain="[('date','=',time.strftime('%%Y-%%m-%%d'))]"/>
                     <field name="user_id"/>
                     <group expand="0" string="Group By">
-                        <filter name="group_by_supplier" string="By Supplier" context="{'group_by':'supplier'}"/>
-                        <filter name="group_by_date" string="Order Month" context="{'group_by':'date'}" help="Supplier Order by Month"/>
+                        <filter name="group_by_supplier" string="By Vendor" context="{'group_by':'supplier'}"/>
+                        <filter name="group_by_date" string="Order Month" context="{'group_by':'date'}" help="Vendor Order by Month"/>
                     </group>
                 </search>
             </field>
@@ -178,7 +178,7 @@
 
         <!--Action for Administrate Orders group by supplier-->
         <record model="ir.actions.act_window" id="action_lunch_order_by_supplier_form">
-            <field name="name">Orders by Supplier</field>
+            <field name="name">Orders by Vendor</field>
             <field name="res_model">lunch.order.line</field>
             <field name="view_mode">tree</field>
             <field name="search_view_id" ref="lunch_order_line_search_view"/>
@@ -194,11 +194,11 @@
               </p>
             </field>
         </record>
-        <menuitem name="Today's Orders by Supplier" parent="menu_lunch_admin" id="menu_lunch_order_by_supplier_form" action="action_lunch_order_by_supplier_form" />
+        <menuitem name="Today's Orders by Vendor" parent="menu_lunch_admin" id="menu_lunch_order_by_supplier_form" action="action_lunch_order_by_supplier_form" />
 
-        <!--Action for control Supplier-->
+        <!--Action for control Vendor-->
         <record model="ir.actions.act_window" id="action_lunch_control_suppliers">
-            <field name="name">Control Suppliers</field>
+            <field name="name">Control Vendors</field>
             <field name="res_model">lunch.order.line</field>
             <field name="view_mode">tree</field>
             <field name="search_view_id" ref="lunch_order_line_search_view"/> 
@@ -214,7 +214,7 @@
               </p>
             </field>
         </record>
-        <menuitem name="Orders by Supplier" parent="menu_lunch_admin" id="menu_lunch_control_suppliers" action="action_lunch_control_suppliers" />
+        <menuitem name="Orders by Vendor" parent="menu_lunch_admin" id="menu_lunch_control_suppliers" action="action_lunch_control_suppliers" />
 
         <!--Action for Control Accounts-->
         <record model="ir.actions.act_window" id="action_lunch_control_accounts">

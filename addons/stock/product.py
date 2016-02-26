@@ -406,7 +406,7 @@ class product_template(osv.osv):
         'loc_rack': fields.char('Rack', size=16),
         'loc_row': fields.char('Row', size=16),
         'loc_case': fields.char('Case', size=16),
-        'track_incoming': fields.boolean('Track Incoming Lots', help="Forces to specify a Serial Number for all moves containing this product and coming from a Supplier Location"),
+        'track_incoming': fields.boolean('Track Incoming Lots', help="Forces to specify a Serial Number for all moves containing this product and coming from a Vendor Location"),
         'track_outgoing': fields.boolean('Track Outgoing Lots', help="Forces to specify a Serial Number for all moves containing this product and going to a Customer Location"),
         'track_all': fields.boolean('Full Lots Traceability', help="Forces to specify a Serial Number on each and every operation related to this product"),
         

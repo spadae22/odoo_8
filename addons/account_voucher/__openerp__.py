@@ -37,7 +37,7 @@ This module manages:
 
 * Voucher Entry
 * Voucher Receipt [Sales & Purchase]
-* Voucher Payment [Customer & Supplier]
+* Voucher Payment [Customer & Vendor]
     """,
     'category': 'Accounting & Finance',
     'sequence': 4,

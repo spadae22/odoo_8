@@ -94,9 +94,9 @@
                                         <field name="uom_po_id"/>
                                     </group>
                                 </group>
-                                <separator string="Suppliers"/>
+                                <separator string="Vendors"/>
                                 <field name="seller_ids"/>
-                                <separator string="Description for Suppliers"/>
+                                <separator string="Description for Vendors"/>
                                 <field name="description_purchase" placeholder="This note will be displayed on requests for quotation..."/>
                             </page>
                             <page string="Inventory">
@@ -798,7 +798,7 @@
             <field name="name">product.supplierinfo.form.view</field>
             <field name="model">product.supplierinfo</field>
             <field name="arch" type="xml">
-                <form string="Supplier Information">
+                <form string="Vendor Information">
                     <group col="4">
                         <field name="name" context="{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1}"/>
                         <field name="sequence"/>
@@ -829,7 +829,7 @@
             <field name="name">product.supplierinfo.tree.view</field>
             <field name="model">product.supplierinfo</field>
             <field name="arch" type="xml">
-                <tree string="Supplier Information">
+                <tree string="Vendor Information">
                     <field name="sequence" widget="handle"/>
                     <field name="name"/>
                     <field name="delay"/>

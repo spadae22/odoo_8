@@ -176,10 +176,10 @@ class purchase_requisition(osv.osv):
 
     def make_purchase_order(self, cr, uid, ids, partner_id, context=None):
         """
-        Create New RFQ for Supplier
+        Create New RFQ for Vendor
         """
         context = dict(context or {})
-        assert partner_id, 'Supplier should be specified'
+        assert partner_id, 'Vendor should be specified'
         purchase_order = self.pool.get('purchase.order')
         purchase_order_line = self.pool.get('purchase.order.line')
         res_partner = self.pool.get('res.partner')

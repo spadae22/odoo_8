@@ -52,7 +52,7 @@
         </record>
         
     <record id="act_res_partner_2_supplier_invoices" model="ir.actions.act_window">
-            <field name="name">Supplier Invoices</field>
+            <field name="name">Vendor Invoices</field>
             <field name="res_model">account.invoice</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,graph</field>
@@ -62,7 +62,7 @@
                 <p class="oe_view_nocontent_create">
                     Click here to record a supplier invoice.
                 </p><p>
-                    Supplier invoices can be pre-generated based on purchase
+                    Vendor invoices can be pre-generated based on purchase
                     orders or receipts. This allows you to control invoices
                     you receive from your supplier according to the draft
                     document in Odoo.
@@ -95,8 +95,8 @@
             <field name="arch" type="xml">
                 <xpath expr="//div[@name='buttons']" position="inside">
                     <button class="oe_inline oe_stat_button" name="%(purchase.act_res_partner_2_supplier_invoices)d" type="action"
-                        attrs="{'invisible': [('supplier', '=', False)]}" icon="fa-pencil-square-o" help="Supplier Invoices">
-                        <field string="Supplier Inv." name="supplier_invoice_count" widget="statinfo"/>
+                        attrs="{'invisible': [('supplier', '=', False)]}" icon="fa-pencil-square-o" help="Vendor Invoices">
+                        <field string="Vendor Inv." name="supplier_invoice_count" widget="statinfo"/>
                     </button>
                 </xpath>
             </field>

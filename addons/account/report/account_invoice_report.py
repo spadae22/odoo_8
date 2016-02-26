@@ -83,9 +83,9 @@ class account_invoice_report(osv.osv):
         'nbr': fields.integer('# of Invoices', readonly=True),  # TDE FIXME master: rename into nbr_lines
         'type': fields.selection([
             ('out_invoice','Customer Invoice'),
-            ('in_invoice','Supplier Invoice'),
+            ('in_invoice','Vendor Invoice'),
             ('out_refund','Customer Refund'),
-            ('in_refund','Supplier Refund'),
+            ('in_refund','Vendor Refund'),
             ],'Type', readonly=True),
         'state': fields.selection([
             ('draft','Draft'),

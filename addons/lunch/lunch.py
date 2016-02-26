@@ -409,7 +409,7 @@ class lunch_order_line(osv.Model):
             'lunch.order': (_get_line_order_ids, ['date'], 10), 
             'lunch.order.line': (lambda self, cr, uid, ids, ctx: ids, [], 10),
             }),
-        'supplier': fields.related('product_id', 'supplier', type='many2one', relation='res.partner', string="Supplier", readonly=True, store=True),
+        'supplier': fields.related('product_id', 'supplier', type='many2one', relation='res.partner', string="Vendor", readonly=True, store=True),
         'user_id': fields.related('order_id', 'user_id', type='many2one', relation='res.users', string='User', readonly=True, store=True),
         'note': fields.text('Note'),
         'price': fields.float("Price"),
@@ -437,7 +437,7 @@ class lunch_product(osv.Model):
         'category_id': fields.many2one('lunch.product.category', 'Category', required=True),
         'description': fields.text('Description', size=256),
         'price': fields.float('Price', digits=(16,2)), #TODO: use decimal precision of 'Account', move it from product to decimal_precision
-        'supplier': fields.many2one('res.partner', 'Supplier'),
+        'supplier': fields.many2one('res.partner', 'Vendor'),
     }
 
 class lunch_product_category(osv.Model):

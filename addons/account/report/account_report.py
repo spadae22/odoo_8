@@ -162,9 +162,9 @@ class report_invoice_created(osv.osv):
         'name': fields.char('Description', readonly=True),
         'type': fields.selection([
             ('out_invoice','Customer Invoice'),
-            ('in_invoice','Supplier Invoice'),
+            ('in_invoice','Vendor Invoice'),
             ('out_refund','Customer Refund'),
-            ('in_refund','Supplier Refund'),
+            ('in_refund','Vendor Refund'),
             ],'Type', readonly=True),
         'number': fields.char('Invoice Number', readonly=True),
         'partner_id': fields.many2one('res.partner', 'Partner', readonly=True),

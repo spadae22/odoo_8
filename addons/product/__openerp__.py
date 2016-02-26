@@ -45,7 +45,7 @@ Pricelists support:
         * Other pricelist
         * Cost price
         * List price
-        * Supplier price
+        * Vendor price
 
 Pricelists preferences by product and/or partners.
 

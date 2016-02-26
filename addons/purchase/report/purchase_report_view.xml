@@ -24,7 +24,7 @@
             <field name="context">{'group_by': ['category_id'], 'col_group_by': ['date:month'], 'measures': ['quantity']}</field>
         </record>
         <record id="filter_purchase_order_price_per_supplier" model="ir.filters">
-            <field name="name">Price Per Supplier</field>
+            <field name="name">Price Per Vendor</field>
             <field name="model_id">purchase.report</field>
             <field name="domain">[('state','&lt;&gt;','draft'),('state','&lt;&gt;','cancel')]</field>
             <field name="user_id" eval="False"/>
@@ -59,7 +59,7 @@
                     <field name="expected_date"/>
                 </group>
                 <group expand="1" string="Group By">
-                    <filter string="Supplier" name="group_partner_id" context="{'group_by':'partner_id'}"/>
+                    <filter string="Vendor" name="group_partner_id" context="{'group_by':'partner_id'}"/>
                     <filter string="Responsible" name="Responsible" context="{'group_by':'user_id'}"/>
                     <filter string="Category of product" name="group_category_id" context="{'group_by':'category_id'}"/>
                     <filter string="Status" context="{'group_by':'state'}"/>

@@ -273,7 +273,7 @@
 		</record>
 
 		<record model="account.account.template" id="uae_account_3689">
-			<field name="name">Accrued Rebates Due from Suppliers</field>
+			<field name="name">Accrued Rebates Due from Vendors</field>
 			<field name="code">102220</field>
 			<field name="type">receivable</field>
 			<field name="user_type" ref="account.data_account_type_receivable" />
@@ -282,7 +282,7 @@
 		</record>
 
 		<record model="account.account.template" id="uae_account_3690">
-			<field name="name">Accured Income from Suppliers</field>
+			<field name="name">Accured Income from Vendors</field>
 			<field name="code">102221</field>
 			<field name="type">receivable</field>
 			<field name="user_type" ref="account.data_account_type_receivable" />
@@ -903,7 +903,7 @@
 		</record>
 
 		<record model="account.account.template" id="uae_account_3759">
-			<field name="name">Advance Paybale to Suppliers</field>
+			<field name="name">Advance Paybale to Vendors</field>
 			<field name="code">202106</field>
 			<field name="type">payable</field>
 			<field name="user_type" ref="account.data_account_type_payable" />
@@ -912,7 +912,7 @@
 		</record>
 
 		<record model="account.account.template" id="uae_account_3760">
-			<field name="name">Suppliers Price Protection</field>
+			<field name="name">Vendors Price Protection</field>
 			<field name="code">202107</field>
 			<field name="type">payable</field>
 			<field name="user_type" ref="account.data_account_type_payable" />
@@ -1461,7 +1461,7 @@
 		</record>
 
 		<record model="account.account.template" id="uae_account_3821">
-			<field name="name">Early Setmt Margin from Suppliers</field>
+			<field name="name">Early Setmt Margin from Vendors</field>
 			<field name="code">411104</field>
 			<field name="type">other</field>
 			<field name="user_type" ref="account.data_account_type_income" />
@@ -1479,7 +1479,7 @@
 		</record>
 
 		<record model="account.account.template" id="uae_account_3823">
-			<field name="name">Rebate from Suppliers</field>
+			<field name="name">Rebate from Vendors</field>
 			<field name="code">411106</field>
 			<field name="type">other</field>
 			<field name="user_type" ref="account.data_account_type_income" />
@@ -1488,7 +1488,7 @@
 		</record>
 
 		<record model="account.account.template" id="uae_account_3824">
-			<field name="name">Marketing Rebate from Suppliers</field>
+			<field name="name">Marketing Rebate from Vendors</field>
 			<field name="code">411107</field>
 			<field name="type">other</field>
 			<field name="user_type" ref="account.data_account_type_income" />
@@ -1542,7 +1542,7 @@
 		</record>
 
 		<record model="account.account.template" id="uae_account_3830">
-			<field name="name">Products Listing Fees from Suppliers</field>
+			<field name="name">Products Listing Fees from Vendors</field>
 			<field name="code">421104</field>
 			<field name="type">other</field>
 			<field name="user_type" ref="account.data_account_type_income" />
@@ -2172,7 +2172,7 @@
 		</record>
 
 		<record model="account.account.template" id="uae_account_3900">
-			<field name="name">Stationary From Suppliers</field>
+			<field name="name">Stationary From Vendors</field>
 			<field name="code">521909</field>
 			<field name="type">other</field>
 			<field name="user_type" ref="account.data_account_type_expense" />

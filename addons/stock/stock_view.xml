@@ -363,7 +363,7 @@
                     <field name="name" string="Stock Locations"/>
                     <filter icon="terp-go-home" name="in_location" string="Internal" domain="[('usage', '=', 'internal')]" help="Internal Locations"/>
                     <filter icon="terp-personal" name="customer" string="Customer" domain="[('usage', '=', 'customer')]" help="Customer Locations"/>
-                    <filter icon="terp-personal" name="supplier" string="Supplier" domain="[('usage', '=', 'supplier')]" help="Supplier Locations"/>
+                    <filter icon="terp-personal" name="supplier" string="Vendor" domain="[('usage', '=', 'supplier')]" help="Vendor Locations"/>
                     <field name="location_id" string="Parent Location"/>
                 </search>
             </field>
@@ -498,7 +498,7 @@
               </p><p>  
                 Every stock operation in Odoo moves the products from one
                 location to another one.  For instance, if you receive products
-                from a supplier, Odoo will move products from the Supplier
+                from a supplier, Odoo will move products from the Vendor
                 location to the Stock location. Each report can be performed on
                 physical, partner or virtual locations.
               </p>

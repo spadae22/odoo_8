@@ -184,7 +184,7 @@ class account_voucher(osv.osv):
             for node in nodes:
                 node.set('context', "{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1}")
                 if context.get('invoice_type','') in ('in_invoice', 'in_refund'):
-                    node.set('string', _("Supplier"))
+                    node.set('string', _("Vendor"))
         res['arch'] = etree.tostring(doc)
         return res
 

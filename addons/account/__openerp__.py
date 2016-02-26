@@ -34,7 +34,7 @@ Financial and accounting module that covers:
     * Third party accounting
     * Taxes management
     * Budgets
-    * Customer and Supplier Invoices
+    * Customer and Vendor Invoices
     * Bank statements
     * Reconciliation process by partner
 

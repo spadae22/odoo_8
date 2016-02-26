@@ -73,10 +73,10 @@ class account_config_settings(osv.osv_memory):
         'sale_refund_sequence_prefix': fields.related('sale_refund_journal_id', 'sequence_id', 'prefix', type='char', string='Credit note sequence'),
         'sale_refund_sequence_next': fields.related('sale_refund_journal_id', 'sequence_id', 'number_next', type='integer', string='Next credit note number'),
         'purchase_journal_id': fields.many2one('account.journal', 'Purchase journal'),
-        'purchase_sequence_prefix': fields.related('purchase_journal_id', 'sequence_id', 'prefix', type='char', string='Supplier invoice sequence'),
+        'purchase_sequence_prefix': fields.related('purchase_journal_id', 'sequence_id', 'prefix', type='char', string='Vendor invoice sequence'),
         'purchase_sequence_next': fields.related('purchase_journal_id', 'sequence_id', 'number_next', type='integer', string='Next supplier invoice number'),
         'purchase_refund_journal_id': fields.many2one('account.journal', 'Purchase refund journal'),
-        'purchase_refund_sequence_prefix': fields.related('purchase_refund_journal_id', 'sequence_id', 'prefix', type='char', string='Supplier credit note sequence'),
+        'purchase_refund_sequence_prefix': fields.related('purchase_refund_journal_id', 'sequence_id', 'prefix', type='char', string='Vendor credit note sequence'),
         'purchase_refund_sequence_next': fields.related('purchase_refund_journal_id', 'sequence_id', 'number_next', type='integer', string='Next supplier credit note number'),
 
         'module_account_check_writing': fields.boolean('Pay your suppliers by check',

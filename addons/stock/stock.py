@@ -106,7 +106,7 @@ class stock_location(osv.osv):
         'name': fields.char('Location Name', required=True, translate=True),
         'active': fields.boolean('Active', help="By unchecking the active field, you may hide a location without deleting it."),
         'usage': fields.selection([
-                        ('supplier', 'Supplier Location'),
+                        ('supplier', 'Vendor Location'),
                         ('view', 'View'),
                         ('internal', 'Internal Location'),
                         ('customer', 'Customer Location'),
@@ -115,7 +115,7 @@ class stock_location(osv.osv):
                         ('production', 'Production'),
                         ('transit', 'Transit Location')],
                 'Location Type', required=True,
-                help="""* Supplier Location: Virtual location representing the source location for products coming from your suppliers
+                help="""* Vendor Location: Virtual location representing the source location for products coming from your suppliers
                        \n* View: Virtual location used to create a hierarchical structures for your warehouse, aggregating its child locations ; can't directly contain products
                        \n* Internal Location: Physical locations inside your own warehouses,
                        \n* Customer Location: Virtual location representing the destination location for products sent to your customers
@@ -220,7 +220,7 @@ class stock_location_route(osv.osv):
         'product_categ_selectable': fields.boolean('Applicable on Product Category'),
         'warehouse_selectable': fields.boolean('Applicable on Warehouse'),
         'supplied_wh_id': fields.many2one('stock.warehouse', 'Supplied Warehouse'),
-        'supplier_wh_id': fields.many2one('stock.warehouse', 'Supplier Warehouse'),
+        'supplier_wh_id': fields.many2one('stock.warehouse', 'Vendor Warehouse'),
         'company_id': fields.many2one('res.company', 'Company', select=1, help='Let this field empty if this route is shared between all companies'),
     }
 
@@ -4535,7 +4535,7 @@ class stock_picking_type(osv.osv):
         'sequence_id': fields.many2one('ir.sequence', 'Reference Sequence', required=True),
         'default_location_src_id': fields.many2one('stock.location', 'Default Source Location'),
         'default_location_dest_id': fields.many2one('stock.location', 'Default Destination Location'),
-        'code': fields.selection([('incoming', 'Suppliers'), ('outgoing', 'Customers'), ('internal', 'Internal')], 'Type of Operation', required=True),
+        'code': fields.selection([('incoming', 'Vendors'), ('outgoing', 'Customers'), ('internal', 'Internal')], 'Type of Operation', required=True),
         'return_picking_type_id': fields.many2one('stock.picking.type', 'Picking Type for Returns'),
         'warehouse_id': fields.many2one('stock.warehouse', 'Warehouse', ondelete='cascade'),
         'active': fields.boolean('Active'),

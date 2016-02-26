@@ -38,9 +38,9 @@ TYPE2JOURNAL = {
 # mapping invoice type to refund type
 TYPE2REFUND = {
     'out_invoice': 'out_refund',        # Customer Invoice
-    'in_invoice': 'in_refund',          # Supplier Invoice
+    'in_invoice': 'in_refund',          # Vendor Invoice
     'out_refund': 'out_invoice',        # Customer Refund
-    'in_refund': 'in_invoice',          # Supplier Refund
+    'in_refund': 'in_invoice',          # Vendor Refund
 }
 
 MAGIC_COLUMNS = ('id', 'create_uid', 'create_date', 'write_uid', 'write_date')
@@ -192,14 +192,14 @@ class account_invoice(models.Model):
     origin = fields.Char(string='Source Document',
         help="Reference of the document that produced this invoice.",
         readonly=True, states={'draft': [('readonly', False)]})
-    supplier_invoice_number = fields.Char(string='Supplier Invoice Number',
+    supplier_invoice_number = fields.Char(string='Vendor Invoice Number',
         help="The reference of this invoice as provided by the supplier.",
         readonly=True, states={'draft': [('readonly', False)]})
     type = fields.Selection([
             ('out_invoice','Customer Invoice'),
-            ('in_invoice','Supplier Invoice'),
+            ('in_invoice','Vendor Invoice'),
             ('out_refund','Customer Refund'),
-            ('in_refund','Supplier Refund'),
+            ('in_refund','Vendor Refund'),
         ], string='Type', readonly=True, index=True, change_default=True,
         default=lambda self: self._context.get('type', 'out_invoice'),
         track_visibility='always')
@@ -289,7 +289,7 @@ class account_invoice(models.Model):
         store=True, readonly=True, compute='_compute_reconciled',
         help="It indicates that the invoice has been paid and the journal entry of the invoice has been reconciled with one or several journal entries of payment.")
     partner_bank_id = fields.Many2one('res.partner.bank', string='Bank Account',
-        help='Bank Account Number to which the invoice will be paid. A Company bank account if this is a Customer Invoice or Supplier Refund, otherwise a Partner bank account number.',
+        help='Bank Account Number to which the invoice will be paid. A Company bank account if this is a Customer Invoice or Vendor Refund, otherwise a Partner bank account number.',
         readonly=True, states={'draft': [('readonly', False)]})
 
     move_lines = fields.Many2many('account.move.line', string='Entry Lines',
@@ -364,7 +364,7 @@ class account_invoice(models.Model):
         if view_type == 'tree':
             partner_string = _('Customer')
             if context.get('type') in ('in_invoice', 'in_refund'):
-                partner_string = _('Supplier')
+                partner_string = _('Vendor')
                 for node in doc.xpath("//field[@name='reference']"):
                     node.set('invisible', '0')
             for node in doc.xpath("//field[@name='partner_id']"):
@@ -1022,9 +1022,9 @@ class account_invoice(models.Model):
     def name_get(self):
         TYPES = {
             'out_invoice': _('Invoice'),
-            'in_invoice': _('Supplier Invoice'),
+            'in_invoice': _('Vendor Invoice'),
             'out_refund': _('Refund'),
-            'in_refund': _('Supplier Refund'),
+            'in_refund': _('Vendor Refund'),
         }
         result = []
         for inv in self:

@@ -1338,7 +1338,7 @@
             <field name="parent_id" ref="c1215"/>
         </record>
         <record model="account.account.template" id="c121521">
-            <field name="name">Advance To Suppliers</field>
+            <field name="name">Advance To Vendors</field>
             <field name="code">121521</field>
             <field name="type">other</field>
             <field name="user_type" ref="account.data_account_type_asset"/>

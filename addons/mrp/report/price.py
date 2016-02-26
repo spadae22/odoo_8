@@ -140,7 +140,7 @@ class report_custom(report_rml):
                     <col t='yes'>%s</col>
                     <col t='yes'>%s</col>
                 </row>
-        """ % (_('Components'), _('Components suppliers'), _('Quantity'),_('Cost Price per Unit of Measure'), _('Supplier Price per Unit of Measure'))
+        """ % (_('Components'), _('Components suppliers'), _('Quantity'),_('Cost Price per Unit of Measure'), _('Vendor Price per Unit of Measure'))
 
         for product in product_pool.browse(cr, uid, ids, context=context):
             product_uom_name = to_xml(product.uom_id.name)

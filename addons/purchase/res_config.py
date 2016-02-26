@@ -34,7 +34,7 @@ class purchase_config_settings(osv.osv_memory):
             ], 'Default invoicing control method', required=True, default_model='purchase.order'),
         'group_purchase_pricelist':fields.boolean("Manage pricelist per supplier",
             implied_group='product.group_purchase_pricelist',
-            help='Allows to manage different prices based on rules per category of Supplier.\n'
+            help='Allows to manage different prices based on rules per category of Vendor.\n'
                  'Example: 10% for retailers, promotion of 5 EUR on this product, etc.'),
         'group_uom':fields.boolean("Manage different units of measure for products",
             implied_group='product.group_uom',
@@ -45,7 +45,7 @@ class purchase_config_settings(osv.osv_memory):
         'module_warning': fields.boolean("Alerts by products or supplier",
             help='Allow to configure notification on products and trigger them when a user wants to purchase a given product or a given supplier.\n'
                  'Example: Product: this product is deprecated, do not purchase more than 5.\n'
-                 'Supplier: don\'t forget to ask for an express delivery.'),
+                 'Vendor: don\'t forget to ask for an express delivery.'),
         'module_purchase_double_validation': fields.boolean("Force two levels of approvals",
             help='Provide a double validation mechanism for purchases exceeding minimum amount.\n'
                  '-This installs the module purchase_double_validation.'),
