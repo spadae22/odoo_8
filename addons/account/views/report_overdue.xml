@@ -132,6 +132,13 @@
             <p t-if="not getLines(o)">
                 <strong>There is nothing due with this customer.</strong>
             </p>
+            <p>
+             <span><p>
+             <span ><p>
+             <span>Credit(s) are not automatically applied. When using a credit towards your payment(s) on your account, please be sure to list the above credit number on your check stub and/or remittance for proper credit on your account. Thank you!</span>
+             </p></span>
+             </p></span>
+             </p>
         </div>
     </t>
 
