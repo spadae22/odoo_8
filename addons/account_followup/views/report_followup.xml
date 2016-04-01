@@ -16,7 +16,7 @@
                     </div>
 
                     <p>
-                        Document: Customer account statement<br/>
+                        Overdue Invoices<br/>
                         Date: <span t-esc="formatLang(data['form']['date'], date=True)"/><br/>
                         Customer ref: <span t-field="o.partner_id.ref"/>
                     </p>
@@ -28,11 +28,11 @@
                             <thead>
                                 <tr>
                                     <th>Invoice Date</th>
-                                    <th>Description</th>
-                                    <th class="text-center">Ref</th>
-                                    <th class="text-center">Maturity Date</th>
+                                    <th>Invoice #</th>
+                                    <th>PO/Ref</th>
+                                    <th class="text-center">Due Date</th>
                                     <th class="text-right">Amount</th>
-                                    <th class="text-center">Li.</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,7 +42,7 @@
                                     <td><span t-esc="line['ref']"/></td>
                                     <td class="text-center"><span t-esc="line['date_maturity'] and formatLang(line['date_maturity'], date=True)"/></td>
                                     <td class="text-right"><span t-esc="formatLang(line['balance'], currency_obj=line['currency_id'])"/></td>
-                                    <td><span t-esc="line['blocked'] and 'X' or ''"/></td>
+                                    
                                 </tr>
                             </tbody>
                         </table>
