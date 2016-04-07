@@ -432,7 +432,9 @@ class PreforkServer(CommonServer):
         self.population = config['workers']
         self.timeout = config['limit_time_real']
         self.limit_request = config['limit_request']
-        self.cron_timeout = self.timeout if config['limit_time_real_cron'] == -1 else config['limit_time_real_cron'] or None
+        self.cron_timeout = config['limit_time_real_cron'] or None
+        if self.cron_timeout == -1:
+            self.cron_timeout = self.timeout
         # working vars
         self.beat = 4
         self.app = app
