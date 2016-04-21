@@ -264,8 +264,7 @@ class res_partner(osv.osv):
                     <td>''' + _("Description") + '''</td>
                     <td>''' + _("Reference") + '''</td>
                     <td>''' + _("Due Date") + '''</td>
-                    <td>''' + _("Amount") + " (%s)" % (currency.symbol) + '''</td>
-                    <td>''' + _("Lit.") + '''</td>
+                    <td>''' + _("Amount ($)") +  '''</td>
                 </tr>
                 ''' 
                 total = 0
