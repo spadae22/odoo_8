@@ -47,8 +47,13 @@ SLEEP_INTERVAL = 60     # 1 min
 def memory_info(process):
     """ psutil < 2.0 does not have memory_info, >= 3.0 does not have
     get_memory_info """
+<<<<<<< HEAD
     return (getattr(process, 'memory_info', None) or process.get_memory_info)()
     
+=======
+    pmem = (getattr(process, 'memory_info', None) or process.get_memory_info)()
+    return (pmem.rss, pmem.vms)
+>>>>>>> 61c808b77425c35f9e6f9774ee88ae7e8a2c995d
 
 #----------------------------------------------------------
 # Werkzeug WSGI servers patched
