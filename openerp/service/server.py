@@ -47,13 +47,8 @@ SLEEP_INTERVAL = 60     # 1 min
 def memory_info(process):
     """ psutil < 2.0 does not have memory_info, >= 3.0 does not have
     get_memory_info """
-<<<<<<< HEAD
-    return (getattr(process, 'memory_info', None) or process.get_memory_info)()
-    
-=======
     pmem = (getattr(process, 'memory_info', None) or process.get_memory_info)()
     return (pmem.rss, pmem.vms)
->>>>>>> 61c808b77425c35f9e6f9774ee88ae7e8a2c995d
 
 #----------------------------------------------------------
 # Werkzeug WSGI servers patched
@@ -273,11 +268,9 @@ class ThreadedServer(CommonServer):
 
     def cron_spawn(self):
         """ Start the above runner function in a daemon thread.
-
         The thread is a typical daemon thread: it will never quit and must be
         terminated when the main process exits - with no consequence (the processing
         threads it spawns are not marked daemon).
-
         """
         # Force call to strptime just before starting the cron thread
         # to prevent time.strptime AttributeError within the thread.
@@ -356,7 +349,6 @@ class ThreadedServer(CommonServer):
 
     def run(self, preload=None, stop=False):
         """ Start the http server and the cron thread then wait for a signal.
-
         The first SIGINT or SIGTERM signal will initiate a graceful shutdown while
         a second one if any will force an immediate exit.
         """
@@ -437,9 +429,6 @@ class PreforkServer(CommonServer):
         self.population = config['workers']
         self.timeout = config['limit_time_real']
         self.limit_request = config['limit_request']
-        self.cron_timeout = config['limit_time_real_cron'] or None
-        if self.cron_timeout == -1:
-            self.cron_timeout = self.timeout
         # working vars
         self.beat = 4
         self.app = app
@@ -562,12 +551,7 @@ class PreforkServer(CommonServer):
         for (pid, worker) in self.workers.items():
             if worker.watchdog_timeout is not None and \
                     (now - worker.watchdog_time) >= worker.watchdog_timeout:
-                _logger.error(
-                    "%s (pid=%s) timeout after %ss",
-                    worker.__class__.__name__,
-                    pid,
-                    worker.watchdog_timeout
-                )
+                _logger.error("Worker (%s) timeout", pid)
                 self.worker_kill(pid, signal.SIGKILL)
 
     def process_spawn(self):
@@ -817,7 +801,6 @@ class WorkerCron(Worker):
         # The variable db_index is keeping track of the next database to
         # process.
         self.db_index = 0
-        self.watchdog_timeout = multi.cron_timeout  # Use a distinct value for CRON Worker
 
     def sleep(self):
         # Really sleep once all the databases have been processed.
@@ -993,5 +976,3 @@ def restart():
         threading.Thread(target=_reexec).start()
     else:
         os.kill(server.pid, signal.SIGHUP)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
