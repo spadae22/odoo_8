@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2016-03-19 17:10+0000\n"
+"PO-Revision-Date: 2016-04-20 19:28+0000\n"
 "Last-Translator: Paolo Valier\n"
 "Language-Team: Italian (http://www.transifex.com/odoo/odoo-8/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -407,7 +407,7 @@ msgstr "Commenti"
 #. module: website_forum
 #: help:forum.post,website_message_ids:0
 msgid "Comments on forum post"
-msgstr ""
+msgstr "Commenti sul messaggio del forum"
 
 #. module: website_forum
 #: model:gamification.challenge,name:website_forum.challenge_configure_profile
@@ -528,7 +528,7 @@ msgstr "Modifica profilo"
 #. module: website_forum
 #: view:website:website_forum.user_detail_full
 msgid "Edit Your Bio"
-msgstr ""
+msgstr "Modifica Biografia"
 
 #. module: website_forum
 #: view:website:website_forum.post_description_full
@@ -548,7 +548,7 @@ msgstr "Modifica risposta"
 #. module: website_forum
 #: field:forum.forum,karma_edit_own:0
 msgid "Edit its own posts"
-msgstr ""
+msgstr "Modifica i suoi stessi messaggi"
 
 #. module: website_forum
 #: view:website:website_forum.edit_post
@@ -565,7 +565,7 @@ msgstr "Modifica la tua domanda"
 #: model:gamification.challenge,name:website_forum.challenge_editor
 #: model:gamification.goal.definition,name:website_forum.definition_editor
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #. module: website_forum
 #: view:website:website_forum.edit_profile
@@ -677,13 +677,13 @@ msgstr "Forum Karma"
 #: view:forum.post:website_forum.view_forum_post_form
 #: model:ir.model,name:website_forum.model_forum_post
 msgid "Forum Post"
-msgstr ""
+msgstr "Messaggio del Forum"
 
 #. module: website_forum
 #: view:forum.post:website_forum.view_forum_post_list
 #: model:ir.actions.act_window,name:website_forum.action_forum_post
 msgid "Forum Posts"
-msgstr ""
+msgstr "Messaggi del Forum"
 
 #. module: website_forum
 #: view:forum.forum:website_forum.view_forum_forum_list
@@ -778,7 +778,7 @@ msgstr "Aiuto"
 msgid ""
 "Holds the Chatter summary (number of messages, ...). This summary is "
 "directly in html format in order to be inserted in kanban views."
-msgstr "Gestisce il sommario (numero di messaggi, ...) del Chatter. Questo sommario è direttamente in html così da poter essere inserito nelle viste kanban."
+msgstr "Contiene il riepilogo Chatter (numero di messaggi, ...). Questa sintesi è direttamente in formato HTML, al fine di essere inserita nelle viste kanban."
 
 #. module: website_forum
 #: field:forum.forum,id:0 field:forum.post,id:0 field:forum.post.reason,id:0
@@ -808,12 +808,12 @@ msgstr ""
 #: field:forum.forum,message_is_follower:0
 #: field:forum.post,message_is_follower:0
 msgid "Is a Follower"
-msgstr "E' un Follower"
+msgstr "È un Follower"
 
 #. module: website_forum
 #: view:website:website_forum.header
 msgid "It appears your email has not been verified."
-msgstr ""
+msgstr "Sembra che la tua email non sia stata verificata."
 
 #. module: website_forum
 #: field:res.users,karma:0 view:website:website_forum.user_detail_full
@@ -1079,7 +1079,7 @@ msgstr ""
 msgid ""
 "Please enter a valid email address in order to receive notifications from "
 "answers or comments."
-msgstr ""
+msgstr "Inserire un indirizzo email valido per ricevere notifiche da risposte o commenti."
 
 #. module: website_forum
 #: view:website:website_forum.post_answer
@@ -1238,7 +1238,7 @@ msgstr "Motivo:"
 #. module: website_forum
 #: view:website:website_forum.404 view:website:website_forum.private_profile
 msgid "Return to the question list."
-msgstr ""
+msgstr "Ritorna alla lista domande."
 
 #. module: website_forum
 #: view:website:website_forum.edit_post
@@ -1320,7 +1320,7 @@ msgstr ""
 #. module: website_forum
 #: field:forum.forum,message_summary:0 field:forum.post,message_summary:0
 msgid "Summary"
-msgstr "Sommario"
+msgstr "Riepilogo"
 
 #. module: website_forum
 #: model:gamification.badge,name:website_forum.badge_31
@@ -1792,4 +1792,4 @@ msgstr "sito web"
 #. module: website_forum
 #: view:website:website_forum.display_post
 msgid "with"
-msgstr ""
+msgstr "con"

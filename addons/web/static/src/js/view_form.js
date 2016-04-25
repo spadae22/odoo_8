@@ -5814,6 +5814,7 @@ instance.web.form.FieldBinaryImage = instance.web.form.FieldBinary.extend({
             $img.css("max-height", "" + self.options.size[1] + "px");
         });
         $img.on('error', function() {
+            self.on_clear();
             $img.attr('src', self.placeholder);
             instance.webclient.notification.warn(_t("Image"), _t("Could not display the selected image."));
         });
@@ -6144,13 +6145,20 @@ instance.web.form.FieldStatus = instance.web.form.AbstractField.extend({
             val = $li.data("id");
         }
         if (val != self.get('value')) {
-            this.view.recursive_save().done(function() {
-                var change = {};
-                change[self.name] = val;
-                self.view.dataset.write(self.view.datarecord.id, change).done(function() {
-                    self.view.reload();
+            if(!this.view.datarecord.id ||
+               this.view.datarecord.id.toString().match(instance.web.BufferedDataSet.virtual_id_regex)) {
+                // don't save, only set value for not-yet-saved many2ones
+                self.set_value(val);
+            }
+            else {
+                this.view.recursive_save().done(function() {
+                    var change = {};
+                    change[self.name] = val;
+                    self.view.dataset.write(self.view.datarecord.id, change).done(function() {
+                        self.view.reload();
+                    });
                 });
-            });
+            }
         }
     },
 });
