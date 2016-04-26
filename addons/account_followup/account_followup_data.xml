@@ -47,7 +47,7 @@ ${object.get_followup_table_html() | safe}
         <record id="email_template_account_followup_level1" model="email.template">
             <field name="name">A bit urging second payment follow-up reminder email</field>
             <field name="email_from">${(user.email or '')|safe}</field>
-            <field name="subject">${user.company_id.name} Payment Reminder</field>
+            <field name="subject">${user.company_id.name|safe} Payment Reminder</field>
             <field name="email_to">${object.email|safe}</field>
             <field name="lang">${object.lang}</field>
             <field name="model_id" ref="base.model_res_partner"/>
@@ -57,13 +57,11 @@ ${object.get_followup_table_html() | safe}
     
     <p>Dear ${object.name},</p>
    <p>
-    We are disappointed to see that despite sending a reminder, that your account is now seriously overdue.
-It is essential that immediate payment is made, otherwise we will have to consider placing a stop on your account
-which means that we will no longer be able to supply your company with (goods/services).
-Please, take appropriate measures in order to carry out this payment in the next 8 days.
-If there is a problem with paying invoice that we are not aware of, do not hesitate to contact our accounting
-department. so that we can resolve the matter quickly.
-Details of due payments is printed below.
+   Below are past due invoices for your account.  We ask that you remit payment as soon as possible to keep your account in good standing with us. 
+
+Please disregard this notice if payment has already been submitted.  If you have any questions please contact our accounting office at accounting@chriscoffee.com. 
+
+Thank you for your continued business.
  </p>
 <br/>
 Best Regards,
@@ -87,7 +85,7 @@ ${object.get_followup_table_html() | safe}
         <record id="email_template_account_followup_level2" model="email.template">
             <field name="name">Urging payment follow-up reminder email</field>
             <field name="email_from">${(user.email or '')|safe}</field>
-            <field name="subject">${user.company_id.name} Payment Reminder</field>
+           <field name="subject">${user.company_id.name|safe} Payment Reminder</field>
             <field name="email_to">${object.email|safe}</field>
             <field name="lang">${object.lang}</field>
             <field name="model_id" ref="base.model_res_partner"/>
@@ -97,11 +95,11 @@ ${object.get_followup_table_html() | safe}
     
     <p>Dear ${object.name},</p>
     <p>
-    Despite several reminders, your account is still not settled.
-Unless full payment is made in next 8 days, legal action for the recovery of the debt will be taken without
-further notice.
-I trust that this action will prove unnecessary and details of due payments is printed below.
-In case of any queries concerning this matter, do not hesitate to contact our accounting department.
+    Below are past due invoices for your account.  We ask that you remit payment as soon as possible to keep your account in good standing with us. 
+
+Please disregard this notice if payment has already been submitted.  If you have any questions please contact our accounting office at accounting@chriscoffee.com. 
+
+ Thank you for your continued business.
 </p>
 <br/>
 Best Regards,
@@ -124,7 +122,7 @@ ${object.get_followup_table_html() | safe}
         <record id="email_template_account_followup_default" model="email.template">
             <field name="name">Default payment follow-up reminder e-mail</field>
             <field name="email_from">${(user.email or '')|safe}</field>
-            <field name="subject">${user.company_id.name} Payment Reminder</field>
+             <field name="subject">${user.company_id.name|safe} Payment Reminder</field>
             <field name="email_to">${object.email|safe}</field>
             <field name="lang">${object.lang}</field>
             <field name="model_id" ref="base.model_res_partner"/>
@@ -134,10 +132,11 @@ ${object.get_followup_table_html() | safe}
     
     <p>Dear ${object.name},</p>
     <p>
-    Exception made if there was a mistake of ours, it seems that the following amount stays unpaid. Please, take
-appropriate measures in order to carry out this payment in the next 8 days.
-Would your payment have been carried out after this mail was sent, please ignore this message. Do not hesitate to
-contact our accounting department.
+   Below are past due invoices for your account.  We ask that you remit payment as soon as possible to keep your account in good standing with us. 
+
+Please disregard this notice if payment has already been submitted.  If you have any questions please contact our accounting office at accounting@chriscoffee.com. 
+
+Thank you for your continued business.
     </p>
 <br/>
 Best Regards,
