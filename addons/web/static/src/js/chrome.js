@@ -1292,6 +1292,7 @@ instance.web.WebClient = instance.web.Client.extend({
             self.action_manager.do_action(self.client_options.action_post_login);
             delete(self.client_options.action_post_login);
         }
+
     },
     update_logo: function() {
         var company = this.session.company_id;

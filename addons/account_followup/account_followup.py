@@ -205,6 +205,7 @@ class res_partner(osv.osv):
         unknown_mails = 0
         for partner in self.browse(cr, uid, partner_ids, context=ctx):
             partners_to_email = [child for child in partner.child_ids if child.type == 'invoice' and child.email]
+            print "------ parters to email----------", partners_to_email    
             if not partners_to_email and partner.email:
                 partners_to_email = [partner]
             if partners_to_email:
@@ -264,8 +265,7 @@ class res_partner(osv.osv):
                     <td>''' + _("Description") + '''</td>
                     <td>''' + _("Reference") + '''</td>
                     <td>''' + _("Due Date") + '''</td>
-                    <td>''' + _("Amount") + " (%s)" % (currency.symbol) + '''</td>
-                    <td>''' + _("Lit.") + '''</td>
+                    <td>''' + _("Amount ($)") +  '''</td>
                 </tr>
                 ''' 
                 total = 0
