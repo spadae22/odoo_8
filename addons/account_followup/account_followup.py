@@ -195,6 +195,7 @@ class res_partner(osv.osv):
 
     @api.cr_uid_ids_context
     def do_partner_mail(self, cr, uid, partner_ids, context=None):
+        print "----- FROM FOLLOW UP ADDONS ODOO----------------"
         if context is None:
             context = {}
         ctx = context.copy()
@@ -210,13 +211,16 @@ class res_partner(osv.osv):
                 partners_to_email = [partner]
             if partners_to_email:
                 level = partner.latest_followup_level_id_without_lit
+                print "---- follow up from addons odoo------------", level, partners_to_email, partner
                 for partner_to_email in partners_to_email:
                     if level and level.send_email and level.email_template_id and level.email_template_id.id:
                         mtp.send_mail(cr, uid, level.email_template_id.id, partner_to_email.id, context=ctx)
+                        print "----- level email ----------"
                     else:
                         mail_template_id = self.pool.get('ir.model.data').get_object_reference(cr, uid,
                                                         'account_followup', 'email_template_account_followup_default')
                         mtp.send_mail(cr, uid, mail_template_id[1], partner_to_email.id, context=ctx)
+                        print "------- not level ----- email-------"
                 if partner not in partners_to_email:
                     self.message_post(cr, uid, [partner.id], body=_('Overdue email sent to %s' % ', '.join(['%s <%s>' % (partner.name, partner.email) for partner in partners_to_email])), context=context)
             else:
@@ -241,7 +245,7 @@ class res_partner(osv.osv):
             :rtype: string
         """
         from report import account_followup_print
-
+        print "--------------------------  kill me --------------------------"
         assert len(ids) == 1
         if context is None:
             context = {}
@@ -263,7 +267,7 @@ class res_partner(osv.osv):
                 <tr>
                     <td>''' + _("Invoice Date") + '''</td>
                     <td>''' + _("Description") + '''</td>
-                    <td>''' + _("Reference") + '''</td>
+                    <td>''' + _("Ref/PO") + '''</td>
                     <td>''' + _("Due Date") + '''</td>
                     <td>''' + _("Amount ($)") +  '''</td>
                 </tr>
@@ -278,7 +282,12 @@ class res_partner(osv.osv):
                     if date <= current_date and aml['balance'] > 0:
                         strbegin = "<TD><B>"
                         strend = "</B></TD>"
-                    followup_table +="<TR>" + strbegin + str(aml['date']) + strend + strbegin + aml['name'] + strend + strbegin + (aml['ref'] or '') + strend + strbegin + str(date) + strend + strbegin + str(aml['balance']) + strend + strbegin + block + strend + "</TR>"
+                     # Modifying the Date Fomrat to dd/mm/yyyy
+                    dt=aml['date'].split('-')
+                    ndt= dt[1]+ '/' + dt[-1]+'/'+dt[0]
+                    xdt=date.split('-')
+                    mdt=xdt[1]+'/'+xdt[-1]+'/'+xdt[0]    
+                    followup_table +="<TR>" + strbegin + str(ndt) + strend + strbegin + aml['name'] + strend + strbegin + (aml['ref'] or '') + strend + strbegin + str(mdt) + strend + strbegin + str(aml['balance']) + strend + strbegin + block + strend + "</TR>"
 
                 total = reduce(lambda x, y: x+y['balance'], currency_dict['line'], 0.00)
 
@@ -322,6 +331,7 @@ class res_partner(osv.osv):
         self.message_post(cr, uid, [ids[0]], body=_('Printed overdue payments report'), context=context)
         #build the id of this partner in the psql view. Could be replaced by a search with [('company_id', '=', company_id),('partner_id', '=', ids[0])]
         wizard_partner_ids = [ids[0] * 10000 + company_id]
+        print "----------- FOLLOW UP wizard print ids---------------", wizard_partner_ids
         followup_ids = self.pool.get('account_followup.followup').search(cr, uid, [('company_id', '=', company_id)], context=context)
         if not followup_ids:
             raise osv.except_osv(_('Error!'),_("There is no followup plan defined for the current company."))

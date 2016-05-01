@@ -6,7 +6,7 @@
         <!--Mail template level 0-->
         <record id="email_template_account_followup_level0" model="email.template">
             <field name="name">First polite payment follow-up reminder email</field>
-            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="email_from">accounting@chriscoffee.com</field>
             <field name="subject">${user.company_id.name|safe} Payment Reminder</field>
             <field name="email_to">${object.email|safe}</field>
             <field name="lang">${object.lang}</field>
@@ -19,9 +19,7 @@
     <p>
 
 Below are past due invoices for your account.  We ask that you remit payment as soon as possible to keep your account in good standing with us. 
-
-Please disregard this notice if payment has already been submitted.  If you have any questions please contact our accounting office at accounting@chriscoffee.com. 
-
+Please disregard this notice if payment has already been submitted. If you have any questions please contact our  accounting office at accounting@chriscoffee.com. 
 Thank you for your continued business.
 
     </p>
