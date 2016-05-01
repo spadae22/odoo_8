@@ -267,9 +267,9 @@ class res_partner(osv.osv):
                 <tr>
                     <td>''' + _("Invoice Date") + '''</td>
                     <td>''' + _("Description") + '''</td>
-                    <td>''' + _("Reference") + '''</td>
+                    <td>''' + _("Ref/PO") + '''</td>
                     <td>''' + _("Due Date") + '''</td>
-                    <td>''' + _("Amounts ($)") +  '''</td>
+                    <td>''' + _("Amount ($)") +  '''</td>
                 </tr>
                 ''' 
                 total = 0
