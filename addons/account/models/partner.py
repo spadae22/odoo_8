@@ -123,6 +123,8 @@ class AccountFiscalPosition(models.Model):
         if not country_id:
             return False
         base_domain = [('auto_apply', '=', True), ('vat_required', '=', vat_required)]
+        if self.env.context.get('force_company'):
+            base_domain.append(('company_id', '=', self.env.context.get('force_company')))
         null_state_dom = state_domain = [('state_ids', '=', False)]
         null_zip_dom = zip_domain = [('zip_from', '=', 0), ('zip_to', '=', 0)]
         null_country_dom = [('country_id', '=', False), ('country_group_id', '=', False)]
@@ -389,7 +391,8 @@ class ResPartner(models.Model):
 
     @api.multi
     def mark_as_reconciled(self):
-        return self.write({'last_time_entries_checked': time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)})
+        self.env['account_partial_reconcile'].check_access_right('write')
+        return self.sudo().write({'last_time_entries_checked': time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)})
 
     @api.one
     def _get_company_currency(self):

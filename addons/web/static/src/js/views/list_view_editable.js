@@ -82,17 +82,20 @@ var Editor = Widget.extend({
     is_creating: function () {
         return (this.is_editing() && !this.record.id);
     },
-    edit: function (record, configureField, options) {
+    edit: function (record, configureField) {
+        var self = this;
         // TODO: specify sequence of edit calls
         var loaded;
         if(record) {
-            loaded = this.form.trigger('load_record', _.extend({}, record))
+            this.form.trigger('load_record', _.extend({}, record));
+            loaded = this.form.record_loaded;
         } else {
-            loaded = this.form.load_defaults();
+            loaded = this.form.load_defaults().then(function() {
+                return self.form.record_loaded;
+            });
         }
 
-        var self = this;
-        return $.when(loaded).then(function () {
+        return loaded.then(function () {
             return self.do_show({reload: false});
         }).then(function () {
             self.record = self.form.datarecord;
@@ -718,13 +721,13 @@ ListView.include(/** @lends instance.web.ListView# */{
     keyup_UP: function (e) {
         var self = this;
         return this._key_move_record(e, 'pred', function (el, cursor) {
-            return self._at_start(cursor, el);
+            return self._at_start(cursor, el) && !$(el).is('select,.ui-autocomplete-input');
         });
     },
     keyup_DOWN: function (e) {
         var self = this;
         return this._key_move_record(e, 'succ', function (el, cursor) {
-            return self._at_end(cursor, el);
+            return self._at_end(cursor, el) && !$(el).is('select,.ui-autocomplete-input');
         });
     },
 

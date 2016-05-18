@@ -243,12 +243,7 @@ var MentionManager = Widget.extend({
     },
 
     get_selection_id: function (match, selection) {
-        var m = match[0].slice(1);
-        _.each(selection, function (s) {
-            if(s.name == m){
-                return s.id;
-            }
-        });
+        return _.findWhere(selection, {'name': match[0].slice(1)}).id;
     },
 
     reset_selections: function () {
@@ -348,7 +343,7 @@ var BasicComposer = Widget.extend({
             input_min_height: 28,
             mention_fetch_limit: 8,
             mention_partners_restricted: false, // set to true to only suggest prefetched partners
-            send_text: _('Send'),
+            send_text: _t('Send'),
             default_body: '',
             default_mention_selections: {},
         });
@@ -624,7 +619,7 @@ var BasicComposer = Widget.extend({
             // filter prefetched partners with the given search string
             var suggestions = [];
             var limit = self.options.mention_fetch_limit;
-            var search_regexp = new RegExp(self.unaccent(search), 'i');
+            var search_regexp = new RegExp(_.str.escapeRegExp(self.unaccent(search)), 'i');
             _.each(prefetched_partners, function (partners) {
                 if (limit > 0) {
                     var filtered_partners = _.filter(partners, function (partner) {

@@ -486,7 +486,7 @@ class Home(http.Controller):
                     redirect = '/web'
                 return http.redirect_with_hash(redirect)
             request.uid = old_uid
-            values['error'] = "Wrong login/password"
+            values['error'] = _("Wrong login/password")
         return request.render('web.login', values)
 
 class WebClient(http.Controller):
@@ -636,6 +636,7 @@ class Database(http.Controller):
         d['insecure'] = openerp.tools.config['admin_passwd'] == 'admin'
         d['list_db'] = openerp.tools.config['list_db']
         d['langs'] = openerp.service.db.exp_list_lang()
+        d['countries'] = openerp.service.db.exp_list_countries()
         # databases list
         d['databases'] = []
         try:
@@ -657,7 +658,9 @@ class Database(http.Controller):
     @http.route('/web/database/create', type='http', auth="none", methods=['POST'], csrf=False)
     def create(self, master_pwd, name, lang, password, **post):
         try:
-            request.session.proxy("db").create_database(master_pwd, name, bool(post.get('demo')), lang,  password)
+            # country code could be = "False" which is actually True in python
+            country_code = post.get('country_code') or False
+            request.session.proxy("db").create_database(master_pwd, name, bool(post.get('demo')), lang, password, post.get('login'), country_code)
             request.session.authenticate(name, 'admin', password)
             return http.local_redirect('/web/')
         except Exception, e:
@@ -1371,6 +1374,11 @@ class CSVExport(ExportFormat, http.Controller):
                     except UnicodeError:
                         pass
                 if d is False: d = None
+
+                # Spreadsheet apps tend to detect formulas on leading =, + and -
+                if type(d) is str and d.startswith(('=', '-', '+')):
+                    d = "'" + d
+
                 row.append(d)
             writer.writerow(row)
 

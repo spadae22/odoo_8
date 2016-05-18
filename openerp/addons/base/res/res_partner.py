@@ -237,7 +237,9 @@ class res_partner(osv.Model, format_address):
                  'fields, this one serves as interface. Due to the old API '
                  'limitations with interface function field, we implement it '
                  'by hand instead of a true function field. When migrating to '
-                 'the new API the code should be simplified.'),
+                 'the new API the code should be simplified. Changing the'
+                 'company_type of a company contact into a company will not display'
+                 'this contact as a company contact but as a standalone company.'),
         'use_parent_address': fields.boolean('Use Company Address', help="Select this if you want to set company's address information  for this contact"),
         'company_id': fields.many2one('res.company', 'Company', select=1),
         'color': fields.integer('Color Index'),
@@ -252,30 +254,14 @@ class res_partner(osv.Model, format_address):
     image = openerp.fields.Binary("Image", attachment=True,
         help="This field holds the image used as avatar for this contact, limited to 1024x1024px",
         default=lambda self: self._get_default_image(False, True))
-    image_medium = openerp.fields.Binary("Medium-sized image",
-        compute='_compute_images', inverse='_inverse_image_medium', store=True, attachment=True,
+    image_medium = openerp.fields.Binary("Medium-sized image", attachment=True,
         help="Medium-sized image of this contact. It is automatically "\
              "resized as a 128x128px image, with aspect ratio preserved. "\
              "Use this field in form views or some kanban views.")
-    image_small = openerp.fields.Binary("Small-sized image",
-        compute='_compute_images', inverse='_inverse_image_small', store=True, attachment=True,
+    image_small = openerp.fields.Binary("Small-sized image", attachment=True,
         help="Small-sized image of this contact. It is automatically "\
              "resized as a 64x64px image, with aspect ratio preserved. "\
              "Use this field anywhere a small image is required.")
-
-    @api.depends('image')
-    def _compute_images(self):
-        for rec in self:
-            rec.image_medium = tools.image_resize_image_medium(rec.image)
-            rec.image_small = tools.image_resize_image_small(rec.image)
-
-    def _inverse_image_medium(self):
-        for rec in self:
-            rec.image = tools.image_resize_image_big(rec.image_medium)
-
-    def _inverse_image_small(self):
-        for rec in self:
-            rec.image = tools.image_resize_image_big(rec.image_small)
 
     @api.model
     def _default_category(self):
@@ -487,8 +473,6 @@ class res_partner(osv.Model, format_address):
             any(partner[f] for f in address_fields) and not any(parent[f] for f in address_fields):
             addr_vals = self._update_fields_values(cr, uid, partner, address_fields, context=context)
             parent.update_address(addr_vals)
-            if not parent.is_company:
-                parent.write({'is_company': True})
 
     def _clean_website(self, website):
         (scheme, netloc, path, params, query, fragment) = urlparse.urlparse(website)
@@ -521,9 +505,12 @@ class res_partner(osv.Model, format_address):
             vals['is_company'] = c_type == 'company'
         elif 'is_company' in vals:
             vals['company_type'] = is_company and 'company' or 'person'
+        tools.image_resize_images(vals)
 
         result = super(res_partner, self).write(vals)
         for partner in self:
+            if any(u.has_group('base.group_user') for u in partner.user_ids if u != self.env.user):
+                self.env['res.users'].check_access_rights('write')
             self._fields_sync(partner, vals)
         return result
 
@@ -542,6 +529,7 @@ class res_partner(osv.Model, format_address):
             vals['is_company'] = c_type == 'company'
         else:
             vals['company_type'] = is_company and 'company' or 'person'
+        tools.image_resize_images(vals)
         partner = super(res_partner, self).create(vals)
         self._fields_sync(partner, vals)
         self._handle_first_contact_creation(partner)
