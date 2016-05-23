@@ -331,7 +331,6 @@ class res_partner(osv.osv):
         self.message_post(cr, uid, [ids[0]], body=_('Printed overdue payments report'), context=context)
         #build the id of this partner in the psql view. Could be replaced by a search with [('company_id', '=', company_id),('partner_id', '=', ids[0])]
         wizard_partner_ids = [ids[0] * 10000 + company_id]
-        print "----------- FOLLOW UP wizard print ids---------------", wizard_partner_ids
         followup_ids = self.pool.get('account_followup.followup').search(cr, uid, [('company_id', '=', company_id)], context=context)
         if not followup_ids:
             raise osv.except_osv(_('Error!'),_("There is no followup plan defined for the current company."))
