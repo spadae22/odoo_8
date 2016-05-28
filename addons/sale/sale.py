@@ -539,7 +539,7 @@ class sale_order(osv.osv):
                     continue
                 elif (line.state in states):
                     lines.append(line.id)
-            created_lines = obj_sale_order_line.invoice_line_create(cr, uid, lines)
+            created_lines = obj_sale_order_line.invoice_line_create(cr, uid, lines, context=context)
             if created_lines:
                 invoices.setdefault(o.partner_invoice_id.id or o.partner_id.id, []).append((o, created_lines))
         if not invoices:
@@ -904,7 +904,7 @@ class sale_order_line(osv.osv):
     def _get_price_reduce(self, cr, uid, ids, field_name, arg, context=None):
         res = dict.fromkeys(ids, 0.0)
         for line in self.browse(cr, uid, ids, context=context):
-            res[line.id] = line.price_subtotal / line.product_uom_qty
+            res[line.id] = line.price_subtotal / line.product_uom_qty if line.product_uom_qty else 0.0
         return res
 
     _name = 'sale.order.line'
