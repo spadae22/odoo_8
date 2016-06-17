@@ -66,14 +66,13 @@
                         <td><span t-field="l.name"/></td>
                         
                         <td>
-                          
-                            <t t-esc="'{0:,.0f}'.format(int(l.quantity))" />
+                                                    <t t-esc="'{0:,.0f}'.format(int(l.quantity))" />
                             <span t-field="l.uos_id" />
                         </td>
-                        <td class="text-right">
+                        <td class="text-center">
                             <span t-field="l.product_id.loc_row"/>
                         </td>
-                        <td class="text-right">
+                        <td class="text-center">
                             <span t-esc="', '.join(map(lambda x: x.name, l.lot_id))"/>
                         </td>
                         <td class="text-right">
