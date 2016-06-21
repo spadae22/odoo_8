@@ -105,10 +105,10 @@
                                         <field name="state"/>
                                         <field name="product_manager"/>
                                     </group>
-                                    <group name="weight" string="Weights" attrs="{'invisible':[('type','=','service')]}">
+                                    <group name="weight" string="Weight" attrs="{'invisible':[('type','=','service')]}">
                                         <field digits="(14, 3)" name="volume"/>
                                         <field name="weight"/>
-                                        <field name="weight_net"/>
+                                        <field name="weight_net" invisible="1"/>
                                     </group>
                                 </group>
                                 <group name="packaging" string="Packaging" attrs="{'invisible':[('type','=','service')]}" groups="product.group_stock_packaging" colspan="4">
