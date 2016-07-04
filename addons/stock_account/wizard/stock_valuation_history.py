@@ -47,7 +47,7 @@ class stock_history(osv.osv):
         if context is None:
             context = {}
         date = context.get('history_date', datetime.now())
-        if 'inventory_value' in fields:
+        if 'inventory_value' > 0 in fields:
             group_lines = {}
             for line in res:
                 domain = line.get('__domain', domain)
