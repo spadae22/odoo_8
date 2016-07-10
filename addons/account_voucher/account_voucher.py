@@ -699,7 +699,7 @@ class account_voucher(osv.osv):
         }
 
         # drop existing lines
-        line_ids = ids and line_pool.search(cr, uid, [('voucher_id', '=', ids[0])])
+        line_ids = ids and line_pool.search(cr, uid, [('voucher_id', 'in', ids[0])])
         for line in line_pool.browse(cr, uid, line_ids, context=context):
             if line.type == 'cr':
                 default['value']['line_cr_ids'].append((2, line.id))
