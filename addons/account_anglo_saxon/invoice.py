@@ -99,6 +99,7 @@ class account_invoice_line(osv.osv):
                 from_unit = i_line.product_id.uom_id.id
                 to_unit = i_line.uos_id.id
                 price_unit = self.pool['product.uom']._compute_price(cr, uid, from_unit, price_unit, to_uom_id=to_unit)
+                print "----- anglo price unit------", price_unit
                 return [
                     {
                         'type':'src',

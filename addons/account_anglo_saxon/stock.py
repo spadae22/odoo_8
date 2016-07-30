@@ -31,6 +31,7 @@ class stock_move(osv.Model):
         if possible (fallback on standard_price)
         """
         res = super(stock_move, self)._get_invoice_line_vals(cr, uid, move, partner, inv_type, context=context)
+        print "------- angloe stock move ", res
         res.update({
             'move_id': move.id,
         })

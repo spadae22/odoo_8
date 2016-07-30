@@ -108,7 +108,7 @@ class stock_picking(osv.osv):
         if not account_id:
             account_id = picking.carrier_id.product_id.categ_id\
                     .property_account_income_categ.id
-
+        print "---- delivery picking ", price
         taxes = picking.carrier_id.product_id.taxes_id
         partner = picking.partner_id or False
         fp = invoice.fiscal_position or partner.property_account_position
