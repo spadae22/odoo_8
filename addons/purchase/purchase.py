@@ -784,7 +784,6 @@ class purchase_order(osv.osv):
         if order.currency_id.id != order.company_id.currency_id.id:
             #we don't round the price_unit, as we may want to store the standard price with more digits than allowed by the currency
             price_unit = self.pool.get('res.currency').compute(cr, uid, order.currency_id.id, order.company_id.currency_id.id, price_unit, round=False, context=context)
-        print "----- purchase price unit --------", price_unit
         res = []
         if order.location_id.usage == 'customer':
             name = order_line.product_id.with_context(dict(context or {}, lang=order.dest_address_id.lang)).display_name
@@ -914,7 +913,6 @@ class purchase_order(osv.osv):
             }
             
             picking_id = self.pool.get('stock.picking').create(cr, uid, picking_vals, context=context)
-            print "---- priking values---- from purchase----", picking_vals, picking_id
             self._create_stock_moves(cr, uid, order, order.order_line, picking_id, context=context)
         return picking_id
 
