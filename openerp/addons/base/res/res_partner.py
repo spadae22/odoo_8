@@ -264,7 +264,7 @@ class res_partner(osv.Model, format_address):
         'function': fields.char('Job Position'),
         'type': fields.selection([('default', 'Default'), ('invoice', 'Invoice'),
                                    ('delivery', 'Shipping'), ('contact', 'Contact'),
-                                   ('other', 'Other'),  ('delivery', 'Delivery')], 'Address Type',
+                                   ('other', 'Other'),  ('delivery_contact', 'Delivery')], 'Address Type',
             help="Used to select automatically the right address according to the context in sales and purchases documents."),
         'street': fields.char('Street'),
         'street2': fields.char('Street2'),
