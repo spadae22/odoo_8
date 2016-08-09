@@ -263,7 +263,7 @@ class res_partner(osv.Model, format_address):
         'employee': fields.boolean('Employee', help="Check this box if this contact is an Employee."),
         'function': fields.char('Job Position'),
         'type': fields.selection([('default', 'Default'), ('invoice', 'Invoice'),
-                                   ('delivery', 'Shipping'), ('contact', 'Contact'),
+                                   ('delivery', 'Shipping'), ('delivery', 'Delivery'), ('contact', 'Contact'),
                                    ('other', 'Other')], 'Address Type',
             help="Used to select automatically the right address according to the context in sales and purchases documents."),
         'street': fields.char('Street'),
