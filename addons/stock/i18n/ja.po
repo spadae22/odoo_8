@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-14 12:26+0000\n"
-"PO-Revision-Date: 2016-06-29 06:26+0000\n"
+"PO-Revision-Date: 2016-08-05 12:38+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Japanese (http://www.transifex.com/odoo/odoo-8/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -556,7 +556,7 @@ msgstr "処理可能"
 #. module: stock
 #: view:product.template:stock.product_template_search_form_view_stock
 msgid "Available Products"
-msgstr ""
+msgstr "利用可能製品"
 
 #. module: stock
 #: field:stock.move,backorder_id:0 field:stock.picking,backorder_id:0
@@ -788,7 +788,7 @@ msgstr "コード"
 #. module: stock
 #: field:stock.picking.type,color:0
 msgid "Color"
-msgstr ""
+msgstr "色"
 
 #. module: stock
 #: view:website:stock.report_picking
@@ -1306,7 +1306,7 @@ msgstr "目的地への移動"
 #. module: stock
 #: field:stock.pack.operation,result_package_id:0
 msgid "Destination Package"
-msgstr ""
+msgstr "先梱包"
 
 #. module: stock
 #: field:stock.transfer_details_items,result_package_id:0
@@ -1375,7 +1375,7 @@ msgstr ""
 #. module: stock
 #: view:stock.picking.type:stock.stock_picking_type_kanban
 msgid "Edit..."
-msgstr ""
+msgstr "編集"
 
 #. module: stock
 #: code:addons/stock/wizard/stock_transfer_details.py:115
@@ -1412,7 +1412,7 @@ msgstr ""
 #. module: stock
 #: view:product.template:stock.product_template_search_form_view_stock
 msgid "Exhausted Stock"
-msgstr ""
+msgstr "在庫なし"
 
 #. module: stock
 #: field:stock.move,date_expected:0
@@ -2033,7 +2033,7 @@ msgstr "在庫ロケーション"
 #. module: stock
 #: model:ir.model,name:stock.model_stock_location
 msgid "Inventory Locations"
-msgstr ""
+msgstr "在庫ロケーション"
 
 #. module: stock
 #: help:stock.inventory,move_ids:0
@@ -2108,7 +2108,7 @@ msgstr "商品を部分的または一度にすべて配送するか指定しま
 #. module: stock
 #: field:stock.transfer_details,item_ids:0
 msgid "Items"
-msgstr ""
+msgstr "件"
 
 #. module: stock
 #: view:stock.picking.type:stock.stock_picking_type_kanban
@@ -2124,7 +2124,7 @@ msgstr ""
 #: field:stock.picking,message_last_post:0
 #: field:stock.production.lot,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "最終メッセージ日"
 
 #. module: stock
 #: field:make.procurement,write_uid:0
@@ -2390,12 +2390,12 @@ msgstr "ピッキング後、所定の場所で梱包作業を行い、出荷（
 #. module: stock
 #: model:res.groups,name:stock.group_tracking_owner
 msgid "Manage Different Stock Owners"
-msgstr ""
+msgstr "異なる在庫所有者を管理"
 
 #. module: stock
 #: model:res.groups,name:stock.group_production_lot
 msgid "Manage Lots / Serial Numbers"
-msgstr ""
+msgstr "ロット/シリアル番号を管理"
 
 #. module: stock
 #: model:res.groups,name:stock.group_locations
@@ -2405,12 +2405,12 @@ msgstr "複数ロケーション・倉庫を管理"
 #. module: stock
 #: model:res.groups,name:stock.group_tracking_lot
 msgid "Manage Packages"
-msgstr ""
+msgstr "梱包を管理"
 
 #. module: stock
 #: model:res.groups,name:stock.group_adv_location
 msgid "Manage Push and Pull inventory flows"
-msgstr ""
+msgstr "プッシュ/プル在庫フローを管理"
 
 #. module: stock
 #: field:stock.config.settings,group_stock_adv_location:0
@@ -2635,7 +2635,7 @@ msgstr ""
 #. module: stock
 #: view:product.template:stock.product_template_search_form_view_stock
 msgid "Negative Stock"
-msgstr ""
+msgstr "マイナス在庫"
 
 #. module: stock
 #: selection:stock.move,state:0
@@ -3212,7 +3212,7 @@ msgstr "梱包は既に処理済です。"
 #. module: stock
 #: model:ir.actions.act_window,name:stock.do_view_pickings
 msgid "Pickings for Groups"
-msgstr ""
+msgstr "グループのピッキング"
 
 #. module: stock
 #: view:stock.picking:stock.view_picking_internal_search
@@ -3944,7 +3944,7 @@ msgstr "引当済保管ロット"
 #. module: stock
 #: field:stock.quant,reservation_id:0
 msgid "Reserved for Move"
-msgstr ""
+msgstr "引当元移動"
 
 #. module: stock
 #: field:stock.move,reserved_quant_ids:0
@@ -4321,7 +4321,7 @@ msgstr "移動元ロケーション"
 #. module: stock
 #: field:stock.pack.operation,package_id:0
 msgid "Source Package"
-msgstr ""
+msgstr "元梱包"
 
 #. module: stock
 #: help:procurement.rule,location_src_id:0
@@ -4690,7 +4690,7 @@ msgstr "次のルートを関連の製品に適用（親カテゴリも参照）
 #. module: stock
 #: help:stock.quant,reservation_id:0
 msgid "The move the quant is reserved for"
-msgstr ""
+msgstr "保管ロットを引き当てている移動"
 
 #. module: stock
 #: sql_constraint:stock.warehouse:0
@@ -5072,7 +5072,7 @@ msgstr ""
 #. module: stock
 #: field:stock.quant,cost:0
 msgid "Unit Cost"
-msgstr ""
+msgstr "原価"
 
 #. module: stock
 #: help:stock.pack.operation,cost:0
@@ -5155,7 +5155,7 @@ msgstr "引当解除"
 #. module: stock
 #: view:stock.inventory:stock.view_inventory_form
 msgid "UoM"
-msgstr ""
+msgstr "単位"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_view_change_product_quantity
