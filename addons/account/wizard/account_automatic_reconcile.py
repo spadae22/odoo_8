@@ -168,7 +168,6 @@ class account_automatic_reconcile(osv.osv_memory):
             # reconcile automatically all transactions from partners whose balance is 0
             cr.execute(query, params)
             partner_ids = [id for (id,) in cr.fetchall()]
-            print "----- partner ids--------", partner_ids, query
             for partner_id in partner_ids:
                 cr.execute(
                     "SELECT id " \
