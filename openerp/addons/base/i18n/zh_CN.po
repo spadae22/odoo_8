@@ -3,6 +3,7 @@
 # * base
 # 
 # Translators:
+# ChinaMaker <tiexinliu@126.com>, 2016
 # Eddie Lim <bhweelim@yahoo.com>, 2016
 # fausthuang, 2015
 # fausthuang, 2015-2016
@@ -27,7 +28,7 @@
 # Liping Wang <lynn.config@gmail.com>, 2015
 # waveyeung <waveyeung@qq.com>, 2015
 # Wei "oldrev" Li <liwei@sandwych.com>, 2016
-# wxb <bd5dml@gmail.com>, 2015
+# xiaobin wu <bd5dml@gmail.com>, 2015
 # Xu Lei <xulei8@qq.com>, 2015
 # Zamba Lee <zambalee@gmail.com>, 2016
 # zhangpeiqing <zpq001@live.com>, 2015
@@ -40,8 +41,8 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-09 09:18+0000\n"
-"PO-Revision-Date: 2016-07-22 06:36+0000\n"
-"Last-Translator: Jeffery Chenn <jeffery9@gmail.com>\n"
+"PO-Revision-Date: 2016-09-01 13:00+0000\n"
+"Last-Translator: ChinaMaker <tiexinliu@126.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/odoo/odoo-9/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5253,7 +5254,7 @@ msgstr "卸载模块要求管理访问。"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_event_track
 msgid "Advanced Events"
-msgstr "高级的活动"
+msgstr "高级活动"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_model_fields_form
@@ -5280,7 +5281,7 @@ msgstr "阿富汗伊斯兰国"
 #. module: base
 #: selection:res.currency,position:0
 msgid "After Amount"
-msgstr "在总额后面"
+msgstr "金额后面"
 
 #. module: base
 #: model:ir.ui.menu,name:base.menu_aftersale
@@ -5903,7 +5904,7 @@ msgstr "批量存款"
 #. module: base
 #: selection:res.currency,position:0
 msgid "Before Amount"
-msgstr "在总额的前面"
+msgstr "金额前面"
 
 #. module: base
 #: model:res.country,name:base.by
@@ -6020,7 +6021,7 @@ msgstr "布尔值"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_theme_bootswatch
 msgid "Bootswatch Theme"
-msgstr "Bootswatch模板"
+msgstr "Bootswatch Theme"
 
 #. module: base
 #: model:res.country,name:base.ba
@@ -6137,12 +6138,12 @@ msgstr "CRM"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_gamification_sale_crm
 msgid "CRM Gamification"
-msgstr "游戏化CRM"
+msgstr "CRM游戏化"
 
 #. module: base
 #: selection:base.language.export,format:0
 msgid "CSV File"
-msgstr "CSV 文件"
+msgstr "CSV文件"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.wizard_lang_export
@@ -7522,7 +7523,7 @@ msgstr "自定义对象"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_report_xml_auto
 msgid "Custom Python Parser"
-msgstr "自定义Python解释器"
+msgstr "自定义Python解析器"
 
 #. module: base
 #: model:ir.ui.menu,name:base.menu_administration_shortcut
@@ -7700,17 +7701,17 @@ msgstr "一周的第几天 (0:星期一):%(weekday)s"
 #. module: base
 #: model:ir.ui.view,arch_db:base.sequence_view
 msgid "Day of the Year: %(doy)s"
-msgstr "年内天数"
+msgstr "年内天数: %(doy)s"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.sequence_view
 msgid "Day: %(day)s"
-msgstr "天：%(day)s"
+msgstr "日: %(day)s"
 
 #. module: base
 #: selection:ir.cron,interval_type:0
 msgid "Days"
-msgstr "天"
+msgstr "天数"
 
 #. module: base
 #: model:res.company,overdue_msg:base.main_company
@@ -7768,13 +7769,13 @@ msgstr "列表视图的默认限制"
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_values_value
 msgid "Default value (pickled) or reference to an action"
-msgstr "默认值(pickled) 或者引用某个动作"
+msgstr "默认值(pickled)，或者引用某个动作"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_values_value_unpickle
 #: model:ir.ui.view,arch_db:base.values_view_form_defaults
 msgid "Default value or action reference"
-msgstr "默认值或动作引用"
+msgstr "默认值，或动作引用"
 
 #. module: base
 #: model:ir.module.module,description:base.module_theme_default
@@ -7837,7 +7838,7 @@ msgstr "丹麦"
 #: model:ir.model.fields,field_description:base.field_ir_module_module_dependencies_id
 #: model:ir.ui.view,arch_db:base.module_form
 msgid "Dependencies"
-msgstr "依赖模块"
+msgstr "依赖"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_depends
@@ -7865,7 +7866,7 @@ msgstr "说明"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_module_description_html
 msgid "Description HTML"
-msgstr "HTML描述"
+msgstr "说明HTML"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_mass_mailing_themes
@@ -8249,7 +8250,7 @@ msgstr "编辑"
 #. module: base
 #: model:res.groups,name:base.group_website_designer
 msgid "Editor and Designer"
-msgstr "编辑和设计"
+msgstr "编辑以及设计师"
 
 #. module: base
 #: model:res.country,name:base.eg
@@ -8396,7 +8397,7 @@ msgstr "错误的上下文:\n视图 `%(view_name)s`"
 #: code:addons/models.py:1264
 #, python-format
 msgid "Error details:"
-msgstr "详细错误"
+msgstr "错误详情:"
 
 #. module: base
 #: constraint:res.company:0
@@ -8614,7 +8615,7 @@ msgstr "额外的"
 #: model:ir.module.category,name:base.module_category_usability
 #: model:ir.ui.view,arch_db:base.user_groups_view
 msgid "Extra Rights"
-msgstr "额外的权利"
+msgstr "额外的权限"
 
 #. module: base
 #: model:res.country,name:base.fk
@@ -8737,7 +8738,7 @@ msgstr "字段"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_model_form
 msgid "Fields Description"
-msgstr "字段描述"
+msgstr "字段说明"
 
 #. module: base
 #: model:res.country,name:base.fj
@@ -8797,7 +8798,7 @@ msgstr "筛选器名称"
 #. module: base
 #: sql_constraint:ir.filters:0
 msgid "Filter names must be unique"
-msgstr "过滤名称必须是独特的"
+msgstr "筛选器名称必须是唯一的"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_attachment_search
@@ -8817,7 +8818,7 @@ msgstr "筛选"
 #. module: base
 #: model:ir.ui.view,arch_db:base.ir_filters_view_search
 msgid "Filters created by myself"
-msgstr "我自己创建的过滤"
+msgstr "我自己创建的筛选器"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.ir_filters_view_search
@@ -9125,7 +9126,7 @@ msgstr "甘特"
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_holidays_gantt
 msgid "Gantt view for Leaves Dashboard"
-msgstr "假期仪表板的甘特视图"
+msgstr "休假仪表板的甘特视图"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web_kanban_gauge
@@ -9146,7 +9147,7 @@ msgstr "一般信息"
 #: model:ir.ui.menu,name:base.menu_config
 #: model:ir.ui.view,arch_db:base.view_window_action_form
 msgid "General Settings"
-msgstr "通用设置"
+msgstr "一般设置"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.ir_property_view_search
@@ -9272,7 +9273,7 @@ msgstr "谷歌用户"
 #: selection:ir.actions.act_window.view,view_mode:0
 #: selection:ir.ui.view,type:0
 msgid "Graph"
-msgstr "图标"
+msgstr "图形"
 
 #. module: base
 #: model:res.country,name:base.gr
@@ -9444,7 +9445,7 @@ msgstr ""
 #. module: base
 #: model:ir.model,name:base.model_ir_http
 msgid "HTTP routing"
-msgstr "HTTP路径"
+msgstr "HTTP 路由"
 
 #. module: base
 #: model:res.country,name:base.ht
@@ -9501,7 +9502,7 @@ msgstr "协助配置应用程序"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
 msgid "Help with Python expressions."
-msgstr "Python表达式帮助"
+msgstr "用Python表达式帮助"
 
 #. module: base
 #: model:ir.module.category,description:base.module_category_point_of_sale
@@ -10619,12 +10620,12 @@ msgstr "肯尼亚"
 #: model:ir.model.fields,field_description:base.field_ir_ui_view_key
 #: model:ir.ui.view,arch_db:base.view_ir_config_search
 msgid "Key"
-msgstr "键值"
+msgstr "键"
 
 #. module: base
 #: sql_constraint:ir.config_parameter:0
 msgid "Key must be unique."
-msgstr "键值必须唯一。"
+msgstr "键必须唯一。"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_wkf_activity_kind
@@ -11002,33 +11003,33 @@ msgstr "拉脱维亚语"
 #: model:ir.ui.view,arch_db:base.config_wizard_step_view_form
 #: model:ir.ui.view,arch_db:base.ir_actions_todo_tree
 msgid "Launch"
-msgstr "启动"
+msgstr "运行"
 
 #. module: base
 #: selection:ir.actions.todo,type:0
 msgid "Launch Automatically"
-msgstr "自动启动"
+msgstr "自动运行"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.config_wizard_step_view_form
 #: model:ir.ui.view,arch_db:base.ir_actions_todo_tree
 msgid "Launch Configuration Wizard"
-msgstr "启动配置向导"
+msgstr "运行配置向导"
 
 #. module: base
 #: selection:ir.actions.todo,type:0
 msgid "Launch Manually"
-msgstr "手动启动"
+msgstr "手动运行"
 
 #. module: base
 #: selection:ir.actions.todo,type:0
 msgid "Launch Manually Once"
-msgstr "手动一次性启动"
+msgstr "手动运行一次"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.wizard_lang_export
 msgid "Launchpad"
-msgstr "启动台"
+msgstr "Launchpad"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_lead_automation
@@ -11212,7 +11213,7 @@ msgstr "日志"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_users_login
 msgid "Login"
-msgstr "登入"
+msgstr "登录"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company_logo
@@ -11273,7 +11274,7 @@ msgstr "MRP"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mrp_byproduct
 msgid "MRP Byproducts"
-msgstr "MRP 副产品"
+msgstr "MRP副产品"
 
 #. module: base
 #: model:res.country,name:base.mo
@@ -11611,7 +11612,7 @@ msgstr "水星支付服务"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_logging_message
 msgid "Message"
-msgstr "信息"
+msgstr "消息"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_users_form
@@ -11987,7 +11988,7 @@ msgstr "多币种"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_multilang
 msgid "Multi Language Chart of Accounts"
-msgstr "多语言科目表"
+msgstr "科目表多语言"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_attachment_search
@@ -12665,7 +12666,7 @@ msgstr "输出转换"
 #: model:ir.model.fields,field_description:base.field_base_language_import_overwrite
 #: model:ir.model.fields,field_description:base.field_base_language_install_overwrite
 msgid "Overwrite Existing Terms"
-msgstr "覆盖已存在的术语"
+msgstr "覆盖现有术语"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_attachment_create_uid
@@ -12810,7 +12811,7 @@ msgstr "合作伙伴"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_crm_partner_assign
 msgid "Partner Assignation & Geolocation"
-msgstr "业务伙伴指定和地理定位"
+msgstr "合作伙伴指派，以及地理定位"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_partner_mass_mail
@@ -12854,7 +12855,7 @@ msgstr "业务伙伴"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_base_geolocalize
 msgid "Partners Geo-Localization"
-msgstr "业务伙伴地理定位"
+msgstr "合作伙伴地理定位"
 
 #. module: base
 #: code:addons/base/res/res_partner.py:772
@@ -13070,7 +13071,7 @@ msgstr "请指定要运行的动作！"
 msgid ""
 "Please use the change password wizard (in User Preferences or User menu) to "
 "change your own password."
-msgstr ""
+msgstr "请使用更改密码向导（在用户个人资料或用户菜单中）来更改您的密码。"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_point_of_sale
@@ -13086,7 +13087,7 @@ msgstr "POS折扣"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_pos_reprint
 msgid "Point of Sale Receipt Reprinting"
-msgstr "POS小票重打印"
+msgstr "POS小票再次打印"
 
 #. module: base
 #: model:res.country,name:base.pl
@@ -13482,7 +13483,7 @@ msgstr "限定"
 #: model:ir.module.module,description:base.module_website_event_questions
 #: model:ir.module.module,shortdesc:base.module_website_event_questions
 msgid "Questions on Events"
-msgstr "活动上的问题"
+msgstr "活动的问题"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_settings_dashboard
@@ -15864,7 +15865,7 @@ msgstr "用户将能够管理设备。"
 #: code:addons/models.py:6160
 #, python-format
 msgid "The value for the field '%s' already exists."
-msgstr "该字段的值 '%s' 已存在."
+msgstr "该字段 '%s' 的值已存在."
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_theme
@@ -15883,7 +15884,7 @@ msgstr "这是一个%(model)s的共享过滤，请在上处或者修改前设置
 #: code:addons/models.py:2646
 #, python-format
 msgid "There is no reference available for %s"
-msgstr ""
+msgstr "没有编号为 %s 的单据"
 
 #. module: base
 #: code:addons/models.py:2773
@@ -16021,7 +16022,7 @@ msgstr "提示"
 #: model:ir.model.fields,field_description:base.field_res_partner_title_name
 #: model:ir.model.fields,field_description:base.field_res_users_title
 msgid "Title"
-msgstr "标题"
+msgstr "称谓"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_sequence_date_range_date_to
@@ -16494,7 +16495,7 @@ msgstr "未知的子字段 '%s'"
 #: code:addons/base/ir/ir_fields.py:165
 #, python-format
 msgid "Unknown value '%s' for boolean field '%%(field)s', assuming '%s'"
-msgstr "'%s'对于布尔字段'%%(field)s'是未知的值，期待输入'%s'"
+msgstr "'%s'对于布尔字段'%%(field)s'是未知的值，期望 '%s'"
 
 #. module: base
 #: code:addons/translate.py:650
@@ -16878,7 +16879,7 @@ msgstr "视图名称"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_currency_form
 msgid "View Rates"
-msgstr "视图汇率"
+msgstr "查看汇率"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_window_view_id
@@ -16952,7 +16953,7 @@ msgstr "维京群岛(美属)"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_category_visible
 msgid "Visible"
-msgstr "可见性"
+msgstr "可见"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_stock_account
@@ -17086,17 +17087,17 @@ msgstr "网站企业版"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_portal_followup
 msgid "Website Followup"
-msgstr "网站催款"
+msgstr "网站关注"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_form_editor
 msgid "Website Form Builder"
-msgstr "网站窗体构建器"
+msgstr "网站表单生成器"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_gengo
 msgid "Website Gengo Translator"
-msgstr "Gengo网站翻译"
+msgstr "网站Gengo翻译"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_google_map
@@ -17111,7 +17112,7 @@ msgstr "网站链接跟踪器"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_im_livechat
 msgid "Website Live Chat"
-msgstr "网页聊天"
+msgstr "网站即时聊天"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_im_livechat
@@ -17121,7 +17122,7 @@ msgstr "与游客或客户网站即时聊天"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_livechat
 msgid "Website Live Support"
-msgstr "网站在线客服"
+msgstr "网站即时支持"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_mail
@@ -17131,7 +17132,7 @@ msgstr "网站邮件"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_mass_mailing
 msgid "Website Mass Mailing Campaigns"
-msgstr ""
+msgstr "网站群发邮件营销"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_mail
@@ -17260,7 +17261,7 @@ msgstr "当转换操作来源于客户端表单上的一个按钮，信号测试
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_copy
 msgid "Whether the value is copied when duplicating a record."
-msgstr ""
+msgstr "值在复制过程中是否拷贝"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_translate
@@ -18059,7 +18060,7 @@ msgstr "ir.values"
 #: model:ir.ui.view,arch_db:base.view_server_action_form
 msgid ""
 "log(message, level='info'): a logging function to create ir_logging records"
-msgstr ""
+msgstr "log(message, level='info'): 日志函数用来创建 ir_logging 记录"
 
 #. module: base
 #: code:addons/base/ir/ir_ui_view.py:447

@@ -170,7 +170,7 @@ Worker number calculation
 
 * Rule of thumb : (#CPU * 2) + 1
 * Cron workers need CPU
-* 1 worker ~= 6 concurent users
+* 1 worker ~= 6 concurrent users
 
 memory size calculation
 -----------------------
@@ -196,7 +196,7 @@ Configuration sample
 --------------------
 
 * Server with 4 CPU, 8 Thread
-* 60 concurent users
+* 60 concurrent users
 
 * 60 users / 6 = 10 <- theorical number of worker needed
 * (4 * 2) + 1 = 9 <- theorical maximal number of worker
@@ -208,8 +208,8 @@ in ``/etc/odoo.conf``:
 .. code-block:: apacheconf
 
   [options]
-  limit_memory_hard = 629145600
-  limit_memory_soft = 1677721600
+  limit_memory_hard = 1677721600
+  limit_memory_soft = 629145600
   limit_request = 8192
   limit_time_cpu = 600
   limit_time_real = 1200
@@ -230,6 +230,12 @@ just about any SSL termination proxy, but requires the following setup:
 * set up the proxying itself (`Nginx proxying example`_)
 * your SSL termination proxy should also automatically redirect non-secure
 connections to the secure port
+
+.. warning::
+
+  In case you are using the Point of Sale module in combinaison with a `POSBox`_,
+  you must disable the HTTPS configuration for the route ``/pos/web`` to avoid
+  mix-content errors.
 
 Configuration sample
 --------------------
@@ -422,3 +428,4 @@ which will generate a 32 characters pseudorandom printable string.
 .. _use an SSH tunnel:
     http://www.postgresql.org/docs/9.3/static/ssh-tunnels.html
 .. _WSGI: http://wsgi.readthedocs.org/
+.. _POSBox: https://www.odoo.com/page/point-of-sale-hardware#part_2
