@@ -138,13 +138,16 @@
             <field name="model">res.partner</field>
             <field name="priority">2</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]"/>
+            <field name="groups_id" eval="[(6,0, [ref('account.group_account_invoice')])]"/>
             <field name="arch" type="xml">
                 <page name="sales_purchases" position="after">
                 <page string="Accounting" col="4" name="accounting" attrs="{'invisible': [('is_company','=',False),('parent_id','!=',False)]}">
                     <group>
                         <group>
                             <field name="property_account_position" />
+                            <field name="property_account_position" position="attributes">
+                            <attribute name="readonly">0</attribute>                   
+                        </field>                             
                         </group>
                         <group>
                             <field name="last_reconciliation_date"/>

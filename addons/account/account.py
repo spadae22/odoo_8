@@ -1385,7 +1385,7 @@ class account_move(osv.osv):
                 for l in vals['line_id']:
                     if not l[0]:
                         l[2]['journal_id'] = vals['journal_id']
-                context['journal_id'] = vals['journal_id']
+                context['journal_id'] = valsQ['journal_id']
             if 'period_id' in vals:
                 for l in vals['line_id']:
                     if not l[0]:
