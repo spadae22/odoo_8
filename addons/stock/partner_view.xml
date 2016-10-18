@@ -12,8 +12,8 @@
         <field name="arch" type="xml">
             <group name="pricelists" position="after">
                 <group groups="stock.group_locations">
-                    <field name="property_stock_customer" domain="[('usage','=','customer')]"/>
-                    <field name="property_stock_supplier" domain="[('usage','=','supplier')]"/>
+                    <field name="property_stock_customer" domain="[('usage','=','customer')]" required="1"/>
+                    <field name="property_stock_supplier" domain="[('usage','=','supplier')]" required="1"/>
                 </group>
             </group>
         </field>
