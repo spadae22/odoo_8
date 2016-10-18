@@ -6,15 +6,15 @@
 # Arek Smagacz <arek.smagacz@gmail.com>, 2015
 # zbik2607 <darek@krokus.com.pl>, 2016
 # Grzegorz Grzelak <grzegorz.grzelak@openglobe.pl>, 2015-2016
-# Mariusz <waniliowy@o2.pl>, 2015
+# Mariusz, 2015
 # Piotr Szlązak <szlazakpiotr@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:44+0000\n"
-"PO-Revision-Date: 2016-09-26 16:37+0000\n"
-"Last-Translator: zbik2607 <darek@krokus.com.pl>\n"
+"PO-Revision-Date: 2016-10-13 13:09+0000\n"
+"Last-Translator: Grzegorz Grzelak <grzegorz.grzelak@openglobe.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/odoo/odoo-9/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -239,7 +239,7 @@ msgstr "Pozwala podać konto analityczne na zamówieniu sprzedaży"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_crm_team_sales_to_invoice_amount
 msgid "Amount of sales to invoice"
-msgstr "ilość obrotów do faktur"
+msgstr "Kwota zamówień do fakturowania"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_project_id
@@ -296,7 +296,7 @@ msgstr "Anulowano"
 #. module: sale
 #: model:ir.model.fields,help:sale.field_crm_team_use_invoices
 msgid "Check this box to manage invoices in this sales team."
-msgstr ""
+msgstr "Zaznacz, aby zarządzać fakturami dla tego zespołu sprzedaży."
 
 #. module: sale
 #: model:ir.model.fields,help:sale.field_crm_team_use_quotations
@@ -348,7 +348,7 @@ msgstr "Utwórz faktury"
 #: model:ir.actions.act_window,help:sale.action_quotations
 #: model:ir.actions.act_window,help:sale.action_quotations_salesteams
 msgid "Create a Quotation, the first step of a new sale."
-msgstr "Utwórz oferte cenową, jako pierwszy krok w nowej sprzedaży."
+msgstr "Utwórz ofertę cenową, jako pierwszy krok w nowej sprzedaży."
 
 #. module: sale
 #: selection:product.template,track_service:0
@@ -456,12 +456,12 @@ msgstr "Pobrane"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_order_form
 msgid "Delivered Quantity"
-msgstr ""
+msgstr "Dostarczona ilość"
 
 #. module: sale
 #: selection:product.template,invoice_policy:0
 msgid "Delivered quantities"
-msgstr ""
+msgstr "Dostarczone ilości"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_partner_shipping_id
@@ -543,7 +543,7 @@ msgstr ""
 #. module: sale
 #: selection:sale.config.settings,module_sale_margin:0
 msgid "Display margins on quotations and sales orders"
-msgstr "Pokaż marże na ofertach cenowych i zamówieniach sprzedaży"
+msgstr "Pokaż marże na ofertach i w zamówieniach sprzedaży"
 
 #. module: sale
 #: selection:sale.order,state:0
@@ -580,7 +580,7 @@ msgstr "Zaliczki (procentowo)"
 #: code:addons/sale/wizard/sale_make_invoice_advance.py:67
 #, python-format
 msgid "Down payment of %s%%"
-msgstr ""
+msgstr "Zaliczka dla %s%%"
 
 #. module: sale
 #: selection:sale.report,state:0
@@ -701,7 +701,7 @@ msgstr "Faktura"
 #: code:addons/sale/sale.py:785
 #, python-format
 msgid "Invoice %s paid"
-msgstr ""
+msgstr "Faktura %s zapłacona"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_partner_invoice_id
@@ -800,12 +800,12 @@ msgstr "Zafakturowano"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_order_form
 msgid "Invoiced Quantity"
-msgstr ""
+msgstr "Ilość zafakturowana"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_crm_team_invoiced
 msgid "Invoiced This Month"
-msgstr ""
+msgstr "Zafakturowano w tym miesiącu"
 
 #. module: sale
 #: model:ir.actions.act_window,name:sale.action_invoice_salesteams
@@ -849,19 +849,19 @@ msgstr "Zasady fakturowania"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "Invoicing address:"
-msgstr ""
+msgstr "Adres do faktury:"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "Invoicing and shipping address:"
-msgstr ""
+msgstr "Adres do faktury i dostawy:"
 
 #. module: sale
 #: selection:sale.config.settings,group_sale_delivery_address:0
 msgid ""
 "Invoicing and shipping addresses are always the same (Example: services "
 "companies)"
-msgstr ""
+msgstr "Adresy na fakturze oraz wysyłki są zawsze takie same (przykład: firmy usługowe)"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.crm_team_salesteams_view_form
@@ -908,7 +908,7 @@ msgstr ""
 #. module: sale
 #: selection:product.template,track_service:0
 msgid "Manually set quantities on order"
-msgstr ""
+msgstr "Ręcznie ustaw ilości w zamówieniu"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_config_settings_module_sale_margin
@@ -976,13 +976,13 @@ msgstr ""
 msgid ""
 "Note that once a Quotation becomes a Sale Order, it will be moved from the "
 "Quotations list to the Sales Order list."
-msgstr ""
+msgstr "Zapamiętaj, że jeśli oferta sprzedaży przejdzie do zamówienia sprzedaży,\nzostanie ona przeniesiona z listy ofert do listy zamówienia sprzedaży."
 
 #. module: sale
 #: selection:sale.order,invoice_status:0
 #: selection:sale.order.line,invoice_status:0
 msgid "Nothing to Invoice"
-msgstr ""
+msgstr "Nie ma nic do fakturowania"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_message_needaction_counter
@@ -1111,7 +1111,7 @@ msgstr "Kraj partnera"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_order_product_search
 msgid "Partner's Country"
-msgstr "Kraj kontrahenta"
+msgstr "Kraj partnera"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_payment_term_id
@@ -1122,7 +1122,7 @@ msgstr "Warunki płatności"
 #: code:addons/sale/sale.py:233
 #, python-format
 msgid "Please define an accounting sale journal for this company."
-msgstr ""
+msgstr "Wybierz dziennik sprzedaży dla tej firmy."
 
 #. module: sale
 #: code:addons/sale/sale.py:654
@@ -1130,7 +1130,7 @@ msgstr ""
 msgid ""
 "Please define income account for this product: \"%s\" (id:%d) - or for its "
 "category: \"%s\"."
-msgstr ""
+msgstr "Zdefiniuj konto przychodów dla tego produktu: \"%s\" (id:%d) - lub dla tej kategorii: \"%s\"."
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
@@ -1140,7 +1140,7 @@ msgstr "Cena"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_price_reduce
 msgid "Price Reduce"
-msgstr "zredukowano cenę"
+msgstr "Redukcja ceny"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_pricelist_id
@@ -1214,12 +1214,12 @@ msgstr "Produkty"
 msgid ""
 "Products can have several attributes, defining variants (Example: size, "
 "color,...)"
-msgstr ""
+msgstr "Produkty mogą mieć różne atrybuty, do definiowania wariantów (przykład: wielkość, kolor...)"
 
 #. module: sale
 #: selection:sale.config.settings,group_uom:0
 msgid "Products have only one unit of measure (easier)"
-msgstr ""
+msgstr "Produkty mają wyłącznie jedną jednostkę miary (łatwiejsze)"
 
 #. module: sale
 #: model:res.groups,name:sale.group_mrp_properties
@@ -1234,7 +1234,7 @@ msgstr "Ilość"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_report_qty_delivered
 msgid "Qty Delivered"
-msgstr ""
+msgstr "Ilość dostarczona"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_report_qty_invoiced
@@ -1244,7 +1244,7 @@ msgstr "Qty zafakturowano"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_report_qty_to_invoice
 msgid "Qty To Invoice"
-msgstr ""
+msgstr "Ilość do zafakturowania"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_product_uom_qty
@@ -1392,7 +1392,7 @@ msgstr "Analiza Sprzedaży"
 #. module: sale
 #: selection:sale.report,state:0
 msgid "Sales Done"
-msgstr ""
+msgstr "Sprzedaż zakończona"
 
 #. module: sale
 #: model:ir.filters,name:sale.filter_sale_report_sales_funnel
@@ -1546,7 +1546,7 @@ msgstr ""
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_order_form
 msgid "Setup default terms and conditions in your company settings."
-msgstr ""
+msgstr "Ustaw domyślne warunki i zapisy w ustawieniach twojej firmy."
 
 #. module: sale
 #: selection:sale.config.settings,group_display_incoterm:0
@@ -1556,12 +1556,12 @@ msgstr ""
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_config_settings_group_product_pricelist
 msgid "Show pricelists On Products"
-msgstr ""
+msgstr "Pokazuj cenniki przy produktach"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_config_settings_group_pricelist_item
 msgid "Show pricelists to customers"
-msgstr ""
+msgstr "Pokazuj cenniki klientom"
 
 #. module: sale
 #: selection:sale.config.settings,group_uom:0
@@ -1676,7 +1676,7 @@ msgstr ""
 #: code:addons/sale/sale.py:316
 #, python-format
 msgid "There is no invoicable line."
-msgstr ""
+msgstr "Brak pozycji fakturowania."
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_order_product_search
@@ -1708,7 +1708,7 @@ msgid ""
 "product, etc.) Use this report to perform analysis on sales not having "
 "invoiced yet. If you want to analyse your turnover, you should use the "
 "Invoice Analysis report in the Accounting application."
-msgstr "To jest raport do ofert i zamówień sprzedaży. Pozwala on analizować sprzedaż według różnych kryteriów (na sprzedawców , klientów, produkty). Stosuj ten raport do analizy sprzedaży niezafakturowanej. Jeśli chcesz analizować obroty, to powinieneś stosować analizę fakturową w aplikacji Księgowość."
+msgstr "To jest raport do ofert i zamówień sprzedaży. Pozwala on analizować sprzedaż według różnych kryteriów (wg sprzedawców, klientów, produktów). Stosuj ten raport do analizy sprzedaży niezafakturowanej. Jeśli chcesz analizować obroty, to powinieneś stosować analizę fakturową w aplikacji Księgowość."
 
 #. module: sale
 #: model:ir.actions.act_window,help:sale.action_order_report_so_salesteam
@@ -1860,7 +1860,7 @@ msgstr "Wpisano nieprawidłową wartość!"
 msgid ""
 "You can not remove a sale order line.\n"
 "Discard changes and try setting the quantity to 0."
-msgstr ""
+msgstr "Nie możesz usunąć pozycji zamówienia sprzedaży.\nOdrzuć zmiany, a następnie spróbuj zmienić ilość na 0."
 
 #. module: sale
 #: code:addons/sale/sale.py:153

@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:15+0000\n"
-"PO-Revision-Date: 2016-09-26 13:00+0000\n"
+"PO-Revision-Date: 2016-10-09 11:40+0000\n"
 "Last-Translator: Erwin van der Ploeg <erwin@odooexperts.nl>\n"
 "Language-Team: Dutch (http://www.transifex.com/odoo/odoo-9/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -509,7 +509,7 @@ msgstr "<strong>De prospect</strong> is begonnen met het bespreken van uw voorst
 msgid ""
 "<strong>To boost your leads acquisition,</strong> you should have a look at "
 "our marketing apps:"
-msgstr "<strong>Om sneller en meer leads op te sporen</strong> moet u eens een kijkje nemen bij onze marketingtoepassingen:"
+msgstr "<strong>Om sneller en meer leads op te sporen</strong> moet u eens een kijkje nemen bij onze marketing apps:"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -517,7 +517,7 @@ msgid ""
 "<strong>Trainings</strong><br/>\n"
 "                                To build a strong sales training program, you can use the following\n"
 "                                apps of Odoo:"
-msgstr "<strong>Opleidingen</strong><br/>\n                                Om een sterk verkooptrainingsprogramma uit te bouwen,\n                                kan u volgende Odoo-toepassingen gebruiken:"
+msgstr "<strong>Opleidingen</strong><br/>\n                                Om een sterk verkooptrainingsprogramma uit te bouwen,\n                                kan u volgende Odoo apps gebruiken:"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -1298,7 +1298,7 @@ msgstr "Dagen tot sluiten"
 #. module: crm
 #: model:ir.actions.act_window,name:crm.action_partner_deduplicate
 msgid "Deduplicate Contacts"
-msgstr ""
+msgstr "Ontdubbelen contacten"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.base_partner_merge_automatic_wizard_form
@@ -2640,7 +2640,7 @@ msgstr "Odoo helpt u bij het opvolgen van uw verkooppijplijn om mogelijke verkop
 msgid ""
 "Odoo is the world's only software to have a full integration of Marketing "
 "Apps for your sales channel: insight sales, point of sale, ecommerce."
-msgstr "Odoo is wereldwijd de enige toepassing met een volledige integratie met marketing-toepassingen voor uw verkoopkanalen : interne verkoopmedewerkers, kassa en e-commerce."
+msgstr "Odoo is wereldwijd de enige toepassing met een volledige integratie met marketing apps voor uw verkoopkanalen : interne verkoopmedewerkers, kassa en e-commerce."
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_sale_config_settings_generate_sales_team_alias
@@ -2965,7 +2965,7 @@ msgid ""
 "- everyone: everyone can post\n"
 "- partners: only authenticated partners\n"
 "- followers: only followers of the related document or members of following channels\n"
-msgstr ""
+msgstr "Beleid om een bericht te versturen bij een document door gebruik te maken van de mail gateway.\n-iedereen: iedereen mag versturen\n-relaties: alleen geautoriseerde relaties\n-volgers: allen volgers van een bijbehorend document of volgers van gevolgde kanalen\n"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -3977,7 +3977,7 @@ msgstr "U kan de prijsberekening op elk moment wijzigen. Wij\nraden u aan om voo
 #: code:addons/crm/base_partner_merge.py:309
 #, python-format
 msgid "You cannot merge a contact with one of his parent."
-msgstr ""
+msgstr "U kan geen contact samenvoegen met één van de bovenliggende."
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
