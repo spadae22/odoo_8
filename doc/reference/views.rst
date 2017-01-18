@@ -31,7 +31,7 @@ otherwise.
 ``arch``
     the description of the view's layout
 ``groups_id``
-    :class:`~openerp.fields.Many2many` field to the groups allowed to view/use
+    :class:`~odoo.fields.Many2many` field to the groups allowed to view/use
     the current view
 ``inherit_id``
     the current view's parent view, see :ref:`reference/views/inheritance`,
@@ -76,15 +76,19 @@ The result of applying children views yields the final ``arch``
 Inheritance specs
 -----------------
 
-There are three types of inheritance specs:
+Inheritance specs are comprised of an element locator, to match
+the inherited element in the parent view, and children element that
+will be used to modify the inherited element.
+
+There are three types of element locators for matching a target element:
 
 * An ``xpath`` element with an ``expr`` attribute. ``expr`` is an XPath_
   expression\ [#hasclass]_ applied to the current ``arch``, the first node
   it finds is the match
 * a ``field`` element with a ``name`` attribute, matches the first ``field``
-  with the same ``name``
-* any other element, the first element with the same name and identical
-  attributes (ignoring ``position``) is matched
+  with the same ``name``. All other attributes are ignored during matching
+* any other element: the first element with the same name and identical
+  attributes (ignoring ``position`` and ``version`` attributes) is matched
 
 The inheritance spec may have an optional ``position`` attribute specifying
 how the matched node should be altered:
@@ -92,7 +96,10 @@ how the matched node should be altered:
 ``inside`` (default)
     the content of the inheritance spec is appended to the matched node
 ``replace``
-    the content of the inheritance spec replaces the matched node
+    the content of the inheritance spec replaces the matched node.
+    Any text node containing only `$0` within the contents of the spec will
+    be replaced  by a complete copy of the matched node, effectively wrapping
+    the matched node.
 ``after``
     the content of the inheritance spec is added to the matched node's
     parent, after the matched node
@@ -142,28 +149,25 @@ root can have the following attributes:
 
         <tree default_order="sequence,name desc">
 ``colors``
-    allows changing the color of a row's text based on the corresponding
+    .. deprecated:: 9.0
+        replaced by ``decoration-{$name}``
+``fonts``
+    .. deprecated:: 9.0
+        replaced by ``decoration-{$name}``
+``decoration-{$name}``
+    allow changing the style of a row's text based on the corresponding
     record's attributes.
 
-    Defined as a mapping of colors to Python expressions. Values are of the
-    form: :samp:`{color}:{expr}[;...]`. For each record, pairs are tested
-    in order, the expression is evaluated for the record and if ``true`` the
-    corresponding color is applied to the row. If no color matches, uses the
-    default text color (black).
+    Values are Python expressions. For each record, the expression is evaluated
+    with the record's attributes as context values and if ``true``, the
+    corresponding style is applied to the row. Other context values are
+    ``uid`` (the id of the current user) and ``current_date`` (the current date
+    as a string of the form ``yyyy-MM-dd``).
 
-    * ``color`` can be any valid `CSS color unit`_.
-    * ``expr`` should be a Python expression evaluated with the current
-      record's attributes as context values. Other context values are ``uid``
-      (the id of the current user) and ``current_date`` (the current date as
-      a string of the form ``yyyy-MM-dd``)
-``fonts``
-    allows changing a row's font style based on the corresponding record's
-    attributes.
-
-    The format is the same as for ``color``, but the ``color`` of each pair
-    is replaced by ``bold``, ``italic`` or ``underline``, the expression
-    evaluating to ``true`` will apply the corresponding style to the row's
-    text. Contrary to ``colors``, multiple pairs can match each record
+    ``{$name}`` can be ``bf`` (``font-weight: bold``), ``it``
+    (``font-style: italic``), or any `bootstrap contextual color
+    <http://getbootstrap.com/components/#available-variations>`_ (``danger``,
+    ``info``, ``muted``, ``primary``, ``success`` or ``warning``).
 ``create``, ``edit``, ``delete``
     allows *dis*\ abling the corresponding action in the view by setting the
     corresponding attribute to ``false``
@@ -359,14 +363,14 @@ system. Available semantic components are:
     the name of the field to render
   ``widget``
     fields have a default rendering based on their type
-    (e.g. :class:`~openerp.fields.Char`,
-    :class:`~openerp.fields.Many2one`). The ``widget`` attributes allows using
+    (e.g. :class:`~odoo.fields.Char`,
+    :class:`~odoo.fields.Many2one`). The ``widget`` attributes allows using
     a different rendering method and context.
 
     .. todo:: list of widgets
 
        & options & specific attributes (e.g. widget=statusbar
-       statusbar_visible statusbar_colors clickable)
+       statusbar_visible clickable)
   ``options``
     JSON object specifying configuration option for the field's widget
     (including default widgets)
@@ -381,7 +385,7 @@ system. Available semantic components are:
       only displays the field in the corresponding form mode
     ``oe_no_button``
       avoids displaying the navigation button in a
-      :class:`~openerp.fields.Many2one`
+      :class:`~odoo.fields.Many2one`
     ``oe_avatar``
       for image fields, displays images as "avatar" (square, 90x90 maximum
       size, some image decorations)
@@ -393,7 +397,7 @@ system. Available semantic components are:
 
     .. deprecated:: 8.0
 
-       Use :func:`openerp.api.onchange` on the model
+       Use :func:`odoo.api.onchange` on the model
 
   ``attrs``
     dynamic meta-parameters based on record values
@@ -416,7 +420,7 @@ system. Available semantic components are:
     complex forms. *Should not* be an example of data as users are liable to
     confuse placeholder text with filled fields
   ``mode``
-    for :class:`~openerp.fields.One2many`, display mode (view type) to use for
+    for :class:`~odoo.fields.One2many`, display mode (view type) to use for
     the field's linked records. One of ``tree``, ``form``, ``kanban`` or
     ``graph``. The default is ``tree`` (a list display)
   ``help``
@@ -425,7 +429,7 @@ system. Available semantic components are:
     for binary fields, name of the related field providing the name of the
     file
   ``password``
-    indicates that a :class:`~openerp.fields.Char` field stores a password and
+    indicates that a :class:`~odoo.fields.Char` field stores a password and
     that its data shouldn't be displayed
 
 .. todo:: classes for forms
@@ -505,13 +509,10 @@ The states are shown following the order used in the field (the list in a
 selection field, etc). States that are always visible are specified with the
 attribute ``statusbar_visible``.
 
-``statusbar_colors`` can be used to give a custom color to specific states.
-
 ::
 
     <field name="state" widget="statusbar"
-        statusbar_visible="draft,sent,progress,invoiced,done"
-        statusbar_colors="{'shipping_except':'red','waiting_date':'blue'}"/>
+        statusbar_visible="draft,sent,progress,invoiced,done" />
 
 The Sheet
 '''''''''
@@ -574,18 +575,18 @@ Button Box
 Many relevant actions or links can be displayed in the form. For example, in
 Opportunity form, the actions "Schedule a Call" and "Schedule a Meeting" have
 an important place in the use of the CRM. Instead of placing them in the
-"More" menu, put them directly in the sheet as buttons (on the top right) to
-make them more visible and more easily accessible.
+"More" menu, put them directly in the sheet as buttons (on the top) to make
+them more visible and more easily accessible.
 
 .. image:: forms/header3.png
    :class: img-responsive
 
 Technically, the buttons are placed inside a ``<div>`` to group them as a
-block on the right-hand side of the sheet.
+block on the top of the sheet.
 
 ::
 
-    <div class="oe_button_box oe_right">
+    <div class="oe_button_box" name="button_box">
         <button string="Schedule/Log Call" name="..." type="action"/>
         <button string="Schedule Meeting" name="action_makeMeeting" type="object"/>
     </div>
@@ -691,7 +692,7 @@ The form above contains a <sheet> element that starts with:
 Tags
 ....
 
-Most :class:`~openerp.fields.Many2many` fields, like categories, are better
+Most :class:`~odoo.fields.Many2many` fields, like categories, are better
 rendered as a list of tags. Use the widget ``many2many_tags`` for this:
 
 .. image:: forms/screenshot-04.png
@@ -751,9 +752,7 @@ record groups. Its root element is ``<graph>`` which can take the following
 attributes:
 
 ``type``
-  one of ``bar`` (default), ``pie``, ``line`` and ``pivot``, the type of graph
-  to use (``pivot`` technically isn't a graph type, it displays the
-  aggregation as a `pivot table`_)
+  one of ``bar`` (default), ``pie`` and ``line``, the type of graph to use
 ``stacked``
   only used for ``bar`` charts. If present and set to ``True``, stacks bars
   within a group
@@ -771,7 +770,7 @@ following attributes:
 
   ``row`` (default)
     groups by the specified field. All graph types support at least one level
-    of grouping, some may support more. For pivot tables, each group gets its
+    of grouping, some may support more. For pivot views, each group gets its
     own row.
   ``col``
     only used by pivot tables, creates column-wise groups
@@ -787,6 +786,19 @@ following attributes:
 
    graph view aggregations are performed on database content, non-stored
    function fields can not be used in graph views
+
+Pivots
+------
+
+The pivot view is used to visualize aggregations as a `pivot table`_. Its root 
+element is ``<pivot>`` which can take the following attributes:
+
+``disable_linking``
+  Set to ``True`` to remove table cell's links to list view.
+``display_quantity``
+  Set to ``true`` to display the Quantity column by default.
+
+The elements allowed within a pivot view are the same as for the graph view.
 
 .. _reference/views/kanban:
 
@@ -852,9 +864,11 @@ Possible children of the view element are:
     an object with all the requested fields as its attributes. Each field has
     two attributes ``value`` and ``raw_value``, the former is formatted
     according to current user parameters, the latter is the direct value from
-    a :meth:`~openerp.models.Model.read` (except for date and datetime fields
+    a :meth:`~odoo.models.Model.read` (except for date and datetime fields
     that are `formatted according to user's locale
-    <https://github.com/odoo/odoo/blob/8.0/addons/web_kanban/static/src/js/kanban.js#L900>`_)
+    <https://github.com/odoo/odoo/blob/a678bd4e/addons/web_kanban/static/src/js/kanban_record.js#L102>`_)
+  ``formats``
+    the :js:class:`web.formats` module to manipulate and convert values
   ``read_only_mode``
     self-explanatory
 
@@ -952,7 +966,7 @@ calendar view are:
     same color segment are allocated the same highlight color in the calendar,
     colors are allocated semi-randomly.
 ``event_open_popup``
-    opens the event in a dialog instead of switching to the form view, enabled
+    opens the event in a dialog instead of switching to the form view, disabled
     by default
 ``quick_add``
     enables quick-event creation on click: only asks the user for a ``name``
@@ -964,6 +978,9 @@ calendar view are:
 ``all_day``
     name of a boolean field on the record indicating whether the corresponding
     event is flagged as day-long (and duration is irrelevant)
+``mode``
+    Default display mode when loading the calendar.
+    Possible attributes are: ``day``, ``week``, ``month``
 
 
 .. todo::
@@ -1003,22 +1020,42 @@ take the following attributes:
   and the end date will be set to the start date
 ``date_delay``
   name of the field providing the duration of the event
-``progress``
-  name of a field providing the completion percentage for the record's event,
-  between 0 and 100
+``duration_unit``
+  one of ``minute``, ``hour`` (default), ``day``, ``week``, ``month``, ``year``
+
 ``default_group_by``
   name of a field to group tasks by
+``type``
+  ``gantt`` classic gantt view (default)
 
-.. previously documented content which don't seem to be used anymore:
+  ``consolidate`` values of the first children are consolidated in the gantt's task
+  
+  ``planning`` children are displayed in the gantt's task
+``consolidation``
+  field name to display consolidation value in record cell
+``consolidation_max``
+  dictionary with the "group by" field as key and the maximum consolidation
+  value that can be reached before displaying the cell in red
+  (e.g. ``{"user_id": 100}``)
 
-   * string
-   * day_length
-   * color
-   * mode
-   * date_string
-   * <level>
-   * <field>
-   * <html>
+  .. warning::
+      The dictionnary definition must use double-quotes, ``{'user_id': 100}`` is
+      not a valid value
+``string``
+  string to display next to the consolidation value, if not specified, the label
+  of the consolidation field will be used
+``fold_last_level``
+  If a value is set, the last grouping level is folded
+``round_dnd_dates``
+  enables rounding the task's start and end dates to the nearest scale marks
+``drag_resize``
+  resizing of the tasks, default is ``true``
+
+.. ``progress``
+    name of a field providing the completion percentage for the record's event,
+    between 0 and 100
+.. consolidation_exclude
+.. consolidation_color
 
 .. _reference/views/diagram:
 
@@ -1049,10 +1086,10 @@ Possible children of the diagram view are:
     ``object`` (required)
       the edge's Odoo model
     ``source`` (required)
-      :class:`~openerp.fields.Many2one` field of the edge's model pointing to
+      :class:`~odoo.fields.Many2one` field of the edge's model pointing to
       the edge's source node record
     ``destination`` (required)
-      :class:`~openerp.fields.Many2one` field of the edge's model pointing to
+      :class:`~odoo.fields.Many2one` field of the edge's model pointing to
       the edge's destination node record
     ``label``
       Python list of attributes (as quoted strings). The corresponding
@@ -1124,10 +1161,10 @@ Possible children elements of the search view are:
     ``widget``
         use specific search widget for the field (the only use case in
         standard Odoo 8.0 is a ``selection`` widget for
-        :class:`~openerp.fields.Many2one` fields)
+        :class:`~odoo.fields.Many2one` fields)
     ``domain``
         if the field can provide an auto-completion
-        (e.g. :class:`~openerp.fields.Many2one`), filters the possible
+        (e.g. :class:`~odoo.fields.Many2one`), filters the possible
         completion results.
 
 ``filter``
@@ -1155,10 +1192,6 @@ Possible children elements of the search view are:
         tooltip
     ``groups``
         makes a filter only available to specific users
-    ``icon``
-        an icon to display next to the label, if there's sufficient space
-
-        .. deprecated:: 7.0
 
     .. tip::
 

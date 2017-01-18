@@ -3,17 +3,15 @@
 # * marketing_campaign_crm_demo
 # 
 # Translators:
-# Kari Lindgren <kari.lindgren@emsystems.fi>, 2015
-# Sanna Edelman <direct@generare.com>, 2015
-# Topi Aura <topi@aurat.fi>, 2015
+# Kari Lindgren <kari.lindgren@emsystems.fi>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 8.0\n"
+"Project-Id-Version: Odoo Server 10.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2015-09-04 18:20+0000\n"
-"Last-Translator: Tuomo Aura <tuomo.aura@web-veistamo.fi>\n"
-"Language-Team: Finnish (http://www.transifex.com/odoo/odoo-8/language/fi/)\n"
+"POT-Creation-Date: 2016-09-07 08:57+0000\n"
+"PO-Revision-Date: 2016-09-07 08:57+0000\n"
+"Last-Translator: Kari Lindgren <kari.lindgren@emsystems.fi>, 2016\n"
+"Language-Team: Finnish (https://www.transifex.com/odoo/teams/41243/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -21,86 +19,114 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,body_html:marketing_campaign_crm_demo.email_template_4
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_9
 msgid ""
+"\n"
 "<p>Hello,</p>\n"
-"            <p>Thanks for showing interest and buying the Odoo book.</p>\n"
-"            If any further information required kindly revert back.\n"
-"            <p>Regards,Odoo Team,</p>"
-msgstr "<p>Hei,</p>\n            <p>Kiitoksia kiinnostuksestasi ja Odoo kirjan ostamisesta.</p>\n            <p>Jos tarvitset jotakin lisätietoa, vastaathan tähän viestiin.</p>\n            <p>Terveisin, Odoo Tiimi,</p>"
-
-#. module: marketing_campaign_crm_demo
-#: model:email.template,body_html:marketing_campaign_crm_demo.email_template_8
-msgid ""
-"<p>Hello,</p>\n"
-"            <p>Thanks for showing interest and for subscribing to technical training.</p>\n"
-"            If any further information required kindly revert back.I really appreciate your co-operation on this.</p>\n"
-"            <p>If any further information is required, do not hesitate to reply to this message.</p>\n"
-"            <p>Regards,Odoo Team,</p>"
-msgstr "<p>Hei,</p>\n            <p>Kiitos osoittamastasi mielenkiinnosta teknistä koulutustamme kohtaan.</p>\n            Jos tarvitset lisätietoja, otathan meihin yhteyttä, sillä arvostamme yhteystyömme.\n</p>\n            <p>Terveisin,Odoo Tiimi,</p>"
-
-#. module: marketing_campaign_crm_demo
-#: model:email.template,body_html:marketing_campaign_crm_demo.email_template_3
-msgid ""
-"<p>Hello,</p>\n"
-"            <p>Thanks for showing interest and for subscribing to the Odoo Discovery Day.</p>\n"
-"            <p>If any further information is required, do not hesitate to reply to this message.</p>\n"
-"            <p>Regards,Odoo Team,</p>"
+"<p>It seems Odoo could do a lot for you. Would you be interested in a free trial of our OnDemand offer?</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
 msgstr ""
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,body_html:marketing_campaign_crm_demo.email_template_1
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_4
 msgid ""
+"\n"
 "<p>Hello,</p>\n"
-"            <p>Thanks for the genuine interest you have shown in Odoo.</p>\n"
-"            <p>If any further information is required, do not hesitate to reply to this message.</p>\n"
-"            <p>Regards,Odoo Team,</p>"
-msgstr "<p>Hei,</p>\n            <p>Kiitoksia kiinnostuksestasi Odoota kohtaan.</p>\n            <p>Jos tarvitset jotakin lisätietoa, vastaa tähän viestiin.</p>\n            <p>Terveisin, Odoo Tiimi,</p>"
-
-#. module: marketing_campaign_crm_demo
-#: model:email.template,body_html:marketing_campaign_crm_demo.email_template_5
-msgid ""
-"<p>Hello,</p>\n"
-"            <p>We have very good offer that might suit you.\n"
-"            For our gold partners,We are arranging free technical training on june,2010.</p>\n"
-"            <p>If any further information is required, do not hesitate to reply to this message.</p>\n"
-"            <p>Regards,Odoo Team,</p>"
+"<p>Thanks for showing interest and buying the Odoo book.</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
 msgstr ""
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,body_html:marketing_campaign_crm_demo.email_template_7
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_8
 msgid ""
+"\n"
 "<p>Hello,</p>\n"
-"            <p>We have very good offer that might suit you.\n"
-"            For our silver partners, we are  offering Gold partnership.</p>\n"
-"            <p>If any further information is required, do not hesitate to reply to this message.</p>\n"
-"            <p>Regards,Odoo Team,</p>"
-msgstr "<p>Hei,</p>\n<p>Meillä on sinulle erittäin hyvä tarjous.\nSilver tason kumppaneille tarjoamme nyt Gold -tason jäsenyyttä.</p>\n<p>Jos haluat lisätietoja, vastaa tähän viestiin.</p>\n<p>Terveisin, Odoo tiimi,</p>"
-
-#. module: marketing_campaign_crm_demo
-#: model:email.template,body_html:marketing_campaign_crm_demo.email_template_6
-msgid ""
-"<p>Hello,</p>\n"
-"            <p>We have very good offer that might suit you.\n"
-"            For our silver partners,We are  paid technical training on june,2010.</p>\n"
-"            <p>If any further information is required, do not hesitate to reply to this message.</p>\n"
-"            <p>Regards,Odoo Team,</p>"
+"<p>Thanks for showing interest and for subscribing to technical training.</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
 msgstr ""
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,body_html:marketing_campaign_crm_demo.email_template_2
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_3
 msgid ""
+"\n"
 "<p>Hello,</p>\n"
-"            <p>We have very good offer that might suit you.\n"
-"            We suggest you subscribe to the Odoo Discovery Day on May 2010.</p>\n"
-"            <p>If any further information is required, do not hesitate to reply to this message.</p>\n"
-"            <p>Regards,Odoo Team,</p>"
+"<p>Thanks for showing interest and for subscribing to the Odoo Discovery Day.</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
 msgstr ""
 
 #. module: marketing_campaign_crm_demo
-#: report:crm.lead.demo:0
-msgid "Company :"
-msgstr "Yritys:"
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_1
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>Thanks for the genuine interest you have shown in Odoo.</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
+msgstr ""
+
+#. module: marketing_campaign_crm_demo
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_5
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>We have very good offer that might suit you. For our gold partners we are\n"
+"arranging free technical training on June 2016.</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
+msgstr ""
+
+#. module: marketing_campaign_crm_demo
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_6
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>We have very good offer that might suit you. For our silver partners we are \n"
+"arranging a paid technical training on June 2016.</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
+msgstr ""
+
+#. module: marketing_campaign_crm_demo
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_7
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>We have very good offer that might suit you. For our silver partners, we are\n"
+"offering Gold partnership.</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
+msgstr ""
+
+#. module: marketing_campaign_crm_demo
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_2
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>We have very good offer that might suit you. We suggest you subscribe to the\n"
+"Odoo Discovery Day on May 2015.</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
+msgstr ""
+
+#. module: marketing_campaign_crm_demo
+#: model:mail.template,body_html:marketing_campaign_crm_demo.email_template_10
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>Would you be interested in buying our book? It contains a lot of useful\n"
+"functionnal information to perfect your Odoo training.</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>"
+msgstr ""
+
+#. module: marketing_campaign_crm_demo
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_9
+msgid "1 month free trial for an OnDemand offer"
+msgstr ""
 
 #. module: marketing_campaign_crm_demo
 #: model:ir.actions.server,name:marketing_campaign_crm_demo.action_dummy
@@ -108,51 +134,46 @@ msgid "Dummy Python Code"
 msgstr "Esimerkki Python koodista"
 
 #. module: marketing_campaign_crm_demo
-#: model:ir.actions.report.xml,name:marketing_campaign_crm_demo.mc_crm_lead_demo_report
-msgid "Marketing campaign demo report"
-msgstr "Markkinointikampanjan esimerkkiraportti"
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_3
+msgid "Lead Automation: Thanks for subscribing to the Odoo Discovery Day"
+msgstr ""
 
 #. module: marketing_campaign_crm_demo
-#: report:crm.lead.demo:0
-msgid "Partner :"
-msgstr "Kumppani :"
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_10
+msgid "Odoo Book"
+msgstr ""
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,subject:marketing_campaign_crm_demo.email_template_5
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_5
 msgid "Propose a free technical training to Gold partners"
 msgstr "Ehdota ilmaista teknistä koulutusta Gold -tason kumppaneille"
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,subject:marketing_campaign_crm_demo.email_template_7
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_7
 msgid "Propose gold partnership to silver partners"
 msgstr "Ehdota Gold -tason kumppanuutta Silver -tason kumppaneille"
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,subject:marketing_campaign_crm_demo.email_template_6
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_6
 msgid "Propose paid training to Silver partners"
 msgstr "Ehdota maksullista koulutusta Silver -tason kumppaneille"
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,subject:marketing_campaign_crm_demo.email_template_2
-msgid "Propose to subscribe to the Odoo Discovery Day on May 2010"
-msgstr "Ehdota ilmoittautumista ja osallistumista Odoo Experience 2016 tapahtumaan Belgiassa"
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_2
+msgid "Propose to subscribe to the Odoo Discovery Day on May 2015"
+msgstr ""
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,subject:marketing_campaign_crm_demo.email_template_4
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_4
 msgid "Thanks for buying the Odoo book"
 msgstr "Kiitoksia kun ostit Odoo kirjan"
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,subject:marketing_campaign_crm_demo.email_template_1
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_1
 msgid "Thanks for showing interest in Odoo"
 msgstr "Kiitoksia mielenkiinnosta Odoo yritysohjelmistoon"
 
 #. module: marketing_campaign_crm_demo
-#: model:email.template,subject:marketing_campaign_crm_demo.email_template_8
+#: model:mail.template,subject:marketing_campaign_crm_demo.email_template_8
 msgid "Thanks for subscribing to technical training"
 msgstr "Kiitos ilmoittautumisestasi tekniseen koulutukseen"
-
-#. module: marketing_campaign_crm_demo
-#: model:email.template,subject:marketing_campaign_crm_demo.email_template_3
-msgid "Thanks for subscribing to the Odoo Discovery Day"
-msgstr "Kiitos ilmoittautumisestasi Odoo Experience 2016 tapahtumaan"

@@ -9,9 +9,10 @@ $(document).ready(function () {
         var card_type = $.payment.cardType(this.value);
         if (card_type) {
             $(this).parent('.form-group').children('.card_placeholder').removeClass().addClass('card_placeholder ' + card_type);
+            $(this).parent('.form-group').children('input[name="cc_brand"]').val(card_type)
         }
         else {
-            $(this).parent('.form-group').children('.card_placeholder').removeClass().addClass('card_placeholder');   
+            $(this).parent('.form-group').children('.card_placeholder').removeClass().addClass('card_placeholder');
         }
         if (valid_value) {
             $(this).parent('.form-group').addClass('has-success');
@@ -50,6 +51,12 @@ $(document).ready(function () {
             $(this).parent('.form-group').addClass('has-error');
             $(this).parent('.form-group').removeClass('has-success');
         }
+    });
+
+    $('select[name="pm_acquirer_id"]').on('change', function() {
+        var acquirer_id = $(this).val();
+        $('.acquirer').addClass('hidden');
+        $('.acquirer[data-acquirer-id="'+acquirer_id+'"]').removeClass('hidden');
     });
 
 });

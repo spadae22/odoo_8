@@ -3,16 +3,18 @@
 # * product_extended
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015
-# Paolo Valier, 2016
+# Paolo Valier <paolo.valier@hotmail.it>, 2016
+# p_amoruso <p.amoruso@elvenstudio.it>, 2016
+# Giacomo Grasso <giacomo.grasso.82@gmail.com>, 2016
+# Martin Trigaux <mat@odoo.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 8.0\n"
+"Project-Id-Version: Odoo Server 10.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2016-03-24 08:07+0000\n"
-"Last-Translator: Paolo Valier\n"
-"Language-Team: Italian (http://www.transifex.com/odoo/odoo-8/language/it/)\n"
+"POT-Creation-Date: 2016-09-07 08:57+0000\n"
+"PO-Revision-Date: 2016-09-07 08:57+0000\n"
+"Last-Translator: Martin Trigaux <mat@odoo.com>, 2016\n"
+"Language-Team: Italian (https://www.transifex.com/odoo/teams/41243/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,124 +22,58 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: product_extended
-#: code:addons/product_extended/wizard/wizard_price.py:44
-#: code:addons/product_extended/wizard/wizard_price.py:56
-#, python-format
-msgid "Active ID is not set in Context."
-msgstr "Active ID non impostato nel context."
+#: model:ir.model.fields,field_description:product_extended.field_product_product_available_in_pos
+msgid "Available in the Point of Sale"
+msgstr "Disponibile nel Punto Vendita"
 
 #. module: product_extended
-#: model:ir.model,name:product_extended.model_mrp_bom
-msgid "Bill of Material"
-msgstr "Distinta Base"
+#: model:ir.model.fields,help:product_extended.field_product_product_to_weight
+msgid ""
+"Check if the product should be weighted using the hardware scale integration"
+msgstr "Seleziona se il prodotto deve essere pesato con la bilancia integrata"
 
 #. module: product_extended
-#: view:wizard.price:product_extended.view_compute_price_wizard
-msgid "Cancel"
-msgstr "Annulla"
+#: model:ir.model.fields,help:product_extended.field_product_product_available_in_pos
+msgid "Check if you want this product to appear in the Point of Sale"
+msgstr "Seleziona se vuoi che questo prodotto appaia all'interno del POS"
 
 #. module: product_extended
-#: view:wizard.price:product_extended.view_compute_price_wizard
-msgid "Change Price"
-msgstr "Modifica prezzo"
+#: model:ir.ui.view,arch_db:product_extended.product_product_ext_form_view2
+#: model:ir.ui.view,arch_db:product_extended.product_product_view_form_normal_inherit_extended
+msgid "Compute from BOM"
+msgstr "Calcola da Distinta Base"
 
 #. module: product_extended
-#: view:wizard.price:product_extended.view_compute_price_wizard
-msgid "Change Standard Price"
-msgstr "Modifica Prezzo Standard"
-
-#. module: product_extended
-#: field:wizard.price,recursive:0
-msgid "Change prices of child BoMs too"
-msgstr "Cambia anche i prezzi delle Distinte Base figlie"
-
-#. module: product_extended
-#: model:ir.actions.act_window,name:product_extended.action_view_compute_price_wizard
-msgid "Compute Price Wizard"
-msgstr "Procedura guidata per calcolare il Prezzo"
-
-#. module: product_extended
-#: model:ir.model,name:product_extended.model_wizard_price
-msgid "Compute price wizard"
-msgstr "Procedura guidata per calcolare il prezzo"
-
-#. module: product_extended
-#: field:wizard.price,create_uid:0
-msgid "Created by"
-msgstr "Creato da"
-
-#. module: product_extended
-#: field:wizard.price,create_date:0
-msgid "Created on"
-msgstr "Creato il"
-
-#. module: product_extended
-#: field:wizard.price,real_time_accounting:0
-msgid "Generate accounting entries when real-time"
+#: model:ir.ui.view,arch_db:product_extended.product_product_ext_form_view2
+#: model:ir.ui.view,arch_db:product_extended.product_product_view_form_normal_inherit_extended
+msgid ""
+"Compute the price of the product using products and operations of related "
+"bill of materials, for manufactured products only."
 msgstr ""
 
 #. module: product_extended
-#: field:wizard.price,id:0
-msgid "ID"
-msgstr "ID"
+#: model:ir.model.fields,field_description:product_extended.field_product_product_pos_categ_id
+msgid "Point of Sale Category"
+msgstr "Categoria POS"
 
 #. module: product_extended
-#: field:wizard.price,info_field:0
-msgid "Info"
-msgstr "Info"
-
-#. module: product_extended
-#: field:wizard.price,write_uid:0
-msgid "Last Updated by"
-msgstr "Ultima modifica di"
-
-#. module: product_extended
-#: field:wizard.price,write_date:0
-msgid "Last Updated on"
-msgstr "Ultima modifica il"
+#: model:ir.model,name:product_extended.model_product_product
+msgid "Product"
+msgstr "Prodotto"
 
 #. module: product_extended
 #: model:ir.model,name:product_extended.model_product_template
 msgid "Product Template"
-msgstr "Template Prodotto"
+msgstr "Template prodotto"
 
 #. module: product_extended
-#: view:product.template:product_extended.product_product_ext_form_view2
-msgid "Recompute price from BoM"
-msgstr "Ricalcola prezzo da Distinta Base"
-
-#. module: product_extended
-#: view:wizard.price:product_extended.view_compute_price_wizard
-msgid "Set price on BoM"
-msgstr "Imposta prezzo su Distinta Base"
-
-#. module: product_extended
-#: field:mrp.bom,standard_price:0
-msgid "Standard Price"
-msgstr "Prezzo Standard"
-
-#. module: product_extended
-#: view:wizard.price:product_extended.view_compute_price_wizard
-msgid ""
-"The price is computed from the bill of material lines which are not variant "
-"specific"
+#: model:ir.model.fields,help:product_extended.field_product_product_pos_categ_id
+msgid "Those categories are used to group similar products for point of sale."
 msgstr ""
+"Quelle categorie sono usate per raggruppare prodotti simili per punto di "
+"vendita."
 
 #. module: product_extended
-#: code:addons/product_extended/wizard/wizard_price.py:54
-#, python-format
-msgid ""
-"This wizard is build for product templates, while you are currently running "
-"it from a product variant."
-msgstr ""
-
-#. module: product_extended
-#: code:addons/product_extended/wizard/wizard_price.py:54
-#, python-format
-msgid "Wrong model!"
-msgstr "Modello errato!"
-
-#. module: product_extended
-#: view:wizard.price:product_extended.view_compute_price_wizard
-msgid "or"
-msgstr "o"
+#: model:ir.model.fields,field_description:product_extended.field_product_product_to_weight
+msgid "To Weigh With Scale"
+msgstr "Da pesare con Bilancia"

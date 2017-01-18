@@ -3,15 +3,18 @@
 # * marketing_campaign
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
+# Martin Trigaux <mat@odoo.com>, 2016
+# Marc Tormo i Bochaca <mtbochaca@gmail.com>, 2016
+# RGB Consulting <odoo@rgbconsulting.com>, 2016
+# Eric Antones <eantones@users.noreply.github.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 8.0\n"
+"Project-Id-Version: Odoo Server 10.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2015-12-17 19:16+0000\n"
-"Last-Translator: Martin Trigaux\n"
-"Language-Team: Catalan (http://www.transifex.com/odoo/odoo-8/language/ca/)\n"
+"POT-Creation-Date: 2016-09-07 08:57+0000\n"
+"PO-Revision-Date: 2016-09-07 08:57+0000\n"
+"Last-Translator: Eric Antones <eantones@users.noreply.github.com>, 2016\n"
+"Language-Team: Catalan (https://www.transifex.com/odoo/teams/41243/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,59 +22,90 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: marketing_campaign
-#: field:campaign.analysis,count:0
+#: model:mail.template,body_html:marketing_campaign.email_template_3
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>We are delighted to let you know that you have entered the select circle of our Gold Partners!</p>\n"
+"<p>Thank you,</p>\n"
+msgstr ""
+
+#. module: marketing_campaign
+#: model:mail.template,body_html:marketing_campaign.email_template_2
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>We are delighted to welcome you among our Silver Partners as of today!</p>\n"
+"<p>Thank you,</p>\n"
+msgstr ""
+
+#. module: marketing_campaign
+#: model:mail.template,body_html:marketing_campaign.email_template_1
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>You will receive your welcome pack via email shortly.</p>\n"
+"<p>Thank you,</p>\n"
+msgstr ""
+
+#. module: marketing_campaign
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_count
 msgid "# of Actions"
-msgstr "núm. d'accions"
+msgstr "# d'accions "
+
+#. module: marketing_campaign
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
+msgid ""
+"<span class=\"o_stat_text\">Campaign</span>\n"
+"                            <span class=\"o_stat_text\">Statistics</span>"
+msgstr ""
+"<span class=\"o_stat_text\">Campanya</span>\n"
+"<span class=\"o_stat_text\">Estadística</span>"
 
 #. module: marketing_campaign
 #: model:ir.actions.act_window,help:marketing_campaign.action_marketing_campaign_form
 msgid ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"            Click to create a marketing campaign.\n"
-"          </p><p>\n"
-"            Odoo's marketing campaign allows you to automate communication\n"
-"            to your prospects. You can define a segment (set of conditions) on\n"
-"            your leads and partners to fullfil the campaign.\n"
-"          </p><p>\n"
-"            A campaign can have many activities like sending an email, printing\n"
+"A campaign can have many activities like sending an email, printing\n"
 "            a letter, assigning to a team, etc. These activities are triggered\n"
 "            from specific situations; contact form, 10 days after first\n"
-"            contact, if a lead is not closed yet, etc.\n"
-"          </p>\n"
-"        "
+"            contact, if a lead is not closed yet, etc."
 msgstr ""
+"Una campanya pot tenir moltes activitats com enviar un correu, imprimir\n"
+"una carta, assignar a un equip, etc. Aquestes activitats és desencadenen\n"
+"per a situacions específiques;  formulari de contacte, 10 dies des del primer\n"
+"contacte, si una iniciativa encara no està tancada, etc."
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,server_action_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_server_action_id
 msgid "Action"
 msgstr "Acció"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
-#: field:marketing.campaign,activity_ids:0
-#: view:marketing.campaign.activity:marketing_campaign.view_marketing_campaign_activity_form
-#: view:marketing.campaign.activity:marketing_campaign.view_marketing_campaign_activity_tree
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_ids
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_activity_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_activity_tree
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
 msgid "Activities"
 msgstr "Activitats"
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
-#: field:campaign.analysis,activity_id:0
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
-#: field:marketing.campaign.workitem,activity_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_activity_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_activity_id
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 msgid "Activity"
 msgstr "Activitat"
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:501
+#: code:addons/marketing_campaign/models/marketing_campaign.py:384
 #, python-format
 msgid "After %(interval_nbr)d %(interval_type)s"
 msgstr "Després %(interval_nbr)d %(interval_type)s"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
 msgid "All"
-msgstr "Tots"
+msgstr "Tot"
 
 #. module: marketing_campaign
 #: selection:marketing.campaign.segment,sync_mode:0
@@ -79,11 +113,13 @@ msgid "All records (no duplicates)"
 msgstr "Tots els registres (no duplicats)"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.activity,signal:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_signal
 msgid ""
 "An activity with a signal can be called programmatically. Be careful, the "
 "workitem is always created when a signal is sent"
-msgstr "Una activitat amb un senyal pot ser cridada mitjançant programació. Vés amb compte, l'element sempre es crea quan s'envia un senyal."
+msgstr ""
+"Una activitat amb un senyal pot ser cridada mitjançant programació. Vés amb "
+"compte, l'element sempre es crea quan s'envia un senyal."
 
 #. module: marketing_campaign
 #: selection:campaign.analysis,month:0
@@ -101,28 +137,32 @@ msgid "Automatic"
 msgstr "Automàtic"
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:500
+#: code:addons/marketing_campaign/models/marketing_campaign.py:383
 #, python-format
 msgid "Automatic transition"
 msgstr "Transició automàtica"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.activity,keep_if_condition_not_met:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_keep_if_condition_not_met
 msgid ""
 "By activating this option, workitems that aren't executed because the "
 "condition is not met are marked as cancelled instead of being deleted."
-msgstr "En activar aquesta opció, els elements de treball que no s'executen pel fet que la condició no es compleix, es marquen com cancel·lats en lloc de ser eliminats."
+msgstr ""
+"En activar aquesta opció, els elements de treball que no s'executen pel fet "
+"que la condició no es compleix, es marquen com cancel·lats en lloc de ser "
+"eliminats."
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
-#: field:campaign.analysis,campaign_id:0
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
-#: field:marketing.campaign.activity,campaign_id:0
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
-#: field:marketing.campaign.segment,campaign_id:0
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
-#: field:marketing.campaign.workitem,campaign_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_campaign_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_campaign_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_campaign_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_campaign_id
+#: model:ir.ui.menu,name:marketing_campaign.menu_action_campaign_analysis_all
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 msgid "Campaign"
 msgstr "Campanya"
 
@@ -132,22 +172,19 @@ msgid "Campaign Activity"
 msgstr "Activitat campanya"
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
 #: model:ir.actions.act_window,name:marketing_campaign.action_campaign_analysis_all
 #: model:ir.model,name:marketing_campaign.model_campaign_analysis
-#: model:ir.ui.menu,name:marketing_campaign.menu_action_campaign_analysis_all
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
 msgid "Campaign Analysis"
 msgstr "Anàlisi de la campanya"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_diagram
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_diagram
 msgid "Campaign Editor"
 msgstr "Editor de campanyes"
 
 #. module: marketing_campaign
 #: model:ir.actions.act_window,name:marketing_campaign.act_marketing_campaing_stat
-#: model:ir.actions.act_window,name:marketing_campaign.action_marketing_campaign_workitem
-#: model:ir.ui.menu,name:marketing_campaign.menu_action_marketing_campaign_workitem
 msgid "Campaign Follow-up"
 msgstr "Seguiment de campanya"
 
@@ -168,30 +205,30 @@ msgstr "Element de treball de la campanya"
 
 #. module: marketing_campaign
 #: model:ir.actions.act_window,name:marketing_campaign.action_marketing_campaign_form
-#: model:ir.ui.menu,name:marketing_campaign.menu_marketing_campaign
+#: model:ir.ui.menu,name:marketing_campaign.menu_marketing_campaign_campaigns
 #: model:ir.ui.menu,name:marketing_campaign.menu_marketing_campaign_form
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_tree
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_tree
 msgid "Campaigns"
 msgstr "Campanyes"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_tree
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_tree
 msgid "Cancel"
 msgstr "Cancel·la"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
 msgid "Cancel Campaign"
 msgstr "Cancel·lar campanya "
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_form
 msgid "Cancel Segment"
 msgstr "Cancel·lar segment "
 
 #. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_form
 msgid "Cancel Workitem"
 msgstr "Cancel·lar element de treball "
 
@@ -200,95 +237,96 @@ msgstr "Cancel·lar element de treball "
 #: selection:marketing.campaign.segment,state:0
 #: selection:marketing.campaign.workitem,state:0
 msgid "Cancelled"
-msgstr "Cancel·lada"
+msgstr "Cancel·lat"
 
 #. module: marketing_campaign
-#: help:marketing.campaign,object_id:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_object_id
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_object_id
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_segment_object_id
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_workitem_object_id
 msgid "Choose the resource on which you want this campaign to be run"
 msgstr "Escolliu el recurs sobre el qual desitgeu llançar aquesta campanya"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_form
-msgid "Close"
-msgstr "Tanca"
+#: model:ir.actions.act_window,help:marketing_campaign.action_marketing_campaign_form
+msgid "Click to create a marketing campaign."
+msgstr "Cliqueu per a crear una campanya de màrqueting "
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,condition:0
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_form
+msgid "Close"
+msgstr "Tancar"
+
+#. module: marketing_campaign
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_condition
 msgid "Condition"
 msgstr "Condició"
 
 #. module: marketing_campaign
-#: model:email.template,subject:marketing_campaign.email_template_2
+#: model:mail.template,subject:marketing_campaign.email_template_2
 msgid "Congratulations! You are now a Silver Partner!"
 msgstr "Felicitats! Ara sou un soci de plata!"
 
 #. module: marketing_campaign
-#: model:email.template,subject:marketing_campaign.email_template_3
+#: model:mail.template,subject:marketing_campaign.email_template_3
 msgid "Congratulations! You are now one of our Gold Partners!"
 msgstr "Felicitats! Ara sou un dels nostres socis d'or!"
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:502
+#: code:addons/marketing_campaign/models/marketing_campaign.py:385
 #: selection:marketing.campaign.transition,trigger:0
 #, python-format
 msgid "Cosmetic"
 msgstr "Cosmètic"
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_tree
-#: field:campaign.analysis,total_cost:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_total_cost
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_tree
 msgid "Cost"
 msgstr "Cost"
 
 #. module: marketing_campaign
-#: field:campaign.analysis,country_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_country_id
 msgid "Country"
 msgstr "País"
 
 #. module: marketing_campaign
-#: field:marketing.campaign,create_uid:0
-#: field:marketing.campaign.activity,create_uid:0
-#: field:marketing.campaign.segment,create_uid:0
-#: field:marketing.campaign.transition,create_uid:0
-#: field:marketing.campaign.workitem,create_uid:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_create_uid
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_create_uid
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_create_uid
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_create_uid
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_create_uid
 msgid "Created by"
 msgstr "Creat per"
 
 #. module: marketing_campaign
-#: field:marketing.campaign,create_date:0
-#: field:marketing.campaign.activity,create_date:0
-#: field:marketing.campaign.segment,create_date:0
-#: field:marketing.campaign.transition,create_date:0
-#: field:marketing.campaign.workitem,create_date:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_create_date
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_create_date
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_create_date
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_create_date
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_create_date
 msgid "Created on"
 msgstr "Creat el"
 
 #. module: marketing_campaign
-#: selection:marketing.campaign.activity,type:0
+#: selection:marketing.campaign.activity,action_type:0
 msgid "Custom Action"
 msgstr "Acció personalitzada"
 
 #. module: marketing_campaign
-#: field:campaign.analysis,date:0
-msgid "Date"
-msgstr "Data"
-
-#. module: marketing_campaign
-#: help:marketing.campaign.segment,sync_last_date:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_segment_sync_last_date
 msgid ""
 "Date on which this segment was synchronized last time (automatically or "
 "manually)"
-msgstr "Data en la qual aquest segment es va sincronitzar per última vegada (de forma automàtica o manualment)."
+msgstr ""
+"Data en la qual aquest segment es va sincronitzar per última vegada (de "
+"forma automàtica o manualment)."
 
 #. module: marketing_campaign
-#: help:marketing.campaign.segment,date_done:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_segment_date_done
 msgid "Date this segment was last closed or cancelled."
-msgstr "Data en la qual aquest segment va ser tancat o cancel·lat per última vegada"
-
-#. module: marketing_campaign
-#: field:campaign.analysis,day:0
-msgid "Day"
-msgstr "Dia"
+msgstr ""
+"Data en la qual aquest segment va ser tancat o cancel·lat per última vegada"
 
 #. module: marketing_campaign
 #: selection:marketing.campaign.transition,interval_type:0
@@ -301,7 +339,7 @@ msgid "December"
 msgstr "Desembre"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.segment,sync_mode:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_segment_sync_mode
 msgid ""
 "Determines an additional criterion to add to the filter when selecting new "
 "records to inject in the campaign. \"No duplicates\" prevents selecting "
@@ -310,21 +348,32 @@ msgid ""
 "records which have the same value for the unique field as other records that"
 " already entered the campaign."
 msgstr ""
+"Determina un criteri addicional per afegir al filtre quan seleccioni nous "
+"registres per afegir a la campanya. \"Sense duplicats\" preveu seleccionar "
+"registres que ja han estat incorporats a la campanya prèviament. Si la "
+"campanya té marcat \"Camp únic\", \"Sense duplicats\" preveu també "
+"seleccionar registres amb el mateix valor pel camp únic que altres ja "
+"introduïts a la campanya."
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,report_directory_id:0
-msgid "Directory"
-msgstr "Directori"
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_display_name
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_display_name
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_display_name
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_display_name
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_display_name
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_display_name
+msgid "Display Name"
+msgstr "Mostrar Nom"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,keep_if_condition_not_met:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_keep_if_condition_not_met
 msgid "Don't Delete Workitems"
-msgstr ""
+msgstr "No esborrar els elements de treball"
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
 #: selection:campaign.analysis,state:0
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
 #: selection:marketing.campaign,state:0
 #: selection:marketing.campaign.segment,state:0
 #: selection:marketing.campaign.workitem,state:0
@@ -332,72 +381,88 @@ msgid "Done"
 msgstr "Fet"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
 msgid "Draft"
 msgstr "Esborrany"
 
 #. module: marketing_campaign
-#: selection:marketing.campaign.activity,type:0
+#: code:addons/marketing_campaign/models/marketing_campaign.py:127
+#, python-format
+msgid "Duplicating campaigns is not supported."
+msgstr "La duplicació de campanyes no està suportada. "
+
+#. module: marketing_campaign
+#: selection:marketing.campaign.activity,action_type:0
 msgid "Email"
 msgstr "Correu electrònic"
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:774
+#: code:addons/marketing_campaign/models/marketing_campaign.py:586
 #, python-format
 msgid "Email Preview"
-msgstr "Vista prèvia email"
+msgstr "Vista prèvia del correu electrònic "
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,email_template_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_email_template_id
 msgid "Email Template"
-msgstr "Plantilla email"
+msgstr "Plantilla de correu electrònic"
 
 #. module: marketing_campaign
-#: model:ir.model,name:marketing_campaign.model_email_template
+#: model:ir.model,name:marketing_campaign.model_email_template_preview
+msgid "Email Template Preview"
+msgstr "Vista prèvia de la plantilla de l'email"
+
+#. module: marketing_campaign
+#: model:ir.model,name:marketing_campaign.model_mail_template
 msgid "Email Templates"
 msgstr "Plantilles de correu electrònic"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.segment,date_done:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_date_done
 msgid "End Date"
-msgstr "Data de finalització"
+msgstr "Data final"
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:111
-#: code:addons/marketing_campaign/marketing_campaign.py:123
-#: code:addons/marketing_campaign/marketing_campaign.py:133
-#, python-format
-msgid "Error"
-msgstr "Error"
-
-#. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_form
-#: field:marketing.campaign.workitem,error_msg:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_error_msg
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_form
 msgid "Error Message"
 msgstr "Missatge d'error"
 
 #. module: marketing_campaign
 #: selection:campaign.analysis,state:0
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 #: selection:marketing.campaign.workitem,state:0
 msgid "Exception"
 msgstr "Excepció"
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
 msgid "Exceptions"
 msgstr "Excepcions"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.workitem,date:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_date
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_date
 msgid "Execution Date"
 msgstr "Data d'execució"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_day
+msgid "Execution Day"
+msgstr "Dia d'execució "
+
+#. module: marketing_campaign
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_month
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 msgid "Execution Month"
 msgstr "Mes d'execució "
+
+#. module: marketing_campaign
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_year
+msgid "Execution Year"
+msgstr "Any d'execució "
 
 #. module: marketing_campaign
 #: selection:campaign.analysis,month:0
@@ -405,62 +470,58 @@ msgid "February"
 msgstr "Febrer"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.segment,ir_filter_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_ir_filter_id
 msgid "Filter"
 msgstr "Filtre"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.segment,ir_filter_id:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_segment_ir_filter_id
 msgid ""
 "Filter to select the matching resource records that belong to this segment. "
 "New filters can be created and saved using the advanced search on the list "
 "view of the Resource. If no filter is set, all records are selected without "
 "filtering. The synchronization mode may also add a criterion to the filter."
-msgstr "Filtre per seleccionar els registres de recursos que pertanyen a aquest segment. Es poden crear i desar nous filtres amb la recerca avançada en la vista de llista dels recursos. Si no hi ha cap filtre establert, es seleccionen tots els registres sense filtrar. La manera de sincronització també podeu afegir un criteri per al filtre."
+msgstr ""
+"Filtre per seleccionar els registres de recursos que pertanyen a aquest "
+"segment. Es poden crear i desar nous filtres amb la recerca avançada en la "
+"vista de llista dels recursos. Si no hi ha cap filtre establert, es "
+"seleccionen tots els registres sense filtrar. La manera de sincronització "
+"també podeu afegir un criteri per al filtre."
 
 #. module: marketing_campaign
-#: field:marketing.campaign,fixed_cost:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_fixed_cost
 msgid "Fixed Cost"
 msgstr "Cost fix"
 
 #. module: marketing_campaign
-#: help:marketing.campaign,fixed_cost:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_fixed_cost
 msgid ""
 "Fixed cost for running this campaign. You may also specify variable cost and"
 " revenue on each campaign activity. Cost and Revenue statistics are included"
 " in Campaign Reporting."
-msgstr "Cost fix per al funcionament d'aquesta campanya. També podeu especificar els costos variables i els ingressos de cada activitat de la campanya. Estadístiques de costos i ingressos s'inclouen en l'Informe de la campanya."
+msgstr ""
+"Cost fix per al funcionament d'aquesta campanya. També podeu especificar els"
+" costos variables i els ingressos de cada activitat de la campanya. "
+"Estadístiques de costos i ingressos s'inclouen en l'Informe de la campanya."
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
 msgid "Follow-Up"
 msgstr "Seguiment"
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
+#: model:ir.actions.act_window,name:marketing_campaign.action_marketing_campaign_workitem
+#: model:ir.ui.menu,name:marketing_campaign.menu_action_marketing_campaign_workitem
+msgid "Follow-up"
+msgstr "Seguiment"
+
+#. module: marketing_campaign
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 msgid "Group By"
-msgstr "Agrupa per"
-
-#. module: marketing_campaign
-#: model:email.template,body_html:marketing_campaign.email_template_1
-msgid "Hello, you will receive your welcome pack via email shortly."
-msgstr ""
-
-#. module: marketing_campaign
-#: model:email.template,body_html:marketing_campaign.email_template_3
-msgid ""
-"Hi, we are delighted to let you know that you have entered the select circle"
-" of our Gold Partners"
-msgstr ""
-
-#. module: marketing_campaign
-#: model:email.template,body_html:marketing_campaign.email_template_2
-msgid ""
-"Hi, we are delighted to welcome you among our Silver Partners as of today!"
-msgstr ""
+msgstr "Agrupar per"
 
 #. module: marketing_campaign
 #: selection:marketing.campaign.transition,interval_type:0
@@ -468,26 +529,29 @@ msgid "Hour(s)"
 msgstr "Hora/es"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.transition,trigger:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_transition_trigger
 msgid "How is the destination workitem triggered"
 msgstr "Com es dispara l'element de treball en destinació."
 
 #. module: marketing_campaign
-#: field:campaign.analysis,id:0 field:marketing.campaign,id:0
-#: field:marketing.campaign.activity,id:0
-#: field:marketing.campaign.segment,id:0
-#: field:marketing.campaign.transition,id:0
-#: field:marketing.campaign.workitem,id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_id
 msgid "ID"
 msgstr "ID"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.workitem,date:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_workitem_date
 msgid "If date is not set, this workitem has to be run manually"
-msgstr "Si no s'indica la data, aquest element de treball ha de ser executat manualment."
+msgstr ""
+"Si no s'indica la data, aquest element de treball ha de ser executat "
+"manualment."
 
 #. module: marketing_campaign
-#: help:marketing.campaign,unique_field_id:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_unique_field_id
 msgid ""
 "If set, this field will help segments that work in \"no duplicates\" mode to"
 " avoid selecting similar records twice. Similar records are records that "
@@ -498,24 +562,33 @@ msgid ""
 "campaign previously. Only easily comparable fields like textfields, "
 "integers, selections or single relationships may be used."
 msgstr ""
+"Si està establert, aquest camp ajuda a segmentar aquest treball al mètode "
+"sense duplicats per evitar seleccionar registres similars dos cops. Els "
+"registres similars són registres que tenen el mateix valor per al seu camp "
+"únic. P. ex. escollint el camp 'E-mail' per iniciatives de CRM, evita "
+"enviar-li la mateixa campanya a la mateixa direcció de correus més d'una "
+"vegada. Si no s'estableix, els segments \"sense duplicats\" només previndran"
+" seleccionar el mateix registre un altre cop si ja està incorporat a la "
+"campanya. Només es poden utilitzar els camps fàcilment comparables amb "
+"texts, sencers, seleccions o relacions simples."
 
 #. module: marketing_campaign
-#: view:marketing.campaign.activity:marketing_campaign.view_marketing_campaign_activity_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_activity_form
 msgid "Incoming Transitions"
 msgstr "Transicions entrants"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.segment,date_run:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_segment_date_run
 msgid "Initial start date of this segment."
 msgstr "Primera data d'inici d'aquest segment"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.transition,interval_type:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_interval_type
 msgid "Interval Unit"
 msgstr "Unitat d'interval"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.transition,interval_nbr:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_interval_nbr
 msgid "Interval Value"
 msgstr "Interval dels valors"
 
@@ -535,40 +608,60 @@ msgid "June"
 msgstr "Juny"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.segment,sync_last_date:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis___last_update
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign___last_update
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity___last_update
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment___last_update
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition___last_update
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem___last_update
+msgid "Last Modified on"
+msgstr "Última modificació el "
+
+#. module: marketing_campaign
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_sync_last_date
 msgid "Last Synchronization"
 msgstr "Última sincronització"
 
 #. module: marketing_campaign
-#: field:marketing.campaign,write_uid:0
-#: field:marketing.campaign.activity,write_uid:0
-#: field:marketing.campaign.segment,write_uid:0
-#: field:marketing.campaign.transition,write_uid:0
-#: field:marketing.campaign.workitem,write_uid:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_write_uid
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_write_uid
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_write_uid
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_write_uid
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_write_uid
 msgid "Last Updated by"
-msgstr "Actualitzat per última vegada per"
+msgstr "Última actualització per"
 
 #. module: marketing_campaign
-#: field:marketing.campaign,write_date:0
-#: field:marketing.campaign.activity,write_date:0
-#: field:marketing.campaign.segment,write_date:0
-#: field:marketing.campaign.transition,write_date:0
-#: field:marketing.campaign.workitem,write_date:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_write_date
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_write_date
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_write_date
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_write_date
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_write_date
 msgid "Last Updated on"
-msgstr "Actualitzat per última vegada el dia"
+msgstr "Última actualització el"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.segment,date_run:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_date_run
 msgid "Launch Date"
 msgstr "Data de llançament"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
 msgid "Launch Month"
-msgstr ""
+msgstr "Mes de llançament"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.menu,name:marketing_campaign.menu_marketing_campaign_root
+msgid "Lead Automation"
+msgstr "Automatització d'iniciativa"
+
+#. module: marketing_campaign
+#: model:res.groups,name:marketing_campaign.group_lead_automation_manager
+msgid "Manager"
+msgstr "Director"
+
+#. module: marketing_campaign
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
 msgid "Manual Mode"
 msgstr "Mode manual"
 
@@ -579,35 +672,36 @@ msgstr "Març"
 
 #. module: marketing_campaign
 #: model:ir.model,name:marketing_campaign.model_marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
 msgid "Marketing Campaign"
 msgstr "Campanya de marketing"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_form
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_tree
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_tree
 msgid "Marketing Campaign Activities"
 msgstr "Activitats campanya de màrqueting"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 msgid "Marketing Campaign Activity"
 msgstr "Activitats de la campanya de màrqueting"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_form
 msgid "Marketing Campaign Segment"
-msgstr ""
+msgstr "Segment de la campanya de màrqueting"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
 msgid "Marketing Campaign Statistics"
-msgstr ""
+msgstr "Estadístiques de la campanya de màrqueting"
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_tree
-#: view:campaign.analysis:marketing_campaign.view_report_campaign_analysis_graph
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_tree
+#: model:ir.ui.view,arch_db:marketing_campaign.view_report_campaign_analysis_graph
+#: model:ir.ui.view,arch_db:marketing_campaign.view_report_campaign_analysis_pivot
 msgid "Marketing Reports"
 msgstr "Informes de marketing"
 
@@ -617,21 +711,16 @@ msgid "May"
 msgstr "Maig"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
-#: field:marketing.campaign,mode:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_mode
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
 msgid "Mode"
 msgstr "Mode"
 
 #. module: marketing_campaign
-#: constraint:marketing.campaign.segment:0
-msgid "Model of filter must be same as resource model of Campaign "
-msgstr "El model del filtre ha de ser el mateix que el model del recurs de la campanya "
-
-#. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
-#: field:campaign.analysis,month:0
-msgid "Month"
-msgstr "Mes"
+#: code:addons/marketing_campaign/models/marketing_campaign.py:198
+#, python-format
+msgid "Model of filter must be same as resource model of Campaign"
+msgstr ""
 
 #. module: marketing_campaign
 #: selection:marketing.campaign.transition,interval_type:0
@@ -639,9 +728,10 @@ msgid "Month(s)"
 msgstr "Mes/os"
 
 #. module: marketing_campaign
-#: field:marketing.campaign,name:0 field:marketing.campaign.activity,name:0
-#: field:marketing.campaign.segment,name:0
-#: field:marketing.campaign.transition,name:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_name
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_name
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_name
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_name
 msgid "Name"
 msgstr "Nom"
 
@@ -652,41 +742,37 @@ msgid "New"
 msgstr "Nou"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
 msgid "Newly Created"
 msgstr "Creat novament"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
 msgid "Newly Modified"
 msgstr "Recentment modificat"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.activity:marketing_campaign.view_marketing_campaign_activity_form
-#: field:marketing.campaign.activity,to_ids:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_to_ids
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_activity_form
 msgid "Next Activities"
 msgstr "Activitat següent"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.transition,activity_to_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_activity_to_id
 msgid "Next Activity"
 msgstr "Activitat següent"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.segment,date_next_sync:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_date_next_sync
 msgid "Next Synchronization"
 msgstr "Següent sincronització"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.segment,date_next_sync:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_segment_date_next_sync
 msgid "Next time the synchronization job is scheduled to run automatically"
-msgstr "Propera vegada que el treball de sincronització està programat per executar-se automàticament."
-
-#. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:800
-#, python-format
-msgid "No preview"
-msgstr "Sense previsualització"
+msgstr ""
+"Propera vegada que el treball de sincronització està programat per executar-"
+"se automàticament."
 
 #. module: marketing_campaign
 #: selection:marketing.campaign,mode:0
@@ -699,7 +785,7 @@ msgid "November"
 msgstr "Novembre"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,object_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_object_id
 msgid "Object"
 msgstr "Objecte"
 
@@ -709,6 +795,14 @@ msgid "October"
 msgstr "Octubre"
 
 #. module: marketing_campaign
+#: model:ir.actions.act_window,help:marketing_campaign.action_marketing_campaign_form
+msgid ""
+"Odoo's marketing campaign allows you to automate communication\n"
+"            to your prospects. You can define a segment (set of conditions) on\n"
+"            your leads and partners to fulfill the campaign."
+msgstr ""
+
+#. module: marketing_campaign
 #: selection:marketing.campaign.segment,sync_mode:0
 msgid "Only records created after last sync"
 msgstr "Només registres creats després de l'última sincronització"
@@ -716,32 +810,23 @@ msgstr "Només registres creats després de l'última sincronització"
 #. module: marketing_campaign
 #: selection:marketing.campaign.segment,sync_mode:0
 msgid "Only records modified after last sync (no duplicates)"
-msgstr "Només registres actualitzats després de l'última sincronització (sense duplicats)"
-
-#. module: marketing_campaign
-#: model:ir.actions.client,name:marketing_campaign.action_client_marketing_menu
-msgid "Open Marketing Menu"
 msgstr ""
+"Només registres actualitzats després de l'última sincronització (sense "
+"duplicats)"
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:189
-#, python-format
-msgid "Operation not supported"
-msgstr "No s'admet l'operació"
-
-#. module: marketing_campaign
-#: view:marketing.campaign.activity:marketing_campaign.view_marketing_campaign_activity_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_activity_form
 msgid "Outgoing Transitions"
 msgstr "Transicions sortints"
 
 #. module: marketing_campaign
-#: field:campaign.analysis,partner_id:0
-#: field:marketing.campaign.workitem,partner_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_partner_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_partner_id
 msgid "Partner"
 msgstr "Empresa"
 
 #. module: marketing_campaign
-#: field:marketing.campaign,partner_field_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_partner_field_id
 msgid "Partner Field"
 msgstr "Camp empresa"
 
@@ -751,30 +836,30 @@ msgid "Partners"
 msgstr "Empreses"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_form
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_tree
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_tree
 msgid "Preview"
 msgstr "Previsualitza"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.activity:marketing_campaign.view_marketing_campaign_activity_form
-#: field:marketing.campaign.activity,from_ids:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_from_ids
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_activity_form
 msgid "Previous Activities"
 msgstr "Activitats prèvies"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.transition,activity_from_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_activity_from_id
 msgid "Previous Activity"
 msgstr "Activitat anterior"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_form
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_tree
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_tree
 msgid "Process"
 msgstr "Procés"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.activity,condition:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_condition
 msgid ""
 "Python expression to decide whether the activity can be executed, otherwise it will be deleted or cancelled.The expression may use the following [browsable] variables:\n"
 "   - activity: the campaign activity\n"
@@ -782,79 +867,90 @@ msgid ""
 "   - resource: the resource object this campaign item represents\n"
 "   - transitions: list of campaign transitions outgoing from this activity\n"
 "...- re: Python regular expression module"
-msgstr "Expressió de Python per decidir si l'activitat es pot executar, en cas contrari serà eliminada o cancel·lada . L'expressió pot utilitzar les següents variables [navegables]:\n   - activitat: l'activitat de la campanya\n   - treball: l'element de treball de la campanya\n   - recurs: el recurs que representa aquesta campanya\n   - transicions: llista de les transicions de la campanya sortints des d'aquesta activitat\n...- re: Expressió regular de Python"
+msgstr ""
+"Expressió de Python per decidir si l'activitat es pot executar, en cas contrari serà eliminada o cancel·lada . L'expressió pot utilitzar les següents variables [navegables]:\n"
+"   - activitat: l'activitat de la campanya\n"
+"   - treball: l'element de treball de la campanya\n"
+"   - recurs: el recurs que representa aquesta campanya\n"
+"   - transicions: llista de les transicions de la campanya sortints des d'aquesta activitat\n"
+"...- re: Expressió regular de Python"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,report_id:0
-#: selection:marketing.campaign.activity,type:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_report_id
+#: selection:marketing.campaign.activity,action_type:0
 msgid "Report"
+msgstr "Informe"
+
+#. module: marketing_campaign
+#: model:ir.ui.menu,name:marketing_campaign.report_marketing_campaign
+msgid "Reports"
 msgstr "Informes"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_form
 msgid "Reset"
 msgstr "Reinicia"
 
 #. module: marketing_campaign
-#: field:campaign.analysis,res_id:0
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
-#: field:marketing.campaign,object_id:0
-#: field:marketing.campaign.segment,object_id:0
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
-#: field:marketing.campaign.workitem,object_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_res_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_object_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_object_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_object_id
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 msgid "Resource"
 msgstr "Recurs"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
-#: field:marketing.campaign.workitem,res_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_res_id
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 msgid "Resource ID"
-msgstr "ID del registre"
+msgstr "ID del recurs "
 
 #. module: marketing_campaign
-#: field:marketing.campaign.workitem,res_name:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_res_name
 msgid "Resource Name"
-msgstr "Nom del recurs"
+msgstr "Nom del Recurs"
 
 #. module: marketing_campaign
-#: field:campaign.analysis,revenue:0
-#: field:marketing.campaign.activity,revenue:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_revenue
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_revenue
 msgid "Revenue"
 msgstr "Ingressos"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_form
 msgid "Run"
 msgstr "Executa"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
 #: selection:marketing.campaign,state:0
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
 #: selection:marketing.campaign.segment,state:0
 msgid "Running"
-msgstr "Executant"
+msgstr "En procés"
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
-#: field:campaign.analysis,segment_id:0
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
-#: field:marketing.campaign.workitem,segment_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_segment_id
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_segment_id
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 msgid "Segment"
 msgstr "Segment"
 
 #. module: marketing_campaign
 #: model:ir.actions.act_window,name:marketing_campaign.act_marketing_campaing_segment_opened
 #: model:ir.actions.act_window,name:marketing_campaign.action_marketing_campaign_segment_form
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_ids
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segments_count
 #: model:ir.ui.menu,name:marketing_campaign.menu_marketing_campaign_segment_form
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
-#: field:marketing.campaign,segment_ids:0
-#: field:marketing.campaign,segments_count:0
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_form
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_tree
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_tree
 msgid "Segments"
 msgstr "Segments"
 
@@ -864,87 +960,93 @@ msgid "September"
 msgstr "Setembre"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.activity,variable_cost:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_variable_cost
 msgid ""
 "Set a variable cost if you consider that every campaign item that has "
 "reached this point has entailed a certain cost. You can get cost statistics "
 "in the Reporting section"
-msgstr "Indiqueu un cost variable si considereu que cada element de la campanya que ha arribat fins aquest punt ha suposat un cost determinat. Podeu obtenir estadístiques dels costos en la secció d'informes."
+msgstr ""
+"Indiqueu un cost variable si considereu que cada element de la campanya que "
+"ha arribat fins aquest punt ha suposat un cost determinat. Podeu obtenir "
+"estadístiques dels costos en la secció d'informes."
 
 #. module: marketing_campaign
-#: help:marketing.campaign.activity,revenue:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_revenue
 msgid ""
 "Set an expected revenue if you consider that every campaign item that has "
 "reached this point has generated a certain revenue. You can get revenue "
 "statistics in the Reporting section"
-msgstr "Especifiqueu un ingrés previst si considereu que cada element de la campanya que ha aconseguit en aquest punt ha generat un cert ingrés. Podeu obtenir estadístiques sobre ingressos en la secció d'informes."
+msgstr ""
+"Especifiqueu un ingrés previst si considereu que cada element de la campanya"
+" que ha aconseguit en aquest punt ha generat un cert ingrés. Podeu obtenir "
+"estadístiques sobre ingressos en la secció d'informes."
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_form
 msgid "Set to Draft"
 msgstr "Canvia a esborrany"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,signal:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_signal
 msgid "Signal"
 msgstr "Senyal"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,start:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_start
 msgid "Start"
 msgstr "Inicia"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_form
-msgid "Statistics"
-msgstr "Estadístiques"
-
-#. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
-#: field:campaign.analysis,state:0
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
-#: field:marketing.campaign,state:0
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
-#: field:marketing.campaign.segment,state:0
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
-#: field:marketing.campaign.workitem,state:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_campaign_analysis_state
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_state
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_state
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_workitem_state
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 msgid "Status"
 msgstr "Estat"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
 msgid "Sync mode: all records"
-msgstr ""
+msgstr "Mode de sincronització: tots els registres"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
 msgid "Sync mode: only records created after last sync"
 msgstr ""
+"Mode de sincronització: només els registres creats després de l'ultima "
+"sincronització"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_search
 msgid "Sync mode: only records updated after last sync"
 msgstr ""
+"Mode de sincronització: només els registres actualitzats després de l'ultima"
+" sincronització"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.segment,sync_mode:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_segment_sync_mode
 msgid "Synchronization mode"
 msgstr "Mode de sincronització"
 
 #. module: marketing_campaign
-#: view:marketing.campaign.segment:marketing_campaign.view_marketing_campaign_segment_form
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_segment_form
 msgid "Synchronize Manually"
 msgstr "Sincronitza manualment"
 
 #. module: marketing_campaign
-#: help:marketing.campaign,mode:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_mode
 msgid ""
-"Test - It creates and process all the activities directly (without waiting for the delay on transitions) but does not send emails or produce reports.\n"
+"Test - It creates and process all the activities directly (without waiting for the delay on transitions) but does not send emails or produce reports. \n"
 "Test in Realtime - It creates and processes all the activities directly but does not send emails or produce reports.\n"
-"With Manual Confirmation - the campaigns runs normally, but the user has to validate all workitem manually.\n"
+"With Manual Confirmation - the campaigns runs normally, but the user has to \n"
+" validate all workitem manually.\n"
 "Normal - the campaign runs normally and automatically sends all emails and reports (be very careful with this mode, you're live!)"
-msgstr "Test - Crea i processa totes les activitats directament (sense esperar pel retard de les transicions) però no s'envien correus ni es creen informes.\nTest en temps real - Crea i processa totes les activitats directament però no envien correus ni es creen informes.\nConfirmació manual - La campanya s'executa normalment, però l'usuari ha de validar tots els elements de treball manualment.\nNormal - La campanya s'executa amb normalitat i automàticament envia tots els correus correu-vos i informes (vagi amb compte amb aquesta manera, treballa \"en viu\"!)"
+msgstr ""
 
 #. module: marketing_campaign
 #: selection:marketing.campaign,mode:0
@@ -952,7 +1054,7 @@ msgid "Test Directly"
 msgstr "Test directament"
 
 #. module: marketing_campaign
-#: view:marketing.campaign:marketing_campaign.view_marketing_campaign_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_search
 msgid "Test Mode"
 msgstr "Mode de prova"
 
@@ -962,54 +1064,64 @@ msgid "Test in Realtime"
 msgstr "Test en tiemps real"
 
 #. module: marketing_campaign
-#: constraint:marketing.campaign.transition:0
-msgid "The To/From Activity of transition must be of the same Campaign "
-msgstr "L'activitat cap a / des de la transició ha de ser de la mateixa campanya "
+#: code:addons/marketing_campaign/models/marketing_campaign.py:401
+#, python-format
+msgid "The To/From Activity of transition must be of the same Campaign"
+msgstr ""
 
 #. module: marketing_campaign
-#: help:marketing.campaign.activity,server_action_id:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_server_action_id
 msgid "The action to perform when this activity is activated"
 msgstr "L'acció a realitzar quan l'activitat és activada"
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:133
+#: code:addons/marketing_campaign/models/marketing_campaign.py:107
 #, python-format
 msgid "The campaign cannot be marked as done before all segments are closed."
 msgstr ""
+"La campanya pot ser marcada com realitzada abans que tots els segments "
+"estiguin tancats."
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:123
+#: code:addons/marketing_campaign/models/marketing_campaign.py:99
 #, python-format
 msgid ""
 "The campaign cannot be started. It does not have any starting activity. "
 "Modify campaign's activities to mark one as the starting point."
 msgstr ""
+"La campanya no es pot iniciar. No té cap activitat inicial. Modifiqui les "
+"activitats de la campanya per marcar una com a punt d'inici."
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:111
+#: code:addons/marketing_campaign/models/marketing_campaign.py:87
 #, python-format
 msgid "The campaign cannot be started. There are no activities in it."
-msgstr ""
+msgstr "La campanya no es pot iniciar. No hi ha activitats en ella."
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:800
+#: code:addons/marketing_campaign/models/marketing_campaign.py:609
 #, python-format
 msgid "The current step for this item has no email or report to preview."
-msgstr "L'etapa actual per a aquest element no té email o informe per previsualitzar"
-
-#. module: marketing_campaign
-#: help:marketing.campaign.activity,email_template_id:0
-msgid "The email to send when this activity is activated"
 msgstr ""
+"L'etapa actual per a aquest element no té email o informe per previsualitzar"
 
 #. module: marketing_campaign
-#: help:marketing.campaign,partner_field_id:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_email_template_id
+msgid "The email to send when this activity is activated"
+msgstr "El correu a enviar quan es crea l'activitat"
+
+#. module: marketing_campaign
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_partner_field_id
 msgid ""
 "The generated workitems will be linked to the partner related to the record."
 " If the record is the partner itself leave this field empty. This is useful "
 "for reporting purposes, via the Campaign Analysis or Campaign Follow-up "
 "views."
 msgstr ""
+"Els elements de treball generats estan enllaçats a l'empresa relacionada amb"
+" el registre. Si el registre es l'empresa en si, deixi aquest camp en blanc."
+" Això és útil per la elaboració d'informes, via les vistes d'anàlisis de "
+"campanyes o seguiment de campanya."
 
 #. module: marketing_campaign
 #: sql_constraint:marketing.campaign.transition:0
@@ -1017,29 +1129,23 @@ msgid "The interval must be positive or zero"
 msgstr "L'interval ha de ser positiu o zero"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.activity,report_id:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_report_id
 msgid "The report to generate when this activity is activated"
 msgstr "L'informe a generar quan l'activitat és activada"
 
 #. module: marketing_campaign
-#: help:marketing.campaign.activity,type:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_action_type
 msgid ""
 "The type of action to execute when an item enters this activity, such as:\n"
-"   - Email: send an email using a predefined email template\n"
-"   - Report: print an existing Report defined on the resource item and save it into a specific directory\n"
-"   - Custom Action: execute a predefined action, e.g. to modify the fields of the resource record\n"
-"  "
-msgstr "El tipus d'acció a executar quan s'introdueix un registre en aquesta activitat, com:\n   - Correu: envia un correu utilitzant una plantilla predeterminada de correu\n   - Informe: imprimeix un informe existent definit en el recurs i ho guarda en el directori especificat\n   - Acció personalitzada: executa una acció predeterminada, per exemple per modificar els camps del recurs\n  "
+"- Email: send an email using a predefined email template \n"
+"- Report: print an existing Report defined on the resource item and save it into a specific directory \n"
+"- Custom Action: execute a predefined action, e.g. to modify the fields of the resource record"
+msgstr ""
 
 #. module: marketing_campaign
-#: help:marketing.campaign.activity,start:0
+#: model:ir.model.fields,help:marketing_campaign.field_marketing_campaign_activity_start
 msgid "This activity is launched when the campaign starts."
 msgstr "Aquesta activitat és llançada quan la campanya comença"
-
-#. module: marketing_campaign
-#: help:marketing.campaign.activity,report_directory_id:0
-msgid "This folder is used to store the generated reports"
-msgstr "Aquesta carpeta es utilitzada per desar els informes generats"
 
 #. module: marketing_campaign
 #: selection:marketing.campaign.transition,trigger:0
@@ -1047,37 +1153,42 @@ msgid "Time"
 msgstr "Temps"
 
 #. module: marketing_campaign
-#: view:campaign.analysis:marketing_campaign.view_campaign_analysis_search
 #: selection:campaign.analysis,state:0
-#: view:marketing.campaign.workitem:marketing_campaign.view_marketing_campaign_workitem_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_campaign_analysis_search
+#: model:ir.ui.view,arch_db:marketing_campaign.view_marketing_campaign_workitem_search
 #: selection:marketing.campaign.workitem,state:0
 msgid "To Do"
-msgstr "Pendent"
+msgstr "Per fer"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.transition,trigger:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_transition_trigger
 msgid "Trigger"
-msgstr "Disparador"
+msgstr "Activació"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,type:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_action_type
 msgid "Type"
 msgstr "Tipus"
 
 #. module: marketing_campaign
-#: field:marketing.campaign,unique_field_id:0
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_unique_field_id
 msgid "Unique Field"
-msgstr ""
+msgstr "Camp únic"
 
 #. module: marketing_campaign
-#: field:marketing.campaign.activity,variable_cost:0
+#: model:res.groups,name:marketing_campaign.group_lead_automation_user
+msgid "User"
+msgstr "Usuari"
+
+#. module: marketing_campaign
+#: model:ir.model.fields,field_description:marketing_campaign.field_marketing_campaign_activity_variable_cost
 msgid "Variable Cost"
 msgstr "Cost variable"
 
 #. module: marketing_campaign
-#: model:email.template,subject:marketing_campaign.email_template_1
+#: model:mail.template,subject:marketing_campaign.email_template_1
 msgid "Welcome to the Odoo Partner Channel!"
-msgstr ""
+msgstr "Benvingut al canal del soci d'Odoo!"
 
 #. module: marketing_campaign
 #: selection:marketing.campaign,mode:0
@@ -1090,17 +1201,11 @@ msgid "Workitems"
 msgstr "Elements de treball"
 
 #. module: marketing_campaign
-#: field:campaign.analysis,year:0
-msgid "Year"
-msgstr "Any"
-
-#. module: marketing_campaign
 #: selection:marketing.campaign.transition,interval_type:0
 msgid "Year(s)"
 msgstr "Any/s"
 
 #. module: marketing_campaign
-#: code:addons/marketing_campaign/marketing_campaign.py:189
-#, python-format
-msgid "You cannot duplicate a campaign, Not supported yet."
-msgstr ""
+#: model:ir.model,name:marketing_campaign.model_ir_actions_report_xml
+msgid "ir.actions.report.xml"
+msgstr "ir.actions.report.xml"

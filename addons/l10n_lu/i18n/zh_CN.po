@@ -1,113 +1,142 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * l10n_lu
-# 
+#
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
-# leangjia <liangjia@qq.com>, 2015
+# Eddie Lim <bhweelim@yahoo.com>, 2016
+# Jack Lee <suifengtec@qq.com>, 2016
+# liAnGjiA <liangjia@qq.com>, 2016
+# lttlsnk <lttlsnk@gmail.com>, 2016
+# lttlsnk <lttlsnk@gmail.com>, 2016
+# R Mr <7507690@qq.com>, 2016
+# liAnGjiA <liangjia@qq.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 8.0\n"
+"Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-24 02:53+0000\n"
-"PO-Revision-Date: 2015-08-17 13:47+0000\n"
-"Last-Translator: leangjia <liangjia@qq.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/odoo/odoo-8/language/zh_CN/)\n"
+"POT-Creation-Date: 2015-09-18 08:19+0000\n"
+"PO-Revision-Date: 2016-07-07 10:44+0000\n"
+"Last-Translator: Eddie Lim <bhweelim@yahoo.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/odoo/odoo-9/"
+"language/zh_CN/)\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: l10n_lu
-#: view:vat.declaration.report:0
-msgid "Print Tax Statements"
-msgstr "打印税单"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_120
+msgid ""
+"1. Consommation de marchandises et de matières premières et consommables"
+msgstr ""
+"1. Consommation de marchandises et de matières premières et consommables"
 
 #. module: l10n_lu
-#: model:ir.actions.act_window,name:l10n_lu.action_vat_report
-#: model:ir.model,name:l10n_lu.model_vat_declaration_report
-msgid "VAT Declaration Report"
-msgstr "增值税申报"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_48
+msgid "1. Créances résultant de ventes et prestations de services"
+msgstr "1. Créances résultant de ventes et prestations de services"
 
 #. module: l10n_lu
-#: field:vat.declaration.report,tax_code_id:0
-msgid "Company"
-msgstr "公司"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_87
+msgid "1. Emprunts obligataires"
+msgstr "1. 债券"
 
 #. module: l10n_lu
-#: model:account.account.type,name:l10n_lu.account_type_income
-msgid "Income"
-msgstr "收入"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_22
+msgid "1. Frais de recherche et de développement"
+msgstr "研究和发展成本"
 
 #. module: l10n_lu
-#: model:account.account.type,name:l10n_lu.account_type_cash_moves
-msgid "Cash"
-msgstr "现金"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_43
+msgid "1. Matières premières et consommables"
+msgstr "原材料和消耗品"
 
 #. module: l10n_lu
-#: model:ir.ui.menu,name:l10n_lu.legal_lu
-msgid "Luxembourg"
-msgstr "卢森堡"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_141
+msgid "1. Montant net du chiffre d’affaires"
+msgstr "净营业额"
 
 #. module: l10n_lu
-#: field:vat.declaration.report,period_id:0
-msgid "Period"
-msgstr "会计期间"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_34
+msgid "1. Parts dans des entreprises liées"
+msgstr "公司的股票相关"
 
 #. module: l10n_lu
-#: model:account.account.type,name:l10n_lu.account_type_liability
-msgid "Liability"
-msgstr "负债"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_61
+msgid ""
+"1. Parts dans des entreprises liées et dans des entreprises avec lesquelles "
+"la société a un lien de participation"
+msgstr "在关联企业中的股份和企业与社会关系的参与"
 
 #. module: l10n_lu
-#: code:addons/l10n_lu/wizard/print_vat.py:66
-#, python-format
-msgid "pdf not created !"
-msgstr "PDF创建失败！"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_83
+msgid "1. Provisions pour pensions et obligations similaires"
+msgstr "养老金和类似的义务规定"
 
 #. module: l10n_lu
-#: model:ir.ui.menu,name:l10n_lu.legal_lu_vat
-msgid "VAT Declaration"
-msgstr "增值税申报"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_72
+msgid "1. Réserve légale"
+msgstr "1. 法定准备金"
 
 #. module: l10n_lu
-#: model:account.account.type,name:l10n_lu.account_type_asset
-msgid "Asset"
-msgstr "资产"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_29
+msgid "1. Terrains et constructions"
+msgstr "1. 土地及建筑物"
 
 #. module: l10n_lu
-#: code:addons/l10n_lu/wizard/print_vat.py:66
-#, python-format
-msgid "Please check if package pdftk is installed!"
-msgstr "请检查pdftk依赖包是否已安装！"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_30
+msgid "2. Installations techniques et machines"
+msgstr "2. 厂房及机器"
 
 #. module: l10n_lu
-#: model:account.account.type,name:l10n_lu.account_type_cash_equity
-msgid "Equity"
-msgstr "权益"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_85
+msgid "3. Autres provisions"
+msgstr "3.其他规定"
 
 #. module: l10n_lu
-#: view:vat.declaration.report:0
-msgid "Cancel"
-msgstr "取消"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_127
+#: model:account.financial.report,name:l10n_lu.account_financial_report_abr_127
+msgid "4. Corrections de valeur"
+msgstr "4. Corrections de valeur"
 
 #. module: l10n_lu
-#: model:account.account.type,name:l10n_lu.account_type_expense
-msgid "Expense"
-msgstr "费用"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_119
+#: model:account.financial.report,name:l10n_lu.account_financial_report_abr_119
+msgid "A. CHARGES"
+msgstr "A.收费"
 
 #. module: l10n_lu
-#: model:account.account.type,name:l10n_lu.account_type_creances
-msgid "Créances"
-msgstr "Créances"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_15
+#: model:account.financial.report,name:l10n_lu.account_financial_report_abr_15
+msgid "ACTIF"
+msgstr "流动资产"
 
 #. module: l10n_lu
-#: view:vat.declaration.report:0
-msgid "or"
-msgstr "or"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_140
+#: model:account.financial.report,name:l10n_lu.account_financial_report_abr_140
+msgid "B. PRODUITS"
+msgstr "B. 产品"
 
 #. module: l10n_lu
-#: model:account.account.type,name:l10n_lu.account_type_root
-msgid "View"
-msgstr "视图"
+#: model:account.financial.report,name:l10n_lu.account_financial_report_20
+#: model:account.financial.report,name:l10n_lu.account_financial_report_abr_20
+msgid "C. Actif immobilisé"
+msgstr "C. 固定资产"
+
+#. module: l10n_lu
+#: model:account.financial.report,name:l10n_lu.account_financial_report_82
+#: model:account.financial.report,name:l10n_lu.account_financial_report_abr_82
+msgid "C. Provisions"
+msgstr "C. 规定"
+
+#. module: l10n_lu
+#: model:ir.actions.client,name:l10n_lu.action_client_l10n_lu_menu
+msgid "Open Account Dashboard Menu"
+msgstr "打开会计看板菜单"
+
+#. module: l10n_lu
+#: model:account.financial.report,name:l10n_lu.account_financial_report_66
+#: model:account.financial.report,name:l10n_lu.account_financial_report_abr_66
+msgid "PASSIF"
+msgstr "PASSIF"

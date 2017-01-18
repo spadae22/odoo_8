@@ -3,16 +3,19 @@
 # * hr
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
-# Goutoudis Kostas <goutoudis@gmail.com>, 2015-2016
+# Kostas Goutoudis <goutoudis@gmail.com>, 2016
+# Martin Trigaux <mat@odoo.com>, 2016
+# Stefanos Nikou <stefanos.nikou@gmail.com>, 2016
+# Dafao Berto <netmastersgr@gmail.com>, 2016
+# Eirini Spiridonidou <eirinisofia999@gmail.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 8.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-21 14:07+0000\n"
-"PO-Revision-Date: 2016-01-02 22:27+0000\n"
-"Last-Translator: Goutoudis Kostas <goutoudis@gmail.com>\n"
-"Language-Team: Greek (http://www.transifex.com/odoo/odoo-8/language/el/)\n"
+"POT-Creation-Date: 2016-10-10 08:43+0000\n"
+"PO-Revision-Date: 2016-10-10 08:43+0000\n"
+"Last-Translator: Eirini Spiridonidou <eirinisofia999@gmail.com>, 2016\n"
+"Language-Team: Greek (https://www.transifex.com/odoo/teams/41243/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,240 +23,344 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: hr
-#: code:addons/hr/hr.py:158
+#: code:addons/hr/models/hr.py:76
 #, python-format
 msgid "%s (copy)"
 msgstr "%s (αντίγραφο)"
 
 #. module: hr
-#: model:ir.actions.act_window,help:hr.open_view_employee_list_my
-msgid ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Click to add a new employee.\n"
-"              </p><p>\n"
-"                With just a quick glance on the Odoo employee screen, you\n"
-"                can easily find all the information you need for each person;\n"
-"                contact data, job position, availability, etc.\n"
-"              </p>\n"
-"            "
-msgstr "<p class=\"oe_view_nocontent_create\">\nΚάντε κλικ για να προσθέσετε έναν νέο εργαζόμενο.\n</p><p>\nΜε μια σύντομη ματιά στην οθόνη εργαζόμενου στο Odoo, \nμπορείτε εύκολα να βρείτε όλες τις πληροφορίες που χρειάζεστε για κάθε άτομο;\nστοιχεία επαφής, θέση εργασίας, διαθεσιμότητα, κλπ.\n</p>"
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "<i>Work in a fun atmosphere</i>"
+msgstr ""
 
 #. module: hr
-#: model:ir.actions.act_window,help:hr.open_module_tree_department
-msgid ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Click to create a department.\n"
-"              </p><p>\n"
-"                Odoo's department structure is used to manage all documents\n"
-"                related to employees by departments: expenses, timesheets,\n"
-"                leaves and holidays, recruitments, etc.\n"
-"              </p>\n"
-"            "
-msgstr "<p class=\"oe_view_nocontent_create\">\nΚάντε κλικ για να δημιουργήσετε ένα τμήμα.\n</p><p>\nΗ δομή του τμήματος του Odoo χρησιμοποιείται για τη διαχείριση όλων των δεδομένων\nπου σχετίζονται με τους εργαζόμενους ανά τμήματα: δαπάνες, φύλλα κατανομής χρόνου,\nάδειες και διακοπές, στρατολογήσεις, κλπ.\n</p>"
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "<i>You are passionate</i>"
+msgstr ""
 
 #. module: hr
-#: model:ir.actions.act_window,help:hr.view_department_form_installer
-msgid ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Click to define a new department.\n"
-"              </p><p>\n"
-"                Your departments structure is used to manage all documents\n"
-"                related to employees by departments: expenses and timesheets,\n"
-"                leaves and holidays, recruitments, etc.\n"
-"              </p>\n"
-"            "
-msgstr "<p class=\"oe_view_nocontent_create\">\nΚάντε κλικ για να ορίσετε ένα νέο τμήμα.\n</p><p>\nΗ δομή των τμημάτων χρησιμοποίειται για τη διαχείριση όλων των εγγράφων\nσχετικά με τους εργαζόμενους ανά τμήματα: δαπάνες και φύλλα κατανομής χρόνου,\nάδειες και διακοπές, στρατολογήσεις, κλπ.\n</p>"
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "<i>You autonomously and quickly learn</i>"
+msgstr ""
 
 #. module: hr
-#: model:ir.actions.act_window,help:hr.action_hr_job
-msgid ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Click to define a new job position.\n"
-"              </p><p>\n"
-"                Job Positions are used to define jobs and their requirements.\n"
-"                You can keep track of the number of employees you have per job\n"
-"                position and follow the evolution according to what you planned\n"
-"                for the future.\n"
-"              </p><p>\n"
-"                You can attach a survey to a job position. It will be used in\n"
-"                the recruitment process to evaluate the applicants for this job\n"
-"                position.\n"
-"              </p>\n"
-"            "
-msgstr "<p class=\"oe_view_nocontent_create\">\nΚάντε κλικ για να ορίσετε μια νέα θέση εργασίας.\nΟι Θέσεις Εργασίας χρησιμοποιούνται  για να ορίσετε εργασίες και τις απαιτήσεις τους.\nΜπορείτε να παρακολουθείτε τον αριθμό των εργαζομένων που έχετε για κάθε θέση εργασίας και να παρακολουθείτε την εξέλιξη σύμφωνα με αυτό που έχετε σχεδιάσει\nγια το μέλλον.\n</p><p>\nΜπορείτε να επισυνάψετε μια επισκόπηση σε μια θέση εργασίας. θα χρησιμοποιηθεί στη\nδιαδικασία στρατολόγησης για να αξιολογήσετε τους υποψήφιους για αυτή τη θέση εργασίας.\n</p>"
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "<i>You easily manage them</i>"
+msgstr ""
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:ir.ui.view,arch_db:hr.hr_kanban_view_employees
+msgid ""
+"<span class=\"o_unfollow\">Unfollow</span>\n"
+"                                    <span class=\"o_following\">Following</span>"
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.hr_department_view_kanban
+msgid "<span>Reports</span>"
+msgstr "<span>Αναφορές</span>"
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.hr_department_view_kanban
+msgid "<span>To Approve</span>"
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.hr_department_view_kanban
+msgid "<span>To Do</span>"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid ""
+"A full time job, with an attractive salary package in a small team of smart "
+"people. You will start contract with a full technical and functional "
+"training. If you are passionate, motivate and flexible apply for this job, "
+"you will certainly join the best company ever."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "A good job in a young and dynamic team"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_department_active
+#: model:ir.model.fields,field_description:hr.field_hr_employee_active
 msgid "Active"
-msgstr "Ενεργό"
+msgstr "Ενεργή"
 
 #. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-msgid "Additional Features"
-msgstr "Πρόσθετα Χαρακτηριστικά"
+#: model:hr.job,website_description:hr.job_consultant
+msgid "Analyse needs, write specification documents and quotation"
+msgstr ""
 
 #. module: hr
-#: field:hr.config.settings,module_account_analytic_analysis:0
-msgid ""
-"Allow invoicing based on timesheets (the sale application will be installed)"
-msgstr "Επιτρέψτε η τιμολόγηση να βασίζεται σε φύλλα κατανομής χρόνου (η εφαρμογή για τις πωλήσεις θα πρέπει να είναι εγκατεστημένη)"
+#: model:ir.model,name:hr.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Αναλυτικός Λογαριασμός"
 
 #. module: hr
-#: field:hr.config.settings,module_hr_timesheet_sheet:0
-msgid "Allow timesheets validation by managers"
-msgstr "Επιτρέψτε την επικύρωση των φύλλων κατανομής χρόνου απο τους διαχειριστές"
+#: model:ir.ui.view,arch_db:hr.view_department_filter
+#: model:ir.ui.view,arch_db:hr.view_employee_filter
+msgid "Archived"
+msgstr "Αρχειοθετημένα"
 
 #. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-msgid "Apply"
-msgstr "Εφαρμογή"
+#: model:ir.model,name:hr.model_event_registration
+msgid "Attendee"
+msgstr "Συμμετέχων"
 
 #. module: hr
-#: model:ir.ui.menu,name:hr.menu_open_view_attendance_reason_new_config
-msgid "Attendance"
-msgstr "Παρουσίες"
-
-#. module: hr
-#: field:hr.employee,bank_account_id:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_bank_account_id
 msgid "Bank Account Number"
 msgstr "Αριθμός Τραπεζικού Λογαριασμού"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:hr.job,website_description:hr.job_cto
+msgid ""
+"Because of our constant growth, we're now looking for people to reinforce "
+"our team of enthusiastic chief technical officer. So if working on an open "
+"source project in a friendly and cooperative atmosphere sounds like fun to "
+"you, read on..."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid ""
+"Because of our constant growth, we're now looking for people to reinforce "
+"our team of enthusiastic developers. So if working on an open source project"
+" in a friendly and cooperative atmosphere sounds like fun to you, read on..."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_trainee
+msgid ""
+"Because of our constant growth, we're now looking for people to reinforce "
+"our team of enthusiastic trainees. So if working on an open source project "
+"in a friendly and cooperative atmosphere sounds like fun to you, read on..."
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Birth"
 msgstr "Γέννηση"
 
 #. module: hr
-#: help:hr.job,state:0
-msgid ""
-"By default 'Closed', set it to 'In Recruitment' if recruitment process is "
-"going on for this job position."
-msgstr "Εξ ορισμού το 'Κλειστό' ορίστε το στην 'Στελέχωση' αν η διαδικασία στελέχωσης συνεχίζεται για αυτή τη θέση εργασίας."
+#: model:hr.job,name:hr.job_ceo
+msgid "Chief Executive Officer"
+msgstr "Chief Executive Officer"
 
 #. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-msgid "Cancel"
-msgstr "Ακύρωση"
+#: model:hr.job,name:hr.job_cto
+msgid "Chief Technical Officer"
+msgstr ""
 
 #. module: hr
-#: field:hr.employee.category,child_ids:0
-msgid "Child Categories"
-msgstr "Υποκατηγορίες"
-
-#. module: hr
-#: field:hr.department,child_ids:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_child_ids
 msgid "Child Departments"
 msgstr "Υπο- τμήματα"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
-msgid "Citizenship & Other Info"
-msgstr "Ιθαγένεια & Λοιπές Πληροφορίες"
+#: model:ir.ui.view,arch_db:hr.view_employee_form
+msgid "Citizenship & Other Information"
+msgstr ""
 
 #. module: hr
-#: field:hr.employee,city:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_city
 msgid "City"
 msgstr "Πόλη"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_filter field:hr.employee,coach_id:0
+#: model:ir.actions.act_window,help:hr.act_employee_from_department
+#: model:ir.actions.act_window,help:hr.open_view_employee_list_my
+msgid "Click to add a new employee."
+msgstr ""
+
+#. module: hr
+#: model:ir.actions.act_window,help:hr.open_module_tree_department
+msgid "Click to create a department."
+msgstr ""
+
+#. module: hr
+#: model:ir.actions.act_window,help:hr.action_hr_job
+msgid "Click to define a new job position."
+msgstr "Κάντε κλικ για να καθορίσετε μια νέα θέση εργασίας."
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Close to the perfection ..."
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_coach_id
+#: model:ir.ui.view,arch_db:hr.view_employee_filter
 msgid "Coach"
 msgstr "Εκπαιδευτής"
 
 #. module: hr
-#: field:hr.employee,color:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_code
+msgid "Code"
+msgstr "Κωδικός"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_department_color
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_color
+#: model:ir.model.fields,field_description:hr.field_hr_employee_color
 msgid "Color Index"
-msgstr "Χρωματισμός Δείκτη"
+msgstr "Χρωματισμός Ευρετήριου"
 
 #. module: hr
-#: view:hr.department:hr.view_department_tree
+#: model:ir.ui.view,arch_db:hr.view_department_tree
 msgid "Companies"
-msgstr "Εταιρείες"
+msgstr "Εταιρίες"
 
 #. module: hr
-#: field:hr.department,company_id:0 view:hr.employee:hr.view_employee_filter
-#: view:hr.job:hr.view_job_filter field:hr.job,company_id:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_company_id
+#: model:ir.model.fields,field_description:hr.field_hr_employee_company_id
+#: model:ir.model.fields,field_description:hr.field_hr_job_company_id
+#: model:ir.ui.view,arch_db:hr.view_employee_filter
+#: model:ir.ui.view,arch_db:hr.view_job_filter
 msgid "Company"
-msgstr "Εταιρεία"
+msgstr "Εταιρία"
 
 #. module: hr
-#: model:ir.ui.menu,name:hr.menu_hr_configuration
+#: model:ir.ui.menu,name:hr.menu_human_resources_configuration
 msgid "Configuration"
-msgstr "Ρυθμίσεις"
+msgstr "Διαμόρφωση"
 
 #. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-#: model:ir.actions.act_window,name:hr.action_human_resources_configuration
-msgid "Configure Human Resources"
-msgstr "Διαμόρφωση Ανθρωπίνων Πόρων"
+#: model:hr.job,name:hr.job_consultant
+msgid "Consultant"
+msgstr ""
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Contact Information"
 msgstr "Πληροφορίες Επαφής"
 
 #. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-msgid "Contracts"
-msgstr "Συμβάσεις"
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Contributions to open source projects"
+msgstr ""
 
 #. module: hr
-#: model:ir.actions.act_window,name:hr.view_department_form_installer
-msgid "Create Your Departments"
-msgstr "Δημιουργήστε τα Τμήματα σας"
-
-#. module: hr
-#: field:hr.config.settings,create_uid:0 field:hr.department,create_uid:0
-#: field:hr.employee,create_uid:0 field:hr.employee.category,create_uid:0
-#: field:hr.job,create_uid:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_create_uid
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_create_uid
+#: model:ir.model.fields,field_description:hr.field_hr_employee_create_uid
+#: model:ir.model.fields,field_description:hr.field_hr_job_create_uid
 msgid "Created by"
 msgstr "Δημιουργήθηκε από"
 
 #. module: hr
-#: field:hr.config.settings,create_date:0 field:hr.department,create_date:0
-#: field:hr.employee,create_date:0 field:hr.employee.category,create_date:0
-#: field:hr.job,create_date:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_create_date
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_create_date
+#: model:ir.model.fields,field_description:hr.field_hr_employee_create_date
+#: model:ir.model.fields,field_description:hr.field_hr_job_create_date
 msgid "Created on"
 msgstr "Δημιουργήθηκε στις"
 
 #. module: hr
-#: field:hr.job,no_of_employee:0
+#: model:ir.model.fields,field_description:hr.field_hr_job_no_of_employee
 msgid "Current Number of Employees"
 msgstr "Τρέχων Αριθμός των Εργαζομένων"
 
 #. module: hr
-#: field:hr.employee,birthday:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_birthday
 msgid "Date of Birth"
 msgstr "Ημερομηνία γεννήσεως"
 
 #. module: hr
-#: help:hr.employee,message_last_post:0 help:hr.job,message_last_post:0
-msgid "Date of the last message posted on the record."
-msgstr "Ημερομηνία του τελευταίου μηνύματος "
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "Define a clear communication strategy"
+msgstr ""
 
 #. module: hr
-#: view:hr.department:hr.view_department_filter
-#: view:hr.employee:hr.view_employee_filter field:hr.employee,department_id:0
-#: view:hr.job:hr.view_job_filter field:hr.job,department_id:0
+#: model:ir.model.fields,help:hr.field_hr_employee_calendar_id
+msgid "Define the schedule of resource"
+msgstr "Ορίστε το χρονοδιάγραμμα των πόρων"
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "Deliver generic Odoo functional training sessions"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_department_id
+#: model:ir.model.fields,field_description:hr.field_hr_job_department_id
+#: model:ir.ui.view,arch_db:hr.view_department_filter
+#: model:ir.ui.view,arch_db:hr.view_employee_filter
+#: model:ir.ui.view,arch_db:hr.view_job_filter
 msgid "Department"
 msgstr "Τμήμα"
 
 #. module: hr
-#: field:hr.department,name:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_name
 msgid "Department Name"
 msgstr "Όνομα Τμήματος"
 
 #. module: hr
-#: view:hr.department:hr.view_department_filter
 #: model:ir.actions.act_window,name:hr.open_module_tree_department
 #: model:ir.ui.menu,name:hr.menu_hr_department_tree
+#: model:ir.ui.view,arch_db:hr.view_department_filter
 msgid "Departments"
 msgstr "Τμήματα"
 
 #. module: hr
-#: field:res.users,display_employees_suggestions:0
-msgid "Display Employees Suggestions"
-msgstr "Εμφάνιση των Προτάσεων των Εργαζομένων"
+#: model:ir.model,name:hr.model_mail_channel
+msgid "Discussion channel"
+msgstr "Κανάλι Συζήτησης"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_department_display_name
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_display_name
+#: model:ir.model.fields,field_description:hr.field_hr_employee_display_name
+#: model:ir.model.fields,field_description:hr.field_hr_job_display_name
+msgid "Display Name"
+msgstr "Εμφάνιση Ονόματος"
 
 #. module: hr
 #: selection:hr.employee,marital:0
@@ -261,55 +368,67 @@ msgid "Divorced"
 msgstr "Διαζευγμένος"
 
 #. module: hr
-#: field:hr.config.settings,module_hr_gamification:0
-msgid "Drive engagement with challenges and badges"
-msgstr "Υποκινήστε την εμπλοκή με προκλήσεις και κονκάρδες"
+#: model:ir.model.fields,field_description:hr.field_hr_employee_time_efficiency
+msgid "Efficiency Factor"
+msgstr "Αποδοτικότητα "
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:ir.model,name:hr.model_mail_alias
+msgid "Email Aliases"
+msgstr "Ψευδώνυμα Email"
+
+#. module: hr
+#: model:ir.model,name:hr.model_mail_thread
+msgid "Email Thread"
+msgstr "Νήμα Email"
+
+#. module: hr
 #: model:ir.model,name:hr.model_hr_employee
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Employee"
 msgstr "Υπάλληλος"
 
 #. module: hr
-#: view:hr.employee.category:hr.view_employee_category_form
 #: model:ir.model,name:hr.model_hr_employee_category
 msgid "Employee Category"
 msgstr "Κατηγορία Εργαζομένου"
 
 #. module: hr
-#: field:hr.employee.category,name:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_name
 msgid "Employee Tag"
 msgstr "Ετικέτα Εργαζόμενου"
 
 #. module: hr
 #: model:ir.actions.act_window,name:hr.open_view_categ_form
 #: model:ir.ui.menu,name:hr.menu_view_employee_category_form
+#: model:ir.ui.view,arch_db:hr.view_employee_category_form
 msgid "Employee Tags"
 msgstr "Ετικέτες Εργαζομένων"
 
 #. module: hr
-#: help:hr.employee,bank_account_id:0
+#: model:ir.model.fields,help:hr.field_hr_employee_bank_account_id
 msgid "Employee bank salary account"
 msgstr "Τραπεζικός λογαριασμός για τη μισθοδοσία εργαζόμενου"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_filter
-#: view:hr.employee:hr.view_employee_tree
-#: view:hr.employee:hr.view_partner_tree2
-#: field:hr.employee.category,employee_ids:0 field:hr.job,employee_ids:0
-#: model:ir.actions.act_window,name:hr.hr_employee_normal_action_tree
-#: model:ir.actions.act_window,name:hr.open_view_employee_list
-#: model:ir.actions.act_window,name:hr.open_view_employee_list_my
-#: model:ir.ui.menu,name:hr.menu_open_view_employee_list_my
-msgid "Employees"
-msgstr "Υπάλληλοι"
+#: model:ir.ui.view,arch_db:hr.view_employee_form
+msgid "Employee's Name"
+msgstr "Όνομα Εργαζόμενου"
 
 #. module: hr
-#: view:hr.employee.category:hr.view_employee_category_list
-#: view:hr.employee.category:hr.view_employee_category_tree
-msgid "Employees Categories"
-msgstr "Κατηγορίες Εργαζομένων"
+#: model:ir.actions.act_window,name:hr.act_employee_from_department
+#: model:ir.actions.act_window,name:hr.open_view_employee_list
+#: model:ir.actions.act_window,name:hr.open_view_employee_list_my
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_employee_ids
+#: model:ir.model.fields,field_description:hr.field_hr_job_employee_ids
+#: model:ir.ui.menu,name:hr.menu_hr_root
+#: model:ir.ui.menu,name:hr.menu_open_view_employee_list_my
+#: model:ir.ui.view,arch_db:hr.hr_department_view_kanban
+#: model:ir.ui.view,arch_db:hr.view_employee_filter
+#: model:ir.ui.view,arch_db:hr.view_employee_tree
+#: model:ir.ui.view,arch_db:hr.view_partner_tree2
+msgid "Employees"
+msgstr "Υπάλληλοι"
 
 #. module: hr
 #: model:ir.actions.act_window,name:hr.open_view_employee_tree
@@ -317,30 +436,45 @@ msgid "Employees Structure"
 msgstr "Δομή Ανθρώπινου Δυναμικού"
 
 #. module: hr
-#: constraint:hr.employee.category:0
-msgid "Error! You cannot create recursive Categories."
-msgstr "Σφάλμα! Δεν μπορείτε να δημιουργήσετε αναδρομικές Κατηγορίες."
+#: model:ir.ui.view,arch_db:hr.view_employee_category_list
+msgid "Employees Tags"
+msgstr ""
 
 #. module: hr
-#: constraint:hr.department:0
+#: code:addons/hr/models/hr.py:254
+#, python-format
 msgid "Error! You cannot create recursive departments."
 msgstr "Σφάλμα! Δεν μπορείτε να δημιουργήσετε αναδρομικά Τμήματα."
 
 #. module: hr
-#: constraint:hr.employee:0
+#: code:addons/hr/models/hr.py:167
+#, python-format
 msgid "Error! You cannot create recursive hierarchy of Employee(s)."
-msgstr "Σφάλμα! Δεν μπορείτε να δημιουργήσετε αναδρομική ιεραρχία για Υπάλληλο(ους)."
+msgstr ""
+"Σφάλμα! Δεν μπορείτε να δημιουργήσετε αναδρομική ιεραρχία για Υπαλλήλους."
 
 #. module: hr
-#: field:hr.job,no_of_recruitment:0
+#: model:ir.model,name:hr.model_event_event
+msgid "Event"
+msgstr "Συμβάν"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_job_no_of_recruitment
 msgid "Expected New Employees"
 msgstr "Αναμενόμενοι Νέοι Εργαζόμενοι"
 
 #. module: hr
-#: help:hr.job,expected_employees:0
+#: model:ir.model.fields,help:hr.field_hr_job_expected_employees
 msgid ""
 "Expected number of employees for this job position after new recruitment."
-msgstr "Αναμενόμενος αριθμός των εργαζομένων για αυτή τη θέση εργασίας μετά από νέα στελέχωση."
+msgstr ""
+"Αναμενόμενος αριθμός των εργαζομένων για αυτή τη θέση εργασίας μετά από νέα "
+"στελέχωση."
+
+#. module: hr
+#: model:hr.job,name:hr.job_developer
+msgid "Experienced Developer"
+msgstr ""
 
 #. module: hr
 #: selection:hr.employee,gender:0
@@ -348,125 +482,201 @@ msgid "Female"
 msgstr "Γυναίκα"
 
 #. module: hr
-#. openerp-web
-#: code:addons/hr/static/src/xml/suggestions.xml:29
-#: view:hr.employee:hr.hr_kanban_view_employees
-#, python-format
+#: model:ir.ui.view,arch_db:hr.hr_kanban_view_employees
 msgid "Follow"
 msgstr "Ακολουθώ"
 
 #. module: hr
-#: field:hr.employee,message_follower_ids:0
-#: field:hr.job,message_follower_ids:0
+#: model:hr.job,website_description:hr.job_consultant
+msgid "Follow and check the development part"
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.hr_kanban_view_employees
 msgid "Followers"
 msgstr "Ακόλουθοι"
 
 #. module: hr
-#: view:hr.employee:hr.hr_kanban_view_employees
-msgid "Following"
-msgstr "Ακολουθώ"
+#: model:ir.model,name:hr.model_gamification_badge
+msgid "Gamification badge"
+msgstr ""
 
 #. module: hr
-#: field:hr.employee,gender:0
+#: model:ir.model,name:hr.model_gamification_challenge
+msgid "Gamification challenge"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_gender
 msgid "Gender"
 msgstr "Φύλλο"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_filter view:hr.job:hr.view_job_filter
-msgid "Group By"
-msgstr "Ομαδοποίηση Ανά"
+#: model:hr.job,website_description:hr.job_developer
+msgid "Good knowledge of HTML and Javascript"
+msgstr ""
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Good knowledge of object oriented programming"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Good knowledge of the latest web technologies"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Good knowledge of the programming language"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Good knowledge of web design"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Good language skills in another language"
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.view_employee_filter
+#: model:ir.ui.view,arch_db:hr.view_job_filter
+msgid "Group By"
+msgstr "Ομαδοποίηση Κατά"
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "HR Settings"
 msgstr "Ρυθμίσεις Ανθρώπινου Δυναμικού"
 
 #. module: hr
-#: field:hr.job,no_of_hired_employee:0
+#: model:hr.job,website_description:hr.job_consultant
+msgid "Help with the configuration of the software"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_hrm
+msgid "Hire a team of great Human Resources people"
+msgstr "Μισθώστε μια εκπληκτική ομάδα ατόμων Ανθρώπινου Δυναμικού"
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+msgid "Hire a team of great executive people"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_marketing
+msgid "Hire a team of great marketing people"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_job_no_of_hired_employee
 msgid "Hired Employees"
 msgstr "Εργαζόμενοι που προσλήφθηκαν"
 
 #. module: hr
-#: help:hr.employee,message_summary:0 help:hr.job,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
-msgstr "Κρατά την συνολική σύνοψη (αριθμός των μυνημάτων, ...). Αυτή η σύνοψη είναι κατ' ευθείαν σε html format για να μπορεί να ενσωματωθεί σε εμφανίσεις kanban."
-
-#. module: hr
-#: field:hr.employee,address_home_id:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_address_home_id
 msgid "Home Address"
 msgstr "Διεύθυνση Κατοικίας"
 
 #. module: hr
+#: model:ir.model,name:hr.model_hr_department
+msgid "Hr Department"
+msgstr ""
+
+#. module: hr
 #: model:ir.ui.menu,name:hr.menu_hr_main
-#: model:ir.ui.menu,name:hr.menu_hr_reporting
-#: model:ir.ui.menu,name:hr.menu_hr_root
-#: model:ir.ui.menu,name:hr.menu_human_resources_configuration
 msgid "Human Resources"
-msgstr "Διαχείριση Ανθρωπίνων Πόρων"
+msgstr "Ανθρώπινοι Πόροι"
 
 #. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-msgid "Human Resources Management"
-msgstr "Διαχείριση Ανθρωπίνου Δυναμικού"
+#: model:hr.job,name:hr.job_hrm
+msgid "Human Resources Manager"
+msgstr "Διευθυντής Ανθρώπινου Δυναμικού"
 
 #. module: hr
-#: field:hr.config.settings,id:0 field:hr.department,id:0
-#: field:hr.employee,id:0 field:hr.employee.category,id:0 field:hr.job,id:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_id
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_id
+#: model:ir.model.fields,field_description:hr.field_hr_employee_id
+#: model:ir.model.fields,field_description:hr.field_hr_job_id
 msgid "ID"
 msgstr "Κωδικός"
 
 #. module: hr
-#: field:hr.employee,identification_id:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_identification_id
 msgid "Identification No"
 msgstr "Αριθμός Αναγνώρισης"
 
 #. module: hr
-#: help:hr.employee,message_unread:0 help:hr.job,message_unread:0
-msgid "If checked new messages require your attention."
-msgstr "Εάν επιλεγεί τα νέα μηνύματα χρειάζονται την προσοχή σας"
+#: model:ir.model.fields,help:hr.field_hr_employee_active
+msgid ""
+"If the active field is set to False, it will allow you to hide the resource "
+"record without removing it."
+msgstr ""
+"Αν το ενεργό πεδίο έχει οριστεί σε Ψευδές, θα σας επιτρέψει να αποκρύψετε "
+"την εγγραφή πόρου χωρίς να την καταργήσετε."
 
 #. module: hr
-#: view:hr.job:hr.view_job_filter
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "Improve our communication to customers"
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.view_job_filter
 msgid "In Position"
 msgstr "Στη Θέση"
 
 #. module: hr
-#: view:hr.job:hr.view_job_filter
+#: model:ir.ui.view,arch_db:hr.view_job_filter
 msgid "In Recruitment"
 msgstr "Σε Στρατολόγηση"
 
 #. module: hr
-#: field:hr.config.settings,module_hr_attendance:0
-msgid "Install attendances feature"
-msgstr "Εγκατάσταση στοιχείου συμμετεχόντων"
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "Increase opportunities"
+msgstr ""
 
 #. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-msgid "Install your country's payroll"
-msgstr "Εγκατάσταση του μισθολογίου της χώρας σου"
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "Increase the visibility of the product"
+msgstr ""
 
 #. module: hr
-#: field:hr.employee,message_is_follower:0 field:hr.job,message_is_follower:0
-msgid "Is a Follower"
-msgstr "Είναι Ακόλουθος"
+#: model:ir.model,name:hr.model_fleet_vehicle
+msgid "Information on a vehicle"
+msgstr ""
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_filter view:hr.job:hr.view_hr_job_form
-#: view:hr.job:hr.view_hr_job_tree view:hr.job:hr.view_job_filter
+#: model:ir.ui.view,arch_db:hr.view_employee_filter
+#: model:ir.ui.view,arch_db:hr.view_hr_job_form
+#: model:ir.ui.view,arch_db:hr.view_hr_job_tree
+#: model:ir.ui.view,arch_db:hr.view_job_filter
 msgid "Job"
 msgstr "Εργασία"
 
 #. module: hr
-#: field:hr.job,description:0
+#: model:ir.model.fields,field_description:hr.field_hr_job_description
 msgid "Job Description"
 msgstr "Περιγραφή Θέσης"
-
-#. module: hr
-#: field:hr.job,name:0
-msgid "Job Name"
-msgstr "Όνομα Εργασίας"
 
 #. module: hr
 #: model:ir.model,name:hr.model_hr_job
@@ -475,57 +685,83 @@ msgstr "Θέση Εργασίας"
 
 #. module: hr
 #: model:ir.actions.act_window,name:hr.action_hr_job
-#: model:ir.ui.menu,name:hr.menu_hr_job_position
 msgid "Job Positions"
-msgstr "Θέση Εργασίας"
+msgstr "Θέσεις Εργασίας"
 
 #. module: hr
-#: field:hr.employee,job_id:0
+#: model:ir.actions.act_window,help:hr.action_hr_job
+msgid ""
+"Job Positions are used to define jobs and their requirements.\n"
+"                You can keep track of the number of employees you have per job\n"
+"                position and follow the evolution according to what you planned\n"
+"                for the future."
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_job_id
+#: model:ir.model.fields,field_description:hr.field_hr_job_name
 msgid "Job Title"
 msgstr "Τίτλος εργασίας"
 
 #. module: hr
-#: field:hr.department,jobs_ids:0 view:hr.job:hr.view_job_filter
+#: model:ir.model.fields,field_description:hr.field_hr_department_jobs_ids
+#: model:ir.ui.view,arch_db:hr.view_job_filter
 msgid "Jobs"
 msgstr "Θέσεις"
 
 #. module: hr
-#: field:hr.employee,message_last_post:0 field:hr.job,message_last_post:0
-msgid "Last Message Date"
-msgstr "Τελευταία ημερομηνία μηνύματος"
+#: model:ir.model.fields,field_description:hr.field_hr_department___last_update
+#: model:ir.model.fields,field_description:hr.field_hr_employee___last_update
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category___last_update
+#: model:ir.model.fields,field_description:hr.field_hr_job___last_update
+msgid "Last Modified on"
+msgstr "Τελευταία τροποποίηση στις"
 
 #. module: hr
-#: field:hr.config.settings,write_uid:0 field:hr.department,write_uid:0
-#: field:hr.employee,write_uid:0 field:hr.employee.category,write_uid:0
-#: field:hr.job,write_uid:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_write_uid
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_write_uid
+#: model:ir.model.fields,field_description:hr.field_hr_employee_write_uid
+#: model:ir.model.fields,field_description:hr.field_hr_job_write_uid
 msgid "Last Updated by"
 msgstr "Τελευταία Ενημέρωση από"
 
 #. module: hr
-#: field:hr.config.settings,write_date:0 field:hr.department,write_date:0
-#: field:hr.employee,write_date:0 field:hr.employee.category,write_date:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_write_date
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_write_date
+#: model:ir.model.fields,field_description:hr.field_hr_employee_write_date
+#: model:ir.model.fields,field_description:hr.field_hr_job_write_date
 msgid "Last Updated on"
 msgstr "Τελευταία Ενημέρωση στις"
 
 #. module: hr
-#: field:hr.employee,last_login:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_last_login
 msgid "Latest Connection"
 msgstr "Η Τελευταία Σύνδεση"
 
 #. module: hr
-#: view:hr.job:hr.view_hr_job_form
+#: model:ir.ui.view,arch_db:hr.view_hr_job_form
 msgid "Launch Recruitment"
 msgstr "Έναρξη Στρατολήγησης "
 
 #. module: hr
-#: model:ir.ui.menu,name:hr.menu_open_view_attendance_reason_config
-msgid "Leaves"
-msgstr "Άδειες"
+#: model:hr.job,website_description:hr.job_marketing
+msgid "Launch new marketing campaigns and offers"
+msgstr ""
 
 #. module: hr
-#: field:hr.employee,login:0
+#: model:hr.job,website_description:hr.job_hrm
+msgid "Launch new products, Human Resources campaigns and offers"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+msgid "Launch new products, marketing campaigns and offers"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_login
 msgid "Login"
-msgstr "Είσοδος"
+msgstr "Σύνδεση"
 
 #. module: hr
 #: selection:hr.employee,gender:0
@@ -533,40 +769,27 @@ msgid "Male"
 msgstr "Άνδρας"
 
 #. module: hr
-#: field:hr.config.settings,module_hr_expense:0
-msgid "Manage employees expenses"
-msgstr "Διαχείριση δαπανών εργαζομένων"
-
-#. module: hr
-#: field:hr.config.settings,module_hr_holidays:0
-msgid "Manage holidays, leaves and allocation requests"
-msgstr "Διαχείριση διακοπών, αδειών και κατανομή αιτήσεων "
-
-#. module: hr
-#: field:hr.config.settings,module_hr_payroll:0
-msgid "Manage payroll"
-msgstr "Διαχείριση μισθοδοσίας"
-
-#. module: hr
-#: field:hr.config.settings,module_hr_recruitment:0
-msgid "Manage the recruitment process"
-msgstr "Διαχείριση της διαδικασίας στρατολόγησης"
-
-#. module: hr
-#: field:hr.config.settings,module_hr_timesheet:0
-msgid "Manage timesheets"
-msgstr "Διαχείριση φύλλων κατανομής χρόνου"
-
-#. module: hr
-#: field:hr.department,manager_id:0 view:hr.employee:hr.view_employee_filter
-#: field:hr.employee,parent_id:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_manager_id
+#: model:ir.model.fields,field_description:hr.field_hr_employee_parent_id
+#: model:ir.ui.view,arch_db:hr.view_employee_filter
+#: model:res.groups,name:hr.group_hr_manager
 msgid "Manager"
-msgstr "Manager"
+msgstr "Διευθυντής"
 
 #. module: hr
-#: field:hr.employee,marital:0
+#: model:res.groups,name:hr.group_hr_attendance
+msgid "Manual Attendance"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_marital
 msgid "Marital Status"
 msgstr "Έγγαμος/η;"
+
+#. module: hr
+#: model:hr.job,name:hr.job_marketing
+msgid "Marketing and Community Manager"
+msgstr ""
 
 #. module: hr
 #: selection:hr.employee,marital:0
@@ -574,151 +797,210 @@ msgid "Married"
 msgstr "Παντρεμένος/η"
 
 #. module: hr
-#: field:hr.employee,image_medium:0
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Master or engineer in computer science"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_image_medium
 msgid "Medium-sized photo"
 msgstr "Μεσαίου μεγέθους φωτογραφία"
 
 #. module: hr
-#: help:hr.employee,image_medium:0
+#: model:ir.model.fields,help:hr.field_hr_employee_image_medium
 msgid ""
 "Medium-sized photo of the employee. It is automatically resized as a "
 "128x128px image, with aspect ratio preserved. Use this field in form views "
 "or some kanban views."
-msgstr "Μεσαίου μεγέθους φωτογραφία του εργαζόμενου. Αυτόματη αλλαγή μεγέθους σε εικόνα 128X128 px, με διατάρηση της αναλογίας των διαστάσεων. Χρήση αυτού του πεδίου σε φόρμα προβολής ή σε κάποιες προβολές Kanban."
+msgstr ""
+"Μεσαίου μεγέθους φωτογραφία του εργαζόμενου. Αυτόματη αλλαγή μεγέθους σε "
+"εικόνα 128X128 px, με διατάρηση της αναλογίας των διαστάσεων. Χρήση αυτού "
+"του πεδίου σε φόρμα προβολής ή σε κάποιες προβολές Kanban."
 
 #. module: hr
-#: field:hr.department,member_ids:0
+#: model:ir.model.fields,field_description:hr.field_hr_department_member_ids
 msgid "Members"
 msgstr "Μέλη"
 
 #. module: hr
-#: field:hr.employee,message_ids:0 field:hr.job,message_ids:0
+#: model:ir.ui.view,arch_db:hr.hr_kanban_view_employees
 msgid "Messages"
 msgstr "Μηνύματα"
 
 #. module: hr
-#: help:hr.employee,message_ids:0 help:hr.job,message_ids:0
-msgid "Messages and communication history"
-msgstr "Μηνύματα και ιστορικό επικοινωνίας"
+#: model:ir.ui.view,arch_db:hr.hr_department_view_kanban
+msgid "More <i class=\"fa fa-caret-down\"/>"
+msgstr "Περισσότερα <i class=\"fa fa-caret-down\"/>"
 
 #. module: hr
-#: field:hr.department,complete_name:0 field:hr.employee,name_related:0
-#: field:hr.employee.category,complete_name:0
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Must have ..."
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_name
 msgid "Name"
-msgstr "Όνομα"
+msgstr "Περιγραφή"
 
 #. module: hr
-#: field:hr.employee,country_id:0
-msgid "Nationality"
-msgstr "Εθνικότητα"
+#: model:ir.model.fields,field_description:hr.field_hr_employee_country_id
+msgid "Nationality (Country)"
+msgstr ""
 
 #. module: hr
-#: field:hr.department,note:0
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Nice to have"
+msgstr ""
+
+#. module: hr
+#: selection:hr.job,state:0
+msgid "Not Recruiting"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_department_note
 msgid "Note"
 msgstr "Σημείωση"
 
 #. module: hr
-#: field:hr.employee,notes:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_notes
 msgid "Notes"
 msgstr "Σημειώσεις"
 
 #. module: hr
-#: help:hr.job,no_of_employee:0
+#: model:ir.model.fields,help:hr.field_hr_job_no_of_employee
 msgid "Number of employees currently occupying this job position."
-msgstr "Ο αριθμός των εργαζομένων που καταλαβάνουν τώρα αυτή τη θέση εργασίας."
+msgstr ""
+"Ο αριθμός των εργαζομένων που καταλαβάνουν τώρα αυτή τη θέση εργασίας."
 
 #. module: hr
-#: sql_constraint:hr.job:0
-msgid ""
-"Number of hired employee must be less than expected number of employee in "
-"recruitment."
-msgstr "Ο αριθμός των εργαζομένων που έχουν προσληφθεί πρέπει να είναι μικρότερος απο τον αναμενόμενο αριθμό των εργαζομένων στη στρατολόγηση."
-
-#. module: hr
-#: help:hr.job,no_of_hired_employee:0
+#: model:ir.model.fields,help:hr.field_hr_job_no_of_hired_employee
 msgid ""
 "Number of hired employees for this job position during recruitment phase."
-msgstr "Ο αριθμός των εργαζομένων που προσλήφθηκαν για αυτή τη θέση εργασίας κατά φάση της στρατολόγησης."
+msgstr ""
+"Ο αριθμός των εργαζομένων που προσλήφθηκαν για αυτή τη θέση εργασίας κατά "
+"φάση της στρατολόγησης."
 
 #. module: hr
-#: help:hr.job,no_of_recruitment:0
+#: model:ir.model.fields,help:hr.field_hr_job_no_of_recruitment
 msgid "Number of new employees you expect to recruit."
 msgstr "Ο αριθμός των νέων υπαλλήλων που αναμένετε να στρατολογήσετε"
 
 #. module: hr
-#: field:hr.employee,work_location:0
-msgid "Office Location"
-msgstr "Τοποθεσία γραφείου"
+#: model:ir.actions.act_window,help:hr.open_module_tree_department
+msgid ""
+"Odoo's department structure is used to manage all documents\n"
+"                related to employees by departments: expenses, timesheets,\n"
+"                leaves and holidays, recruitments, etc."
+msgstr ""
 
 #. module: hr
-#: model:ir.actions.client,name:hr.action_client_hr_menu
-msgid "Open HR Menu"
-msgstr "Άνοιγμα Μενού HR"
+#: model:res.groups,name:hr.group_hr_user
+msgid "Officer"
+msgstr "Προιστάμενος"
 
 #. module: hr
-#: field:hr.config.settings,module_hr_evaluation:0
-msgid "Organize employees periodic evaluation"
-msgstr "Οργάνωση περιοδικής αξιολόγησης των εργαζομένων"
+#: selection:hr.employee,gender:0
+msgid "Other"
+msgstr "Άλλο"
 
 #. module: hr
-#: field:hr.employee,otherid:0
-msgid "Other Id"
-msgstr "Άλλη Ταυτότητα"
-
-#. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Other Information ..."
 msgstr "Λοιπές πληροφορίες ..."
 
 #. module: hr
-#: field:hr.department,parent_id:0
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Our staff at work"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_department_parent_id
 msgid "Parent Department"
 msgstr "Γονικό Παραστατικό"
 
 #. module: hr
-#: field:hr.employee.category,parent_id:0
-msgid "Parent Employee Tag"
-msgstr "Μητρική Ετικέτα Υπαλλήλου"
+#: model:ir.model,name:hr.model_res_partner
+msgid "Partner"
+msgstr "Συναλλασόμενος"
 
 #. module: hr
-#: field:hr.employee,passport_id:0
+#: model:hr.job,website_description:hr.job_developer
+msgid "Passion for the Internet and its culture"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_passport_id
 msgid "Passport No"
 msgstr "Αριθμός Διαβατηρίου"
 
 #. module: hr
-#: model:ir.actions.act_window,name:hr.open_payroll_modules
-msgid "Payroll"
-msgstr "Μισθοδοσία"
-
-#. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Personal Information"
 msgstr "Προσωπικές Πληροφορίες"
 
 #. module: hr
-#: field:hr.employee,image:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_image
 msgid "Photo"
 msgstr "Φωτογραφία"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Pictures of smart and enthusiastic people"
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Position"
 msgstr "Θέση"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Preferably 1 year of experience"
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Public Information"
 msgstr "Δημόσιες Πληροφορίες"
 
 #. module: hr
-#: field:hr.config.settings,module_hr_contract:0
-msgid "Record contracts per employee"
-msgstr "Αρχείο συμβάσεων ανά εργαζόμενο"
+#: model:hr.job,website_description:hr.job_consultant
+msgid "Quantify and negotiate the resources required"
+msgstr ""
 
 #. module: hr
-#: selection:hr.job,state:0
-msgid "Recruitment Closed"
-msgstr "Κρυφή Στρατολόγηση"
+#: model:hr.job,website_description:hr.job_developer
+msgid "Quick and autonomous learner"
+msgstr ""
 
 #. module: hr
 #: selection:hr.job,state:0
@@ -726,14 +1008,19 @@ msgid "Recruitment in Progress"
 msgstr "Στελέχωση σε Εξέλιξη"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "Related User"
 msgstr "Σχετικός Χρήστης"
 
 #. module: hr
-#: field:res.users,employee_ids:0
+#: model:ir.model.fields,field_description:hr.field_res_users_employee_ids
 msgid "Related employees"
 msgstr "Σχετικοί εργαζόμενοι"
+
+#. module: hr
+#: model:ir.model.fields,help:hr.field_hr_employee_user_id
+msgid "Related user name for the resource to manage its access."
+msgstr "Σχετιζόμενο όνομα χρήστη του πόρου για τη διαχείριση της πρόσβασης."
 
 #. module: hr
 #: model:ir.ui.menu,name:hr.menu_hr_reporting_timesheet
@@ -741,24 +1028,63 @@ msgid "Reports"
 msgstr "Αναφορές"
 
 #. module: hr
-#: field:hr.job,requirements:0
+#: model:ir.model.fields,field_description:hr.field_hr_job_requirements
 msgid "Requirements"
 msgstr "Απαιτήσεις"
 
 #. module: hr
-#: field:hr.employee,resource_id:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_resource_id
 msgid "Resource"
-msgstr "Πηγή"
+msgstr "Πόρος"
 
 #. module: hr
-#: field:hr.employee,sinid:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_name_related
+msgid "Resource Name"
+msgstr "Όνομα Πόρου"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_resource_type
+msgid "Resource Type"
+msgstr "Τύπος Πόρου"
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Responsibilities"
+msgstr "Αρμοδιότητες"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_sinid
 msgid "SIN No"
 msgstr "Αριθμός Ασφαλισμένου"
 
 #. module: hr
-#: field:hr.employee,ssnid:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_ssnid
 msgid "SSN No"
 msgstr "Αρ. Κοινωνικών Παροχών"
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "Scale our events organization all around the world"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,help:hr.field_hr_job_state
+msgid ""
+"Set whether the recruitment process is open or closed for this job position."
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.hr_department_view_kanban
+msgid "Settings"
+msgstr "Ρυθμίσεις"
 
 #. module: hr
 #: selection:hr.employee,marital:0
@@ -766,164 +1092,157 @@ msgid "Single"
 msgstr "Άγαμος"
 
 #. module: hr
-#: field:hr.employee,image_small:0
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "Skills"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_image_small
 msgid "Small-sized photo"
 msgstr "Μικρού μεγέθους φωτογραφία"
 
 #. module: hr
-#: help:hr.employee,image_small:0
+#: model:ir.model.fields,help:hr.field_hr_employee_image_small
 msgid ""
 "Small-sized photo of the employee. It is automatically resized as a 64x64px "
 "image, with aspect ratio preserved. Use this field anywhere a small image is"
 " required."
-msgstr "Μικρού μεγέθους φωτογραφία του εργαζόμενου. Αυτόματη αλλαγή μεγέθους σε μια εικόνα 64x64px, με την αναλογία των διαστάσεων να διατηρείται. Χρήση αυτού του πεδίου οπουδήποτε μια μικρή εικόνα απαιτείται"
+msgstr ""
+"Μικρού μεγέθους φωτογραφία του εργαζόμενου. Αυτόματη αλλαγή μεγέθους σε μια "
+"εικόνα 64x64px, με την αναλογία των διαστάσεων να διατηρείται. Χρήση αυτού "
+"του πεδίου οπουδήποτε μια μικρή εικόνα απαιτείται"
 
 #. module: hr
-#: help:hr.employee,sinid:0
+#: model:ir.model.fields,help:hr.field_hr_employee_sinid
 msgid "Social Insurance Number"
 msgstr "Αριθμός Κονωνικής Ασφάλισης"
 
 #. module: hr
-#: help:hr.employee,ssnid:0
+#: model:ir.model.fields,help:hr.field_hr_employee_ssnid
 msgid "Social Security Number"
 msgstr "Αριθμός Κοινωνικής Ασφάλισης"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form view:hr.job:hr.view_job_filter
-#: field:hr.job,state:0
+#: model:ir.model.fields,field_description:hr.field_hr_job_state
+#: model:ir.ui.view,arch_db:hr.view_employee_form
+#: model:ir.ui.view,arch_db:hr.view_job_filter
 msgid "Status"
 msgstr "Κατάσταση"
 
 #. module: hr
-#: view:hr.job:hr.view_hr_job_form
+#: model:ir.ui.view,arch_db:hr.view_hr_job_form
 msgid "Stop Recruitment"
 msgstr "Διακοπή Στελέχωσης"
 
 #. module: hr
-#: model:ir.actions.act_window,name:hr.action2
+#: model:ir.actions.act_window,name:hr.hr_employee_action_subordinate_hierachy
 msgid "Subordinate Hierarchy"
 msgstr "Ιεραρχία Υφισταμένων"
 
 #. module: hr
-#: field:hr.employee,child_ids:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_child_ids
 msgid "Subordinates"
 msgstr "Υφιστάμενοι"
 
 #. module: hr
-#. openerp-web
-#: code:addons/hr/static/src/xml/suggestions.xml:15
-#, python-format
-msgid "Suggested Employees"
-msgstr "Προτεινόμενοι Εργαζόμενοι"
+#: sql_constraint:hr.employee.category:0
+msgid "Tag name already exists !"
+msgstr "Το όνομα ετικέτας υπάρχει ήδη !"
 
 #. module: hr
-#: field:hr.employee,message_summary:0 field:hr.job,message_summary:0
-msgid "Summary"
-msgstr "Περίληψη"
-
-#. module: hr
-#: field:hr.employee,category_ids:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category_ids
 msgid "Tags"
 msgstr "Ετικέτες"
 
 #. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-msgid "Talent Management"
-msgstr "Διαχείριση Ταλέντων"
+#: model:hr.job,website_description:hr.job_consultant
+msgid "Take part in the consulting services"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_developer
+msgid "Team spirit and good communication"
+msgstr ""
+
+#. module: hr
+#: model:ir.model,name:hr.model_mail_test
+msgid "Test Mail Model"
+msgstr ""
 
 #. module: hr
 #: sql_constraint:hr.job:0
 msgid "The name of the job position must be unique per department in company!"
-msgstr "Το όνομα της θέσης εργασίας θα πρέπει να είναι μοναδικό ανά τμήμα στην εταιρεία!"
+msgstr ""
+"Το όνομα της θέσης εργασίας θα πρέπει να είναι μοναδικό ανά τμήμα στην "
+"εταιρεία!"
 
 #. module: hr
-#: help:hr.employee,image:0
+#: model:res.groups,comment:hr.group_hr_attendance
+msgid ""
+"The user will gain access to the human resources attendance menu, enabling "
+"him to manage his own attendance."
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,help:hr.field_hr_employee_time_efficiency
+msgid ""
+"This field depict the efficiency of the resource to complete tasks. e.g  "
+"resource put alone on a phase of 5 days with 5 tasks assigned to him, will "
+"show a load of 100% for this phase by default, but if we put a efficiency of"
+" 200%, then his load will only be 50%."
+msgstr ""
+"Αυτό το πεδίο απεικονίζει την αποδοτικότητα των πόρων για την ολοκλήρωση των"
+" εργασιών. π.χ. ένας μόνο πόρος που ορισθεί σε μια φάση 5 ημερών με 5 "
+"εργασίες, θα παρουσιάσει ένα φορτίο 100% για τη φάση αυτή από προεπιλογή, "
+"αλλά αν βάλουμε μια απόδοση 200%, τότε το φορτίο του θα είναι μόνο 50%."
+
+#. module: hr
+#: model:ir.model.fields,help:hr.field_hr_employee_image
 msgid ""
 "This field holds the image used as photo for the employee, limited to "
 "1024x1024px."
-msgstr "Αυτό το πεδίο περιέχει μια εικόνα που χρησιμοποιείται ως φωτογραφία του εργαζόμενου, περιορίζεται σε 1024x1024px."
+msgstr ""
+"Αυτό το πεδίο περιέχει μια εικόνα που χρησιμοποιείται ως φωτογραφία του "
+"εργαζόμενου, περιορίζεται σε 1024x1024px."
 
 #. module: hr
-#: help:hr.config.settings,module_account_analytic_analysis:0
-msgid ""
-"This installs the module account_analytic_analysis, which will install sales"
-" management too."
-msgstr "Αυτό εγκαθιστά το άρθρωμα λογαριασμός_ανάλυση, το οποίο θα εγκαταστήσει τη διαχείριση των πωλήσεων επίσης."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_attendance:0
-msgid "This installs the module hr_attendance."
-msgstr "Εγκαθιστά την εφαρμογή hr_attendance."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_contract:0
-msgid "This installs the module hr_contract."
-msgstr "Εγκαθιστά την εφαρμογή hr_contract."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_evaluation:0
-msgid "This installs the module hr_evaluation."
-msgstr "Εγκαθιστά την εφαρμογή hr_evaluation."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_expense:0
-msgid "This installs the module hr_expense."
-msgstr "Εγκαθιστά την εφαρμογή hr_expense."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_gamification:0
-msgid "This installs the module hr_gamification."
-msgstr "Εγκαθιστά την εφαρμογή hr_gamification."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_holidays:0
-msgid "This installs the module hr_holidays."
-msgstr "Εγκαθιστά την εφαρμογή hr_holidays."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_payroll:0
-msgid "This installs the module hr_payroll."
-msgstr "Εγκαθιστά την εφαρμογή hr_payroll."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_recruitment:0
-msgid "This installs the module hr_recruitment."
-msgstr "Εγκαθιστά την εφαρμογή hr_recruitment."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_timesheet:0
-msgid "This installs the module hr_timesheet."
-msgstr "Εγκαθιστά την εφαρμογή hr_timesheet."
-
-#. module: hr
-#: help:hr.config.settings,module_hr_timesheet_sheet:0
-msgid "This installs the module hr_timesheet_sheet."
-msgstr "Εγκαθιστά την εφαρμογή hr_timesheet_sheet."
-
-#. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-msgid "Time Tracking"
-msgstr "Καταγραφή Χρόνου"
-
-#. module: hr
-#: field:hr.job,expected_employees:0
+#: model:ir.model.fields,field_description:hr.field_hr_job_expected_employees
 msgid "Total Forecasted Employees"
 msgstr "Σύνολο Προβλεπόμενων Υπαλλήλων"
 
 #. module: hr
-#: view:hr.employee:hr.hr_kanban_view_employees
-msgid "Unfollow"
-msgstr "Άρση ακολούθησης"
+#: model:hr.job,name:hr.job_trainee
+msgid "Trainee"
+msgstr ""
 
 #. module: hr
-#: field:hr.employee,message_unread:0 field:hr.job,message_unread:0
+#: model:hr.job,website_description:hr.job_marketing
+msgid "Transform our product into a suite of well positioned business Apps"
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.hr_kanban_view_employees
+#: model:ir.ui.view,arch_db:hr.view_department_filter
+#: model:ir.ui.view,arch_db:hr.view_employee_filter
+#: model:ir.ui.view,arch_db:hr.view_job_filter
 msgid "Unread Messages"
 msgstr "Αδιάβαστα Μηνύματα"
 
 #. module: hr
-#: field:hr.job,write_date:0
-msgid "Update Date"
-msgstr "Ενημέρωση Ημερομηνίας"
+#: model:ir.model.fields,help:hr.field_hr_employee_login
+msgid "Used to log into the system"
+msgstr "Χρησιμοποιείται για να συνδεθείτε στο σύστημα"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_user_id
+msgid "User"
+msgstr "Χρήστης"
 
 #. module: hr
 #: model:ir.model,name:hr.model_res_users
@@ -931,10 +1250,62 @@ msgid "Users"
 msgstr "Χρήστες"
 
 #. module: hr
-#: code:addons/hr/hr.py:273
-#, python-format
-msgid "Welcome to %s! Please help him/her take the first steps with Odoo!"
-msgstr "Καλωσόρισμα στο %s! Παρακαλούμε βοηθήστε τον/την να κάνει τα πρώτα βήματα με το Odoo!"
+#: model:hr.job,website_description:hr.job_consultant
+msgid ""
+"We are looking for a motivated and results-driven Functional Consultant! You"
+" will take part in the consulting services we provide to our partners and "
+"customers, on the functional side. Your job start from the quotation to the "
+"customer to the delivery to the customer. You listen the customer and try to"
+" give him the best service. You report to the head of consulting service and"
+" will be coached by a senior consultant."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_hrm
+msgid ""
+"We are looking for a passionated Human Resources Manager to help us make "
+"products people love to use. We need someone who is ambitious, passionated, "
+"and ..... not afraid to start new things, a lot of new things and scale "
+"them."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+msgid ""
+"We are looking for a passionated executive manager to help us make products "
+"people love to use. We need someone who is ambitious, passionated, and ....."
+" not afraid to start new things, a lot of new things and scale them."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_marketing
+msgid ""
+"We are looking for a passionated marketer manager to help us make products "
+"people love to use. We need someone who is ambitious, passionated, and ....."
+" not afraid to start new things, a lot of new things and scale them."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "What we offer"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid "What you will do ..."
+msgstr ""
 
 #. module: hr
 #: selection:hr.employee,marital:0
@@ -942,41 +1313,290 @@ msgid "Widower"
 msgstr "Χήρος"
 
 #. module: hr
-#: field:hr.employee,work_email:0
+#: model:hr.job,website_description:hr.job_consultant
+msgid "Will report to the Head of Professional Services"
+msgstr ""
+
+#. module: hr
+#: model:ir.actions.act_window,help:hr.act_employee_from_department
+#: model:ir.actions.act_window,help:hr.open_view_employee_list_my
+msgid ""
+"With just a quick glance on the Odoo employee screen, you\n"
+"                can easily find all the information you need for each person;\n"
+"                contact data, job position, availability, etc."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+#: model:hr.job,website_description:hr.job_trainee
+msgid ""
+"With our product, which is a suite of 3000 business apps. It is fully open "
+"source, full featured and it’s online offer is 3 times cheaper than "
+"traditional competitors. We have 2.000.000 users, and we're growing fast."
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_work_email
 msgid "Work Email"
 msgstr "Email εργασίας"
 
 #. module: hr
-#: field:hr.employee,mobile_phone:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_work_location
+msgid "Work Location"
+msgstr ""
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee_mobile_phone
 msgid "Work Mobile"
 msgstr "Κινητό Εργασίας"
 
 #. module: hr
-#: field:hr.employee,work_phone:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_work_phone
 msgid "Work Phone"
 msgstr "Τηλ. Εργασίας"
 
 #. module: hr
-#: field:hr.employee,address_id:0
+#: model:ir.model.fields,field_description:hr.field_hr_employee_address_id
 msgid "Working Address"
 msgstr "Διεύθυνση Εργασίας"
 
 #. module: hr
-#: view:hr.department:hr.view_department_form
+#: model:ir.model.fields,field_description:hr.field_hr_employee_calendar_id
+msgid "Working Time"
+msgstr "Ωράριο Εργασίας"
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_marketing
+msgid "Write attractive content"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_hrm
+msgid "Write attractive content and build up Human Resources materials"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+msgid "Write attractive content and build up executive materials"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "You are a quick and autonomous learner"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "You are an excellent communicator and negotiator"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "You are approachable, honest and fun team player"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "You are available immediately"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "You are creative"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "You are ready to travel in US"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "You are ready to work in a dynamic company"
+msgstr ""
+
+#. module: hr
+#: model:ir.actions.act_window,help:hr.action_hr_job
+msgid ""
+"You can attach a survey to a job position. It will be used in\n"
+"                the recruitment process to evaluate the applicants for this job\n"
+"                position."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "You have 2 or 3 years of experience"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "You have a Master degree in Business Management"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+#: model:hr.job,website_description:hr.job_marketing
+msgid "You have an affinity with the IT world"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid "You have an affinity with the product"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "You have good knowledge in accounting"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "You speak a third language"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_consultant
+msgid "You speak fluently French and English"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_trainee
+msgid ""
+"You will be responsible for developing and improving applications. You will "
+"work autonomously as well as                     coordinate and supervise "
+"small distributed development teams for specific projects. You will become a"
+" technical                 expert of the product."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_developer
+msgid ""
+"You will be responsible for developing and improving applications. You will "
+"work autonomously as well as coordinate and supervise small distributed "
+"development teams for specific projects. You will become a technical expert "
+"of the product."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_ceo
+#: model:hr.job,website_description:hr.job_hrm
+#: model:hr.job,website_description:hr.job_marketing
+msgid ""
+"You will be responsible for developing and improving product communication. "
+"You will work autonomously as well as coordinate and supervise small "
+"distributed development teams for specific projects. You will become a "
+"techinical expert of the product."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "You will become a technical expert of the product."
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_developer
+msgid "You will initially be coached by senior developers"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_cto
+msgid "You will initially be coached by senior technical officer"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_trainee
+msgid "You will initially be coached by senior trainees"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_cto
+#: model:hr.job,website_description:hr.job_developer
+#: model:hr.job,website_description:hr.job_trainee
+msgid "You will report to the head of R&amp;D"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_developer
+msgid "You will work closely with all developers"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_cto
+msgid "You will work closely with all technical officer"
+msgstr ""
+
+#. module: hr
+#: model:hr.job,website_description:hr.job_trainee
+msgid "You will work closely with all trainees"
+msgstr ""
+
+#. module: hr
+#: model:mail.template,subject:hr.mail_template_data_unknown_employee_email_address
+msgid "Your document has not been created"
+msgstr ""
+
+#. module: hr
+#: model:mail.template,body_html:hr.mail_template_data_unknown_employee_email_address
+msgid ""
+"Your document has not been created because your email address is not "
+"recognized. Please send emails with the email address recorded on your "
+"employee information, or contact your HR manager."
+msgstr ""
+
+#. module: hr
+#: code:addons/hr/models/mail_thread.py:41
+#, python-format
+msgid "alias %s does not accept unknown employees"
+msgstr ""
+
+#. module: hr
+#: model:ir.ui.view,arch_db:hr.view_department_form
 msgid "department"
 msgstr "τμήμα"
 
 #. module: hr
-#: view:hr.employee:hr.view_employee_form
+#: model:ir.ui.view,arch_db:hr.view_employee_form
 msgid "e.g. Part Time"
 msgstr "π.χ. Μερικής Απασχόλησης"
 
 #. module: hr
-#: view:hr.job:hr.view_hr_job_form
-msgid "new employee(s) expected"
-msgstr "Νέος/οι εργαζόμενος(οι) αναμένεται/αναμένονται"
+#: model:ir.ui.view,arch_db:hr.view_hr_job_form
+msgid "e.g. Sales Manager"
+msgstr ""
 
 #. module: hr
-#: view:hr.config.settings:hr.view_human_resources_configuration
-msgid "or"
-msgstr "ή"
+#: code:addons/hr/models/mail_thread.py:41
+#, python-format
+msgid "skipping"
+msgstr ""
+
+#. module: hr
+#: model:res.groups,comment:hr.group_hr_user
+msgid "the user will be able to approve document created by employees."
+msgstr ""
+"ο χρήστης θα μπορεί να εγκρίνει έγγραφα που δημιουργούνται από εργαζόμενους."
+
+#. module: hr
+#: model:res.groups,comment:hr.group_hr_manager
+msgid ""
+"the user will have an access to the human resources configuration as well as"
+" statistic reports."
+msgstr ""
+"ο χρήστης θα έχει πρόσβαση στις ρυθμίσεις ανθρωπίνων πορων και στις αναφορές"
+" στατιστικών."

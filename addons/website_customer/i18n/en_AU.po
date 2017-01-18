@@ -1,70 +1,59 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * website_customer
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 8.0\n"
+"Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2015-07-17 08:16+0000\n"
+"POT-Creation-Date: 2016-09-07 08:57+0000\n"
+"PO-Revision-Date: 2015-09-08 10:10+0000\n"
 "Last-Translator: Martin Trigaux\n"
-"Language-Team: English (Australia) (http://www.transifex.com/odoo/odoo-8/language/en_AU/)\n"
+"Language-Team: English (Australia) (http://www.transifex.com/odoo/odoo-9/"
+"language/en_AU/)\n"
+"Language: en_AU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: en_AU\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: website_customer
-#: code:addons/website_customer/controllers/main.py:55
-#, python-format
-msgid "All Countries"
-msgstr ""
+#: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_create_uid
+msgid "Created by"
+msgstr "Created by"
 
 #. module: website_customer
-#: view:website:website_customer.implemented_by_block
-msgid "Implemented By"
-msgstr ""
+#: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_create_date
+msgid "Created on"
+msgstr "Created on"
 
 #. module: website_customer
-#: view:website:website_customer.index
-msgid "No result found"
-msgstr ""
+#: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_display_name
+msgid "Display Name"
+msgstr "Display Name"
 
 #. module: website_customer
-#: view:website:website.layout view:website:website_customer.details
-#: view:website:website_customer.index
-msgid "Our References"
-msgstr ""
+#: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_id
+msgid "ID"
+msgstr "ID"
 
 #. module: website_customer
-#: view:website:website_customer.references_block
-msgid "References"
-msgstr ""
+#: model:ir.model.fields,field_description:website_customer.field_res_partner_tag___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
 
 #. module: website_customer
-#: view:website:website_customer.index
-msgid "References by Country"
-msgstr ""
+#: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
 
 #. module: website_customer
-#: view:website:website_customer.index
+#: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: website_customer
+#: model:ir.ui.view,arch_db:website_customer.index
 msgid "Search"
 msgstr "Search"
-
-#. module: website_customer
-#: view:website:website_customer.index
-msgid "Trusted by millions worldwide"
-msgstr ""
-
-#. module: website_customer
-#: view:website:website_customer.index
-msgid "World Map"
-msgstr ""
-
-#. module: website_customer
-#: view:website:website_customer.implemented_by_block
-msgid "reference(s))"
-msgstr ""

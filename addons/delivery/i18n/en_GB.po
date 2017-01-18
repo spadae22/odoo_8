@@ -1,400 +1,326 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * delivery
-# 
+#
 # Translators:
+# James Dove <james@oceancave.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 8.0\n"
+"Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2015-07-17 07:04+0000\n"
+"POT-Creation-Date: 2016-09-07 08:56+0000\n"
+"PO-Revision-Date: 2016-02-11 10:34+0000\n"
 "Last-Translator: Martin Trigaux\n"
-"Language-Team: English (United Kingdom) (http://www.transifex.com/odoo/odoo-8/language/en_GB/)\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/odoo/"
+"odoo-9/language/en_GB/)\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: delivery
-#: selection:delivery.grid.line,operator:0
-msgid "<="
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_rules_count
+msgid "# Analytic Rules"
+msgstr "# Analytic Rules"
 
 #. module: delivery
-#: model:ir.actions.act_window,help:delivery.action_delivery_grid_form
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_description_sale
 msgid ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Click to create a delivery price list for a specific region.\n"
-"              </p><p>\n"
-"                The delivery price list allows you to compute the cost and\n"
-"                sales price of the delivery according to the weight of the\n"
-"                products and other criteria. You can define several price lists\n"
-"                for each delivery method: per country or a zone in a specific\n"
-"                country defined by a postal code range.\n"
-"              </p>\n"
-"            "
+"A description of the Product that you want to communicate to your customers. "
+"This description will be copied to every Sale Order, Delivery Order and "
+"Customer Invoice/Refund"
 msgstr ""
+"A description of the Product that you want to communicate to your customers. "
+"This description will be copied to every Sale Order, Delivery Order and "
+"Customer Invoice/Refund"
 
 #. module: delivery
-#: model:ir.actions.act_window,help:delivery.action_delivery_carrier_form
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_description_purchase
 msgid ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Click to define a new deliver method. \n"
-"              </p><p>\n"
-"                Each carrier (e.g. UPS) can have several delivery methods (e.g.\n"
-"                UPS Express, UPS Standard) with a set of pricing rules attached\n"
-"                to each method.\n"
-"              </p><p>\n"
-"                These methods allow to automatically compute the delivery price\n"
-"                according to your settings; on the sales order (based on the\n"
-"                quotation) or the invoice (based on the delivery orders).\n"
-"              </p>\n"
-"            "
+"A description of the Product that you want to communicate to your vendors. "
+"This description will be copied to every Purchase Order, Receipt and Vendor "
+"Bill/Refund."
 msgstr ""
+"A description of the Product that you want to communicate to your suppliers. "
+"This description will be copied to every Purchase Order, Receipt and "
+"Supplier Bill/Refund."
 
 #. module: delivery
-#: selection:delivery.grid.line,operator:0
-msgid ">="
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_needaction
+msgid "Action Needed"
+msgstr "Action Needed"
 
 #. module: delivery
-#: field:delivery.carrier,active:0 field:delivery.grid,active:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_active
 msgid "Active"
 msgstr "Active"
 
 #. module: delivery
-#: view:sale.order:delivery.view_order_withcarrier_form
-msgid "Add in Quote"
-msgstr ""
-
-#. module: delivery
-#: field:delivery.carrier,pricelist_ids:0
-msgid "Advanced Pricing"
-msgstr ""
-
-#. module: delivery
-#: field:delivery.carrier,use_detailed_pricelist:0
-msgid "Advanced Pricing per Destination"
-msgstr ""
-
-#. module: delivery
-#: field:delivery.carrier,amount:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_amount
 msgid "Amount"
 msgstr "Amount"
 
 #. module: delivery
-#: help:delivery.carrier,amount:0
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_amount
 msgid ""
 "Amount of the order to benefit from a free shipping, expressed in the "
 "company currency"
 msgstr ""
+"Amount of the order to benefit from a free shipping, expressed in the "
+"company currency"
 
 #. module: delivery
-#: field:delivery.carrier,available:0
-msgid "Available"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_asset_category_id
+msgid "Asset Type"
+msgstr "Asset Type"
 
 #. module: delivery
-#: view:delivery.carrier:delivery.view_delivery_carrier_form
-#: view:delivery.carrier:delivery.view_delivery_carrier_tree
-#: field:delivery.grid,carrier_id:0
-#: model:ir.model,name:delivery.model_delivery_carrier
-#: field:stock.picking,carrier_id:0 view:website:stock.report_picking
-msgid "Carrier"
-msgstr ""
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_purchase_avg_price
+msgid "Avg. Price in Vendor Bills "
+msgstr "Avg. Price in Supplier Bills"
 
 #. module: delivery
-#: view:stock.picking:delivery.view_picking_withcarrier_out_form
-msgid "Carrier Information"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_image
+msgid "Big-sized image"
+msgstr "Big-sized image"
 
 #. module: delivery
-#: field:stock.picking,carrier_tracking_ref:0
-msgid "Carrier Tracking Ref"
-msgstr ""
+#: model:ir.ui.view,arch_db:delivery.view_picking_withcarrier_out_form
+msgid "Cancel"
+msgstr "Cancel"
 
 #. module: delivery
-#: help:delivery.carrier,use_detailed_pricelist:0
-msgid ""
-"Check this box if you want to manage delivery prices that depends on the "
-"destination, the weight, the total of the order, etc."
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_color
+msgid "Color Index"
+msgstr "Colour Index"
 
 #. module: delivery
-#: help:sale.order,carrier_id:0
-msgid ""
-"Complete this field if you plan to invoice the shipping based on picking."
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_company_id
+msgid "Company"
+msgstr "Company"
 
 #. module: delivery
-#: view:delivery.grid.line:delivery.view_delivery_grid_line_form
+#: model:ir.ui.view,arch_db:delivery.view_delivery_price_rule_form
 msgid "Condition"
 msgstr "Condition"
 
 #. module: delivery
-#: field:delivery.grid.line,standard_price:0
-msgid "Cost Price"
-msgstr ""
-
-#. module: delivery
-#: view:delivery.grid:delivery.view_delivery_grid_form
-#: field:delivery.grid,country_ids:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_country_ids
 msgid "Countries"
 msgstr "Countries"
 
 #. module: delivery
-#: field:delivery.carrier,create_uid:0 field:delivery.grid,create_uid:0
-#: field:delivery.grid.line,create_uid:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_create_uid
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_create_uid
 msgid "Created by"
 msgstr "Created by"
 
 #. module: delivery
-#: field:delivery.carrier,create_date:0 field:delivery.grid,create_date:0
-#: field:delivery.grid.line,create_date:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_create_date
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_create_date
 msgid "Created on"
 msgstr "Created on"
 
 #. module: delivery
-#: code:addons/delivery/delivery.py:162
-#, python-format
-msgid "Default price"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_currency_id
+msgid "Currency"
+msgstr "Currency"
 
 #. module: delivery
-#: model:ir.ui.menu,name:delivery.menu_delivery
-msgid "Delivery"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_taxes_id
+msgid "Customer Taxes"
+msgstr "Customer Taxes"
 
 #. module: delivery
-#: model:ir.model,name:delivery.model_delivery_grid
-msgid "Delivery Grid"
-msgstr ""
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
 
 #. module: delivery
-#: model:ir.model,name:delivery.model_delivery_grid_line
-msgid "Delivery Grid Line"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_deferred_revenue_category_id
+msgid "Deferred Revenue Type"
+msgstr "Deferred Revenue Type"
 
 #. module: delivery
-#: field:delivery.carrier,grids_id:0
-msgid "Delivery Grids"
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_route_ids
+msgid ""
+"Depending on the modules installed, this will allow you to define the route "
+"of the product: whether it will be bought, manufactured, MTO/MTS,..."
 msgstr ""
+"Depending on the modules installed, this will allow you to define the route "
+"of the product: whether it will be bought, manufactured, MTO/MTS,..."
 
 #. module: delivery
-#: field:delivery.carrier,name:0 field:res.partner,property_delivery_carrier:0
-#: field:sale.order,carrier_id:0
-msgid "Delivery Method"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_description
+msgid "Description"
+msgstr "Description"
 
 #. module: delivery
-#: model:ir.actions.act_window,name:delivery.action_delivery_carrier_form
-#: model:ir.ui.menu,name:delivery.menu_action_delivery_carrier_form
-msgid "Delivery Methods"
-msgstr ""
-
-#. module: delivery
-#: model:ir.actions.act_window,name:delivery.action_delivery_grid_form
-#: model:ir.ui.menu,name:delivery.menu_action_delivery_grid_form
-msgid "Delivery Pricelist"
-msgstr ""
-
-#. module: delivery
-#: field:delivery.carrier,product_id:0
-msgid "Delivery Product"
-msgstr ""
-
-#. module: delivery
-#: model:product.template,name:delivery.product_product_delivery_product_template
-msgid "Delivery by Poste"
-msgstr ""
-
-#. module: delivery
-#: view:delivery.carrier:delivery.view_delivery_carrier_form
-#: view:delivery.grid:delivery.view_delivery_grid_form
-#: view:delivery.grid:delivery.view_delivery_grid_tree
-msgid "Delivery grids"
-msgstr ""
-
-#. module: delivery
-#: view:delivery.carrier:delivery.view_delivery_carrier_form
-#: view:delivery.grid:delivery.view_delivery_grid_form
+#: model:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid "Destination"
 msgstr "Destination"
 
 #. module: delivery
-#: selection:delivery.grid.line,price_type:0
-msgid "Fixed"
-msgstr "Fixed"
-
-#. module: delivery
-#: field:delivery.carrier,free_if_more_than:0
-msgid "Free If Order Total Amount Is More Than"
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_event_ok
+msgid ""
+"Determine if a product needs to create automatically an event registration "
+"at the confirmation of a sales order line."
 msgstr ""
+"Determine if a product needs to create automatically an event registration "
+"at the confirmation of a sales order line."
 
 #. module: delivery
-#: code:addons/delivery/delivery.py:151
-#, python-format
-msgid "Free if more than %.2f"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_display_name
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_display_name
+msgid "Display Name"
+msgstr "Display Name"
 
 #. module: delivery
-#: view:delivery.carrier:delivery.view_delivery_carrier_form
-msgid "General Information"
-msgstr "General Information"
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_property_account_expense_id
+msgid "Expense Account"
+msgstr "Expense Account"
 
 #. module: delivery
-#: help:delivery.grid.line,sequence:0
-msgid "Gives the sequence order when calculating delivery grid."
-msgstr ""
+#: selection:delivery.carrier,delivery_type:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_fixed_price
+msgid "Fixed Price"
+msgstr "Fixed Price"
 
 #. module: delivery
-#: help:delivery.grid,sequence:0
-msgid "Gives the sequence order when displaying a list of delivery grid."
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_follower_ids
+msgid "Followers"
+msgstr "Followers"
 
 #. module: delivery
-#: field:delivery.grid.line,grid_id:0
-msgid "Grid"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Followers (Channels)"
 
 #. module: delivery
-#: field:delivery.grid,line_ids:0
-msgid "Grid Line"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Followers (Partners)"
 
 #. module: delivery
-#: view:delivery.grid.line:delivery.view_delivery_grid_line_form
-#: view:delivery.grid.line:delivery.view_delivery_grid_line_tree
-msgid "Grid Lines"
-msgstr ""
-
-#. module: delivery
-#: field:delivery.grid,name:0
-msgid "Grid Name"
-msgstr ""
-
-#. module: delivery
-#: view:delivery.carrier:delivery.view_delivery_carrier_form
-#: view:delivery.grid:delivery.view_delivery_grid_form
-msgid "Grid definition"
-msgstr ""
-
-#. module: delivery
-#: field:delivery.carrier,id:0 field:delivery.grid,id:0
-#: field:delivery.grid.line,id:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_id
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_id
 msgid "ID"
 msgstr "ID"
 
 #. module: delivery
-#: help:delivery.carrier,active:0
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_message_unread
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "If checked, new messages require your attention."
+
+#. module: delivery
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_image
 msgid ""
-"If the active field is set to False, it will allow you to hide the delivery "
-"carrier without removing it."
+"Image of the product variant (Big-sized image of product template if false). "
+"It is automatically resized as a 1024x1024px image, with aspect ratio "
+"preserved."
 msgstr ""
+"Image of the product variant (Big-sized image of product template if false). "
+"It is automatically resized as a 1024x1024px image, with aspect ratio "
+"preserved."
 
 #. module: delivery
-#: help:delivery.grid,active:0
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_image_medium
 msgid ""
-"If the active field is set to False, it will allow you to hide the delivery "
-"grid without removing it."
+"Image of the product variant (Medium-sized image of product template if "
+"false)."
 msgstr ""
+"Image of the product variant (Medium-sized image of product template if "
+"false)."
 
 #. module: delivery
-#: help:delivery.carrier,free_if_more_than:0
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_image_small
 msgid ""
-"If the order is more expensive than a certain amount, the customer can "
-"benefit from a free shipping"
+"Image of the product variant (Small-sized image of product template if "
+"false)."
 msgstr ""
+"Image of the product variant (Small-sized image of product template if "
+"false)."
 
 #. module: delivery
-#: view:sale.order:delivery.view_order_withcarrier_form
-msgid ""
-"If you don't 'Add in Quote', the exact price will be computed when invoicing"
-" based on delivery order(s)."
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_property_account_income_id
+msgid "Income Account"
+msgstr "Income Account"
 
 #. module: delivery
-#: field:sale.order.line,is_delivery:0
-msgid "Is a Delivery"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_is_follower
+msgid "Is Follower"
+msgstr "Is Follower"
 
 #. module: delivery
-#: help:delivery.carrier,available:0
-msgid "Is the carrier method possible with the current order."
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_last_post
+msgid "Last Message Date"
+msgstr "Last Message Date"
 
 #. module: delivery
-#: help:delivery.carrier,normal_price:0
-msgid ""
-"Keep empty if the pricing depends on the advanced pricing per destination"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier___last_update
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
 
 #. module: delivery
-#: field:delivery.carrier,write_uid:0 field:delivery.grid,write_uid:0
-#: field:delivery.grid.line,write_uid:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_write_uid
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_write_uid
 msgid "Last Updated by"
 msgstr "Last Updated by"
 
 #. module: delivery
-#: field:delivery.carrier,write_date:0 field:delivery.grid,write_date:0
-#: field:delivery.grid.line,write_date:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_write_date
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_write_date
 msgid "Last Updated on"
 msgstr "Last Updated on"
 
 #. module: delivery
-#: field:delivery.grid.line,max_value:0
-msgid "Maximum Value"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_location_id
+msgid "Location"
+msgstr "Location"
 
 #. module: delivery
-#: field:delivery.grid.line,name:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_produce_delay
+msgid "Manufacturing Lead Time"
+msgstr "Manufacturing Lead Time"
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_image_medium
+msgid "Medium-sized image"
+msgstr "Medium-sized image"
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_name
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_name
+#: model:ir.ui.view,arch_db:delivery.view_delivery_carrier_form
 msgid "Name"
 msgstr "Name"
 
 #. module: delivery
-#: field:stock.picking,weight_net:0
-msgid "Net Weight"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_needaction_counter
+msgid "Number of Actions"
+msgstr "Number of Actions"
 
 #. module: delivery
-#: field:stock.move,weight_net:0
-msgid "Net weight"
-msgstr ""
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Number of messages which requires an action"
 
 #. module: delivery
-#: code:addons/delivery/sale.py:71
-#, python-format
-msgid "No Grid Available!"
-msgstr ""
-
-#. module: delivery
-#: code:addons/delivery/sale.py:71
-#, python-format
-msgid "No grid matching for this carrier!"
-msgstr ""
-
-#. module: delivery
-#: field:delivery.carrier,normal_price:0
-msgid "Normal Price"
-msgstr ""
-
-#. module: delivery
-#: field:stock.picking,number_of_packages:0
-msgid "Number of Packages"
-msgstr ""
-
-#. module: delivery
-#: field:delivery.grid.line,operator:0
-msgid "Operator"
-msgstr ""
-
-#. module: delivery
-#: code:addons/delivery/sale.py:74
-#, python-format
-msgid "Order not in Draft State!"
-msgstr ""
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_message_unread_counter
+msgid "Number of unread messages"
+msgstr "Number of unread messages"
 
 #. module: delivery
 #: model:ir.model,name:delivery.model_res_partner
@@ -402,41 +328,39 @@ msgid "Partner"
 msgstr "Partner"
 
 #. module: delivery
-#: model:ir.model,name:delivery.model_stock_picking
-msgid "Picking List"
-msgstr "Picking List"
-
-#. module: delivery
-#: model:ir.actions.act_window,name:delivery.action_picking_tree
-msgid "Picking to be invoiced"
-msgstr ""
-
-#. module: delivery
-#: field:delivery.carrier,price:0 selection:delivery.grid.line,type:0
-#: selection:delivery.grid.line,variable_factor:0
+#: selection:delivery.price.rule,variable:0
+#: selection:delivery.price.rule,variable_factor:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_price
 msgid "Price"
 msgstr "Price"
 
 #. module: delivery
-#: field:delivery.grid.line,price_type:0
-msgid "Price Type"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_property_account_creditor_price_difference
+msgid "Price Difference Account"
+msgstr "Price Difference Account"
 
 #. module: delivery
-#: view:delivery.carrier:delivery.view_delivery_carrier_form
-msgid "Pricing Information"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_pricelist_id
+msgid "Pricelist"
+msgstr "Pricelist"
 
 #. module: delivery
-#: selection:delivery.grid.line,type:0
-#: selection:delivery.grid.line,variable_factor:0
+#: model:ir.model,name:delivery.model_product_template
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_product_tmpl_id
+msgid "Product Template"
+msgstr "Product Template"
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_product_variant_ids
+msgid "Products"
+msgstr "Products"
+
+#. module: delivery
+#: selection:delivery.price.rule,variable:0
+#: selection:delivery.price.rule,variable_factor:0
+#: model:ir.model.fields,field_description:delivery.field_sale_order_line_product_qty
 msgid "Quantity"
 msgstr "Quantity"
-
-#. module: delivery
-#: field:delivery.grid.line,list_price:0
-msgid "Sale Price"
-msgstr ""
 
 #. module: delivery
 #: model:ir.model,name:delivery.model_sale_order
@@ -445,32 +369,25 @@ msgstr "Sales Order"
 
 #. module: delivery
 #: model:ir.model,name:delivery.model_sale_order_line
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_sale_line_warn
 msgid "Sales Order Line"
 msgstr "Sales Order Line"
 
 #. module: delivery
-#: code:addons/delivery/delivery.py:237
-#, python-format
-msgid ""
-"Selected product in the delivery method doesn't fulfill any of the delivery "
-"grid(s) criteria."
-msgstr ""
-
-#. module: delivery
-#: field:delivery.grid,sequence:0 field:delivery.grid.line,sequence:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_sequence
+#: model:ir.model.fields,field_description:delivery.field_delivery_price_rule_sequence
 msgid "Sequence"
 msgstr "Sequence"
 
 #. module: delivery
-#: field:delivery.grid,zip_from:0
-msgid "Start Zip"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_image_small
+msgid "Small-sized image"
+msgstr "Small-sized image"
 
 #. module: delivery
-#: view:delivery.grid:delivery.view_delivery_grid_form
-#: field:delivery.grid,state_ids:0
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_state_ids
 msgid "States"
-msgstr "States"
+msgstr "Status"
 
 #. module: delivery
 #: model:ir.model,name:delivery.model_stock_move
@@ -478,106 +395,93 @@ msgid "Stock Move"
 msgstr "Stock Move"
 
 #. module: delivery
-#: code:addons/delivery/stock.py:91
-#, python-format
-msgid "The carrier %s (id: %d) has no delivery grid!"
-msgstr ""
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_normal_cost
+msgid "Sum of Multiplication of Cost price and quantity of Vendor Bills"
+msgstr "Sum of Multiplication of Cost price and quantity of Supplier Bills"
 
 #. module: delivery
-#: code:addons/delivery/sale.py:74
-#, python-format
-msgid "The order state have to be draft to add delivery lines."
-msgstr ""
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_total_cost
+msgid "Sum of Multiplication of Invoice price and quantity of Vendor Bills "
+msgstr "Sum of Multiplication of Invoice price and quantity of Supplier Bills"
 
 #. module: delivery
-#: help:delivery.carrier,partner_id:0
-msgid "The partner that is doing the delivery service."
-msgstr ""
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_purchase_num_invoiced
+msgid "Sum of Quantity in Vendor Bills"
+msgstr "Sum of Quantity in Supplier Bills"
 
 #. module: delivery
-#: help:res.partner,property_delivery_carrier:0
-msgid "This delivery method will be used when invoicing from picking."
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_property_account_expense_id
+msgid ""
+"This account will be used for invoices instead of the default one to value "
+"expenses for the current product."
 msgstr ""
+"This account will be used for invoices instead of the default one to value "
+"expenses for the current product."
 
 #. module: delivery
-#: field:delivery.grid,zip_to:0
-msgid "To Zip"
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_property_account_income_id
+msgid ""
+"This account will be used for invoices instead of the default one to value "
+"sales for the current product."
 msgstr ""
+"This account will be used for invoices instead of the default one to value "
+"sales for the current product."
 
 #. module: delivery
-#: field:delivery.carrier,partner_id:0
-msgid "Transport Company"
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_property_account_creditor_price_difference
+msgid ""
+"This account will be used to value price difference between purchase price "
+"and cost price."
 msgstr ""
+"This account will be used to value price difference between purchase price "
+"and cost price."
 
 #. module: delivery
-#: code:addons/delivery/delivery.py:237
-#, python-format
-msgid "Unable to fetch delivery method!"
+#: model:ir.model.fields,help:delivery.field_delivery_carrier_property_stock_production
+msgid ""
+"This stock location will be used, instead of the default one, as the source "
+"location for stock moves generated by manufacturing orders."
 msgstr ""
+"This stock location will be used, instead of the default one, as the source "
+"location for stock moves generated by manufacturing orders."
 
 #. module: delivery
-#: field:stock.move,weight_uom_id:0 field:stock.picking,weight_uom_id:0
+#: model:ir.model,name:delivery.model_stock_picking
+msgid "Transfer"
+msgstr "Transfer"
+
+#. module: delivery
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_uom_id
+#: model:ir.model.fields,field_description:delivery.field_stock_picking_weight_uom_id
 msgid "Unit of Measure"
 msgstr "Unit of Measure"
 
 #. module: delivery
-#: help:stock.move,weight_uom_id:0
-msgid ""
-"Unit of Measure (Unit of Measure) is the unit of measurement for Weight"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_unread
+msgid "Unread Messages"
+msgstr "Unread Messages"
 
 #. module: delivery
-#: help:stock.picking,weight_uom_id:0
-msgid "Unit of measurement for Weight"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Unread Messages Counter"
 
 #. module: delivery
-#: selection:delivery.grid.line,price_type:0 field:delivery.grid.line,type:0
-msgid "Variable"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_supplier_taxes_id
+msgid "Vendor Taxes"
+msgstr "Supplier Taxes"
 
 #. module: delivery
-#: field:delivery.grid.line,variable_factor:0
-msgid "Variable Factor"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_warehouse_id
+msgid "Warehouse"
+msgstr "Warehouse"
 
 #. module: delivery
-#: selection:delivery.grid.line,type:0
-#: selection:delivery.grid.line,variable_factor:0 field:stock.picking,volume:0
-msgid "Volume"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_zip_from
+msgid "Zip From"
+msgstr "Postcode From"
 
 #. module: delivery
-#: code:addons/delivery/stock.py:90
-#, python-format
-msgid "Warning!"
-msgstr "Warning!"
-
-#. module: delivery
-#: selection:delivery.grid.line,type:0
-#: selection:delivery.grid.line,variable_factor:0 field:stock.move,weight:0
-#: view:stock.picking:delivery.view_picking_withcarrier_out_form
-#: field:stock.picking,weight:0 view:website:stock.report_picking
-msgid "Weight"
-msgstr ""
-
-#. module: delivery
-#: selection:delivery.grid.line,type:0
-#: selection:delivery.grid.line,variable_factor:0
-msgid "Weight * Volume"
-msgstr ""
-
-#. module: delivery
-#: view:website:stock.report_picking
-msgid "Will be invoiced to:"
-msgstr ""
-
-#. module: delivery
-#: view:delivery.carrier:delivery.view_delivery_carrier_form
-msgid "Zip"
-msgstr "Postcode"
-
-#. module: delivery
-#: view:delivery.grid.line:delivery.view_delivery_grid_line_form
-msgid "in Function of"
-msgstr ""
+#: model:ir.model.fields,field_description:delivery.field_delivery_carrier_zip_to
+msgid "Zip To"
+msgstr "Postcode To"

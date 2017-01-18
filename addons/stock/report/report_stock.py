@@ -1,43 +1,26 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from openerp.osv import fields, osv
-from openerp.tools.sql import drop_view_if_exists
+from odoo import api, fields, models
+from odoo.tools.sql import drop_view_if_exists
 
-class report_stock_lines_date(osv.osv):
+
+class ReportStockLinesDate(models.Model):
     _name = "report.stock.lines.date"
     _description = "Dates of Inventories and latest Moves"
     _auto = False
     _order = "date"
-    _columns = {
-        'id': fields.integer('Product Id', readonly=True),
-        'product_id': fields.many2one('product.product', 'Product', readonly=True, select=True),
-        'date': fields.datetime('Date of latest Inventory', readonly=True),
-        'move_date': fields.datetime('Date of latest Stock Move', readonly=True),
-        "active": fields.boolean("Active", readonly=True),
-    }
 
-    def init(self, cr):
-        drop_view_if_exists(cr, 'report_stock_lines_date')
-        cr.execute("""
+    id = fields.Integer('Product Id', readonly=True)
+    product_id = fields.Many2one('product.product', 'Product', readonly=True, index=True)
+    date = fields.Datetime('Date of latest Inventory', readonly=True)
+    move_date = fields.Datetime('Date of latest Stock Move', readonly=True)
+    active = fields.Boolean("Active", readonly=True)
+
+    @api.model_cr
+    def init(self):
+        drop_view_if_exists(self._cr, 'report_stock_lines_date')
+        self._cr.execute("""
             create or replace view report_stock_lines_date as (
                 select
                 p.id as id,
@@ -54,6 +37,3 @@ class report_stock_lines_date(osv.osv):
                     left join stock_move m on (m.product_id=p.id and m.state = 'done')
                 group by p.id
             )""")
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

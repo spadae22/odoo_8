@@ -3,15 +3,16 @@
 # * report
 # 
 # Translators:
-# Bogdan, 2015
+# ТАрас <tratatuta@i.ua>, 2016
+# Bohdan Lisnenko <lem8r.ka11a@gmail.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 8.0\n"
+"Project-Id-Version: Odoo Server 10.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2015-10-13 18:35+0000\n"
-"Last-Translator: Bogdan\n"
-"Language-Team: Ukrainian (http://www.transifex.com/odoo/odoo-8/language/uk/)\n"
+"POT-Creation-Date: 2016-09-07 08:57+0000\n"
+"PO-Revision-Date: 2016-09-07 08:57+0000\n"
+"Last-Translator: Bohdan Lisnenko <lem8r.ka11a@gmail.com>, 2016\n"
+"Language-Team: Ukrainian (https://www.transifex.com/odoo/teams/41243/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,19 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. module: report
-#: view:website:report.external_layout_footer
-msgid "&bull;"
-msgstr ""
+#: model:ir.ui.view,arch_db:report.external_layout_footer
+msgid "&amp;bull;"
+msgstr "&amp;bull;"
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.minimal_layout
+msgid "&lt;!DOCTYPE html&gt;"
+msgstr "&lt;!DOCTYPE html&gt;"
 
 #. module: report
 #: selection:report.paperformat,format:0
 msgid ":B10    16  31 x 44 mm"
 msgstr ":B10 16 31 x 44 мм"
-
-#. module: report
-#: view:website:report.minimal_layout
-msgid "<!DOCTYPE html>"
-msgstr ""
 
 #. module: report
 #: selection:report.paperformat,format:0
@@ -89,7 +90,7 @@ msgid "Allows customization of a report."
 msgstr "Дозволити налаштування звітів."
 
 #. module: report
-#: field:report.paperformat,report_ids:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_report_ids
 msgid "Associated reports"
 msgstr "Пов’язані звіти"
 
@@ -144,13 +145,13 @@ msgid "B9  23  33 x 62 mm"
 msgstr "B9 23 33 x 62 мм"
 
 #. module: report
-#: code:addons/report/models/report.py:295
+#: code:addons/report/models/report.py:273
 #, python-format
 msgid "Bad Report Reference"
 msgstr "Невірне посилання на звіт"
 
 #. module: report
-#: field:report.paperformat,margin_bottom:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_margin_bottom
 msgid "Bottom Margin (mm)"
 msgstr "Нижнє поле (мм)"
 
@@ -170,14 +171,16 @@ msgid "Companies"
 msgstr "Компанії"
 
 #. module: report
-#: field:report,create_uid:0 field:report.paperformat,create_uid:0
+#: model:ir.model.fields,field_description:report.field_report_create_uid
+#: model:ir.model.fields,field_description:report.field_report_paperformat_create_uid
 msgid "Created by"
 msgstr "Створив"
 
 #. module: report
-#: field:report,create_date:0 field:report.paperformat,create_date:0
+#: model:ir.model.fields,field_description:report.field_report_create_date
+#: model:ir.model.fields,field_description:report.field_report_paperformat_create_date
 msgid "Created on"
-msgstr "Створено"
+msgstr "Дата створення"
 
 #. module: report
 #: selection:report.paperformat,format:0
@@ -190,24 +193,62 @@ msgid "DLE 26 110 x 220 mm"
 msgstr "DLE 26 110 x 220 мм"
 
 #. module: report
-#: field:report.paperformat,default:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_default
 msgid "Default paper format ?"
 msgstr "Типовий формат сторінки?"
 
 #. module: report
-#: field:report.paperformat,header_line:0
+#. openerp-web
+#: code:addons/report/static/src/xml/report.xml:12
+#, python-format
+msgid "Discard"
+msgstr "Відмінити"
+
+#. module: report
+#: model:ir.model.fields,field_description:report.field_ir_qweb_field_barcode_display_name
+#: model:ir.model.fields,field_description:report.field_report_abstract_report_display_name
+#: model:ir.model.fields,field_description:report.field_report_display_name
+#: model:ir.model.fields,field_description:report.field_report_paperformat_display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: report
+#: model:ir.model.fields,field_description:report.field_report_paperformat_header_line
 msgid "Display a header line"
 msgstr "Показувати рядок заголовку"
 
 #. module: report
-#: view:website:report.external_layout_footer
+#. openerp-web
+#: code:addons/report/static/src/xml/report.xml:8
+#, python-format
+msgid "Edit"
+msgstr "Редагувати"
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.base_config_settings_inherited
+msgid "Edit external footer"
+msgstr "Редагувати зовнішніій нижній колонтитул"
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.base_config_settings_inherited
+msgid "Edit external header"
+msgstr "Редагувати зовнішній верхній колонтитул"
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.base_config_settings_inherited
+msgid "Edit internal header"
+msgstr "Редагувати внутрішній верхній колонтитул"
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.external_layout_footer
 msgid "Email:"
 msgstr "Ел. пошта:"
 
 #. module: report
-#: constraint:report.paperformat:0
-msgid "Error ! You cannot select a format AND speficic page width/height."
-msgstr "Помилка! Ви не можете обрати формат та певну ширину/висоту"
+#: code:addons/report/models/report_paperformat.py:68
+#, python-format
+msgid "Error ! You cannot select a format AND specific page width/height."
+msgstr ""
 
 #. module: report
 #: selection:report.paperformat,format:0
@@ -215,12 +256,12 @@ msgid "Executive 4   7.5 x 10 inches, 190.5 x 254 mm"
 msgstr "Адміністративний 4 7.5 x 10 дюймів, 190.5 x 254 мм"
 
 #. module: report
-#: help:report.paperformat,report_ids:0
+#: model:ir.model.fields,help:report.field_report_paperformat_report_ids
 msgid "Explicitly associated reports"
 msgstr "Невірно пов’язані звіти"
 
 #. module: report
-#: view:website:report.external_layout_footer
+#: model:ir.ui.view,arch_db:report.external_layout_footer
 msgid "Fax:"
 msgstr "Факс:"
 
@@ -230,30 +271,47 @@ msgid "Folio 27  210 x 330 mm"
 msgstr "Фоліант 27 210 x 330 мм"
 
 #. module: report
-#: field:report.paperformat,header_spacing:0
+#: model:ir.model,name:report.model_ir_http
+msgid "HTTP routing"
+msgstr "Маршрутизація HTTP"
+
+#. module: report
+#: model:ir.model.fields,field_description:report.field_report_paperformat_header_spacing
 msgid "Header spacing"
 msgstr "Відступ заголовку"
 
 #. module: report
-#: field:report,id:0 field:report.abstract_report,id:0
-#: field:report.paperformat,id:0
+#: model:ir.model.fields,field_description:report.field_ir_qweb_field_barcode_id
+#: model:ir.model.fields,field_description:report.field_report_abstract_report_id
+#: model:ir.model.fields,field_description:report.field_report_id
+#: model:ir.model.fields,field_description:report.field_report_paperformat_id
 msgid "ID"
-msgstr "ID"
+msgstr "ІД"
 
 #. module: report
 #: selection:report.paperformat,orientation:0
 msgid "Landscape"
-msgstr "Альбомна орієнтація"
+msgstr "Альбомна"
 
 #. module: report
-#: field:report,write_uid:0 field:report.paperformat,write_uid:0
+#: model:ir.model.fields,field_description:report.field_ir_qweb_field_barcode___last_update
+#: model:ir.model.fields,field_description:report.field_report___last_update
+#: model:ir.model.fields,field_description:report.field_report_abstract_report___last_update
+#: model:ir.model.fields,field_description:report.field_report_paperformat___last_update
+msgid "Last Modified on"
+msgstr "Остання модифікація"
+
+#. module: report
+#: model:ir.model.fields,field_description:report.field_report_paperformat_write_uid
+#: model:ir.model.fields,field_description:report.field_report_write_uid
 msgid "Last Updated by"
-msgstr "Востаннє відредаговано"
+msgstr "Востаннє оновив"
 
 #. module: report
-#: field:report,write_date:0 field:report.paperformat,write_date:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_write_date
+#: model:ir.model.fields,field_description:report.field_report_write_date
 msgid "Last Updated on"
-msgstr "Дата останньої зміни"
+msgstr "Останнє оновлення"
 
 #. module: report
 #: selection:report.paperformat,format:0
@@ -261,7 +319,7 @@ msgid "Ledger  28  431.8 x 279.4 mm"
 msgstr "Журнал 28 431.8 x 279.4 мм"
 
 #. module: report
-#: field:report.paperformat,margin_left:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_margin_left
 msgid "Left Margin (mm)"
 msgstr "Ліве поле (мм)"
 
@@ -276,39 +334,39 @@ msgid "Letter 2 8.5 x 11 inches, 215.9 x 279.4 mm"
 msgstr "Грамота 2 8.5 x 11 дюймів, 215.9 x 279.4 мм"
 
 #. module: report
-#: field:report.paperformat,name:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_name
 msgid "Name"
 msgstr "Назва"
 
 #. module: report
-#: field:report.paperformat,orientation:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_orientation
 msgid "Orientation"
 msgstr "Орієнтація"
 
 #. module: report
-#: field:report.paperformat,dpi:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_dpi
 msgid "Output DPI"
 msgstr "DPI на виході"
 
 #. module: report
-#: field:report.paperformat,page_height:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_page_height
 msgid "Page height (mm)"
 msgstr "Висота сторінки (мм)"
 
 #. module: report
-#: field:report.paperformat,page_width:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_page_width
 msgid "Page width (mm)"
 msgstr "Ширина сторінки (мм)"
 
 #. module: report
-#: view:website:report.external_layout_footer
+#: model:ir.ui.view,arch_db:report.external_layout_footer
 msgid "Page:"
 msgstr "Сторінка:"
 
 #. module: report
 #: model:ir.ui.menu,name:report.paper_format_menuitem
 msgid "Paper Format"
-msgstr "Формат дати"
+msgstr "Формат сторінки"
 
 #. module: report
 #: model:ir.actions.act_window,name:report.paper_format_action
@@ -316,47 +374,73 @@ msgid "Paper Format General Configuration"
 msgstr "Загалі налаштування формату сторінки"
 
 #. module: report
-#: field:ir.actions.report.xml,paperformat_id:0
-#: field:res.company,paperformat_id:0
+#: model:ir.model.fields,field_description:report.field_ir_act_report_xml_paperformat_id
+#: model:ir.model.fields,field_description:report.field_res_company_paperformat_id
 msgid "Paper format"
 msgstr "Формат сторінки"
 
 #. module: report
-#: view:report.paperformat:report.paperformat_view_form
-#: view:report.paperformat:report.paperformat_view_tree
+#: model:ir.model.fields,field_description:report.field_base_config_settings_paperformat_id
+msgid "Paper format *"
+msgstr ""
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.paperformat_view_form
+#: model:ir.ui.view,arch_db:report.paperformat_view_tree
 msgid "Paper format configuration"
 msgstr "налаштування формату сторінки"
 
 #. module: report
-#: field:report.paperformat,format:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_format
 msgid "Paper size"
 msgstr "Формат сторінки"
 
 #. module: report
-#: view:website:report.external_layout_footer
+#: model:ir.ui.view,arch_db:report.external_layout_footer
 msgid "Phone:"
-msgstr "Телефон"
+msgstr "Телефон:"
 
 #. module: report
 #: selection:report.paperformat,orientation:0
 msgid "Portrait"
-msgstr "Портрет"
+msgstr "Портретна орієнтація"
+
+#. module: report
+#: model:ir.actions.report.xml,name:report.action_report_externalpreview
+#: model:ir.ui.view,arch_db:report.base_config_settings_inherited
+msgid "Preview External Report"
+msgstr "Попередній перегляд зовнішнього звіту"
+
+#. module: report
+#: model:ir.actions.report.xml,name:report.action_report_internalpreview
+#: model:ir.ui.view,arch_db:report.base_config_settings_inherited
+msgid "Preview Internal Report"
+msgstr "Попередній перегляд внутрішнього звіту"
 
 #. module: report
 #. openerp-web
-#: code:addons/report/static/src/js/qwebactionmanager.js:67
-#: code:addons/report/static/src/js/qwebactionmanager.js:75
-#: code:addons/report/static/src/js/qwebactionmanager.js:82
+#: code:addons/report/static/src/xml/report.xml:5
+#, python-format
+msgid "Print"
+msgstr "Друк"
+
+#. module: report
+#: model:ir.model.fields,field_description:report.field_ir_act_report_xml_print_report_name
+msgid "Printed Report Name"
+msgstr ""
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.act_report_xml_view_inherit
+msgid "QWeb views"
+msgstr ""
+
+#. module: report
+#. openerp-web
+#: code:addons/report/static/src/js/qwebactionmanager.js:95
 #: model:ir.model,name:report.model_report
 #, python-format
 msgid "Report"
 msgstr "Звіт"
-
-#. module: report
-#: code:addons/report/models/report.py:449
-#, python-format
-msgid "Report (PDF)"
-msgstr ""
 
 #. module: report
 #: model:ir.actions.act_window,name:report.reports_action
@@ -366,19 +450,26 @@ msgid "Reports"
 msgstr "Звіти"
 
 #. module: report
-#: field:report.paperformat,margin_right:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_margin_right
 msgid "Right Margin (mm)"
 msgstr "Праве поле (мм)"
 
 #. module: report
-#: view:ir.actions.report.xml:report.act_report_xml_view_inherit
-msgid "Search associated QWeb views"
-msgstr "Пошук пов’язаних QWeb переглядів"
+#. openerp-web
+#: code:addons/report/static/src/xml/report.xml:11
+#, python-format
+msgid "Save"
+msgstr "Зберегти"
 
 #. module: report
-#: help:report.paperformat,format:0
+#: model:ir.model.fields,help:report.field_report_paperformat_format
 msgid "Select Proper Paper size"
 msgstr "Виберіть підходящий розмір сторінки"
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.external_layout_footer
+msgid "TIN:"
+msgstr "ІПН:"
 
 #. module: report
 #: selection:report.paperformat,format:0
@@ -386,73 +477,105 @@ msgid "Tabloid 29 279.4 x 431.8 mm"
 msgstr "Таблоїд 29 279.4 x 431.8 мм"
 
 #. module: report
-#: code:addons/report/models/report.py:296
+#: model:ir.ui.view,arch_db:report.preview_externalreport
+msgid "This is a sample of an external report."
+msgstr "Це приклад зовнішнього звіту."
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.preview_internalreport
+msgid "This is a sample of an internal report."
+msgstr "Це приклад внутрішнього звіту."
+
+#. module: report
+#: model:ir.model.fields,help:report.field_ir_act_report_xml_print_report_name
+msgid ""
+"This is the filename of the report going to download. Keep empty to not "
+"change the report filename. You can use a python expression with the object "
+"and time variables."
+msgstr ""
+
+#. module: report
+#: code:addons/report/models/report.py:273
 #, python-format
 msgid "This report is not loaded into the database: %s."
 msgstr "Цей звіт не завантажено в базу даних: %s."
 
 #. module: report
-#: field:report.paperformat,margin_top:0
+#: model:ir.model.fields,field_description:report.field_report_paperformat_margin_top
 msgid "Top Margin (mm)"
 msgstr "Верхнє поле (мм)"
 
 #. module: report
 #. openerp-web
-#: code:addons/report/static/src/js/qwebactionmanager.js:67
+#: code:addons/report/static/src/js/qwebactionmanager.js:18
 #, python-format
 msgid ""
 "Unable to find Wkhtmltopdf on this \n"
 "system. The report will be shown in html.<br><br><a href=\"http://wkhtmltopdf.org/\" target=\"_blank\">\n"
 "wkhtmltopdf.org</a>"
-msgstr "Неможливо знайти Wkhtmltopdf в цій \nсистемі. Звіт буде показано в html.<br><br><a href=\"http://wkhtmltopdf.org/\" target=\"_blank\">\nwkhtmltopdf.org</a>"
+msgstr ""
+"Неможливо знайти Wkhtmltopdf в цій \n"
+"системі. Звіт буде показано в html.<br><br><a href=\"http://wkhtmltopdf.org/\" target=\"_blank\">\n"
+"wkhtmltopdf.org</a>"
 
 #. module: report
-#: view:website:report.external_layout_footer
+#: code:addons/report/models/report.py:164
+#, python-format
+msgid "Unable to find Wkhtmltopdf on this system. The PDF can not be created."
+msgstr ""
+
+#. module: report
+#: model:ir.ui.view,arch_db:report.external_layout_footer
 msgid "Website:"
 msgstr "Веб-сайт:"
 
 #. module: report
-#: code:addons/report/models/report.py:450
+#: code:addons/report/models/report.py:435
 #, python-format
 msgid "Wkhtmltopdf failed (error code: %s). Message: %s"
 msgstr "Помилка Wkhtmltopdf (код помилки: %s). Повідомлення: %s"
 
 #. module: report
 #. openerp-web
-#: code:addons/report/static/src/js/qwebactionmanager.js:75
+#: code:addons/report/static/src/js/qwebactionmanager.js:19
 #, python-format
 msgid ""
 "You need to start OpenERP with at least two \n"
 "workers to print a pdf version of the reports."
-msgstr "Ви повинні запустити OpenERP як мінімум з двума \nробочими процесами, щоб друкувати pdf версії звітів."
+msgstr ""
+"Ви повинні запустити OpenERP як мінімум з двума \n"
+"робочими процесами, щоб друкувати pdf версії звітів."
 
 #. module: report
 #. openerp-web
-#: code:addons/report/static/src/js/qwebactionmanager.js:82
+#: code:addons/report/static/src/js/qwebactionmanager.js:20
 #, python-format
 msgid ""
 "You should upgrade your version of\n"
-" Wkhtmltopdf to at least 0.12.0 in order to get a correct display of headers and footers as well as\n"
-" support for table-breaking between pages.<br><br><a href=\"http://wkhtmltopdf.org/\" \n"
-" target=\"_blank\">wkhtmltopdf.org</a>"
+"Wkhtmltopdf to at least 0.12.0 in order to get a correct display of headers and footers as well as\n"
+"support for table-breaking between pages.<br><br><a href=\"http://wkhtmltopdf.org/\" \n"
+"target=\"_blank\">wkhtmltopdf.org</a>"
+msgstr ""
+"Вам необхідно оновити версію\n"
+"Wkhtmltopdf як мінімум до 0.12.0 щоб отримати коректне відображення колонтитулів та \n"
+"підримку розбивання таблиць на сторінки.<br><br><a href=\"http://wkhtmltopdf.org/\" \n"
+"target=\"_blank\">wkhtmltopdf.org</a>"
+
+#. module: report
+#: model:ir.model,name:report.model_base_config_settings
+msgid "base.config.settings"
+msgstr "base.config.settings"
+
+#. module: report
+#. openerp-web
+#: code:addons/report/static/src/js/qwebactionmanager.js:96
+#, python-format
+msgid ""
+"Your installation of Wkhtmltopdf seems to be broken. The \n"
+"report will be shown in html.<br><br><a href=\"http://wkhtmltopdf.org/\" target=\"_blank\">wkhtmltopdf.org</a>"
 msgstr ""
 
 #. module: report
-#: view:website:report.layout
-msgid "data_report_dpi if data_report_dpi else None"
-msgstr ""
-
-#. module: report
-#: view:website:report.layout
-msgid "data_report_header_spacing if data_report_header_spacing else None"
-msgstr ""
-
-#. module: report
-#: view:website:report.layout
-msgid "data_report_margin_top if data_report_margin_top else None"
-msgstr ""
-
-#. module: report
-#: view:website:report.layout
-msgid "report.layout"
+#: model:ir.model,name:report.model_ir_qweb_field_barcode
+msgid "ir.qweb.field.barcode"
 msgstr ""

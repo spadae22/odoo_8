@@ -1,54 +1,34 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2014-Today OpenERP SA (<http://www.openerp.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import logging
 
-import openerp
-import openerp.tests
+import odoo
+import odoo.tests
 
 
 _logger = logging.getLogger(__name__)
 
 
-@openerp.tests.common.at_install(False)
-@openerp.tests.common.post_install(True)
-class TestReports(openerp.tests.TransactionCase):
+@odoo.tests.common.at_install(False)
+@odoo.tests.common.post_install(True)
+class TestReports(odoo.tests.TransactionCase):
     def test_reports(self):
-        registry, cr, uid = self.registry, self.cr, self.uid
-        r_model = registry('ir.actions.report.xml')
         domain = [('report_type', 'like', 'qweb')]
-        for r in r_model.browse(cr, uid, r_model.search(cr, uid, domain)):
-            report_model = 'report.%s' % r.report_name
+        for report in self.env['ir.actions.report.xml'].search(domain):
+            report_model = 'report.%s' % report.report_name
             try:
-                registry(report_model)
+                self.env[report_model]
             except KeyError:
-            # Only test the generic reports here
-                _logger.info("testing report %s", r.report_name)
-                report_model = registry(r.model)
-                report_model_ids = report_model.search(cr, uid, [], limit=10)
-                if not report_model_ids:
-                    _logger.info("no record found skipping report %s", r.report_name)
-                if not r.multi:
-                    report_model_ids = report_model_ids[:1]
+                # Only test the generic reports here
+                _logger.info("testing report %s", report.report_name)
+                report_model = self.env[report.model]
+                report_records = report_model.search([], limit=10)
+                if not report_records:
+                    _logger.info("no record found skipping report %s", report.report_name)
+                if not report.multi:
+                    report_records = report_records[:1]
 
                 # Test report generation
-                registry('report').get_html(cr, uid, report_model_ids, r.report_name)
+                self.env['report'].get_html(report_records.ids, report.report_name)
             else:
                 continue

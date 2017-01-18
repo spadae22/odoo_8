@@ -3,15 +3,17 @@
 # * website_gengo
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2015
+# Dorin Hongu <dhongu@gmail.com>, 2016
+# Cozmin Candea <office@terrabit.ro>, 2016
+# Martin Trigaux <mat@odoo.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 8.0\n"
+"Project-Id-Version: Odoo Server 10.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2016-03-24 05:08+0000\n"
-"Last-Translator: Martin Trigaux\n"
-"Language-Team: Romanian (http://www.transifex.com/odoo/odoo-8/language/ro/)\n"
+"POT-Creation-Date: 2016-09-07 08:57+0000\n"
+"PO-Revision-Date: 2016-09-07 08:57+0000\n"
+"Last-Translator: Martin Trigaux <mat@odoo.com>, 2016\n"
+"Language-Team: Romanian (https://www.transifex.com/odoo/teams/41243/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -80,7 +82,7 @@ msgstr ""
 #: code:addons/website_gengo/static/src/xml/website.gengo.xml:78
 #, python-format
 msgid "Cancel"
-msgstr "Anulați"
+msgstr "Anulează"
 
 #. module: website_gengo
 #. openerp-web
@@ -92,7 +94,7 @@ msgstr "Anulați"
 #: code:addons/website_gengo/static/src/xml/website.gengo.xml:156
 #, python-format
 msgid "Close"
-msgstr "Închideți"
+msgstr "Închide"
 
 #. module: website_gengo
 #. openerp-web
@@ -155,7 +157,8 @@ msgstr ""
 #: code:addons/website_gengo/static/src/xml/website.gengo.xml:20
 #, python-format
 msgid "Here are the visuals used to help you translate efficiently:"
-msgstr "Sunt folosite aspectele vizuale pentru a vă ajuta să traduceți eficient:"
+msgstr ""
+"Sunt folosite aspectele vizuale pentru a vă ajuta să traduceți eficient:"
 
 #. module: website_gengo
 #. openerp-web
@@ -193,7 +196,7 @@ msgstr ""
 #: code:addons/website_gengo/static/src/xml/website.gengo.xml:76
 #, python-format
 msgid "Post"
-msgstr "Postați"
+msgstr "Postează"
 
 #. module: website_gengo
 #. openerp-web
@@ -327,6 +330,11 @@ msgstr "Sunteți pe cale să intrați în modul de traducere."
 #, python-format
 msgid "and generate API Keys."
 msgstr ""
+
+#. module: website_gengo
+#: model:ir.model,name:website_gengo.model_base_gengo_translations
+msgid "base.gengo.translations"
+msgstr "baza.gengo.traduceri"
 
 #. module: website_gengo
 #. openerp-web
