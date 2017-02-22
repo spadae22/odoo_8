@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-09 09:18+0000\n"
-"PO-Revision-Date: 2016-10-08 10:30+0000\n"
+"PO-Revision-Date: 2016-12-23 16:01+0000\n"
 "Last-Translator: dzord dzord <ekenpad@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/odoo/odoo-9/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -152,7 +152,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:point_of_sale.report_statement
 #: model:ir.ui.view,arch_db:point_of_sale.report_usersproduct
 msgid "<strong>Company</strong>:<br/>"
-msgstr ""
+msgstr "<strong>Компания</strong>:<br/>"
 
 #. module: point_of_sale
 #: model:ir.ui.view,arch_db:point_of_sale.report_sessionsummary
@@ -538,7 +538,7 @@ msgstr "Активен"
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_account_journal_journal_user
 msgid "Active in Point of Sale"
-msgstr ""
+msgstr "Активировать в точке продаж"
 
 #. module: point_of_sale
 #. openerp-web
@@ -878,7 +878,7 @@ msgstr ""
 #: code:addons/point_of_sale/point_of_sale.py:1604
 #, python-format
 msgid "Cashier"
-msgstr ""
+msgstr "Кассир"
 
 #. module: point_of_sale
 #: model:ir.actions.act_window,help:point_of_sale.product_pos_category_action
@@ -957,7 +957,7 @@ msgstr ""
 msgid ""
 "Check this if you want to group the Journal Items by Product while closing a"
 " Session"
-msgstr ""
+msgstr "Отметьте чтобы сгруппировать позиции журнала по продуктам при закрытии сессии"
 
 #. module: point_of_sale
 #. openerp-web
@@ -1411,7 +1411,7 @@ msgstr "Descuento:"
 #: code:addons/point_of_sale/point_of_sale.py:1602
 #, python-format
 msgid "Discounted Product"
-msgstr ""
+msgstr "Уценённый продукт"
 
 #. module: point_of_sale
 #. openerp-web
@@ -2892,7 +2892,7 @@ msgstr "Цена"
 #: code:addons/point_of_sale/point_of_sale.py:1601
 #, python-format
 msgid "Priced Product"
-msgstr ""
+msgstr "Оценённый продукт"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_config_pricelist_id
@@ -4254,7 +4254,7 @@ msgstr "Склад"
 #: code:addons/point_of_sale/point_of_sale.py:1600
 #, python-format
 msgid "Weighted Product"
-msgstr ""
+msgstr "Взвешенный Продукт"
 
 #. module: point_of_sale
 #. openerp-web

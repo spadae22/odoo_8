@@ -304,7 +304,7 @@ class Field(object):
     _slots = {
         'args': EMPTY_DICT,             # the parameters given to __init__()
         '_attrs': EMPTY_DICT,           # the field's non-slot attributes
-        'setup_full_done': False,       # whether the field has been fully setup
+        '_setup_done': None,            # the field's setup state: None, 'base' or 'full'
 
         'automatic': False,             # whether the field is automatically created ("magic" field)
         'inherited': False,             # whether the field is inherited (_inherits)
@@ -346,7 +346,7 @@ class Field(object):
         kwargs['string'] = string
         args = {key: val for key, val in kwargs.iteritems() if val is not None}
         self.args = args or EMPTY_DICT
-        self.setup_full_done = False
+        self._setup_done = None
 
     def new(self, **kwargs):
         """ Return a field of the same type as ``self``, with its own parameters. """
@@ -398,14 +398,15 @@ class Field(object):
 
     def setup_base(self, model, name):
         """ Base setup: things that do not depend on other models/fields. """
-        if self.setup_full_done and not self.related:
+        if self._setup_done and not self.related:
             # optimization for regular fields: keep the base setup
-            self.setup_full_done = False
+            self._setup_done = 'base'
         else:
             # do the base setup from scratch
             self._setup_attrs(model, name)
             if not self.related:
                 self._setup_regular_base(model)
+            self._setup_done = 'base'
 
     #
     # Setup field parameter attributes
@@ -490,12 +491,12 @@ class Field(object):
 
     def setup_full(self, model):
         """ Full setup: everything else, except recomputation triggers. """
-        if not self.setup_full_done:
+        if self._setup_done != 'full':
             if not self.related:
                 self._setup_regular_full(model)
             else:
                 self._setup_related_full(model)
-            self.setup_full_done = True
+            self._setup_done = 'full'
 
     #
     # Setup of non-related fields
@@ -1914,9 +1915,8 @@ class One2many(_RelationalMulti):
     _column_limit = property(attrgetter('limit'))
 
     def convert_to_onchange(self, value, fnames=None):
-        if fnames:
-            # do not serialize self's inverse field
-            fnames = [name for name in fnames if name != self.inverse_name]
+        fnames = set(fnames or value.fields_view_get()['fields'])
+        fnames.discard(self.inverse_name)
         return super(One2many, self).convert_to_onchange(value, fnames)
 
 

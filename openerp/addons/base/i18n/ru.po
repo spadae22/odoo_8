@@ -7,8 +7,10 @@
 # Andrey Samorukov <andrey.samorukov@me.com>, 2016
 # Artur Komishenko <Archi1792@gmail.com>, 2016
 # Denis Trepalin <zekarious@gmail.com>, 2015
+# Evgeny Kemerov <sintezz777@gmail.com>, 2016
 # Evgeny <transingularity@gmail.com>, 2016
 # Gennady Marchenko <gennadym@gmail.com>, 2016
+# Martin Trigaux, 2016
 # Max Belyanin <maxbelyanin@gmail.com>, 2015
 # Max Belyanin <maxbelyanin@gmail.com>, 2015
 # Sergey Vilizhanin <sv@grimmette.ru>, 2016
@@ -22,7 +24,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-22 07:25+0000\n"
-"PO-Revision-Date: 2016-10-15 19:17+0000\n"
+"PO-Revision-Date: 2017-01-28 08:15+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Russian (http://www.transifex.com/odoo/odoo-9/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -2855,7 +2857,7 @@ msgid ""
 "Survey - CRM (bridge module)\n"
 "=================================================================================\n"
 "This module adds a Survey mass mailing button inside the more option of lead/customers views\n"
-msgstr ""
+msgstr "\nОпросы - CRM (соединяющий модуль)\n=================================================================================\nЭтот модуль добавляет кнопку создания массового почтового опроса в большинство опций инициатив и возможностей\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_ch
@@ -5746,6 +5748,12 @@ msgid "Automatic Installation"
 msgstr "Автоматическая установка"
 
 #. module: base
+#: code:addons/base/module/module.py:693
+#, python-format
+msgid "Automatic install of downloaded Apps is currently disabled."
+msgstr ""
+
+#. module: base
 #: model:ir.model.fields,help:base.field_ir_translation_state
 msgid ""
 "Automatically set to let administators find new terms that might need to be "
@@ -7610,7 +7618,7 @@ msgstr "Названия пользовательских полей должн�
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_rating
 msgid "Customer Rating"
-msgstr ""
+msgstr "Рейтинг клиентов"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_customer
@@ -9685,7 +9693,7 @@ msgstr "Помогает вам обрабатывать ваши предлож
 #. module: base
 #: model:ir.module.category,description:base.module_category_lead_automation
 msgid "Helps you manage lead of your marketing campaigns step by step."
-msgstr ""
+msgstr "Поможет управлять инициативами кампании шаг за шагом."
 
 #. module: base
 #: model:ir.module.category,description:base.module_category_event_management
@@ -11208,7 +11216,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_crm_project_issue
 msgid "Lead to Issue"
-msgstr ""
+msgstr "Инициативу в заявку"
 
 #. module: base
 #: model:ir.ui.menu,name:base.menu_crm_config_lead
@@ -14387,7 +14395,7 @@ msgstr ""
 #. module: base
 #: model:res.country,name:base.sm
 msgid "San Marino"
-msgstr ""
+msgstr "Сан-Марино"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner_bank_sanitized_acc_number
@@ -14397,7 +14405,7 @@ msgstr ""
 #. module: base
 #: model:res.country,name:base.sa
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "Саудовская Аравия"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_sa
@@ -14663,7 +14671,7 @@ msgstr ""
 #. module: base
 #: selection:base.language.install,lang:0
 msgid "Serbian (Latin) / srpski"
-msgstr ""
+msgstr "Сербский (Latin) / srpski"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_fields_serialization_field_id
@@ -14803,7 +14811,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_server_wkf_transition_id
 msgid "Signal to Trigger"
-msgstr ""
+msgstr "Сигнал активации"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_users_signature
@@ -15612,7 +15620,7 @@ msgstr ""
 #. module: base
 #: model:ir.actions.report.xml,name:base.ir_module_reference_print
 msgid "Technical guide"
-msgstr ""
+msgstr "Техническое руководство"
 
 #. module: base
 #: selection:base.language.install,lang:0
@@ -15668,7 +15676,7 @@ msgstr ""
 #. module: base
 #: model:res.country,name:base.th
 msgid "Thailand"
-msgstr ""
+msgstr "Таиланд"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_th
@@ -15747,17 +15755,17 @@ msgstr ""
 #. module: base
 #: sql_constraint:res.country:0
 msgid "The code of the country must be unique !"
-msgstr ""
+msgstr "Код страны должен быть уникальным !"
 
 #. module: base
 #: sql_constraint:res.lang:0
 msgid "The code of the language must be unique !"
-msgstr ""
+msgstr "Код языка должен быть уникальным !"
 
 #. module: base
 #: sql_constraint:res.company:0
 msgid "The company name must be unique !"
-msgstr ""
+msgstr "Название компании должно быть уникальным!"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_users_company_id
@@ -16253,6 +16261,13 @@ msgid "To be upgraded"
 msgstr ""
 
 #. module: base
+#: code:addons/base/module/module.py:694
+#, python-format
+msgid ""
+"To enable it, make sure this directory exists and is writable on the server:"
+msgstr ""
+
+#. module: base
 #: model:ir.ui.view,arch_db:base.ir_actions_todo_tree
 msgid "Todo"
 msgstr "Сделать"
@@ -16697,7 +16712,7 @@ msgstr "Неизвестное суб-поле '%s'"
 #: code:addons/base/ir/ir_fields.py:165
 #, python-format
 msgid "Unknown value '%s' for boolean field '%%(field)s', assuming '%s'"
-msgstr ""
+msgstr "Неизвестное значение '%s' для логического поля '%%(field)s' принимая во внимание '%s'"
 
 #. module: base
 #: code:addons/translate.py:650
@@ -17996,7 +18011,7 @@ msgstr ""
 #: selection:base.language.install,state:0
 #: selection:base.module.update,state:0
 msgid "init"
-msgstr ""
+msgstr "вкл"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_partner_form

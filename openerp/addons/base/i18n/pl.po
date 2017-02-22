@@ -4,9 +4,10 @@
 # 
 # Translators:
 # Arek Smagacz <arek.smagacz@gmail.com>, 2015
-# zbik2607 <darek@krokus.com.pl>, 2016
+# zbik2607 <darek@krokus.com.pl>, 2016-2017
 # Grzegorz Grzelak <grzegorz.grzelak@openglobe.pl>, 2015-2016
 # Jaroslaw Kaczmarski, 2015
+# Mariusz, 2016
 # Piotr Szlązak <szlazakpiotr@gmail.com>, 2016
 # Slawomir Adamus <melthalion@gmail.com>, 2016
 # Zdzisław Krajewski <zdzichucb@gmail.com>, 2016
@@ -15,14 +16,14 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-22 07:25+0000\n"
-"PO-Revision-Date: 2016-10-14 15:25+0000\n"
+"PO-Revision-Date: 2017-01-28 10:02+0000\n"
 "Last-Translator: zbik2607 <darek@krokus.com.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/odoo/odoo-9/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_pos_reprint
@@ -5739,6 +5740,12 @@ msgid "Automatic Installation"
 msgstr "Instalacja automatyczna"
 
 #. module: base
+#: code:addons/base/module/module.py:693
+#, python-format
+msgid "Automatic install of downloaded Apps is currently disabled."
+msgstr ""
+
+#. module: base
 #: model:ir.model.fields,help:base.field_ir_translation_state
 msgid ""
 "Automatically set to let administators find new terms that might need to be "
@@ -6207,7 +6214,7 @@ msgstr "Kalendarz"
 #. module: base
 #: model:ir.module.module,summary:base.module_stock_calendar
 msgid "Calendars "
-msgstr ""
+msgstr "Kalendarze"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_stock_calendar
@@ -6427,7 +6434,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_check_printing
 msgid "Check Printing Base"
-msgstr "sprawdź drukowanie"
+msgstr "Podstawa drukowania czeków"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_partner_is_company
@@ -6484,7 +6491,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.category,name:base.module_category_localization_checks_printing
 msgid "Checks Printing"
-msgstr "sprawdź drukowanie"
+msgstr "Drukowanie czeków"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_attachment_checksum
@@ -6519,7 +6526,7 @@ msgstr "ID podrzędnego"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner_category_child_ids
 msgid "Child Tag"
-msgstr "Child Tag"
+msgstr "Tag podrzędny"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_act_server_child_ids
@@ -6831,7 +6838,7 @@ msgstr "Nazwa firmy"
 #: model:ir.actions.act_window,name:base.ir_property_form
 #: model:ir.ui.menu,name:base.menu_ir_property_form_all
 msgid "Company Properties"
-msgstr "właściwości firmy"
+msgstr "Własność firmy"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company_company_registry
@@ -8274,7 +8281,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hw_escpos
 msgid "ESC/POS Hardware Driver"
-msgstr "ESC/POS Sterowniki Urządzeń"
+msgstr "ESC/POS Sterownik Urządzeń"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_eu_service
@@ -8370,7 +8377,7 @@ msgstr "Pracownik"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_appraisal
 msgid "Employee Appraisals"
-msgstr "Podwyżki dla pracowników"
+msgstr "Oceny pracowników"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_contract
@@ -8508,7 +8515,7 @@ msgstr "Etiopia - raporty księgowości"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_server_object_lines_type
 msgid "Evaluation Type"
-msgstr "typ oceny"
+msgstr "Typ oceny"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_event_management
@@ -8567,7 +8574,7 @@ msgstr "Wykonanie"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_expense
 msgid "Expense Tracker"
-msgstr "Wydatki"
+msgstr "Śledzenie wydatków"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_expense
@@ -9298,7 +9305,7 @@ msgstr "Standardowe"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_generic_coa
 msgid "Generic - Accounting"
-msgstr "ogólna - księgowość "
+msgstr "Ogólna księgowość "
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_form
@@ -9648,7 +9655,7 @@ msgstr "Pomoc"
 #. module: base
 #: model:ir.module.module,summary:base.module_web_planner
 msgid "Help to configure application"
-msgstr "pomoc aby konfigurować aplikacje"
+msgstr "Pomoc w konfiguracji aplikacji"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
@@ -9678,7 +9685,7 @@ msgstr "Pomaga operować ofertami, zamówieniami sprzedaży i fakturowaniem."
 #. module: base
 #: model:ir.module.category,description:base.module_category_lead_automation
 msgid "Helps you manage lead of your marketing campaigns step by step."
-msgstr "Pomaga prowadzić wskazówki dla twojej kampanii marketingowej krok po kroku."
+msgstr "Pomaga zarządzać sygnałami w twojej kampanii marketingowej krok po kroku."
 
 #. module: base
 #: model:ir.module.category,description:base.module_category_event_management
@@ -10199,7 +10206,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base.field_ir_model_fields_modules
 #: model:ir.model.fields,field_description:base.field_ir_model_modules
 msgid "In Apps"
-msgstr "w aplikacji"
+msgstr "W aplikacji"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_currency_search
@@ -10416,7 +10423,7 @@ msgstr "Interakcje pomiędzy regułami"
 #. module: base
 #: model:ir.module.module,summary:base.module_inter_company_rules
 msgid "Intercompany SO/PO/INV rules"
-msgstr "zasady wewnątrz firmy SO/PO/INV"
+msgstr "Zasady międzyfirmowe ZS/ZZ/FS/FZ"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_groups_search
@@ -10452,7 +10459,7 @@ msgstr "Notatka wewnętrzna..."
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_cron_interval_number
 msgid "Interval Number"
-msgstr "Numer interwału"
+msgstr "Liczba interwałów"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_cron_interval_type
@@ -10467,7 +10474,7 @@ msgstr "Raportowanie Intrastat"
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodulereference
 msgid "Introspection report on objects"
-msgstr "Introspekcja raportu na obiektach"
+msgstr "Raport introspekcyjny na obiektach"
 
 #. module: base
 #: code:addons/models.py:4516
@@ -10500,7 +10507,7 @@ msgstr "Błędny identyfikator bazy danych '%s' dla pola '%%(field)s'"
 msgid ""
 "Invalid date/time format directive specified. Please refer to the list of "
 "allowed directives, displayed when you edit a language."
-msgstr "Niedozwolony format dyrektywy date/time. Sprawdź lsitę dozwolonych dyrektyw wyświetlaną w trakcie edycji."
+msgstr "Niedozwolony format dyrektywy date/time. Sprawdź listę dozwolonych dyrektyw wyświetlaną w trakcie edycji języka."
 
 #. module: base
 #: code:addons/models.py:672
@@ -11370,7 +11377,7 @@ msgstr "Logowanie"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_users_login
 msgid "Login"
-msgstr "Logowanie"
+msgstr "Login"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company_logo
@@ -11897,7 +11904,7 @@ msgstr "Model %s nie istnieje!"
 #: code:addons/base/ir/ir_model.py:143
 #, python-format
 msgid "Model '%s' contains module data and cannot be removed!"
-msgstr "Model '%s' zawiera dane modułu i nie może zostać usunięta!"
+msgstr "Model '%s' zawiera dane modułu i nie może zostać usunięty!"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_values_model_id
@@ -11910,12 +11917,12 @@ msgstr "Model (tylko zmiany)"
 #: model:ir.ui.view,arch_db:base.view_model_constraint_form
 #: model:ir.ui.view,arch_db:base.view_model_constraint_list
 msgid "Model Constraints"
-msgstr "model ograniczeń"
+msgstr "Ograniczenia modelu"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_view_model_data_id
 msgid "Model Data"
-msgstr "Model danych"
+msgstr "Dane modelu"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_name
@@ -11923,19 +11930,19 @@ msgstr "Model danych"
 #: model:ir.ui.view,arch_db:base.view_model_search
 #: model:ir.ui.view,arch_db:base.view_model_tree
 msgid "Model Description"
-msgstr "modelu opisu"
+msgstr "Opis modelu"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_server_model_name
 #: model:ir.model.fields,field_description:base.field_ir_model_data_model
 #: model:ir.model.fields,field_description:base.field_ir_values_model
 msgid "Model Name"
-msgstr "model nazwy"
+msgstr "Nazwa modelu"
 
 #. module: base
 #: model:ir.actions.report.xml,name:base.report_ir_model_overview
 msgid "Model Overview"
-msgstr "model opisu"
+msgstr "Przegląd modelu"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_act_server_crud_model_id
@@ -11959,7 +11966,7 @@ msgstr "Nazwa modelu, w którym wywoływana metoda jest zdefiniowana, n.p. 'res.
 #: code:addons/base/ir/ir_ui_view.py:685 code:addons/base/ir/ir_ui_view.py:863
 #, python-format
 msgid "Model not found: %(model)s"
-msgstr ""
+msgstr "Nie znaleziono modelu: %(model)s"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_values_model
@@ -12019,7 +12026,7 @@ msgstr "Aktualizacja modułu"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_module_update
 msgid "Module Update Result"
-msgstr "rezultat aktualizacja modułu"
+msgstr "Rezultat aktualizacji modułów"
 
 #. module: base
 #: model:ir.model,name:base.model_base_module_upgrade
@@ -12047,7 +12054,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_translation_module
 msgid "Module this term belongs to"
-msgstr ""
+msgstr "Moduł, do którego należy ta fraza"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_category_module_ids
@@ -12368,7 +12375,7 @@ msgstr "Brak języka z kodem \"%s\""
 msgid ""
 "No matching record found for %(field_type)s '%(value)s' in field "
 "'%%(field)s'"
-msgstr "Nie znaleziono rekordu odpowiadającego %(field_type)s '%(value)s' w polu '%%(field)s'"
+msgstr "Nie znaleziono rekordu odpowiadającego dla %(field_type)s '%(value)s' w polu '%%(field)s'"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_data_noupdate
@@ -12633,12 +12640,12 @@ msgstr "Bilety online na wydarzenie"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_event
 msgid "Online Events"
-msgstr "wydarzenia online"
+msgstr "Wydarzenia online"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_hr_recruitment
 msgid "Online Jobs"
-msgstr "praca online"
+msgstr "Praca online"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_quote
@@ -12757,7 +12764,7 @@ msgstr "Opcjonalna nazwa użytkownika dla identyfikacji przez SMTP"
 #. module: base
 #: selection:workflow.activity,split_mode:0
 msgid "Or"
-msgstr "lub"
+msgstr "Lub"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_view_custom_ref_id
@@ -12822,7 +12829,7 @@ msgstr "Serwer poczty wychodzącej"
 #: model:ir.ui.view,arch_db:base.ir_mail_server_list
 #: model:ir.ui.view,arch_db:base.view_ir_mail_server_search
 msgid "Outgoing Mail Servers"
-msgstr "Serwer poczty wychodzącej"
+msgstr "Serwery poczty wychodzącej"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_wkf_activity_out_transitions
@@ -12834,7 +12841,7 @@ msgstr "Przejścia wyjściowe"
 #: model:ir.model.fields,field_description:base.field_base_language_import_overwrite
 #: model:ir.model.fields,field_description:base.field_base_language_install_overwrite
 msgid "Overwrite Existing Terms"
-msgstr "Zastąp obecne terminy"
+msgstr "Zastąp obecne frazy"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_attachment_create_uid
@@ -13018,7 +13025,7 @@ msgstr "Dane użytkownika jako partnera"
 #: model:ir.model.fields,field_description:base.field_res_partner_category_partner_ids
 #: model:ir.ui.view,arch_db:base.view_partner_form
 msgid "Partners"
-msgstr "partnerzy"
+msgstr "Partnerzy"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_base_geolocalize
@@ -13029,7 +13036,7 @@ msgstr "Geo-lokalizacja partnerów"
 #: code:addons/base/res/res_partner.py:772
 #, python-format
 msgid "Partners: "
-msgstr "partnerzy:"
+msgstr "Partnerzy:"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_mail_server_smtp_pass
@@ -13588,7 +13595,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_module_published_version
 msgid "Published Version"
-msgstr "opublikowana wersja"
+msgstr "Opublikowana wersja"
 
 #. module: base
 #: model:res.country,name:base.pr
@@ -13656,7 +13663,7 @@ msgstr "Kwalifikator"
 #: model:ir.module.module,description:base.module_website_event_questions
 #: model:ir.module.module,shortdesc:base.module_website_event_questions
 msgid "Questions on Events"
-msgstr " pytania do wydarzeń"
+msgstr "Pytania do wydarzeń"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_settings_dashboard
@@ -14175,7 +14182,7 @@ msgstr "Uruchom %s"
 #. module: base
 #: model:ir.ui.view,arch_db:base.ir_cron_view
 msgid "Run Manually"
-msgstr "uruchom ręcznie"
+msgstr "Uruchom ręcznie"
 
 #. module: base
 #: model:ir.actions.server,name:base.action_run_ir_action_todo
@@ -14210,7 +14217,7 @@ msgstr "Port SMTP"
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_mail_server_smtp_port
 msgid "SMTP Port. Usually 465 for SSL, and 25 or 587 for other cases."
-msgstr ""
+msgstr "Port SMTP. Zwykle 465 dla SSL, 25 lub 587 w innych wypadkach."
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_mail_server_smtp_host
@@ -14544,7 +14551,7 @@ msgstr "sprzedaj swoje bilety na wydarzenie"
 #. module: base
 #: model:ir.module.module,summary:base.module_website_sale
 msgid "Sell Your Products Online"
-msgstr "sprzedaj swoje produkty online"
+msgstr "Sprzedaj swoje produkty online"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_sale_timesheet
@@ -14979,7 +14986,7 @@ msgstr "Obiekt źródłowy"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_translation_form
 msgid "Source Term"
-msgstr "Termin źródłowy"
+msgstr "Fraza źródłowa"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_wkf_transition_act_from
@@ -14991,7 +14998,7 @@ msgstr "Aktywność źródłowa. Kiedy ta aktywność się wykona, to jest spraw
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_translation_source
 msgid "Source term"
-msgstr "Termin źródłowy"
+msgstr "Fraza źródłowa"
 
 #. module: base
 #: model:res.country,name:base.za
@@ -15421,7 +15428,7 @@ msgstr ""
 #: model:ir.ui.menu,name:base.menu_wizard_update_translations
 #: model:ir.ui.view,arch_db:base.wizard_update_translations
 msgid "Synchronize Terms"
-msgstr "Synchronizuj określenia"
+msgstr "Synchronizuj frazy"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.wizard_update_translations
@@ -15874,7 +15881,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_model_id
 msgid "The model this field belongs to"
-msgstr "To pole modelu należy do"
+msgstr "Model do którego należy to pole"
 
 #. module: base
 #: sql_constraint:res.country:0
@@ -16165,7 +16172,7 @@ msgstr "Format czasu"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_timesheet
 msgid "Time Tracking"
-msgstr "Rejestracja czasu pracy"
+msgstr "Śledzenie czasu pracy"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_project_issue_sheet
@@ -16246,6 +16253,13 @@ msgid "To be upgraded"
 msgstr "Do aktualizacji"
 
 #. module: base
+#: code:addons/base/module/module.py:694
+#, python-format
+msgid ""
+"To enable it, make sure this directory exists and is writable on the server:"
+msgstr ""
+
+#. module: base
 #: model:ir.ui.view,arch_db:base.ir_actions_todo_tree
 msgid "Todo"
 msgstr "Do zrobienia"
@@ -16294,7 +16308,7 @@ msgstr "Przejściowy"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_transient
 msgid "Transient Model"
-msgstr "przejściowy model"
+msgstr "Model przejściowy"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
@@ -16346,12 +16360,12 @@ msgstr "Przetłumaczone"
 #: model:ir.actions.act_window,name:base.action_translation
 #: model:ir.ui.menu,name:base.menu_action_translation
 msgid "Translated Terms"
-msgstr "Terminy przetłumaczone"
+msgstr "Przetłumaczone frazy"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_translation_name
 msgid "Translated field"
-msgstr "Pole przetłumaczone"
+msgstr "Tłumaczone pole"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_translation_form
@@ -16750,7 +16764,7 @@ msgstr "Polityka aktualizacji"
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_tree
 msgid "Update Terms"
-msgstr "Warunki aktualizacji"
+msgstr "Aktualizuj frazy"
 
 #. module: base
 #: selection:ir.actions.server,use_write:0

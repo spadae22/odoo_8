@@ -804,7 +804,7 @@ class HttpRequest(WebRequest):
         if request.httprequest.method == 'OPTIONS' and request.endpoint and request.endpoint.routing.get('cors'):
             headers = {
                 'Access-Control-Max-Age': 60 * 60 * 24,
-                'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+                'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, X-Debug-Mode'
             }
             return Response(status=200, headers=headers)
 
@@ -840,7 +840,7 @@ more details.
   passing the `csrf=False` parameter to the `route` decorator.
                     """, request.httprequest.path)
 
-                raise werkzeug.exceptions.BadRequest('Invalid CSRF Token')
+                raise werkzeug.exceptions.BadRequest('Session expired (invalid CSRF token)')
 
         r = self._call_function(**self.params)
         if not r:

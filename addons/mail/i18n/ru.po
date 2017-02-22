@@ -9,13 +9,13 @@
 # Paul <korotkov.paul@gmail.com>, 2015
 # Svetlana Pogrebniak <sp@aifil.ru>, 2016
 # Viktor Pogrebniak <vp@aifil.ru>, 2016
-# Віктор <victorscorpion2000@gmail.com>, 2015
+# Viktor Scorpion <victorscorpion2000@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:16+0000\n"
-"PO-Revision-Date: 2016-10-15 19:15+0000\n"
+"PO-Revision-Date: 2017-02-18 05:45+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Russian (http://www.transifex.com/odoo/odoo-9/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -135,7 +135,7 @@ msgid ""
 "or (object.parent_id and object.parent_id.subject and 'Re: %s' % "
 "object.parent_id.subject) or (object.parent_id and "
 "object.parent_id.record_name and 'Re: %s' % object.parent_id.record_name)}"
-msgstr ""
+msgstr "${object.subject or (object.record_name and 'Re: %s' % object.record_name) or (object.parent_id and object.parent_id.subject and 'Re: %s' % object.parent_id.subject) or (object.parent_id and object.parent_id.record_name and 'Re: %s' % object.parent_id.record_name)}"
 
 #. module: mail
 #. openerp-web
@@ -507,7 +507,7 @@ msgstr ""
 #. module: mail
 #: selection:mail.alias,alias_contact:0
 msgid "Authenticated Partners"
-msgstr ""
+msgstr "Авторизованные партнёры"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_author_id
@@ -582,7 +582,7 @@ msgstr "Доступно для массовой рассылки"
 #: code:addons/mail/static/src/xml/chatter.xml:162
 #, python-format
 msgid "Be careful with channels following internal notifications"
-msgstr ""
+msgstr "Осторожнее с каналами, отсдеживающими внутренние оповещения"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_body_html
@@ -1638,7 +1638,7 @@ msgstr "Последнее посещение"
 #. module: mail
 #: model:ir.model,name:mail.model_mail_channel_partner
 msgid "Last Seen Many2many"
-msgstr ""
+msgstr "Последний видел Many2many"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_write_uid
@@ -2365,7 +2365,7 @@ msgid ""
 "Parent subtype, used for automatic subscription. This field is not correctly"
 " named. For example on a project, the parent_id of project subtypes refers "
 "to task-related subtypes."
-msgstr ""
+msgstr "Родительский подтипа, используется для автоматической подписки. Это поле неправильно названо. Например, на проект, parent_id подтипов проекта относится к подтипам, связанных задач."
 
 #. module: mail
 #: model:ir.model,name:mail.model_res_partner
@@ -2452,7 +2452,7 @@ msgid ""
 "Policy to receive emails for new messages pushed to your personal Inbox:\n"
 "- Never: no emails are sent\n"
 "- All Messages: for every notification you receive in your Inbox"
-msgstr ""
+msgstr "Политика получения почты для ваших новых сообщений:\n- Никогда: никогда не отправлять почту\n- Все сообщения: отправлять уведомления обо всех входящих сообщениях"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_template_form
@@ -3327,7 +3327,7 @@ msgstr ""
 msgid ""
 "You cannot delete those groups, as the Whole Company group is required by "
 "other modules."
-msgstr ""
+msgstr "Вы на можете удалить такие группы, так как группа всей компании нужна множеству модулей."
 
 #. module: mail
 #: code:addons/mail/models/mail_thread.py:315

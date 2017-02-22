@@ -30,7 +30,11 @@ class account_invoice_line(osv.osv):
 
     def _get_anglo_saxon_price_unit(self):
         self.ensure_one()
-        return self.product_id.standard_price
+        price = self.product_id.standard_price
+        if not self.uom_id or self.product_id.uom_id == self.uom_id:
+            return price
+        else:
+            return self.product_id.uom_id._compute_price(self.product_id.uom_id.id, price, to_uom_id=self.uom_id.id)
 
     def _get_price(self, cr, uid, inv, company_currency, i_line, price_unit):
         cur_obj = self.pool.get('res.currency')
@@ -79,13 +83,21 @@ class account_invoice(osv.osv):
             cacc = accounts['expense'].id
             if dacc and cacc:
                 price_unit = i_line._get_anglo_saxon_price_unit()
+                if inv.currency_id.id != company_currency:
+                    currency_id = inv.currency_id.id
+                    amount_currency = self.env['account.invoice.line']._get_price(inv, company_currency, i_line, price_unit)
+                else:
+                    currency_id = False
+                    amount_currency = False
                 return [
                     {
                         'type':'src',
                         'name': i_line.name[:64],
                         'price_unit': price_unit,
                         'quantity': i_line.quantity,
-                        'price': self.env['account.invoice.line']._get_price(inv, company_currency, i_line, price_unit),
+                        'price': price_unit * i_line.quantity,
+                        'currency_id': currency_id,
+                        'amount_currency': amount_currency,
                         'account_id':dacc,
                         'product_id':i_line.product_id.id,
                         'uom_id':i_line.uom_id.id,
@@ -97,7 +109,9 @@ class account_invoice(osv.osv):
                         'name': i_line.name[:64],
                         'price_unit': price_unit,
                         'quantity': i_line.quantity,
-                        'price': -1 * self.env['account.invoice.line']._get_price(inv, company_currency, i_line, price_unit),
+                        'price': -1 * price_unit * i_line.quantity,
+                        'currency_id': currency_id,
+                        'amount_currency': -1 * amount_currency,
                         'account_id':cacc,
                         'product_id':i_line.product_id.id,
                         'uom_id':i_line.uom_id.id,
@@ -105,28 +119,6 @@ class account_invoice(osv.osv):
                     },
                 ]
         return []
-
-    def _prepare_refund(self, cr, uid, invoice, date_invoice=None, date=None, description=None, journal_id=None, context=None):
-        invoice_data = super(account_invoice, self)._prepare_refund(cr, uid, invoice, date_invoice, date,
-                                                                    description, journal_id, context=context)
-        #for anglo-saxon accounting
-        if invoice.company_id.anglo_saxon_accounting and invoice.type == 'in_invoice':
-            fiscal_position = self.pool.get('account.fiscal.position')
-            for dummy, dummy, line_dict in invoice_data['invoice_line_ids']:
-                if line_dict.get('product_id'):
-                    product = self.pool.get('product.product').browse(cr, uid, line_dict['product_id'], context=context)
-                    counterpart_acct_id = product.property_stock_account_output and \
-                            product.property_stock_account_output.id
-                    if not counterpart_acct_id:
-                        counterpart_acct_id = product.categ_id.property_stock_account_output_categ_id and \
-                                product.categ_id.property_stock_account_output_categ_id.id
-                    if counterpart_acct_id:
-                        fpos = invoice.fiscal_position_id or False
-                        line_dict['account_id'] = fiscal_position.map_account(cr, uid,
-                                                                              fpos,
-                                                                              counterpart_acct_id)
-        return invoice_data
-
 
 #----------------------------------------------------------
 # Stock Location

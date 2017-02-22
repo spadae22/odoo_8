@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:16+0000\n"
-"PO-Revision-Date: 2016-09-23 08:58+0000\n"
+"PO-Revision-Date: 2017-02-15 07:02+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Vietnamese (http://www.transifex.com/odoo/odoo-9/language/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -989,7 +989,7 @@ msgstr ""
 #. module: mail
 #: model:ir.ui.menu,name:mail.mail_channel_menu_root_chat
 msgid "Discuss"
-msgstr ""
+msgstr "Thảo luận"
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_channel
@@ -1508,7 +1508,7 @@ msgstr ""
 #: code:addons/mail/static/src/js/chat_manager.js:514
 #, python-format
 msgid "Invitation"
-msgstr ""
+msgstr "Lời mời"
 
 #. module: mail
 #: code:addons/mail/wizard/invite.py:53
@@ -2479,7 +2479,7 @@ msgstr ""
 #: code:addons/mail/static/src/xml/client_action.xml:44
 #, python-format
 msgid "Private Channels"
-msgstr ""
+msgstr "Kênh riêng tư"
 
 #. module: mail
 #: code:addons/mail/wizard/mail_compose_message.py:176
@@ -3152,7 +3152,7 @@ msgstr "Thông điệp chưa đọc"
 #: model:ir.model.fields,field_description:mail.field_res_partner_message_unread_counter
 #: model:ir.model.fields,field_description:mail.field_res_users_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Số tin nhắn chưa đọc"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_message_search

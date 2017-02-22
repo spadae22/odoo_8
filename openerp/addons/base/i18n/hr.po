@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-22 07:25+0000\n"
-"PO-Revision-Date: 2016-09-29 13:11+0000\n"
-"Last-Translator: Bole <bole@dajmi5.com>\n"
+"PO-Revision-Date: 2017-02-01 11:11+0000\n"
+"Last-Translator: Martin Trigaux\n"
 "Language-Team: Croatian (http://www.transifex.com/odoo/odoo-9/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -441,7 +441,7 @@ msgid ""
 "        - Copy translations for COA, Tax, Tax Code and Fiscal Position from\n"
 "          templates to target objects.\n"
 "    "
-msgstr ""
+msgstr "\n    * Više jezična potpora za  Kontni plan, Poreze, Šifre poreza, Dnevnike,\n      Računovodstvene predloške , Analitička konta i  Analitičke dnevnike.\n    * Pomočnjak za instalaciju promjene\n        - Kopije prijevoda za Kontni plan, Porez, Šifre porezai fiskalne\npozicije iz predložaka za ciljane objekte.\n          \n    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_tax_cash_basis
@@ -450,7 +450,7 @@ msgid ""
 "    Add an option on tax to allow them to be cash based, meaning that during reconciliation, if there is a tax with\n"
 "    cash basis involved, a new journal entry will be create containing those taxes value.\n"
 "    "
-msgstr ""
+msgstr "\n    Dodaje opciju na porez kojem dopušta da bude baziran na gotovini,  ako tjekom podmirenja postoji porez baziran na gotovini biti će kreirano \nnovo knjiženje koje sadrži te porezne vrijednosti.\n    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_test_documentation_examples
@@ -460,7 +460,7 @@ msgid ""
 "    (via the ``literalinclude`` directive) in situations where they can be\n"
 "    syntax-checked and tested.\n"
 "    "
-msgstr ""
+msgstr "\n    Sadrži djelove koda koji će biti upotrebljeni kao primjer tehničke dokumentacije\n    (putem  ``literalinclude`` naredbe) u situacijama gdje može doći do pregleda sintakse i testiranja.\n    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_sale_stock
@@ -533,7 +533,7 @@ msgid ""
 "Accounting Data for Belgian Payroll Rules.\n"
 "==========================================\n"
 "    "
-msgstr ""
+msgstr "\nRačunovodstveni Podaci za Belgijski izračun plača.\n==========================================\n    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_reports
@@ -919,7 +919,7 @@ msgid ""
 "Keeps track of depreciations, and creates corresponding journal entries.\n"
 "\n"
 "    "
-msgstr ""
+msgstr "\nUpravljanje imovinom\n=================\nUpravljanje imovinom u vlasništvu tvrtke ili osobe.\nPrati amortizaciju,  i stvara odgovarajuće unose u dnevnik.\n\n    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_document
@@ -929,7 +929,7 @@ msgid ""
 "========================================\n"
 "* Show attachment on the top of the forms\n"
 "* Document Indexation: odt\n"
-msgstr ""
+msgstr "\nLista priloga i indeksiranje dokumenata\n========================================\n*Prikazuje priloge na vrhu forme\n* Indeksiranje dokumenta: odt\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_au
@@ -998,7 +998,7 @@ msgid ""
 "scanner, and is used by the posbox to provide barcode scanner support to the\n"
 "point of sale module. \n"
 "\n"
-msgstr ""
+msgstr "\nBarkod Skener  upravljački program (driver)\n================================\n\nOvaj modul omogučuje klijentu udaljeni pristup instaliranom barkod \nskeneru, koje upotrebljava pos blagajna koja omogučuje podršku barkod skeneru  za pos modul.\n \n\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_et
@@ -5130,7 +5130,7 @@ msgstr "Aktivnost"
 #. module: base
 #: model:ir.module.module,summary:base.module_website_sale_delivery
 msgid "Add Delivery Costs to Online Sales"
-msgstr ""
+msgstr "Dodaj troškove dostave online prodaji"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_report_xml_header
@@ -5738,6 +5738,12 @@ msgstr "Automatizirani prijevod kroz Gengo API"
 #: model:ir.model.fields,field_description:base.field_ir_module_module_auto_install
 msgid "Automatic Installation"
 msgstr "Automatska instalacija"
+
+#. module: base
+#: code:addons/base/module/module.py:693
+#, python-format
+msgid "Automatic install of downloaded Apps is currently disabled."
+msgstr ""
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_translation_state
@@ -7048,7 +7054,7 @@ msgstr ""
 #: model:ir.ui.menu,name:base.menu_partner_category_form
 #: model:ir.ui.view,arch_db:base.view_partner_category_list
 msgid "Contact Tags"
-msgstr ""
+msgstr "Oznake kontakata"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_partner_title_contact
@@ -7288,7 +7294,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_server_crud_model_name
 msgid "Create/Write Target Model Name"
-msgstr ""
+msgstr "Kreiraj/Napiši naziv ciljanog modela"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.module_form
@@ -8429,7 +8435,7 @@ msgstr "Ekvatorijalna Gvineja"
 #. module: base
 #: model:res.groups,name:base.group_equipment_manager
 msgid "Equipment Manager"
-msgstr ""
+msgstr "Upravitelj opreme"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_equipment
@@ -8950,7 +8956,7 @@ msgstr "Filteri"
 #. module: base
 #: model:ir.ui.view,arch_db:base.ir_filters_view_search
 msgid "Filters created by myself"
-msgstr ""
+msgstr "Moji filteri"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.ir_filters_view_search
@@ -9679,7 +9685,7 @@ msgstr "Pomaže upravljati ponudama, prodajnim nalozima i izdavanjem računa."
 #. module: base
 #: model:ir.module.category,description:base.module_category_lead_automation
 msgid "Helps you manage lead of your marketing campaigns step by step."
-msgstr ""
+msgstr "Pomaže upravljati marketinškim kampanjama korak po korak."
 
 #. module: base
 #: model:ir.module.category,description:base.module_category_event_management
@@ -10860,7 +10866,7 @@ msgstr "Jezični paket"
 #: code:addons/base/res/res_lang.py:187
 #, python-format
 msgid "Language code cannot be modified."
-msgstr ""
+msgstr "Jezični kod ne može se mijenjati."
 
 #. module: base
 #: sql_constraint:ir.translation:0
@@ -11293,7 +11299,7 @@ msgstr "Redak"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_link_tracker
 msgid "Link Tracker"
-msgstr ""
+msgstr "Praćenje linkova"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_server_link_field_id
@@ -11679,7 +11685,7 @@ msgstr "Grupna e-pošta"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mass_mailing
 msgid "Mass Mailing Campaigns"
-msgstr ""
+msgstr "Kampanje masovne pošte"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mass_mailing_themes
@@ -13968,7 +13974,7 @@ msgstr "Podnožje izvještaja"
 #. module: base
 #: model:ir.ui.view,arch_db:base.act_report_xml_search_view
 msgid "Report Model"
-msgstr ""
+msgstr "Model izvještaja"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_report_xml_report_type
@@ -14354,7 +14360,7 @@ msgstr "Prodajni timovi"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_timesheet
 msgid "Sales Timesheet"
-msgstr ""
+msgstr "Evidencija prodaje"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_mrp
@@ -14722,7 +14728,7 @@ msgstr "Postavi kao Todo"
 msgid ""
 "Set the font into the report header, it will be used as default font in the "
 "RML reports of the user company"
-msgstr ""
+msgstr "Postavite font u zaglavlju RML izvještaja, i on će biti korišten kao zadani font RML izvještaja za poduzeće korisnika"
 
 #. module: base
 #: code:addons/base/res/res_users.py:519
@@ -16247,6 +16253,13 @@ msgid "To be upgraded"
 msgstr "Za nadogradnju"
 
 #. module: base
+#: code:addons/base/module/module.py:694
+#, python-format
+msgid ""
+"To enable it, make sure this directory exists and is writable on the server:"
+msgstr ""
+
+#. module: base
 #: model:ir.ui.view,arch_db:base.ir_actions_todo_tree
 msgid "Todo"
 msgstr "Za obaviti"
@@ -16719,7 +16732,7 @@ msgstr "Ažuriraj"
 #. module: base
 #: model:ir.ui.menu,name:base.menu_view_base_module_update
 msgid "Update Apps List"
-msgstr ""
+msgstr "Ažuriraj listu aplikacija"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_constraint_date_update
@@ -17911,7 +17924,7 @@ msgstr "npr. engleski"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_company_form
 msgid "e.g. Global Business Solutions"
-msgstr ""
+msgstr "npr. globalna rješenja"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_partner_form
@@ -17927,7 +17940,7 @@ msgstr "npr. direktor prodaje"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
 msgid "e.g. Update order quantity"
-msgstr ""
+msgstr "npr. ažuriraj količinu za narudžbu"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_import_language
@@ -18377,7 +18390,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_impex
 msgid "test-import-export"
-msgstr ""
+msgstr "test-uvoz-izvoz"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_inherit
@@ -18397,12 +18410,12 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_uninstall
 msgid "test-uninstall"
-msgstr ""
+msgstr "test-deinstaliraj"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_workflow
 msgid "test-workflow"
-msgstr ""
+msgstr "test - tok rada"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_convert
