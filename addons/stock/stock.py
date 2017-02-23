@@ -2761,6 +2761,7 @@ class stock_inventory(osv.osv):
                                       "(e.g. Cycle Counting) you can choose 'Manual Selection of Products' and the system won't propose anything.  You can also let the "\
                                       "system propose for a single product / lot /... "),
         'total_qty': fields.function(_get_total_qty, type="float"),
+        'inv_notes' : fields.text(string="Notes"), 
     }
 
     def _default_stock_location(self, cr, uid, context=None):
@@ -2965,6 +2966,7 @@ class stock_inventory_line(osv.osv):
         'prodlot_name': fields.related('prod_lot_id', 'name', type='char', string='Serial Number Name', store={
                                                                                             'stock.production.lot': (_get_prodlot_change, ['name'], 20),
                                                                                             'stock.inventory.line': (lambda self, cr, uid, ids, c={}: ids, ['prod_lot_id'], 20),}),
+                                                                                           
     }
 
     _defaults = {
