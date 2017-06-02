@@ -359,7 +359,7 @@
             <field name="name">sale.order.line.tree</field>
             <field name="model">sale.order.line</field>
             <field name="arch" type="xml">
-                <tree string="Sales Order Lines" create="false">
+                <tree string="Sales Order Lines" create="false" default_order="last_sale_date asc">
                     <field name="product_id" invisible="1"/>
                     <field name="order_id"/>
                     <field name="order_partner_id"/>
