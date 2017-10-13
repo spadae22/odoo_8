@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:16+0000\n"
-"PO-Revision-Date: 2016-12-21 11:20+0000\n"
-"Last-Translator: Kostas Goutoudis <goutoudis@gmail.com>\n"
+"PO-Revision-Date: 2017-10-06 06:32+0000\n"
+"Last-Translator: Martin Trigaux\n"
 "Language-Team: Greek (http://www.transifex.com/odoo/odoo-9/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -154,7 +154,7 @@ msgstr ", αν η λογιστική ή οι αγορές είναι εγκατ�
 #. module: account
 #: model:ir.ui.view,arch_db:account.view_account_form
 msgid "-> Reconcile"
-msgstr ""
+msgstr "-> Συμψηφισμός"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.view_move_line_form
@@ -282,7 +282,7 @@ msgid ""
 "<span class=\"panel-title\">\n"
 "                                        <strong>Customer follow-up</strong>\n"
 "                                    </span>"
-msgstr ""
+msgstr "<span class=\"panel-title\">\n                                        <strong>Παρακολούθηση Πελάτη</strong>\n                                    </span>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -314,7 +314,7 @@ msgid ""
 "<span class=\"panel-title\">\n"
 "                                        <strong>Reconcile Bank Statements</strong>\n"
 "                                    </span>"
-msgstr ""
+msgstr "<span class=\"panel-title\">\n                                        <strong>Συμψηφισμός Τραπεζικών Δηλώσεων</strong>\n                                    </span>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -332,7 +332,7 @@ msgstr ""
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 msgid "<span title=\"Latest Statement\">Latest Statement</span>"
-msgstr ""
+msgstr "<span title=\"Latest Statement\">Τελευταία Δήλωση</span>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.view_account_position_form
@@ -397,24 +397,24 @@ msgstr "<strong>-Η ομάδα του Odoo</strong>"
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "<strong>1. Register Outstanding Invoices</strong>"
-msgstr ""
+msgstr "<strong>1. Καταχωρείστε ιδιαίτερα Τιμολόγια</strong>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "<strong>2. Register Unmatched Payments</strong>"
-msgstr ""
+msgstr "<strong>2. Εγγραφή μη Αντιστοιχισμένων Πληρωμών</strong>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "<strong>Assets Management</strong>"
-msgstr ""
+msgstr "<strong>Διαχείριση Παγίων</strong>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid ""
 "<strong>Automated documents sending:</strong> automatically send your "
 "invoices by email or snail mail."
-msgstr ""
+msgstr "<strong>Αυτόματη αποστολή εγγράφων:</strong> Αυτόματα στείλτε τα τιμολόγια σας με email ή snail mail."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.report_overdue_document
@@ -433,7 +433,7 @@ msgstr ""
 msgid ""
 "<strong>Cash transactions</strong><br/> (for which there is no invoice or "
 "bill), should be entered directly into your Cash Registers bank account."
-msgstr ""
+msgstr "<strong>Συναλλαγές μετρητών</strong><br/> (για τα οποία δεν υπάρχει τιμολόγιο ή λογαριασμός), θα πρέπει να καταχωρούνται απευθείας στο Μητρώο Μετρητών του τραπεζικού λογαριασμού."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -445,14 +445,14 @@ msgstr "<strong>Ελέγξτε τις παραμέτρους φόρων:</strong
 msgid ""
 "<strong>Check unpaid invoices</strong><br/>\n"
 "                                         Run an <i>Aged Receivable report</i> and check which customers still owe you money."
-msgstr ""
+msgstr "<strong>Έλεγχος απλήρωτων τιμολογίων</strong><br/>\n                                        Τρέξε μια <i>Έκθεση σχετικά με την είσπραξη απαιτήσεων</i> και έλεγχος για το ποιοι πελάτες χρωστούν  ακόμη χρήματα."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid ""
 "<strong>Clean customer invoices:</strong> easy to create, beautiful and full"
 " featured invoices."
-msgstr ""
+msgstr "<strong>Ξεκαθάρισμα τιμολόγιών πελατών:</strong> εύκολο να δημιουργηθούν, όμορφα και με όλα τα χαρακτηριστικά τιμολόγια."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.report_invoice_document
@@ -474,14 +474,14 @@ msgstr "<strong>Δημιουργία Τιμολογίου Πελάτη</strong>"
 msgid ""
 "<strong>Create a Deposit Ticket</strong><br/>\n"
 "                                        This allows you to record the different payments that constitute your bank deposit. (You may need to"
-msgstr ""
+msgstr "<strong>Δημιουργήστε ένα Εισιτήριο Κατάθεσης</strong><br/>\n                                        Αυτό σας επιτρέπει να καταχωρείτε διαφορετικές πληρωμές που απαρτίζουν την τραπεζική σας κατάθεση.(Μπορεί να χρειαστεί να"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid ""
 "<strong>Create the bill in Odoo</strong><br/> with a proper due date, and "
 "create the vendor if it doesnt' exist yet."
-msgstr ""
+msgstr "<strong>Να δημιουργήσετε έναν λογαριασμό στο Odoo</strong><br/> με σωστή ημερομηνία λήξης  και να δημιουργήσετε τον προμηθευτή αν δεν υπάρχει ακόμα."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.report_invoice_document
@@ -545,7 +545,7 @@ msgstr "<strong>Ημερομηνία Τιμολογίου:</strong>"
 #. module: account
 #: model:ir.ui.view,arch_db:account.report_generalledger
 msgid "<strong>Journals:</strong>"
-msgstr ""
+msgstr "<strong>Ημερολόγια:</strong>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -564,19 +564,19 @@ msgstr "<strong>Επόμενη ενέργεια:</strong><br/>"
 msgid ""
 "<strong>On-the-fly payment reconciliation:</strong> automatic suggestions of"
 " outstanding payments when creating invoices."
-msgstr ""
+msgstr "<strong>Γρήγορος συμψηφισμός πληρωμών:</strong> αυτόματες υποδείξεις για πληρωμές που εκκρεμούν κατά τη δημιουργία τιμολογίων."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid ""
 "<strong>Or generate payment orders</strong><br/>\n"
 "                                        Create a Payment Order and select the bills you'd like to pay as Entry lines (only the validated bills will appear)."
-msgstr ""
+msgstr "<strong>'Η να δημιουργήσετε εντολές πληρωμής</strong><br/>\n                                        Δημιουργήστε μια Εντολή Πληρωμής και επιλέξτε τους λογαριασμούς που θα θέλατε να πληρώσετε ως Γραμμές εισόδου (θα εμφανιστούν μόνο οι επικυρωμένοι λογαριασμοί)."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.report_agedpartnerbalance
 msgid "<strong>Partner's:</strong>"
-msgstr ""
+msgstr "<strong>Του συνεργάτη:</strong>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.report_agedpartnerbalance
@@ -588,7 +588,7 @@ msgstr "<strong>Διάρκεια Περιόδου (μέρες)</strong>"
 msgid ""
 "<strong>Print checks</strong><br/>\n"
 "                                        From the Vendor Payments list, select those you want to pay and click on Print Check (you may first need to activate the check feature in the"
-msgstr ""
+msgstr "<strong>Εκτύπωση επιταγών</strong><br/>\n                                        Από τη λίστα Πληρωμών Προμηθευτών, επιλέξτε εκείνους που θέλετε να πληρώσετε και κάντε κλικ στο  Εκτύπωσης Επιταγής (μπορεί να χρειαστεί πρώτα να ενεργοποιήσετε τη λειτουργία ελέγχου στο"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -598,14 +598,14 @@ msgstr "<strong>Αγορές</strong>"
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid "<strong>Reconcile Bank Statement</strong>"
-msgstr ""
+msgstr "<strong>Συμψηφισμός Τραπεζικής Δήλωσης</strong>"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid ""
 "<strong>Reconcile with existing transaction</strong><br/>\n"
 "                                        In this case, Odoo should automatically match the bank statement with the previously recorded check transaction."
-msgstr ""
+msgstr "<strong>Συμψηφισμός με την υπάρχουσα συναλλαγή</strong><br/>\n                                       Στην περίπτωση αυτή, το Odoo πρέπει να αντιστοιχίσει αυτόματα την τραπεζική δήλωση με την συναλλαγή επιταγής που καταγράφηκε προηγουμένως."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -2989,7 +2989,7 @@ msgstr "Νόμισμα ως προς την χώρα της εταιρίας."
 #: code:addons/account/models/account_move.py:1188
 #, python-format
 msgid "Currency exchange rate difference"
-msgstr ""
+msgstr "Συναλλαγματικές Διαφορές"
 
 #. module: account
 #: model:account.account.type,name:account.data_account_type_current_assets
@@ -3676,7 +3676,7 @@ msgstr "Πρότυπο Excel"
 #: code:addons/account/models/chart_template.py:158
 #, python-format
 msgid "Exchange Difference"
-msgstr ""
+msgstr "Συναλλαγματικές Διαφορές"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_company_currency_exchange_journal_id
@@ -5508,7 +5508,7 @@ msgstr "Διάφορα Έξοδα"
 #: model:ir.ui.view,arch_db:account.view_account_move_filter
 #, python-format
 msgid "Miscellaneous Operations"
-msgstr ""
+msgstr "Ημερολόγιο Αναλυτικό "
 
 #. module: account
 #. openerp-web
@@ -8183,6 +8183,14 @@ msgstr ""
 #: code:addons/account/models/account_payment.py:414
 #, python-format
 msgid "The sequence of journal %s is deactivated."
+msgstr ""
+
+#. module: account
+#: code:addons/account/models/company.py:91
+#, python-format
+msgid ""
+"There are still unposted entries in the period you want to lock. You should "
+"either post or delete them."
 msgstr ""
 
 #. module: account

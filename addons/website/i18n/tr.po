@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-09 09:18+0000\n"
-"PO-Revision-Date: 2016-12-31 22:22+0000\n"
+"PO-Revision-Date: 2017-08-03 13:43+0000\n"
 "Last-Translator: Ahmet Altinisik <aaltinisik@altinkaya.com.tr>\n"
 "Language-Team: Turkish (http://www.transifex.com/odoo/odoo-9/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -195,12 +195,12 @@ msgstr "<b>Tema modülü bulunamadı!</b>"
 #. module: website
 #: model:ir.actions.act_window,help:website.action_module_website
 msgid "<b>No website module found!</b>"
-msgstr ""
+msgstr "<b>Web sitesi modülü bulunamadı!</b>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.show_sign_in
 msgid "<b>Sign in</b>"
-msgstr ""
+msgstr "<b>Protal</b>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_button
@@ -579,7 +579,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "<strong>Discuss live</strong>"
-msgstr ""
+msgstr "<strong>Canlı tartışın</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -638,7 +638,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.http_error_debug
 msgid "<strong>Error message:</strong>"
-msgstr ""
+msgstr "<strong>Hata mesajı:</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -1303,7 +1303,7 @@ msgstr "Renk Paleti"
 #. module: website
 #: model:ir.ui.view,arch_db:website.snippet_options
 msgid "Columns"
-msgstr ""
+msgstr "Sütunlar"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -2734,7 +2734,7 @@ msgstr "Tamam"
 #: code:addons/website/static/src/xml/website.backend.xml:5
 #, python-format
 msgid "On Website"
-msgstr ""
+msgstr "Web Sitesinde"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -2866,7 +2866,7 @@ msgstr "Partnerler"
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "Plan"
-msgstr ""
+msgstr "Plan"
 
 #. module: website
 #: model:web.planner,tooltip_planner:website.planner_website
@@ -3197,7 +3197,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.template_partner_comment
 msgid "Send <span class=\"fa fa-long-arrow-right\"/>"
-msgstr ""
+msgstr "Gönder <span class=\"fa fa-long-arrow-right\"/>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.template_partner_comment
@@ -4231,7 +4231,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "Your Objectives"
-msgstr ""
+msgstr "Hedefleriniz"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_title
@@ -4424,7 +4424,7 @@ msgstr "ir.attachment"
 #. module: website
 #: model:ir.model,name:website.model_ir_qweb
 msgid "ir.qweb"
-msgstr ""
+msgstr "ir.qweb"
 
 #. module: website
 #: model:ir.model,name:website.model_ir_ui_view

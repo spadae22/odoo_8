@@ -112,8 +112,9 @@ function _parse_and_transform(nodes, transform_function) {
     }).join("");
 }
 
-// suggested regexp (gruber url matching regexp, adapted to js, see https://gist.github.com/gruber/8891611)
-var url_regexp = /\b((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/gi;
+// Suggested URL Javascript regex of http://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url
+// Adapted to make http(s):// not required if (and only if) www. is given. So `should.notmatch` does not match.
+var url_regexp = /\b(?:https?:\/\/|(www\.))[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,13}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi;
 function add_link (node, transform_children) {
     if (node.nodeType === 3) {  // text node
         return node.data.replace(url_regexp, function (url) {
@@ -286,13 +287,21 @@ function make_message (data) {
     // can not be done in preprocess, since it alter the original value
     if (msg.tracking_value_ids && msg.tracking_value_ids.length) {
         _.each(msg.tracking_value_ids, function(f) {
-            if (_.contains(['date', 'datetime'], f.field_type)) {
-                var format = (f.field_type === 'date') ? 'LL' : 'LLL';
+            if (f.field_type === 'datetime') {
+                var format = 'LLL';
                 if (f.old_value) {
                     f.old_value = moment.utc(f.old_value).local().format(format);
                 }
                 if (f.new_value) {
                     f.new_value = moment.utc(f.new_value).local().format(format);
+                }
+            } else if (f.field_type === 'date') {
+                var format = 'LL';
+                if (f.old_value) {
+                    f.old_value = moment(f.old_value).local().format(format);
+                }
+                if (f.new_value) {
+                    f.new_value = moment(f.new_value).local().format(format);
                 }
             }
         });

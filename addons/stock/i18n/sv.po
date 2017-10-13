@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-13 09:40+0000\n"
-"PO-Revision-Date: 2016-11-01 19:20+0000\n"
+"PO-Revision-Date: 2017-08-21 08:30+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Swedish (http://www.transifex.com/odoo/odoo-9/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -1321,7 +1321,7 @@ msgstr "Skapa anskaffning"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Create Vendors"
-msgstr ""
+msgstr "Skapa Leverantörer"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -2671,7 +2671,7 @@ msgstr "Interna lagerställen"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_production_lot_ref
 msgid "Internal Reference"
-msgstr ""
+msgstr "Intern referens"
 
 #. module: stock
 #: code:addons/stock/stock.py:3680
@@ -3610,7 +3610,7 @@ msgstr ""
 #. module: stock
 #: selection:stock.config.settings,group_product_variant:0
 msgid "No variants on products"
-msgstr ""
+msgstr "Inga variationer av produkt"
 
 #. module: stock
 #: model:stock.location,name:stock.stock_location_8
@@ -4758,7 +4758,7 @@ msgstr ""
 #: model:stock.picking.type,name:stock.picking_type_in
 #, python-format
 msgid "Receipts"
-msgstr ""
+msgstr "Mottagningar"
 
 #. module: stock
 #: selection:stock.warehouse,reception_steps:0
@@ -6373,7 +6373,7 @@ msgstr ""
 #. module: stock
 #: model:stock.location,name:stock.stock_location_suppliers
 msgid "Vendors"
-msgstr ""
+msgstr "leverantörer"
 
 #. module: stock
 #: selection:stock.move,priority:0 selection:stock.picking,priority:0

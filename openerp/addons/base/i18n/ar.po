@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-22 07:25+0000\n"
-"PO-Revision-Date: 2017-02-06 07:24+0000\n"
+"PO-Revision-Date: 2017-09-26 10:40+0000\n"
 "Last-Translator: Shaima Safar <shaima.safar@open-inside.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/odoo/odoo-9/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -314,7 +314,7 @@ msgstr "\nتحويل مكالمات الآلي  ، وسجلات ورسائل ا�
 msgid ""
 "\n"
 "        Enable a cache on products for a lower POS loading time."
-msgstr ""
+msgstr "\nتمكين ذاكرة التخزين المؤقت على المنتجات للحصول على وقت تحميل أقل في نقاط البيع"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_sepa
@@ -333,14 +333,14 @@ msgid ""
 "\n"
 "        Long description of module's purpose\n"
 "    "
-msgstr ""
+msgstr "\nوصف طويل من الغرض من الوحدة"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_voip
 msgid ""
 "\n"
 "        Technical core for all the modules using the VOIP system."
-msgstr ""
+msgstr "\nالتقنية الأساسية لجميع الوحدات باستخدام نظام الصوت عبر بروتوكول الإنترنت."
 
 #. module: base
 #: model:ir.module.module,description:base.module_voip
@@ -393,14 +393,14 @@ msgid ""
 "\n"
 "        This module adds support for barcodes scanning to the warehouse management system.\n"
 "    "
-msgstr ""
+msgstr "\nهذه الوحدة يضيف دعم الباركود المسح الضوئي إلى نظام إدارة المستودعات."
 
 #. module: base
 #: model:ir.module.module,summary:base.module_account_online_sync
 msgid ""
 "\n"
 "        This module is used for Online bank synchronization."
-msgstr ""
+msgstr "\nيتم استخدام هذه الوحدة لتزامن البنك عبر الإنترنت."
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_online_sync
@@ -6249,7 +6249,7 @@ msgstr "لا يمكنك ترقية الوحدة البرمجية '%s' لأنها
 #: code:addons/base/ir/ir_model.py:518
 #, python-format
 msgid "Can only rename one field at a time!"
-msgstr ""
+msgstr "في كل مرة يمكن تغيير اسم حقل واحد فقط"
 
 #. module: base
 #: model:res.country,name:base.ca
@@ -11199,7 +11199,7 @@ msgstr "لانشباد"
 #. module: base
 #: model:ir.module.category,name:base.module_category_lead_automation
 msgid "Lead Automation"
-msgstr ""
+msgstr "التشغيل الآلي الرئيسي"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_crm_score
@@ -11399,7 +11399,7 @@ msgstr "السجلات"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_pos_loyalty
 msgid "Loyalty Program"
-msgstr ""
+msgstr "برنامج الولاء"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_pos_loyalty
@@ -16054,7 +16054,7 @@ msgstr "The user this filter is private to. When left empty the filter is public
 #. module: base
 #: model:res.groups,comment:base.group_equipment_manager
 msgid "The user will be able to manage equipments."
-msgstr ""
+msgstr "المستخدم سوف تكون قادرة على إدارة المعدات."
 
 #. module: base
 #: code:addons/models.py:6160
@@ -16065,7 +16065,7 @@ msgstr "The value for the field '%s' already exists."
 #. module: base
 #: model:ir.module.category,name:base.module_category_theme
 msgid "Theme"
-msgstr ""
+msgstr "الثيم"
 
 #. module: base
 #: code:addons/base/ir/ir_filters.py:79
@@ -16401,7 +16401,7 @@ msgstr "الترجمة في تقدم"
 msgid ""
 "Translation is not valid:\n"
 "%s"
-msgstr ""
+msgstr "الترجمة ليست سارية المفعول:\n%s"
 
 #. module: base
 #: model:ir.ui.menu,name:base.menu_translation
@@ -16733,7 +16733,7 @@ msgstr "تحديث"
 #. module: base
 #: model:ir.ui.menu,name:base.menu_view_base_module_update
 msgid "Update Apps List"
-msgstr ""
+msgstr "تحديث قائمة التطبيقات"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_constraint_date_update
@@ -17317,12 +17317,12 @@ msgstr "خريطة جوجل للموقع الالكتروني"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_links
 msgid "Website Link Tracker"
-msgstr ""
+msgstr "رابط لموقع إلكتروني متتبع"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_im_livechat
 msgid "Website Live Chat"
-msgstr ""
+msgstr "موقع المحادثة المباشرة"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_im_livechat
@@ -17342,7 +17342,7 @@ msgstr "بريد الموقع الالكتروني"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_mass_mailing
 msgid "Website Mass Mailing Campaigns"
-msgstr ""
+msgstr "موقع الحملات البريدية"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_mail
@@ -17357,7 +17357,7 @@ msgstr "شريك الموقع الالكتروني"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_portal
 msgid "Website Portal"
-msgstr ""
+msgstr "بوابة الموقع الألكتروني"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_portal_sale
@@ -17367,17 +17367,17 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_project_issue
 msgid "Website Project Issue"
-msgstr ""
+msgstr "مسالة مشروع الموقع الألكتروني"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_rating_project_issue
 msgid "Website Rating Project Issue"
-msgstr ""
+msgstr "مشروع تقييم موقع الويب العدد"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale_digital
 msgid "Website Sale Digital - Sell digital products"
-msgstr ""
+msgstr "موقع بيع الرقمية - بيع المنتجات الرقمية"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale_stock
@@ -17471,7 +17471,7 @@ msgstr "When the operation of transition comes from a button pressed in the clie
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_copy
 msgid "Whether the value is copied when duplicating a record."
-msgstr ""
+msgstr "ما إذا كان يتم نسخ القيمة عند تكرار سجل."
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_translate
@@ -17659,7 +17659,7 @@ msgstr ""
 msgid ""
 "You can either upload a file from your computer or copy/paste an internet "
 "link to your file"
-msgstr ""
+msgstr "يمكنك إما تحميل ملف من جهاز الكمبيوتر الخاص بك أو نسخ / لصق وصلة إنترنت إلى الملف الخاص بك"
 
 #. module: base
 #: code:addons/base/res/res_partner.py:527
@@ -17743,7 +17743,7 @@ msgstr "لا يوجد لديك إذن للقيام بهذه العملية !!!"
 #. module: base
 #: model:ir.actions.act_window,help:base.open_module_tree
 msgid "You should try others search criteria."
-msgstr ""
+msgstr "يجب عليك محاولة معايير البحث الآخرين."
 
 #. module: base
 #: code:addons/base/module/module.py:380

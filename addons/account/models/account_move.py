@@ -1243,9 +1243,8 @@ class AccountMoveLine(models.Model):
         """ Create analytic items upon validation of an account.move.line having an analytic account. This
             method first remove any existing analytic item related to the line before creating any new one.
         """
+        self.mapped('analytic_line_ids').unlink()
         for obj_line in self:
-            if obj_line.analytic_line_ids:
-                obj_line.analytic_line_ids.unlink()
             if obj_line.analytic_account_id:
                 vals_line = obj_line._prepare_analytic_line()[0]
                 self.env['account.analytic.line'].create(vals_line)
@@ -1346,9 +1345,9 @@ class AccountPartialReconcile(models.Model):
         for rec in self:
             if not rec.company_id.currency_exchange_journal_id:
                 raise UserError(_("You should configure the 'Exchange Rate Journal' in the accounting settings, to manage automatically the booking of accounting entries related to differences between exchange rates."))
-            if not self.company_id.income_currency_exchange_account_id.id:
+            if not rec.company_id.income_currency_exchange_account_id.id:
                 raise UserError(_("You should configure the 'Gain Exchange Rate Account' in the accounting settings, to manage automatically the booking of accounting entries related to differences between exchange rates."))
-            if not self.company_id.expense_currency_exchange_account_id.id:
+            if not rec.company_id.expense_currency_exchange_account_id.id:
                 raise UserError(_("You should configure the 'Loss Exchange Rate Account' in the accounting settings, to manage automatically the booking of accounting entries related to differences between exchange rates."))
             move_vals = {'journal_id': rec.company_id.currency_exchange_journal_id.id, 'rate_diff_partial_rec_id': rec.id}
 
@@ -1381,7 +1380,8 @@ class AccountPartialReconcile(models.Model):
                 'partner_id': rec.debit_move_id.partner_id.id,
             })
             for aml in aml_to_fix:
-                partial_rec = rec.env['account.partial.reconcile'].create({
+                # DO NOT FORWARDPORT! ONLY FOR v9
+                partial_rec = rec.env['account.partial.reconcile'].with_context(cash_basis=False).create({
                     'debit_move_id': aml.credit and line_to_reconcile.id or aml.id,
                     'credit_move_id': aml.debit and line_to_reconcile.id or aml.id,
                     'amount': abs(aml.amount_residual),

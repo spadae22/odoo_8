@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-18 08:11+0000\n"
-"PO-Revision-Date: 2017-02-15 07:03+0000\n"
+"PO-Revision-Date: 2017-08-17 08:22+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Vietnamese (http://www.transifex.com/odoo/odoo-9/language/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "<span>Báo cáo</span>"
 #. module: sales_team
 #: model:ir.ui.view,arch_db:sales_team.crm_team_salesteams_view_kanban
 msgid "<span>View</span>"
-msgstr ""
+msgstr "<span>Xem</span>"
 
 #. module: sales_team
 #: model:ir.model.fields,field_description:sales_team.field_crm_team_message_needaction
@@ -137,7 +137,7 @@ msgstr "Được tạo vào"
 #: model:ir.ui.menu,name:sales_team.menu_sales_team_act
 #, python-format
 msgid "Dashboard"
-msgstr ""
+msgstr "Màn hình điều khiển"
 
 #. module: sales_team
 #: model:ir.model.fields,help:sales_team.field_crm_team_message_last_post
@@ -281,7 +281,7 @@ msgstr "Lịch sử trao đổi"
 #. module: sales_team
 #: model:ir.ui.view,arch_db:sales_team.crm_team_salesteams_view_kanban
 msgid "More <i class=\"fa fa-caret-down\"/>"
-msgstr ""
+msgstr "Thêm"
 
 #. module: sales_team
 #: model:ir.ui.view,arch_db:sales_team.crm_team_view_form
@@ -327,7 +327,7 @@ msgstr ""
 #: code:addons/sales_team/static/src/js/sales_team_dashboard.js:87
 #, python-format
 msgid "Only Integer Value should be valid."
-msgstr ""
+msgstr "Chỉ có kiểu số nguyên có thể hợp lệ."
 
 #. module: sales_team
 #: model:ir.model,name:sales_team.model_res_partner
@@ -537,7 +537,7 @@ msgstr "Giờ làm việc"
 #: code:addons/sales_team/static/src/js/sales_team_dashboard.js:87
 #, python-format
 msgid "Wrong value entered!"
-msgstr ""
+msgstr "Nhập giá trị sai!"
 
 #. module: sales_team
 #. openerp-web

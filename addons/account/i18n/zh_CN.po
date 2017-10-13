@@ -23,12 +23,12 @@
 # liAnGjiA <liangjia@qq.com>, 2015,2017
 # Martin Trigaux, 2015
 # Martin Trigaux, 2015
-# Rita Yu <my7floor@gmail.com>, 2016
+# Seven Floor <my7floor@gmail.com>, 2016
 # Rona Lin <ssauapw@qq.com>, 2015-2016
 # Si Ling Lau <happy8645@hotmail.com>, 2016
 # waveyeung <waveyeung@qq.com>, 2015
 # Wei "oldrev" Li <liwei@sandwych.com>, 2016
-# zhangpeiqing <zpq001@live.com>, 2015
+# zpq001 <zpq001@live.com>, 2015
 # zhining wu <wzn63@21cn.com>, 2015
 # Олег <pehotaolega.ru@mail.ru>, 2016
 # 卓忆科技 <zhanghao@jointd.com>, 2016
@@ -41,7 +41,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:16+0000\n"
-"PO-Revision-Date: 2017-02-04 06:49+0000\n"
+"PO-Revision-Date: 2017-09-01 11:48+0000\n"
 "Last-Translator: liAnGjiA <liangjia@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/odoo/odoo-9/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -5287,7 +5287,7 @@ msgstr "法律提到必须打印在发票上的"
 #. module: account
 #: model:ir.ui.view,arch_db:account.view_account_form
 msgid "Less Cost of Revenue"
-msgstr ""
+msgstr "主营业务成本"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.view_account_form
@@ -8210,6 +8210,14 @@ msgstr "那些应用税行的序列用来定义顺序 "
 #, python-format
 msgid "The sequence of journal %s is deactivated."
 msgstr "日记账%s的序列号不可用"
+
+#. module: account
+#: code:addons/account/models/company.py:91
+#, python-format
+msgid ""
+"There are still unposted entries in the period you want to lock. You should "
+"either post or delete them."
+msgstr "在你想要锁定期还未发布的条目。您应该张贴或删除它们。"
 
 #. module: account
 #: code:addons/account/models/account_bank_statement.py:170

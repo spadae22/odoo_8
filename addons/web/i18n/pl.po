@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-18 04:43+0000\n"
-"PO-Revision-Date: 2016-10-28 12:11+0000\n"
+"PO-Revision-Date: 2017-10-05 14:40+0000\n"
 "Last-Translator: zbik2607 <darek@krokus.com.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/odoo/odoo-9/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #. module: web
 #. openerp-web
@@ -1695,7 +1695,7 @@ msgstr "Wykres kołowy"
 msgid ""
 "Pie chart cannot display all zero numbers.. Try to change your domain to "
 "display positive results"
-msgstr ""
+msgstr "Wykres kołowy nie może wyświetlać wartości zerowych. Zmień domenę by wyświetlać wartości dodatnie"
 
 #. module: web
 #. openerp-web
@@ -2018,7 +2018,7 @@ msgstr "Współdziel z wszystkimi użytkownikami"
 #: code:addons/web/static/src/js/apps.js:189
 #, python-format
 msgid "Showing locally available modules"
-msgstr ""
+msgstr "Wyświetla lokalne moduły"
 
 #. module: web
 #. openerp-web
@@ -2031,7 +2031,7 @@ msgstr "Rozmiar:"
 #: code:addons/web/controllers/main.py:1067
 #, python-format
 msgid "Something horrible happened"
-msgstr ""
+msgstr "Stało się coś strasznego"
 
 #. module: web
 #. openerp-web
