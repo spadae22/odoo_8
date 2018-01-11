@@ -272,6 +272,9 @@ class mrp_repair(osv.osv):
             
         self.write(cr, uid, ids, {'state': 'draft'})
         return self.create_workflow(cr, uid, ids)
+        
+        
+     
 
     def action_confirm(self, cr, uid, ids, *args):
         """ Repair order state is set to 'To be invoiced' when invoice method
