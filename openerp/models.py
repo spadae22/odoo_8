@@ -3325,9 +3325,7 @@ class BaseModel(object):
                         res_trans = ir_translation._get_ids(
                             '%s,%s' % (self._name, f), 'model', context['lang'], ids)
                         for vals in result:
-                            if res_trans.get(vals['id']) is False:
-                                res_trans.pop(vals['id'])
-                            vals[f] = res_trans.get(vals['id'], vals[f])
+                            vals[f] = res_trans.get(vals['id'], False) or vals[f]
 
             # apply the symbol_get functions of the fields we just read
             for field in fields_pre:
