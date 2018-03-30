@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='date']" position="after">
                     <field name="period_id"/>
+                    <field name="create_uid"/>
                 </xpath>
             </field>
         </record>
