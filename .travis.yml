@@ -21,9 +21,9 @@ env:
   global:
   - VERSION="8.0" ODOO_REPO="OCA/OCB" LINT_CHECK="0" WEBSITE_REPO="1" TESTS="0"
   matrix:
-  - export INCLUDE=applications
-  - export INCLUDE=no_applications TESTS="1"
-  - export INCLUDE=localization
+  - INCLUDE=applications
+  - INCLUDE=no_applications TESTS="1"
+  - INCLUDE=localization
 
 virtualenv:
   system_site_packages: true
