@@ -1025,6 +1025,7 @@
                                 <field name="company_id" groups="base.group_multi_company" widget="selection"/>
                                 <field name="date_expected" on_change="onchange_date(date,date_expected)" attrs="{'invisible': [('state', '=', 'done')]}"/>
                                 <field name="date" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                                <field name="create_uid"/>
                             </group>
                         </group>
                         <group name="origin_grp" string="Origin">
