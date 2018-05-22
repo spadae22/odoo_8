@@ -144,10 +144,14 @@
                 <strong>Comment:</strong>
                 <span t-field="o.comment"/>
             </p>
-            <p>
-                <strong>Delivery Instructions:</strong>
-                <span t-field="o.commercial_partner_id.delivery_instructions" />
+           
+            <p t-if="o.type == 'out_invoice'">
+            <strong>Delivery Instructions:</strong>
+            <span t-field="o.commercial_partner_id.delivery_instructions"/>
             </p>
+            
+            
+           
             <p>
              <span t-if="o.type == 'out_refund'">This credit is not automatically applied. When using this  credit towards your payment(s) on your account, please be sure to list the above credit number on your check stub and/or remittance for proper credit on your account. Thank you!</span>
              </p>
