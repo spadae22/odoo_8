@@ -138,7 +138,7 @@ class mrp_repair(osv.osv):
             \n* The \'Cancelled\' status is used when user cancel repair order.'),
         'location_id': fields.many2one('stock.location', 'Current Location', select=True, required=True, readonly=True, states={'draft': [('readonly', False)], 'confirmed': [('readonly', True)]}),
         'location_dest_id': fields.many2one('stock.location', 'Delivery Location', readonly=True, required=True, states={'draft': [('readonly', False)], 'confirmed': [('readonly', True)]}),
-        'lot_id': fields.many2one('stock.production.lot', 'Repaired Lot', domain="[('product_id','=', product_id)]", help="Products repaired are all belonging to this lot", oldname="prodlot_id"),
+        'lot_id': fields.many2one('stock.production.lot', 'Repaired Serial #', domain="[('product_id','=', product_id)]", help="Products repaired are all belonging to this serial #", oldname="prodlot_id"),
         'guarantee_limit': fields.date('Warranty Expiration', states={'confirmed': [('readonly', True)]}),
         'operations': fields.one2many('mrp.repair.line', 'repair_id', 'Operation Lines', states={'done': [('readonly', True)]}, copy=True),
         'pricelist_id': fields.many2one('product.pricelist', 'Pricelist', help='Pricelist of the selected partner.'),
@@ -622,7 +622,7 @@ class mrp_repair_line(osv.osv, ProductChangeMixin):
         'location_id': fields.many2one('stock.location', 'Source Location', required=True, select=True),
         'location_dest_id': fields.many2one('stock.location', 'Dest. Location', required=True, select=True),
         'move_id': fields.many2one('stock.move', 'Inventory Move', readonly=True, copy=False),
-        'lot_id': fields.many2one('stock.production.lot', 'Lot'),
+        'lot_id': fields.many2one('stock.production.lot', 'Serial #'),
         'state': fields.selection([
                     ('draft', 'Draft'),
                     ('confirmed', 'Confirmed'),

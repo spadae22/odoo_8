@@ -42,7 +42,7 @@
                             <p t-field="o.product_id.name"/>
                         </div>
                         <div class="col-xs-3" groups="stock.group_production_lot">
-                            <strong>Lot Number</strong>
+                            <strong>Serial Number</strong>
                             <t t-if="o.lot_id">
                                 <span t-field="o.lot_id.name"/>
                             </t>
