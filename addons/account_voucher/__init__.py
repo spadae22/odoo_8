@@ -22,5 +22,6 @@
 import account_voucher
 import invoice
 import report
+import partner
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
