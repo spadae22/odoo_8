@@ -1,0 +1,25 @@
+From b97b6f44998c77e1a28fafcc623cd7a2c2b47915 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?C=C3=A9dric=20Pigeon?= <cedric.pigeon@acsone.eu>
+Date: Fri, 12 Feb 2016 10:01:09 +0100
+Subject: [PATCH] [8.0] compute taxes when invoicing sale order lines
+
+---
+ addons/sale/wizard/sale_line_invoice.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/addons/sale/wizard/sale_line_invoice.py b/addons/sale/wizard/sale_line_invoice.py
+index 7bbf266193aef..c58d925e118d0 100644
+--- a/addons/sale/wizard/sale_line_invoice.py
++++ b/addons/sale/wizard/sale_line_invoice.py
+@@ -80,8 +80,10 @@ def make_invoice(order, lines):
+                  @return:
+ 
+             """
++            inv_obj = self.pool.get('account.invoice')
+             inv = self._prepare_invoice(cr, uid, order, lines)
+-            inv_id = self.pool.get('account.invoice').create(cr, uid, inv)
++            inv_id = inv_obj.create(cr, uid, inv)
++            inv_obj.button_reset_taxes(cr, uid, inv_id)
+             return inv_id
+ 
+         sales_order_line_obj = self.pool.get('sale.order.line')
