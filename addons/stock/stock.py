@@ -2115,7 +2115,7 @@ class stock_move(osv.osv):
                         'title': _('Information'),
                         'message': _("By changing this quantity here, you accept the "
                                 "new quantity as complete: Odoo will not "
-                                "automatically generate a back order.")})
+                                "automatically generate a back order. Please UNRESERVE Delivery Order after qty update.")})
                 break
 
         if product_uos and product_uom and (product_uom != product_uos):
