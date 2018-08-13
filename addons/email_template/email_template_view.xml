@@ -25,6 +25,7 @@
                             <button name="unlink_action" type="object" 
                                     groups="base.group_system"
                                     class="oe_stat_button" icon="fa-minus"
+                                    groups="base.group_system"
                                     attrs="{'invisible':[('ref_ir_act_window','=',False)]}"
                                     help="Remove the contextual action to use this template on related documents" widget="statinfo">
                                 <div>Remove<br/>Context Action</div>
