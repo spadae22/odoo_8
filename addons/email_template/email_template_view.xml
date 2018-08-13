@@ -23,7 +23,6 @@
                                 <div>Add<br/>Context Action</div>
                             </button>
                             <button name="unlink_action" type="object" 
-                                    groups="base.group_system"
                                     class="oe_stat_button" icon="fa-minus"
                                     groups="base.group_system"
                                     attrs="{'invisible':[('ref_ir_act_window','=',False)]}"
