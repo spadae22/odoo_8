@@ -19,7 +19,6 @@
                                     context="{'default_product_id':product_id}"
                                     attrs="{'required': [('track_production', '=', True), ('mode', '=', 'consume_produce')]}"
                                     groups="stock.group_production_lot"/>
-                                   
                     </group>
                     <group string="To Consume">
                         <field name="consume_lines" nolabel="1">
