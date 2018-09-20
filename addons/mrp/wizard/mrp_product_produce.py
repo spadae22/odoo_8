@@ -33,6 +33,7 @@ class mrp_product_produce_line(osv.osv_memory):
         'lot_id': fields.many2one('stock.production.lot', 'Lot'),
         'produce_id': fields.many2one('mrp.product.produce'),
         'track_production': fields.related('product_id', 'track_production', type='boolean'),
+       
     }
 
 class mrp_product_produce(osv.osv_memory):
@@ -50,6 +51,7 @@ class mrp_product_produce(osv.osv_memory):
         'lot_id': fields.many2one('stock.production.lot', 'Lot'), #Should only be visible when it is consume and produce mode
         'consume_lines': fields.one2many('mrp.product.produce.line', 'produce_id', 'Products Consumed'),
         'track_production': fields.boolean('Track production'),
+        
     }
 
     def on_change_qty(self, cr, uid, ids, product_qty, consume_lines, context=None):
