@@ -13,7 +13,7 @@
                     <field name="name"/>
                     <field name="type"/>
                     <field name="sequence"/>
-                    <field name="probability"/>
+             <field name="probability" invisible="1"/>
                 </search>
             </field>
         </record>
@@ -179,7 +179,7 @@
                                 <field name="message_bounce"/>
                             </group>
                             <group string="Misc">
-                                <field name="probability" groups="base.group_no_one"/>
+                          <field name="probability" groups="base.group_no_one" invisible="1"/>
                                 <field name="active"/>
                                 <field name="referred"/>
                             </group>
@@ -397,8 +397,8 @@
                             <h2>
                                 <field name="company_currency" invisible="1"/>
                                 <field name="planned_revenue" class="oe_inline" widget='monetary' options="{'currency_field': 'company_currency'}"/>
-                                <span class="oe_grey"> at </span>
-                                <field name="probability" class="oe_inline" widget="integer"/>%%
+                           <!--     <span class="oe_grey"> at </span> -->
+                                <field name="probability" class="oe_inline" widget="integer" invisible="1"/>
                             </h2>
                         </div>
                         <group>
@@ -518,7 +518,7 @@
                     <field name="source_id" invisible="1"/>
                     <field name="stage_id"/>
                     <field name="planned_revenue" sum="Expected Revenues"/>
-                    <field name="probability" avg="Avg. of Probability"/>
+                    <field name="probability" avg="Avg. of Probability" invisible="1"/>
                     <field name="section_id" groups="base.group_multi_salesteams"/>
                     <field name="user_id"/>
                     <field name="referred" invisible="1"/>
@@ -542,7 +542,7 @@
                     <field name="user_id"/>
                     <field name="partner_id" operator="child_of"/>
                     <field name="stage_id" domain="[]"/>
-                    <field name="probability"/>
+                <!--    <field name="probability"/>
                     <separator/>
                     <filter string="New" name="new"
                             domain="['&amp;', ('stage_id.probability', '=', 0), ('stage_id.sequence', '&lt;=', 1)]"/>
@@ -550,7 +550,7 @@
                             domain="['&amp;', ('stage_id.probability', '=', 100), ('stage_id.fold', '=', True)]"/>
                     <filter string="Lost" name="lost"
                             domain="['&amp;', ('stage_id.probability', '=', 0), ('stage_id.fold', '=', True)]"/>
-                    <separator/>
+                    <separator/> -->
                     <filter string="My Opportunities" name="assigned_to_me"
                             domain="[('user_id', '=', uid)]"
                             help="Opportunities that are assigned to me"/>

@@ -2115,6 +2115,7 @@
 }
 .openerp .oe_form .oe_title h1, .openerp .oe_form h1 {
   font-weight: bold;
+  
   font-size: 2em;
 }
 .openerp .oe_form h2 {
