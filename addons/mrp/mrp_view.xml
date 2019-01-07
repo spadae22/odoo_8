@@ -276,6 +276,9 @@
                         <group>
                             <field name="name"/>
                             <field name="code"/>
+                            <field name="roaster"/>
+                            <field name="roaster_green_qty"/>
+                            
                         </group>
                         <group>
                             <field name="location_id"/>
@@ -704,6 +707,7 @@
                                 <field name="product_uos" class="oe_inline"/>
                             </div>
                             <field name="date_planned"/>
+                            <field name="MO_roast_green"/>
                         </group>
                         <group>
                             <field name="bom_id"

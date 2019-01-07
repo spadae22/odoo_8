@@ -127,6 +127,8 @@ class mrp_routing(osv.osv):
                 "if you subcontract the manufacturing operations."
         ),
         'company_id': fields.many2one('res.company', 'Company'),
+        'roaster_green_qty': fields.float('Number of Pounds', help="Green Coffee Capacity."),
+        'roaster': fields.boolean('Roaster?'),
     }
     _defaults = {
         'active': lambda *a: 1,
@@ -613,6 +615,8 @@ class mrp_production(osv.osv):
         'user_id': fields.many2one('res.users', 'Responsible'),
         'company_id': fields.many2one('res.company', 'Company', required=True),
         'ready_production': fields.function(_moves_assigned, type='boolean', store={'stock.move': (_mrp_from_move, ['state'], 10)}),
+        'MO_roast_green': fields.float('Total Green Coffeee', readonly=True,),
+        'number_of_roasts': fields.float('Number of Roasts', readonly=True,)
     }
 
     _defaults = {
@@ -737,6 +741,7 @@ class mrp_production(osv.osv):
         results = []
         prod_line_obj = self.pool.get('mrp.production.product.line')
         workcenter_line_obj = self.pool.get('mrp.production.workcenter.line')
+        total_roast_qty=0
         for production in self.browse(cr, uid, ids, context=context):
             #unlink product_lines
             prod_line_obj.unlink(cr, SUPERUSER_ID, [line.id for line in production.product_lines], context=context)
@@ -751,11 +756,17 @@ class mrp_production(osv.osv):
             for line in results:
                 line['production_id'] = production.id
                 prod_line_obj.create(cr, uid, line)
-
+    
+                total_roast_qty += line['product_qty']
+                
+            
             #reset workcenter_lines in production order
             for line in results2:
                 line['production_id'] = production.id
                 workcenter_line_obj.create(cr, uid, line, context)
+        print "-------- reset workcenter lines--------", results
+        print "--------     roater qty--------", total_roast_qty  
+        self.write(cr, uid, ids, {'MO_roast_green': total_roast_qty})        
         return results
 
     def action_compute(self, cr, uid, ids, properties=None, context=None):
@@ -1087,6 +1098,7 @@ class mrp_production(osv.osv):
         res = []
         for order in self.browse(cr, uid, ids, context={}):
             res += [x.id for x in order.move_lines]
+        print "------------ action inn production------------", res    
         return res
 
     def test_ready(self, cr, uid, ids):
