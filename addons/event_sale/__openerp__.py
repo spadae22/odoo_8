@@ -42,7 +42,6 @@ this event.
     'depends': ['event', 'sale_crm'],
     'data': [
         'event_sale_view.xml',
-        'event_sale_data.xml',
         'event_sale_report.xml',
         'views/report_registrationbadge.xml',
         'security/ir.model.access.csv',
