@@ -708,6 +708,7 @@
                             </div>
                             <field name="date_planned"/>
                             <field name="MO_roast_green"/>
+                            <field name="number_of_roasts"/>
                         </group>
                         <group>
                             <field name="bom_id"

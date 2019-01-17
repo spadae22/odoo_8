@@ -20,6 +20,7 @@
 ##############################################################################
 
 import time
+import math
 import openerp.addons.decimal_precision as dp
 from collections import OrderedDict
 from openerp.osv import fields, osv, orm
@@ -366,7 +367,7 @@ class mrp_bom(osv.osv):
         return res
 
     def unlink(self, cr, uid, ids, context=None):
-        if self.pool['mrp.production'].search(cr, uid, [('bom_id', 'in', ids), ('state', 'not in', ['done', 'cancel'])], context=context):
+        if self.pool['mrp.production'].search(cr, uid, [('bom_id', 'in', ids), ('state', 'not in', ['draft','done', 'cancel'])], context=context):
             raise osv.except_osv(_('Warning!'), _('You can not delete a Bill of Material with running manufacturing orders.\nPlease close or cancel it first.'))
         return super(mrp_bom, self).unlink(cr, uid, ids, context=context)
 
@@ -616,7 +617,8 @@ class mrp_production(osv.osv):
         'company_id': fields.many2one('res.company', 'Company', required=True),
         'ready_production': fields.function(_moves_assigned, type='boolean', store={'stock.move': (_mrp_from_move, ['state'], 10)}),
         'MO_roast_green': fields.float('Total Green Coffeee', readonly=True,),
-        'number_of_roasts': fields.float('Number of Roasts', readonly=True,)
+        'number_of_roasts': fields.float('Number of Roasts', readonly=True,),
+        'roaster_qty': fields.related('routing_id','roaster_green_qty', type='many2one', relation='mrp.routing', string='Green Quantity', readonly=True)
     }
 
     _defaults = {
@@ -649,7 +651,7 @@ class mrp_production(osv.osv):
 
     def unlink(self, cr, uid, ids, context=None):
         for production in self.browse(cr, uid, ids, context=context):
-            if production.state not in ('draft', 'cancel'):
+            if production.state not in ('cancel'):
                 raise osv.except_osv(_('Invalid Action!'), _('Cannot delete a manufacturing order in state \'%s\'.') % production.state)
         return super(mrp_production, self).unlink(cr, uid, ids, context=context)
 
@@ -739,9 +741,12 @@ class mrp_production(osv.osv):
         if properties is None:
             properties = []
         results = []
+        mrp_route_obj=self.pool.get('mrp.routing')
         prod_line_obj = self.pool.get('mrp.production.product.line')
         workcenter_line_obj = self.pool.get('mrp.production.workcenter.line')
         total_roast_qty=0
+        number_of_roasts=0
+        routing=1
         for production in self.browse(cr, uid, ids, context=context):
             #unlink product_lines
             prod_line_obj.unlink(cr, SUPERUSER_ID, [line.id for line in production.product_lines], context=context)
@@ -756,17 +761,21 @@ class mrp_production(osv.osv):
             for line in results:
                 line['production_id'] = production.id
                 prod_line_obj.create(cr, uid, line)
-    
                 total_roast_qty += line['product_qty']
-                
-            
+                            
             #reset workcenter_lines in production order
             for line in results2:
                 line['production_id'] = production.id
                 workcenter_line_obj.create(cr, uid, line, context)
-        print "-------- reset workcenter lines--------", results
-        print "--------     roater qty--------", total_roast_qty  
-        self.write(cr, uid, ids, {'MO_roast_green': total_roast_qty})        
+        
+            if production.routing_id:
+                routing = production.routing_id.roaster_green_qty
+            else:
+                routing = production.bom_id.routing_id.roaster_green_qty
+        print "--------     roater qty--------", total_roast_qty, routing
+        number_of_roasts_calc= math.ceil(total_roast_qty/routing)
+        self.write(cr, uid, ids, {'MO_roast_green': total_roast_qty}) 
+        self.write(cr, uid, ids, {'number_of_roasts': number_of_roasts_calc})        
         return results
 
     def action_compute(self, cr, uid, ids, properties=None, context=None):
