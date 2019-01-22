@@ -34,6 +34,7 @@ class StockMove(osv.osv):
         'production_id': fields.many2one('mrp.production', 'Production Order for Produced Products', select=True, copy=False),
         'raw_material_production_id': fields.many2one('mrp.production', 'Production Order for Raw Materials', select=True),
         'consumed_for': fields.many2one('stock.move', 'Consumed for', help='Technical field used to make the traceability of produced products'),
+        'number_of_roasts': fields.many2one('mrp.production', 'Number of Green Roasts', copy=False),
     }
 
     def check_tracking(self, cr, uid, move, lot_id, context=None):

@@ -282,6 +282,8 @@ class mrp_bom(osv.osv):
         uom_obj = self.pool.get("product.uom")
         routing_obj = self.pool.get('mrp.routing')
         master_bom = master_bom or bom
+        
+        
 
 
         def _factor(factor, product_efficiency, product_rounding):
@@ -322,6 +324,9 @@ class mrp_bom(osv.osv):
 
             quantity = _factor(bom_line_id.product_qty * factor, bom_line_id.product_efficiency, bom_line_id.product_rounding)
             bom_id = self._bom_find(cr, uid, product_id=bom_line_id.product_id.id, properties=properties, context=context)
+            #number_of_roasts_per= production_id.number_of_roasts
+            #roast_quantity=quantity = (_factor(bom_line_id.product_qty * factor, bom_line_id.product_efficiency, bom_line_id.product_rounding)/number_of_roasts
+            print "-----------  bom explode--------------", quantity
 
             #If BoM should not behave like PhantoM, just add the product, otherwise explode further
             if bom_line_id.type != "phantom" and (not bom_id or self.browse(cr, uid, bom_id, context=context).type != "phantom"):
@@ -332,6 +337,8 @@ class mrp_bom(osv.osv):
                     'product_uom': bom_line_id.product_uom.id,
                     'product_uos_qty': bom_line_id.product_uos and _factor(bom_line_id.product_uos_qty * factor, bom_line_id.product_efficiency, bom_line_id.product_rounding) or False,
                     'product_uos': bom_line_id.product_uos and bom_line_id.product_uos.id or False,
+                   
+                    
                 })
             elif bom_id:
                 all_prod = [bom.product_tmpl_id.id] + (previous_products or [])
@@ -427,7 +434,8 @@ class mrp_bom_line(osv.osv):
 
         'bom_id': fields.many2one('mrp.bom', 'Parent BoM', ondelete='cascade', select=True, required=True),
         'attribute_value_ids': fields.many2many('product.attribute.value', string='Variants', help="BOM Product Variants needed form apply this line."),
-        'child_line_ids': fields.function(_get_child_bom_lines, relation="mrp.bom.line", string="BOM lines of the referred bom", type="one2many")
+        'child_line_ids': fields.function(_get_child_bom_lines, relation="mrp.bom.line", string="BOM lines of the referred bom", type="one2many"),
+        
     }
 
     def _get_uom_id(self, cr, uid, *args):
@@ -616,9 +624,10 @@ class mrp_production(osv.osv):
         'user_id': fields.many2one('res.users', 'Responsible'),
         'company_id': fields.many2one('res.company', 'Company', required=True),
         'ready_production': fields.function(_moves_assigned, type='boolean', store={'stock.move': (_mrp_from_move, ['state'], 10)}),
-        'MO_roast_green': fields.float('Total Green Coffeee', readonly=True,),
-        'number_of_roasts': fields.float('Number of Roasts', readonly=True,),
-        'roaster_qty': fields.related('routing_id','roaster_green_qty', type='many2one', relation='mrp.routing', string='Green Quantity', readonly=True)
+        'MO_roast_green': fields.float('Total Green Coffee', readonly=True, copy=False),
+        'number_of_roasts': fields.float('Number of Roasts', readonly=True, copy=False),
+        'number_of_roasts2': fields.float('Number of Roasts', readonly=True, copy=False),
+        
     }
 
     _defaults = {
@@ -730,7 +739,12 @@ class mrp_production(osv.osv):
 
         # get components and workcenter_lines from BoM structure
         factor = uom_obj._compute_qty(cr, uid, production.product_uom.id, production.product_qty, bom_point.product_uom.id)
+        
         # product_lines, workcenter_lines
+        
+        bom_expode_temp=bom_obj._bom_explode(cr, uid, bom_point, production.product_id, factor / bom_point.product_qty, properties, routing_id=production.routing_id.id, context=context)
+        roaster_bom_qty=production.routing_id.roaster_green_qty
+        print "---- prepare BOM lines---------------", roaster_bom_qty
         return bom_obj._bom_explode(cr, uid, bom_point, production.product_id, factor / bom_point.product_qty, properties, routing_id=production.routing_id.id, context=context)
 
 
@@ -773,9 +787,15 @@ class mrp_production(osv.osv):
             else:
                 routing = production.bom_id.routing_id.roaster_green_qty
         print "--------     roater qty--------", total_roast_qty, routing
-        number_of_roasts_calc= math.ceil(total_roast_qty/routing)
+        
+        number_of_roasts_calc=(total_roast_qty/routing)
+        number_of_roasts_calc_report= math.ceil(total_roast_qty/routing)
+        if routing <= 1:
+            total_roast_qty=0.0
+            routing=0.0
         self.write(cr, uid, ids, {'MO_roast_green': total_roast_qty}) 
-        self.write(cr, uid, ids, {'number_of_roasts': number_of_roasts_calc})        
+        self.write(cr, uid, ids, {'number_of_roasts': number_of_roasts_calc})
+        self.write(cr, uid, ids, {'number_of_roasts2': number_of_roasts_calc_report})        
         return results
 
     def action_compute(self, cr, uid, ids, properties=None, context=None):
@@ -1107,7 +1127,7 @@ class mrp_production(osv.osv):
         res = []
         for order in self.browse(cr, uid, ids, context={}):
             res += [x.id for x in order.move_lines]
-        print "------------ action inn production------------", res    
+        
         return res
 
     def test_ready(self, cr, uid, ids):
@@ -1143,6 +1163,8 @@ class mrp_production(osv.osv):
             'production_id': production.id,
             'origin': production.name,
             'group_id': procurement and procurement.group_id.id,
+            'number_of_roasts': production.number_of_roasts,
+            
         }
         move_id = stock_move.create(cr, uid, data, context=context)
         #a phantom bom cannot be used in mrp order so it's ok to assume the list returned by action_confirm
@@ -1240,7 +1262,7 @@ class mrp_production(osv.osv):
             'product_uos': uos_id or False,
             'location_id': source_location_id,
             'location_dest_id': destination_location_id,
-            'company_id': production.company_id.id,
+            'company_id': production.company_id.id,            
             'procure_method': prev_move and 'make_to_stock' or self._get_raw_material_procure_method(cr, uid, product, location_id=source_location_id,
                                                                                                      location_dest_id=destination_location_id, context=context), #Make_to_stock avoids creating procurement
             'raw_material_production_id': production.id,
@@ -1360,6 +1382,10 @@ class mrp_production_product_line(osv.osv):
         'product_uos_qty': fields.float('Product UOS Quantity'),
         'product_uos': fields.many2one('product.uom', 'Product UOS'),
         'production_id': fields.many2one('mrp.production', 'Production Order', select=True),
+        'number_of_roasts': fields.related('number_of_roasts', type='many2one', relation='mrp.production', string='Number of Roasts Actual', store=True),
+        
+        
+        
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
