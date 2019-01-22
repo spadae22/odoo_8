@@ -760,6 +760,7 @@ class mrp_production(osv.osv):
         workcenter_line_obj = self.pool.get('mrp.production.workcenter.line')
         total_roast_qty=0
         number_of_roasts=0
+     
         routing=1
         for production in self.browse(cr, uid, ids, context=context):
             #unlink product_lines
@@ -788,11 +789,14 @@ class mrp_production(osv.osv):
                 routing = production.bom_id.routing_id.roaster_green_qty
         print "--------     roater qty--------", total_roast_qty, routing
         
-        number_of_roasts_calc=(total_roast_qty/routing)
-        number_of_roasts_calc_report= math.ceil(total_roast_qty/routing)
+        number_of_roasts_calc=(total_roast_qty/1)
+        number_of_roasts_calc_report= math.ceil(total_roast_qty/1)
         if routing <= 1:
             total_roast_qty=0.0
             routing=0.0
+            number_of_roasts_calc=1
+            number_of_roasts_calc_report=1
+            
         self.write(cr, uid, ids, {'MO_roast_green': total_roast_qty}) 
         self.write(cr, uid, ids, {'number_of_roasts': number_of_roasts_calc})
         self.write(cr, uid, ids, {'number_of_roasts2': number_of_roasts_calc_report})        
