@@ -34,7 +34,7 @@ class StockMove(osv.osv):
         'production_id': fields.many2one('mrp.production', 'Production Order for Produced Products', select=True, copy=False),
         'raw_material_production_id': fields.many2one('mrp.production', 'Production Order for Raw Materials', select=True),
         'consumed_for': fields.many2one('stock.move', 'Consumed for', help='Technical field used to make the traceability of produced products'),
-        'number_of_roasts': fields.many2one('mrp.production', 'Number of Green Roasts', copy=False),
+        'pounds_per_product_roast': fields.float(string='Lbs per product line', copy=False),
     }
 
     def check_tracking(self, cr, uid, move, lot_id, context=None):
@@ -64,7 +64,7 @@ class StockMove(osv.osv):
     def _action_explode(self, cr, uid, move, context=None):
         """ Explodes pickings.
         @param move: Stock moves
-        @return: True
+        @return: True 
         """
         if context is None:
             context = {}
@@ -81,7 +81,7 @@ class StockMove(osv.osv):
             processed_ids = []
             factor = uom_obj._compute_qty(cr, SUPERUSER_ID, move.product_uom.id, move.product_uom_qty, bom_point.product_uom.id) / bom_point.product_qty
             res = bom_obj._bom_explode(cr, SUPERUSER_ID, bom_point, move.product_id, factor, property_ids, context=context)
-
+            print "------ from stock ---- res[0]-----------------", res
             for line in res[0]:
                 product = prod_obj.browse(cr, uid, line['product_id'], context=context)
                 if product.type != 'service':
@@ -96,6 +96,8 @@ class StockMove(osv.osv):
                         'name': line['name'],
                         'procurement_id': move.procurement_id.id,
                         'split_from': move.id, #Needed in order to keep sale connection, but will be removed by unlink
+                        'product_uos_qty': line['product_uos_qty'],
+                        'pounds_per_product_roast': line['pounds_per_product_roast'],
                     }
                     mid = move_obj.copy(cr, uid, move.id, default=valdef, context=context)
                     to_explode_again_ids.append(mid)
@@ -114,6 +116,8 @@ class StockMove(osv.osv):
                             'group_id': move.group_id.id,
                             'priority': move.priority,
                             'partner_dest_id': move.partner_id.id,
+                            'pounds_per_product_roast': line['pounds_per_product_roast'],
+                            
                             }
                         if move.procurement_id:
                             proc = proc_obj.copy(cr, uid, move.procurement_id.id, default=valdef, context=context)
@@ -139,8 +143,9 @@ class StockMove(osv.osv):
             #delete the move with original product which is not relevant anymore
             move_obj.unlink(cr, SUPERUSER_ID, [move.id], context=context)
             #return list of newly created move
+            print "------ processed_ids----------------", processed_ids
             return processed_ids
-
+            print "------ from stock ---- res[0]-----------------", res
         return [move.id]
 
     def action_confirm(self, cr, uid, ids, context=None):

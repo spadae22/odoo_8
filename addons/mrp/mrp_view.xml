@@ -276,7 +276,7 @@
                         <group>
                             <field name="name"/>
                             <field name="code"/>
-                            <field name="roaster"/>
+                            <field name="is_roaster"/>
                             <field name="roaster_green_qty"/>
                             
                         </group>
@@ -707,8 +707,9 @@
                                 <field name="product_uos" class="oe_inline"/>
                             </div>
                             <field name="date_planned"/>
-                            <field name="MO_roast_green"/>
                             <field name="number_of_roasts"/>
+                            <field name="number_of_roasts3"/>
+                             <field name="number_of_roasts2"/>
                         </group>
                         <group>
                             <field name="bom_id"
@@ -730,13 +731,14 @@
                     <notebook>
                         <page string="Consumed Products">
                             <group>
-                                <group string="Products to Consume">
+                                <group string="Products to Consumed">
                                     <field name="move_lines" nolabel="1" options="{'reload_on_button': true}">
                                         <tree colors="blue:state == 'draft';black:state in ('ready','assigned','in_production');gray:state in ('cancel','done');red:state in ('confirmed','waiting')" string="Products to Consume">
                                             <field name="product_id"/>
                                             <field name="product_uom_qty"  string="Quantity"/>
                                             <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
                                             <field name="state" invisible="1"/>
+                                            <field name="pounds_per_product_roast"/>
                                             <button name="%(mrp.move_consume)d"
                                                 string="Consume Products" type="action"
                                                 icon="gtk-go-forward" context="{'consume': True}"

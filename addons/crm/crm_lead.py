@@ -230,7 +230,7 @@ class crm_lead(format_address, osv.osv):
         'priority': fields.selection(crm.AVAILABLE_PRIORITIES, 'Priority', select=True),
         'date_closed': fields.datetime('Closed', readonly=True, copy=False),
         'stage_id': fields.many2one('crm.case.stage', 'Stage', track_visibility='onchange', select=True,
-                        domain="['&', ('section_ids', '=', section_id), '|', ('type', '=', type), ('type', '=', 'both')]"),
+                        domain="['&', ('section_ids', '=', section_ids), '|', ('type', '=', type), ('type', '=', 'both')]"),
         'user_id': fields.many2one('res.users', 'Salesperson', select=True, track_visibility='onchange'),
         'referred': fields.char('Referred By'),
         'date_open': fields.datetime('Assigned', readonly=True),

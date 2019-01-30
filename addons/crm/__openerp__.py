@@ -94,26 +94,8 @@ Dashboard for CRM will include:
 
         'sales_team_view.xml',
     ],
-    'demo': [
-        'crm_demo.xml',
-        'crm_lead_demo.xml',
-        'crm_phonecall_demo.xml',
-        'crm_action_rule_demo.xml',
-    ],
-    'test': [
-        'test/crm_access_group_users.yml',
-        'test/crm_lead_message.yml',
-        'test/lead2opportunity2win.yml',
-        'test/lead2opportunity_assign_salesmen.yml',
-        'test/crm_lead_merge.yml',
-        'test/crm_lead_cancel.yml',
-        'test/segmentation.yml',
-        'test/phonecalls.yml',
-        'test/crm_lead_onchange.yml',
-        'test/crm_lead_copy.yml',
-        'test/crm_lead_unlink.yml',
-        'test/crm_lead_find_stage.yml',
-    ],
+    
+   
     'installable': True,
     'application': True,
     'auto_install': False,

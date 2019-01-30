@@ -129,7 +129,7 @@ class mrp_routing(osv.osv):
         ),
         'company_id': fields.many2one('res.company', 'Company'),
         'roaster_green_qty': fields.float('Number of Pounds', help="Green Coffee Capacity."),
-        'roaster': fields.boolean('Roaster?'),
+        'is_roaster': fields.boolean('Roaster?'),
     }
     _defaults = {
         'active': lambda *a: 1,
@@ -282,10 +282,9 @@ class mrp_bom(osv.osv):
         uom_obj = self.pool.get("product.uom")
         routing_obj = self.pool.get('mrp.routing')
         master_bom = master_bom or bom
+       
         
         
-
-
         def _factor(factor, product_efficiency, product_rounding):
             factor = factor / (product_efficiency or 1.0)
             factor = _common.ceiling(factor, product_rounding)
@@ -323,11 +322,11 @@ class mrp_bom(osv.osv):
                 raise osv.except_osv(_('Invalid Action!'), _('BoM "%s" contains a BoM line with a product recursion: "%s".') % (master_bom.name,bom_line_id.product_id.name_get()[0][1]))
 
             quantity = _factor(bom_line_id.product_qty * factor, bom_line_id.product_efficiency, bom_line_id.product_rounding)
+            quantity_per_roast = ((routing.roaster_green_qty*bom_line_id.product_qty))
+            
             bom_id = self._bom_find(cr, uid, product_id=bom_line_id.product_id.id, properties=properties, context=context)
-            #number_of_roasts_per= production_id.number_of_roasts
-            #roast_quantity=quantity = (_factor(bom_line_id.product_qty * factor, bom_line_id.product_efficiency, bom_line_id.product_rounding)/number_of_roasts
-            print "-----------  bom explode--------------", quantity
-
+            
+           
             #If BoM should not behave like PhantoM, just add the product, otherwise explode further
             if bom_line_id.type != "phantom" and (not bom_id or self.browse(cr, uid, bom_id, context=context).type != "phantom"):
                 result.append({
@@ -337,8 +336,8 @@ class mrp_bom(osv.osv):
                     'product_uom': bom_line_id.product_uom.id,
                     'product_uos_qty': bom_line_id.product_uos and _factor(bom_line_id.product_uos_qty * factor, bom_line_id.product_efficiency, bom_line_id.product_rounding) or False,
                     'product_uos': bom_line_id.product_uos and bom_line_id.product_uos.id or False,
-                   
-                    
+                    'pounds_per_product_roast': quantity_per_roast,
+                                       
                 })
             elif bom_id:
                 all_prod = [bom.product_tmpl_id.id] + (previous_products or [])
@@ -352,7 +351,7 @@ class mrp_bom(osv.osv):
                 result2 = result2 + res[1]
             else:
                 raise osv.except_osv(_('Invalid Action!'), _('BoM "%s" contains a phantom BoM line but the product "%s" does not have any BoM defined.') % (master_bom.name,bom_line_id.product_id.name_get()[0][1]))
-
+        print "------ bom_line_id-------", result, result2
         return result, result2
 
     def copy_data(self, cr, uid, id, default=None, context=None):
@@ -556,7 +555,7 @@ class mrp_production(osv.osv):
         """ Return mrp"""
         res = []
         for move in self.browse(cr, uid, ids, context=context):
-            res += self.pool.get("mrp.production").search(cr, uid, [('move_lines', 'in', move.id)], context=context)
+            res += self.pool.get("mrp.production").search(cr, uid, [('move_lines', 'in', move.id)], context=context)   
         return res
 
     _columns = {
@@ -624,9 +623,12 @@ class mrp_production(osv.osv):
         'user_id': fields.many2one('res.users', 'Responsible'),
         'company_id': fields.many2one('res.company', 'Company', required=True),
         'ready_production': fields.function(_moves_assigned, type='boolean', store={'stock.move': (_mrp_from_move, ['state'], 10)}),
-        'MO_roast_green': fields.float('Total Green Coffee', readonly=True, copy=False),
+        'MO_roast_green': fields.float('Number of Roasts', readonly=True, copy=False),
+        'MO_roast_green_high': fields.float('Green Coffee High', readonly=True, copy=False),
         'number_of_roasts': fields.float('Number of Roasts', readonly=True, copy=False),
-        'number_of_roasts2': fields.float('Number of Roasts', readonly=True, copy=False),
+        'number_of_roasts2': fields.float('Quantity to Roast High', readonly=True, copy=False),
+        'number_of_roasts3': fields.float('Quantity to Roast Low', readonly=True, copy=False),
+        'pounds_per_product_roast':fields.float('lbs per roast'),
         
     }
 
@@ -740,11 +742,10 @@ class mrp_production(osv.osv):
         # get components and workcenter_lines from BoM structure
         factor = uom_obj._compute_qty(cr, uid, production.product_uom.id, production.product_qty, bom_point.product_uom.id)
         
-        # product_lines, workcenter_lines
         
+        # product_lines, workcenter_lines        
         bom_expode_temp=bom_obj._bom_explode(cr, uid, bom_point, production.product_id, factor / bom_point.product_qty, properties, routing_id=production.routing_id.id, context=context)
-        roaster_bom_qty=production.routing_id.roaster_green_qty
-        print "---- prepare BOM lines---------------", roaster_bom_qty
+        
         return bom_obj._bom_explode(cr, uid, bom_point, production.product_id, factor / bom_point.product_qty, properties, routing_id=production.routing_id.id, context=context)
 
 
@@ -759,25 +760,31 @@ class mrp_production(osv.osv):
         prod_line_obj = self.pool.get('mrp.production.product.line')
         workcenter_line_obj = self.pool.get('mrp.production.workcenter.line')
         total_roast_qty=0
-        number_of_roasts=0
-     
+        number_of_roasts_actual=0
+        number_of_roasts_calc=0
         routing=1
+        roaster=0
+        lbs_per_coffee=0
+        
+        
         for production in self.browse(cr, uid, ids, context=context):
             #unlink product_lines
             prod_line_obj.unlink(cr, SUPERUSER_ID, [line.id for line in production.product_lines], context=context)
             #unlink workcenter_lines
             workcenter_line_obj.unlink(cr, SUPERUSER_ID, [line.id for line in production.workcenter_lines], context=context)
-
+            
             res = self._prepare_lines(cr, uid, production, properties=properties, context=context)
-            results = res[0] # product_lines
+            results = res[0] # product_lines           
             results2 = res[1] # workcenter_lines
-
+            
             # reset product_lines in production order
             for line in results:
                 line['production_id'] = production.id
                 prod_line_obj.create(cr, uid, line)
+                
                 total_roast_qty += line['product_qty']
-                            
+               
+                                          
             #reset workcenter_lines in production order
             for line in results2:
                 line['production_id'] = production.id
@@ -785,21 +792,27 @@ class mrp_production(osv.osv):
         
             if production.routing_id:
                 routing = production.routing_id.roaster_green_qty
+                roaster= production.routing_id.is_roaster
             else:
                 routing = production.bom_id.routing_id.roaster_green_qty
-#        print "--------     roater qty--------", total_roast_qty, routing
-        
-#        number_of_roasts_calc=(total_roast_qty/1)
-#        number_of_roasts_calc_report= math.ceil(total_roast_qty/1)
-        if routing <= 1:
-            total_roast_qty=0.0
-            routing=1
-            number_of_roasts_calc=1
-            number_of_roasts_calc_report=1
+                roaster= production.routing_id.is_roaster
+                   
+        if roaster == 1:           
+            mo_finshed_qty=production.product_qty   
+            number_of_roasts_calc=(total_roast_qty/routing)
+            number_of_roasts_calc_report= math.ceil(total_roast_qty/routing)
             
-        self.write(cr, uid, ids, {'MO_roast_green': total_roast_qty}) 
-        self.write(cr, uid, ids, {'number_of_roasts': 1})
-        self.write(cr, uid, ids, {'number_of_roasts2': 1})        
+            number_of_roasts_floor= math.floor(total_roast_qty/routing)
+            qty_to_roast_floor= (number_of_roasts_floor*mo_finshed_qty)/number_of_roasts_calc
+            number_of_roasts_ceil= math.ceil(total_roast_qty/routing)
+            qty_to_roast_ceil= (number_of_roasts_ceil*mo_finshed_qty)/number_of_roasts_calc  
+            
+            self.write(cr, uid, ids, {'MO_roast_green': number_of_roasts_calc})
+            self.write(cr, uid, ids, {'number_of_roasts': number_of_roasts_calc}) 
+            self.write(cr, uid, ids, {'number_of_roasts3': qty_to_roast_floor})
+            self.write(cr, uid, ids, {'number_of_roasts2': qty_to_roast_ceil})
+            
+        print "--------- resylts from acton compute lines------", results    
         return results
 
     def action_compute(self, cr, uid, ids, properties=None, context=None):
@@ -1146,6 +1159,7 @@ class mrp_production(osv.osv):
     def _make_production_produce_line(self, cr, uid, production, context=None):
         stock_move = self.pool.get('stock.move')
         proc_obj = self.pool.get('procurement.order')
+        
         source_location_id = production.product_id.property_stock_production.id
         destination_location_id = production.location_dest_id.id
         procs = proc_obj.search(cr, uid, [('production_id', '=', production.id)], context=context)
@@ -1167,10 +1181,10 @@ class mrp_production(osv.osv):
             'production_id': production.id,
             'origin': production.name,
             'group_id': procurement and procurement.group_id.id,
-            'number_of_roasts': production.number_of_roasts,
-            
+                        
         }
         move_id = stock_move.create(cr, uid, data, context=context)
+        print "--------- move id---------------------", move_id
         #a phantom bom cannot be used in mrp order so it's ok to assume the list returned by action_confirm
         #is 1 element long, so we can take the first.
         return stock_move.action_confirm(cr, uid, [move_id], context=context)[0]
@@ -1235,7 +1249,7 @@ class mrp_production(osv.osv):
         }, context=context)
         return move
 
-    def _make_consume_line_from_data(self, cr, uid, production, product, uom_id, qty, uos_id, uos_qty, context=None):
+    def _make_consume_line_from_data(self, cr, uid, production, product, uom_id, qty, uos_id, uos_qty, pounds_per_product_roast,context=None):
         stock_move = self.pool.get('stock.move')
         loc_obj = self.pool.get('stock.location')
         # Internal shipment is created for Stockable and Consumer Products
@@ -1273,8 +1287,10 @@ class mrp_production(osv.osv):
             #this saves us a browse in create()
             'price_unit': product.standard_price,
             'origin': production.name,
-            'warehouse_id': loc_obj.get_warehouse(cr, uid, production.location_src_id, context=context),
+            'warehouse_id': loc_obj.get_warehouse(cr, uid, production.location_src_id, context=context),            
             'group_id': production.move_prod_id.group_id.id,
+            'pounds_per_product_roast': pounds_per_product_roast
+           
         }, context=context)
         
         if prev_move:
@@ -1283,7 +1299,7 @@ class mrp_production(osv.osv):
         return move_id
 
     def _make_production_consume_line(self, cr, uid, line, context=None):
-        return self._make_consume_line_from_data(cr, uid, line.production_id, line.product_id, line.product_uom.id, line.product_qty, line.product_uos.id, line.product_uos_qty, context=context)
+        return self._make_consume_line_from_data(cr, uid, line.production_id, line.product_id, line.product_uom.id, line.product_qty, line.product_uos.id, line.product_uos_qty, line.pounds_per_product_roast, context=context)
 
 
     def _make_service_procurement(self, cr, uid, line, context=None):
@@ -1318,6 +1334,8 @@ class mrp_production(osv.osv):
 
             stock_moves = []
             for line in production.product_lines:
+                print "------ line--------",  line['pounds_per_product_roast']
+                
                 if line.product_id.type != 'service':
                     stock_move_id = self._make_production_consume_line(cr, uid, line, context=context)
                     stock_moves.append(stock_move_id)
@@ -1386,10 +1404,8 @@ class mrp_production_product_line(osv.osv):
         'product_uos_qty': fields.float('Product UOS Quantity'),
         'product_uos': fields.many2one('product.uom', 'Product UOS'),
         'production_id': fields.many2one('mrp.production', 'Production Order', select=True),
-        'number_of_roasts': fields.related('number_of_roasts', type='many2one', relation='mrp.production', string='Number of Roasts Actual', store=True),
-        
-        
-        
+        'pounds_per_product_roast': fields.float('pounds_per_product_roast'),
+               
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
