@@ -739,6 +739,7 @@
                                             <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
                                             <field name="state" invisible="1"/>
                                             <field name="pounds_per_product_roast"/>
+                                            <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
                                             <button name="%(mrp.move_consume)d"
                                                 string="Consume Products" type="action"
                                                 icon="gtk-go-forward" context="{'consume': True}"
