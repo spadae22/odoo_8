@@ -453,6 +453,8 @@
                     <field name="product_id"/>
                     <field name="product_uom" groups="product.group_uom"/>
                     <field name="type"/>
+                    
+                    
                     <field name="routing_id" groups="mrp.group_mrp_routings"/>
                     <field name="date_start"/>
                     <field name="date_stop"/>

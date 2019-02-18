@@ -812,7 +812,6 @@ class mrp_production(osv.osv):
             self.write(cr, uid, ids, {'number_of_roasts3': qty_to_roast_floor})
             self.write(cr, uid, ids, {'number_of_roasts2': qty_to_roast_ceil})
             
-        print "--------- resylts from acton compute lines------", results    
         return results
 
     def action_compute(self, cr, uid, ids, properties=None, context=None):
