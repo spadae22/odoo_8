@@ -1675,11 +1675,11 @@ class mail_thread(osv.AbstractModel):
             subtype_id = self.pool.get('ir.model.data').xmlid_to_res_id(cr, uid, subtype)
 
         # automatically subscribe recipients if asked to
-        if context.get('mail_post_autofollow') and thread_id and partner_ids:
-            partner_to_subscribe = partner_ids
-            if context.get('mail_post_autofollow_partner_ids'):
-                partner_to_subscribe = filter(lambda item: item in context.get('mail_post_autofollow_partner_ids'), partner_ids)
-            self.message_subscribe(cr, uid, [thread_id], list(partner_to_subscribe), context=context)
+#        if context.get('mail_post_autofollow') and thread_id and partner_ids:
+#            partner_to_subscribe = partner_ids
+#            if context.get('mail_post_autofollow_partner_ids'):
+#                partner_to_subscribe = filter(lambda item: item in context.get('mail_post_autofollow_partner_ids'), partner_ids)
+#            self.message_subscribe(cr, uid, [thread_id], list(partner_to_subscribe), context=context)
 
         # _mail_flat_thread: automatically set free messages to the first posted message
         if self._mail_flat_thread and model and not parent_id and thread_id:
