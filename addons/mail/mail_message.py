@@ -618,7 +618,7 @@ class mail_message(osv.Model):
             - otherwise: remove the id
         """
         # Rules do not apply to administrator
-        if uid == SUPERUSER_ID:
+        if SUPERUSER_ID in (uid, access_rights_uid):
             return super(mail_message, self)._search(
                 cr, uid, args, offset=offset, limit=limit, order=order,
                 context=context, count=count, access_rights_uid=access_rights_uid)
@@ -751,7 +751,7 @@ class mail_message(osv.Model):
         document_related_ids = []
         for model, doc_ids in model_record_ids.items():
             model_obj = self.pool[model]
-            mids = model_obj.exists(cr, uid, list(doc_ids))
+            mids = list(doc_ids)
             if hasattr(model_obj, 'check_mail_message_access'):
                 model_obj.check_mail_message_access(cr, uid, mids, operation, context=context)
             else:
@@ -812,7 +812,10 @@ class mail_message(osv.Model):
             values['record_name'] = self._get_record_name(cr, uid, values, context=context)
 
         newid = super(mail_message, self).create(cr, uid, values, context)
-        self.browse(cr, uid, newid, context)._invalidate_documents()
+        new_mail = self.browse(cr, uid, newid, context=context)
+        if values.get('attachment_ids'):
+            self.pool['ir.attachment'].check(cr, uid, new_mail.attachment_ids.ids, mode='read', context=context)
+        new_mail._invalidate_documents()
 
         self._notify(cr, uid, newid, context=context,
                      force_send=context.get('mail_notify_force_send', True),
@@ -839,6 +842,9 @@ class mail_message(osv.Model):
         if 'model' in vals or 'res_id' in vals:
             self._invalidate_documents()
         res = super(mail_message, self).write(vals)
+        if vals.get('attachment_ids'):
+            for mail in self:
+                mail.attachment_ids.check(mode='read')
         self._invalidate_documents()
         return res
 

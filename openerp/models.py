@@ -76,7 +76,7 @@ _schema = logging.getLogger(__name__ + '.schema')
 
 regex_order = re.compile('^(\s*([a-z0-9:_]+|"[a-z0-9:_]+")(\s+(desc|asc))?\s*(,|$))+(?<!,)$', re.I)
 regex_object_name = re.compile(r'^[a-z0-9_.]+$')
-onchange_v7 = re.compile(r"^(\w+)\((.*)\)$")
+onchange_v7 = re.compile(r"^([a-zA-Z]\w+)\((.*)\)$")
 
 AUTOINIT_RECALCULATE_STORED_FIELDS = 1000
 
@@ -118,7 +118,7 @@ POSTGRES_CONFDELTYPES = {
 }
 
 def intersect(la, lb):
-    return filter(lambda x: x in lb, la)
+    return list(set(lb).intersection(la))
 
 def same_name(f, g):
     """ Test whether functions ``f`` and ``g`` are identical or have the same name """
@@ -1761,7 +1761,7 @@ class BaseModel(object):
                     else:
                         res[lang][f] = self._columns[f].string
         for table in self._inherits:
-            cols = intersect(self._inherit_fields.keys(), fields)
+            cols = list(set(fields).intersection(self._inherit_fields))
             res2 = self.pool[table].read_string(cr, uid, id, langs, cols, context)
         for lang in res2:
             if lang in res:
@@ -1779,7 +1779,7 @@ class BaseModel(object):
                     src = self._columns[field].string
                     self.pool.get('ir.translation')._set_ids(cr, uid, self._name+','+field, 'field', lang, [0], vals[field], src)
         for table in self._inherits:
-            cols = intersect(self._inherit_fields.keys(), vals)
+            cols = list(set(vals).intersection(self._inherit_fields))
             if cols:
                 self.pool[table].write_string(cr, uid, id, langs, vals, context)
         return True
@@ -3377,10 +3377,32 @@ class BaseModel(object):
             if column.deprecated:
                 _logger.warning('Field %s.%s is deprecated: %s', self._name, f, column.deprecated)
 
+        # determine fields that need cache validation (nonstored float function
+        # fields with a decimal precision)
+        validate_fields = [
+            f for f in field_names
+            if isinstance(self._columns[f], openerp.osv.fields.function) and
+            self._columns[f]._type == 'float' and self._columns[f].digits and
+            not self._columns[f].store
+        ]
         # store result in cache
         for vals in result:
             record = self.browse(vals.pop('id'))
-            record._cache.update(record._convert_to_cache(vals, validate=False))
+            # write database fields to cache without validation
+            record._cache.update(record._convert_to_cache(
+                {
+                    key: value for key, value in vals.iteritems()
+                    if key not in validate_fields
+                },
+                validate=False))
+            # write other fields to cache with validation
+            record._cache.update(record._convert_to_cache(
+                {
+                    key: value for key, value in vals.iteritems()
+                    if key in validate_fields
+                },
+                validate=True))
+
 
         # store failed values in cache for the records that could not be read
         fetched = self.browse(ids)
@@ -4548,6 +4570,15 @@ class BaseModel(object):
                 return True
             return False
 
+        if self.is_transient():
+            # One single implicit access rule for transient models: owner only!
+            # This is ok because we assert that TransientModels always have
+            # log_access enabled, so that 'create_uid' is always there.
+            domain = [('create_uid', '=', uid)]
+            tquery = self._where_calc(cr, uid, domain, active_test=False)
+            apply_rule(tquery.where_clause, tquery.where_clause_params, tquery.tables)
+            return
+
         # apply main rules on the object
         rule_obj = self.pool.get('ir.rule')
         rule_where_clause, rule_where_clause_params, rule_tables = rule_obj.domain_get(cr, uid, self._name, mode, context=context)
@@ -4679,10 +4710,6 @@ class BaseModel(object):
         if context is None:
             context = {}
         self.check_access_rights(cr, access_rights_uid or user, 'read')
-
-        # For transient models, restrict access to the current user, except for the super-user
-        if self.is_transient() and self._log_access and user != SUPERUSER_ID:
-            args = expression.AND(([('create_uid', '=', user)], args or []))
 
         query = self._where_calc(cr, user, args, context=context)
         self._apply_ir_rules(cr, user, query, 'read', context=context)
