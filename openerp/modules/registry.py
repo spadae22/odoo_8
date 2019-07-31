@@ -396,7 +396,7 @@ class RegistryManager(object):
         """Delete the registry linked to a given database.  """
         with cls.lock():
             if db_name in cls.registries:
-                cls.registries[db_name].clear_caches()
+#                cls.registries[db_name].clear_caches()
                 del cls.registries[db_name]
 
     @classmethod
