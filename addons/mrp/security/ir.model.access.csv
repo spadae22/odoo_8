@@ -85,4 +85,7 @@ access_account_journal_period_user,account.journal.period user,account.model_acc
 access_account_period,account.period,account.model_account_period,mrp.group_mrp_user,1,1,1,0
 access_account_move_line,account.move.line,account.model_account_move_line,mrp.group_mrp_user,1,1,1,0
 access_account_move,account.move,account.model_account_move,mrp.group_mrp_user,1,1,1,0
+access_account_move,account.move,account.model_account_move,mrp.group_mrp_user,1,1,1,0
+
+
 

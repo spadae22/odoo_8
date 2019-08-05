@@ -65,7 +65,7 @@
                     <filter string="Secondary Salesperson" icon="terp-personal" domain="[]" context="{'group_by':'salesperson_id2'}"
                             name="secondary_salesperson"/>
                     <filter string="Route" name="by_route" icon="terp-accessories-archiver" domain="[]" context="{'group_by': 'timeslot_parent_id'}" />
-					<filter string="Driver" name="by_driver" icon="terp-accessories-archiver" domain="[]" context="{'group_by': 'driver_number'}" />
+					<filter string="Driver" name="by_driver" icon="terp-accessories-archiver" domain="[]" context="{'group_by': 'driver_number'}" /> 
                     <filter string="Sales Team" context="{'group_by':'section_id'}" groups="base.group_multi_salesteams"/>
                     <filter string="Customer" name="Customer" context="{'group_by':'partner_id'}"/>
                     <filter string="Category of Product" name="Category" context="{'group_by':'categ_id'}"/>

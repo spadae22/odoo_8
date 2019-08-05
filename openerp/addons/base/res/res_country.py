@@ -103,6 +103,7 @@ class CountryState(osv.osv):
                             help='Administrative divisions of a country. E.g. Fed. State, Departement, Canton'),
         'code': fields.char('State Code', size=3,
             help='The state code in max. three chars.', required=True),
+        'nexus': fields.boolean('Chris Nexus'),
     }
     _order = 'code'
 
