@@ -376,10 +376,12 @@ class mrp_repair(osv.osv):
                         'origin': repair.name,
                         'type': 'out_invoice',
                         'account_id': account_id,
-                        'partner_id': repair.partner_invoice_id.id or repair.partner_id.id,                         
+                        'partner_id': repair.partner_invoice_id.id or repair.partner_id.id,
+                        'address_shipping_id': repair.partner_id.id,
                         'currency_id': repair.pricelist_id.currency_id.id,
                         'comment': repair.quotation_notes,
                         'fiscal_position': repair.partner_id.property_account_position.id,
+                        'warehouse_id': 1,
                         'payment_term': repair.partner_id.property_payment_term.id
                     }
                     inv_id = inv_obj.create(cr, uid, inv)
