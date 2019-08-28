@@ -39,6 +39,7 @@ class account_invoice_confirm(osv.osv_memory):
         for record in proxy.browse(cr, uid, active_ids, context=context):
             if record.state not in ('draft', 'proforma', 'proforma2'):
                 raise osv.except_osv(_('Warning!'), _("Selected invoice(s) cannot be confirmed as they are not in 'Draft' or 'Pro-Forma' state."))
+            record.button_reset_taxes()
             record.signal_workflow('invoice_open')
             
         return {'type': 'ir.actions.act_window_close'}
