@@ -378,7 +378,7 @@ class res_partner(osv.osv):
     def _commercial_fields(self, cr, uid, context=None):
         return super(res_partner, self)._commercial_fields(cr, uid, context=context) + \
             ['debit_limit', 'property_account_payable', 'property_account_receivable', 'property_account_position',
-             'property_payment_term', 'property_supplier_payment_term', 'last_reconciliation_date']
+             'property_payment_term', 'property_supplier_payment_term', 'last_reconciliation_date','tax_exempt', 'exemption_number', 'exemption_code']
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
