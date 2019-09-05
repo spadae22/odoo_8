@@ -300,8 +300,8 @@ class mrp_repair(osv.osv):
         """
         mrp_line_obj = self.pool.get('mrp.repair.line')
         for repair in self.browse(cr, uid, ids, context=context):
-            if repair.invoice_id.state != 'cancel' and repair.invoiced:
-                raise osv.except_osv(_('Warning!'), _('Repair order is already invoiced. You must cancel the invoice first. Please see a manager.'))   
+#            if repair.invoice_id.state != 'cancel' and repair.invoiced:
+#               raise osv.except_osv(_('Warning!'), _('Repair order is already invoiced. You must cancel the invoice first. Please see a manager.'))   
         mrp_line_obj.write(cr, uid, [l.id for l in repair.operations], {'state': 'draft'}, context=context)                      
         res = {}
         move_obj = self.pool.get('stock.move')
