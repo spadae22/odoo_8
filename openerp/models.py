@@ -76,7 +76,7 @@ _schema = logging.getLogger(__name__ + '.schema')
 
 regex_order = re.compile('^(\s*([a-z0-9:_]+|"[a-z0-9:_]+")(\s+(desc|asc))?\s*(,|$))+(?<!,)$', re.I)
 regex_object_name = re.compile(r'^[a-z0-9_.]+$')
-onchange_v7 = re.compile(r"^(\w+)\((.*)\)$")
+onchange_v7 = re.compile(r"^([a-zA-Z]\w+)\((.*)\)$")
 
 AUTOINIT_RECALCULATE_STORED_FIELDS = 1000
 
