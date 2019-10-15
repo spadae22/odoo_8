@@ -371,6 +371,13 @@ class mrp_repair(osv.osv):
                     if not repair.partner_id.property_account_receivable:
                         raise osv.except_osv(_('Error!'), _('No account defined for partner "%s".') % repair.partner_id.name)
                     account_id = repair.partner_id.property_account_receivable.id
+                    
+                    repair_exemption_code_id=[]
+                    repair_exemption_number=""
+                    if repair.partner_id.exemption_code_id.id != 7:
+                        repair_exemption_code_id=repair.partner_id.exemption_code_id.id
+                        repair_exemption_number=repair.partner_id.exemption_number
+                    
                     inv = {
                         'name': repair.name,
                         'origin': repair.name,
@@ -382,7 +389,9 @@ class mrp_repair(osv.osv):
                         'comment': repair.quotation_notes,
                         'fiscal_position': repair.partner_id.property_account_position.id,
                         'warehouse_id': 1,
-                        'payment_term': repair.partner_id.property_payment_term.id
+                        'payment_term': repair.partner_id.property_payment_term.id,
+                        'exemption_code_id' : repair_exemption_code_id,
+                        'exemption_code'  : repair_exemption_number
                     }
                     inv_id = inv_obj.create(cr, uid, inv)
                     invoices_group[repair.partner_invoice_id.id] = inv_id
