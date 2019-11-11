@@ -104,6 +104,7 @@ class CountryState(osv.osv):
         'code': fields.char('State Code', size=3,
             help='The state code in max. three chars.', required=True),
         'nexus': fields.boolean('Chris Nexus'),
+        'amazon_market': fields.boolean('Amazon Marketplace'),
     }
     _order = 'code'
 

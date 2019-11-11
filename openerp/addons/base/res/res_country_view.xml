@@ -96,6 +96,7 @@
                     <field name="name"/>
                     <field name="code"/>
                     <field name="nexus"/>
+                    <field name="amazon_market"/>
                     <field name="country_id"/>
                 </tree>
             </field>
@@ -110,6 +111,7 @@
                         <field name="name"/>
                         <field name="code"/>
                          <field name="nexus"/>
+                         <field name="amazon_market"/>
                         <field name="country_id" options='{"no_open": True}'/>
                     </group>
                 </form>

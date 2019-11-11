@@ -559,6 +559,7 @@ class pos_order(osv.osv):
     def _amount_line_tax(self, cr, uid, line, context=None):
         account_tax_obj = self.pool['account.tax']
         taxes_ids = [tax for tax in line.product_id.taxes_id if tax.company_id.id == line.order_id.company_id.id]
+        #taxes_ids = [(6, 0, [179])]
         price = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
         taxes = account_tax_obj.compute_all(cr, uid, taxes_ids, price, line.qty, product=line.product_id, partner=line.order_id.partner_id or False)['taxes']
         val = 0.0
