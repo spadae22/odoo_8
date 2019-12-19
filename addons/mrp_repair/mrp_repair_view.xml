@@ -33,7 +33,7 @@
                    <button name="action_invoice_create" states="2binvoiced" string="Create Invoice" class="oe_highlight"/>
                    <button name="invoice_corrected" states="invoice_except" string="Invoice Corrected"/>
                    <button name="action_cancel" string="Cancel Repair - Return Parts to Stock" type="object"
-                  attrs="{'invisible':[('state', 'not in',('done', 'invoice_except'))]}"/> 
+                  attrs="{'invisible':[('state', 'not in',('done','2binvoiced', 'invoice_except'))]}"/> 
                  
                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
                </header>
@@ -56,7 +56,7 @@
  <field name="partner_invoice_id" attrs="{'readonly':[('invoice_method','=', 'none')],'required':[('invoice_method','!=','none')]}" groups="sale.group_delivery_invoice_address"/>
                         </group>
                         <group>
-                            <field name="location_id" on_change="onchange_location_id(location_id)" groups="stock.group_locations" domain="[('usage', 'in', ('internal', 'customer'))]"/>
+                          <field name="location_id" on_change="onchange_location_id(location_id)" groups="stock.group_locations" domain="[('usage', 'in', ('internal', 'customer'))]"/>
                             <field name="location_dest_id" groups="stock.group_locations" domain="[('usage', 'in', ('internal', 'customer'))]"/>
                             <field name="company_id" groups="base.group_multi_company" widget="selection"/>
                             <field name="guarantee_limit"/>
