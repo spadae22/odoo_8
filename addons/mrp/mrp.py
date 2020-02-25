@@ -1334,7 +1334,6 @@ class mrp_production(osv.osv):
 
             stock_moves = []
             for line in production.product_lines:
-                print "------ line--------",  line['pounds_per_product_roast']
                 
                 if line.product_id.type != 'service':
                     stock_move_id = self._make_production_consume_line(cr, uid, line, context=context)

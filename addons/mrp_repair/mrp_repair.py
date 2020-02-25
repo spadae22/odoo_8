@@ -142,7 +142,7 @@ class mrp_repair(osv.osv):
         'guarantee_limit': fields.date('Warranty Expiration', states={'confirmed': [('readonly', True)]}),
         'operations': fields.one2many('mrp.repair.line', 'repair_id', 'Operation Lines', states={'done': [('readonly', True)]}, copy=True),
         'pricelist_id': fields.many2one('product.pricelist', 'Pricelist', help='Pricelist of the selected partner.'),
-        'partner_invoice_id': fields.many2one('res.partner', 'Invoicing Address'),
+        'partner_invoice_id': fields.many2one('res.partner', 'Invoicing Address',states={'confirmed': [('readonly', True)]}),
         'invoice_method': fields.selection([
             ("none", "No Charge / Warranty"),           
             ("after_repair", "To Be Invoiced")
