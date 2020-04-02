@@ -1356,14 +1356,16 @@ class product_product(osv.Model):
     _inherit = 'product.product'
 
     def _sales_count(self, cr, uid, ids, field_name, arg, context=None):
-        r = dict.fromkeys(ids, 0)
-        domain = [
-            ('state', 'in', ['confirmed', 'done']),
-            ('product_id', 'in', ids),
-        ]
-        for group in self.pool['sale.report'].read_group(cr, uid, domain, ['product_id', 'product_uom_qty'], ['product_id'], context=context):
-            r[group['product_id'][0]] = group['product_uom_qty']
-        return r
+        # standard code replaced - MANSI
+        res = dict.fromkeys(ids, 0)
+        cr.execute("""SELECT pr.id as product, sum(sline.product_uom_qty) as sale_count FROM sale_order_line sline 
+            LEFT JOIN product_product pr on (sline.product_id=pr.id)
+                LEFT JOIN sale_order so on (so.id=sline.order_id)
+                        WHERE sline.product_id in %s and so.state in ('confirmed', 'done') group by pr.id""", (tuple(ids),))
+        fetched_data = cr.dictfetchall()
+        for data in fetched_data:
+            res[data.get('product')] = data.get('sale_count', 0.0)
+        return res
 
     def action_view_sales(self, cr, uid, ids, context=None):
         result = self.pool['ir.model.data'].xmlid_to_res_id(cr, uid, 'sale.action_order_line_product_tree', raise_if_not_found=True)
