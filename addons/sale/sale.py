@@ -46,6 +46,7 @@ class sale_order(osv.osv):
     }
 
     def _amount_line_tax(self, cr, uid, line, context=None):
+        print "-----_amount_line_tax START----"
         val = 0.0
         line_obj = self.pool['sale.order.line']
         price = line_obj._calc_line_base_price(cr, uid, line, context=context)
@@ -54,13 +55,17 @@ class sale_order(osv.osv):
                 cr, uid, line.tax_id, price, qty, line.product_id,
                 line.order_id.partner_id)['taxes']:
             val += c.get('amount', 0.0)
-        return val
+        print "-----_amount_line_tax END----"    
+        return val 
 
     def _amount_all_wrapper(self, cr, uid, ids, field_name, arg, context=None):
+        print "-----_amount_WRAPPER START----"
         """ Wrapper because of direct method passing as parameter for function fields """
+        print "-----_amount_WRAPPER END----"
         return self._amount_all(cr, uid, ids, field_name, arg, context=context)
 
     def _amount_all(self, cr, uid, ids, field_name, arg, context=None):
+        print "-----_amount_ALL START----"
         cur_obj = self.pool.get('res.currency')
         res = {}
         for order in self.browse(cr, uid, ids, context=context):
@@ -77,6 +82,7 @@ class sale_order(osv.osv):
             res[order.id]['amount_tax'] = cur_obj.round(cr, uid, cur, val)
             res[order.id]['amount_untaxed'] = cur_obj.round(cr, uid, cur, val1)
             res[order.id]['amount_total'] = res[order.id]['amount_untaxed'] + res[order.id]['amount_tax']
+        print "-----_amount_ALL END----"    
         return res
 
 
@@ -120,6 +126,7 @@ class sale_order(osv.osv):
         return res
 
     def _invoiced_search(self, cursor, user, obj, name, args, context=None):
+        print "-----_INVOICED SEARCH_ALL START----"
         if not len(args):
             return []
         clause = ''
@@ -146,24 +153,31 @@ class sale_order(osv.osv):
             res.extend(cursor.fetchall())
         if not res:
             return [('id', '=', 0)]
+        print "-----_amount_INVOICE SEARCH END----"    
         return [('id', 'in', [x[0] for x in res])]
 
     def _get_order(self, cr, uid, ids, context=None):
+        print "-----_GET ORDER START----"
         line_obj = self.pool.get('sale.order.line')
-        return list(set(line['order_id'] for line in line_obj.read(
-            cr, uid, ids, ['order_id'], load='_classic_write', context=context)))
+        res = list(set(line['order_id'] for line in line_obj.read(cr, uid, ids, ['order_id'], load='_classic_write', context=context)))
+        print " GET ORDER - RES-end-------"
+        return res
 
     def _get_default_company(self, cr, uid, context=None):
+        print "-----_default company START----"
         company_id = self.pool.get('res.users')._get_company(cr, uid, context=context)
         if not company_id:
             raise osv.except_osv(_('Error!'), _('There is no default company for the current user!'))
+        print "-----_default company END----"
         return company_id
 
     def _get_default_section_id(self, cr, uid, context=None):
+        print "-----_default SECONT START----"
         """ Gives default section by checking if present in the context """
         section_id = self._resolve_section_id_from_context(cr, uid, context=context) or False
         if not section_id:
             section_id = self.pool.get('res.users').browse(cr, uid, uid, context).default_section_id.id or False
+        print "-----_default compan END----"    
         return section_id
 
     def _resolve_section_id_from_context(self, cr, uid, context=None):
@@ -359,19 +373,25 @@ class sale_order(osv.osv):
         return {'value': val}
 
     def create(self, cr, uid, vals, context=None):
+        print " hello create start from odoo sale.py"
         if context is None:
             context = {}
         if vals.get('name', '/') == '/':
             vals['name'] = self.pool.get('ir.sequence').get(cr, uid, 'sale.order', context=context) or '/'
+        print "---- line 357 sale .py-------"    
         if vals.get('partner_id') and any(f not in vals for f in ['partner_invoice_id', 'partner_shipping_id', 'pricelist_id', 'fiscal_position']):
             defaults = self.onchange_partner_id(cr, uid, [], vals['partner_id'], context=context)['value']
             if not vals.get('fiscal_position') and vals.get('partner_shipping_id'):
                 delivery_onchange = self.onchange_delivery_id(cr, uid, [], vals.get('company_id'), None, vals['partner_id'], vals.get('partner_shipping_id'), context=context)
                 defaults.update(delivery_onchange['value'])
             vals = dict(defaults, **vals)
+        print "---- line 374 defaulfs on chaange sale .py-------"        
         ctx = dict(context or {}, mail_create_nolog=True)
+        print "---- ctx = dict(context or {}, mail_create_nolog=True)-------" 
         new_id = super(sale_order, self).create(cr, uid, vals, context=ctx)
+        print "---- line 377 NEW_ID  sale .py-------" 
         self.message_post(cr, uid, [new_id], body=_("Quotation created"), context=ctx)
+        print " hello create END from odoo sale.py"
         return new_id
 
     def button_dummy(self, cr, uid, ids, context=None):
@@ -615,6 +635,7 @@ class sale_order(osv.osv):
         return True
         
     def action_wait(self, cr, uid, ids, context=None):
+        print "--start action_wait  -- sale.py----"
         context = context or {}
         for o in self.browse(cr, uid, ids):
             if not any(line.state != 'cancel' for line in o.order_line):
@@ -625,6 +646,7 @@ class sale_order(osv.osv):
             else:
                 self.write(cr, uid, [o.id], {'state': 'progress', 'date_confirm': fields.date.context_today(self, cr, uid, context=context)})
             self.pool.get('sale.order.line').button_confirm(cr, uid, [x.id for x in o.order_line if x.state != 'cancel'])
+        print "--end action_wait  -- sale.py----"
         return True
 
     def action_quotation_send(self, cr, uid, ids, context=None):
@@ -714,12 +736,14 @@ class sale_order(osv.osv):
         return {'name': order.name, 'partner_id': order.partner_shipping_id.id}
 
     def procurement_needed(self, cr, uid, ids, context=None):
+        print "-start-sale.py procurment methid"
         #when sale is installed only, there is no need to create procurements, that's only
         #further installed modules (sale_service, sale_stock) that will change this.
         sale_line_obj = self.pool.get('sale.order.line')
         res = []
         for order in self.browse(cr, uid, ids, context=context):
             res.append(sale_line_obj.need_procurement(cr, uid, [line.id for line in order.order_line if line.state != 'cancel'], context=context))
+        print "-end-sale.py procurment methid"    
         return any(res)
 
     def action_ignore_delivery_exception(self, cr, uid, ids, context=None):
@@ -734,6 +758,7 @@ class sale_order(osv.osv):
 
         :return: True
         """
+        print "--action_ship create  -- sale.py----"
         context = dict(context or {})
         context['lang'] = self.pool['res.users'].browse(cr, uid, uid).lang
         procurement_obj = self.pool.get('procurement.order')
@@ -790,6 +815,7 @@ class sale_order(osv.osv):
         :param int fiscal_position: sale order fiscal position
         :param list order_lines: command list for one2many write method
         '''
+        
         order_line = []
         fiscal_obj = self.pool.get('account.fiscal.position')
         product_obj = self.pool.get('product.product')
@@ -851,6 +877,7 @@ class sale_order(osv.osv):
 class sale_order_line(osv.osv):
 
     def need_procurement(self, cr, uid, ids, context=None):
+        print "-start-sale.py need procurment "
         #when sale is installed only, there is no need to create procurements, that's only
         #further installed modules (sale_service, sale_stock) that will change this.
         prod_obj = self.pool.get('product.product')
@@ -866,6 +893,7 @@ class sale_order_line(osv.osv):
         return line.product_uom_qty
 
     def _amount_line(self, cr, uid, ids, field_name, arg, context=None):
+        print "-start-sale.py amount line------"
         tax_obj = self.pool.get('account.tax')
         cur_obj = self.pool.get('res.currency')
         res = {}
@@ -879,6 +907,7 @@ class sale_order_line(osv.osv):
                                         line.order_id.partner_id)
             cur = line.order_id.pricelist_id.currency_id
             res[line.id] = cur_obj.round(cr, uid, cur, taxes['total'])
+        print "-END---sale.py amount line------"    
         return res
 
     def _get_uom_id(self, cr, uid, *args):
@@ -910,10 +939,12 @@ class sale_order_line(osv.osv):
         return res
 
     def _get_sale_order(self, cr, uid, ids, context=None):
+        print "-start-sale.py get sale order line------"
         result = set()
         for order in self.pool['sale.order'].browse(cr, uid, ids, context=context):
             for line in order.order_line:
                 result.add(line.id)
+        print "-   END----sale.py get sale order line------"         
         return list(result)
 
     _name = 'sale.order.line'
@@ -1072,6 +1103,7 @@ class sale_order_line(osv.osv):
         return res
 
     def uos_change(self, cr, uid, ids, product_uos, product_uos_qty=0, product_id=None):
+        print "-start-sale.py UOS CHNAGE------"
         product_obj = self.pool.get('product.product')
         if not product_id:
             return {'value': {'product_uom': product_uos,
@@ -1092,6 +1124,7 @@ class sale_order_line(osv.osv):
         return {'value': value}
 
     def create(self, cr, uid, values, context=None):
+        print "-start-sale.py create order line------"
         if values.get('order_id') and values.get('product_id') and  any(f not in values for f in ['name', 'price_unit', 'product_uom_qty', 'product_uom']):
             order = self.pool['sale.order'].read(cr, uid, values['order_id'], ['pricelist_id', 'partner_id', 'date_order', 'fiscal_position'], context=context)
             defaults = self.product_id_change(cr, uid, [], order['pricelist_id'][0], values['product_id'],
@@ -1109,6 +1142,7 @@ class sale_order_line(osv.osv):
             if defaults.get('tax_id'):
                 defaults['tax_id'] = [[6, 0, defaults['tax_id']]]
             values = dict(defaults, **values)
+        print "-END-sale.py CREATE sale order line------"    
         return super(sale_order_line, self).create(cr, uid, values, context=context)
 
     def product_id_change(self, cr, uid, ids, pricelist, product, qty=0,
