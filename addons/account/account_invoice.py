@@ -952,7 +952,7 @@ class account_invoice(models.Model):
 
     @api.multi
     def invoice_validate(self):
-        return self.write({'state': 'open'})
+        return 
 
     @api.model
     def line_get_convert(self, line, part, date):
