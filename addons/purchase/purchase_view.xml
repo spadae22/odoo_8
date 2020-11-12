@@ -350,7 +350,7 @@
             <field name="name">purchase.order.tree</field>
             <field name="model">purchase.order</field>
             <field name="arch" type="xml">
-                <tree fonts="bold:message_unread==True" colors="blue:state == 'draft';grey:state == 'cancel';red:state not in ('cancel', 'done') and minimum_planned_date &lt; current_date" string="Purchase Order" default_order="partner_id">
+                <tree fonts="bold:message_unread==True" colors="blue:state == 'draft';grey:state == 'cancel';red:state not in ('cancel', 'done') and minimum_planned_date &lt; current_date" string="Purchase Order">
                     <field name="message_unread" invisible="1"/>
                     <field name="name" string="Reference"/>
                     <field name="date_order" />
