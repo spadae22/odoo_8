@@ -29,23 +29,25 @@ class mail_mail(osv.Model):
     _inherit = 'mail.mail'
 
     def _get_partner_access_link(self, cr, uid, mail, partner=None, context=None):
-        """ Generate URLs for links in mails:
-            - partner is not an user: signup_url
-            - partner is an user: fallback on classic URL
-        """
-        if context is None:
-            context = {}
-        partner_obj = self.pool.get('res.partner')
-        if partner and not partner.user_ids:
-            contex_signup = dict(context, signup_valid=True)
-            signup_url = partner_obj._get_signup_url_for_action(cr, SUPERUSER_ID, [partner.id],
-                                                                action='mail.action_mail_redirect',
-                                                                model=mail.model, res_id=mail.res_id,
-                                                                context=contex_signup)[partner.id]
-            return ", <span class='oe_mail_footer_access'><small>%(access_msg)s <a style='color:inherit' href='%(portal_link)s'>%(portal_msg)s</a></small></span>" % {
-                'access_msg': _('access directly to'),
-                'portal_link': signup_url,
-                'portal_msg': '%s %s' % (context.get('model_name', ''), mail.record_name) if mail.record_name else _('your messages '),
-            }
-        else:
-            return super(mail_mail, self)._get_partner_access_link(cr, uid, mail, partner=partner, context=context)
+#        """ Generate URLs for links in mails:
+#            - partner is not an user: signup_url
+#            - partner is an user: fallback on classic URL
+#        """
+#        if context is None:
+#            context = {}
+#        partner_obj = self.pool.get('res.partner')
+#        if partner and not partner.user_ids:
+#            contex_signup = dict(context, signup_valid=True)
+#            signup_url = partner_obj._get_signup_url_for_action(cr, SUPERUSER_ID, [partner.id],
+#                                                                action='mail.action_mail_redirect',
+#                                                                model=mail.model, res_id=mail.res_id,
+#                                                                context=contex_signup)[partner.id]
+#            return ", <span class='oe_mail_footer_access'><small>%(access_msg)s <a style='color:inherit' href='%(portal_link)s'>%(portal_msg)s</a></small></span>" % {
+#                'access_msg': _('access directly to'),
+#                'portal_link': signup_url,
+#                'portal_msg': '%s %s' % (context.get('model_name', ''), mail.record_name) if mail.record_name else _('your messages '),
+#            }
+#        else:
+#            return super(mail_mail, self)._get_partner_access_link(cr, uid, mail, partner=partner, context=context)
+         return None
+
