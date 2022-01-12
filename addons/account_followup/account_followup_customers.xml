@@ -102,8 +102,8 @@
                                 <field name="payment_next_action" placeholder="Action to be taken e.g. Give a phonecall, Check if it's paid, ..."/>
                             </div>
                         </group>
-                        <label for="payment_note" class="oe_edit_only"/>
-                        <field name="payment_note" placeholder="He said the problem was temporary and promised to pay 50%% before 15th of May, balance before 1st of July."/>
+                <!-->       <label for="payment_note" class="oe_edit_only"/>
+                        <field name="payment_note" placeholder="He said the problem was temporary and promised to pay 50%% before 15th of May, balance before 1st of July."/> -->
                         <p class="oe_grey">
                             Below is the history of the transactions of this
                             customer. You can check "No Follow-up" in
